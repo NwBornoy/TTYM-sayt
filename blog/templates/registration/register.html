@@ -1,0 +1,91 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Ro‘yxatdan o‘tish{% endblock %}
+
+{% block content %}
+
+<div class="auth-page">
+    <div class="auth-card">
+
+        <div class="auth-icon">103</div>
+
+        <h1>Ro‘yxatdan o‘tish</h1>
+        <p class="auth-subtitle">
+            Saytda ishtirok etish uchun yangi hisob yarating.
+        </p>
+
+        <form method="post" class="auth-form">
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+                <div class="form-error">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+
+            <div class="form-group">
+                <label for="{{ form.username.id_for_label }}">
+                    Foydalanuvchi nomi
+                </label>
+                {{ form.username }}
+
+                {% if form.username.errors %}
+                    <div class="field-error">
+                        {{ form.username.errors }}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.email.id_for_label }}">
+                    Email <span>(ixtiyoriy)</span>
+                </label>
+                {{ form.email }}
+
+                {% if form.email.errors %}
+                    <div class="field-error">
+                        {{ form.email.errors }}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.password1.id_for_label }}">
+                    Parol
+                </label>
+                {{ form.password1 }}
+
+                {% if form.password1.errors %}
+                    <div class="field-error">
+                        {{ form.password1.errors }}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <label for="{{ form.password2.id_for_label }}">
+                    Parolni tasdiqlang
+                </label>
+                {{ form.password2 }}
+
+                {% if form.password2.errors %}
+                    <div class="field-error">
+                        {{ form.password2.errors }}
+                    </div>
+                {% endif %}
+            </div>
+
+            <button type="submit" class="auth-button">
+                Ro‘yxatdan o‘tish
+            </button>
+        </form>
+
+        <div class="auth-bottom">
+            Hisobingiz bormi?
+            <a href="{% url 'login' %}">Kirish</a>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

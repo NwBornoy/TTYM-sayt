@@ -1,0 +1,219 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %}Ekofaol xodim{% endblock %}
+
+{% block content %}
+
+<style>
+  .eko-page {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .eko-page .page-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .eko-page .page-header .eko-icon {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .eko-page .page-header h1 {
+    font-size: 44px;
+    color: #0B2438;
+    margin-bottom: 15px;
+  }
+
+  .eko-page .page-header p {
+    font-size: 17px;
+    color: #666;
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .eko-page .eko-divider {
+    width: 60px;
+    height: 3px;
+    background: #ff4757;
+    margin: 25px auto 50px;
+    border-radius: 3px;
+  }
+
+  .eko-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  @media (max-width: 1100px) {
+    .eko-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .eko-grid { grid-template-columns: 1fr; }
+  }
+
+  .eko-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .eko-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .eko-card-image {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .eko-card-image-placeholder {
+    width: 100%;
+    height: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f7fa;
+    font-size: 50px;
+    color: #cfd8de;
+  }
+
+  .eko-card-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .eko-card-title {
+    color: #0B2438;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    line-height: 1.4;
+  }
+
+  .eko-card-title a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .eko-card-title a:hover { color: #ff4757; }
+
+  .eko-card-desc {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    flex: 1;
+  }
+
+  .eko-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 14px;
+  }
+
+  .eko-card-date {
+    color: #999;
+    font-size: 13px;
+  }
+
+  .eko-card-more {
+    color: #ff4757;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .eko-card-more:hover { text-decoration: underline; }
+
+  .eko-empty {
+    text-align: center;
+    color: #999;
+    padding: 60px;
+    grid-column: 1 / -1;
+  }
+
+  .eko-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 50px;
+  }
+  .eko-pagination a, .eko-pagination span {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .eko-pagination .current {
+    background: #ff4757;
+    color: #fff;
+    border-color: #ff4757;
+  }
+</style>
+
+<div class="eko-page">
+  <div class="page-header">
+    <span class="eko-icon">✳️</span>
+    <h1>Ekofaol xodim</h1>
+    <p>Bizning fotosuratlarimiz va videolarimiz prizmasi orqali bizning ekologik obodonlashtirish faoliyatimiz bilan tanishing</p>
+  </div>
+  <div class="eko-divider"></div>
+
+  <div class="eko-grid">
+    {% for item in activities %}
+      <div class="eko-card">
+        {% if item.image %}
+          <img src="{{ item.image.url }}" alt="{{ item.title }}" class="eko-card-image">
+        {% else %}
+          <div class="eko-card-image-placeholder">🌳</div>
+        {% endif %}
+
+        <div class="eko-card-body">
+          <h3 class="eko-card-title">
+            <a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
+          </h3>
+          <p class="eko-card-desc">{{ item.description|truncatewords:20 }}</p>
+
+          <div class="eko-card-footer">
+            <span class="eko-card-date">{{ item.created_at|date:"d.m.Y" }}</span>
+            <a href="{{ item.get_absolute_url }}" class="eko-card-more">Batafsil →</a>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <div class="eko-empty">Hozircha ekofaol postlar qo'shilmagan.</div>
+    {% endfor %}
+  </div>
+
+  {% if is_paginated %}
+    <div class="eko-pagination">
+      {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">←</a>
+      {% endif %}
+      <span class="current">{{ page_obj.number }}</span>
+      {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">→</a>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>
+
+{% endblock %}

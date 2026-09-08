@@ -1,0 +1,1588 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %}Bosh sahifa{% endblock %}
+
+{% block content %}
+
+<div class="home-page">
+
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
+    <section class="hero-section">
+
+        <div class="hero-inner">
+
+            <!-- CHAP TOMON -->
+            <div class="hero-text">
+
+                <h1>
+                    Respublika Tez<br>
+                    Tibbiy Yordam Markazi<br>
+                    Qashqadaryo filiali
+                </h1>
+
+                <div class="hero-welcome">
+                    saytiga Xush kelibsiz!
+                </div>
+
+                <div class="hero-buttons">
+
+                    <a href="{% url 'about' %}"
+                       class="hero-btn hero-btn-red">
+                        Batafsil
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PASTKI OQ BLOK
+             ================================================= -->
+             <div class="hero-info">
+
+              <!-- 1. 103 GA QO'NG'IROQ -->
+              <div class="hero-info-item">
+                  <div class="hero-info-icon hero-103">103</div>
+          
+                  <div class="hero-info-text">
+                      <strong>103 raqamiga</strong>
+                      <span>qo‘ng‘iroq qilinadi</span>
+                  </div>
+              </div>
+          
+              <!-- 2. MANZIL -->
+              <div class="hero-info-item">
+                  <div class="hero-info-icon">📍</div>
+          
+                  <div class="hero-info-text">
+                      <strong>Manzilingizni</strong>
+                      <span>aniq ayting</span>
+                  </div>
+              </div>
+          
+              <!-- 3. YETIB BORISH -->
+              <div class="hero-info-item">
+                  <div class="hero-info-icon">🚑</div>
+          
+                  <div class="hero-info-text">
+                      <strong>Tez yordam</strong>
+                      <span>15 min ichida yetib boradi</span>
+                  </div>
+              </div>
+          
+              <!-- 4. YORDAM -->
+              <div class="hero-info-item">
+                  <div class="hero-info-icon">👨‍⚕️</div>
+          
+                  <div class="hero-info-text">
+                      <strong>Shifokorlik yordami</strong>
+                      <span>ko‘rsatiladi</span>
+                  </div>
+              </div>
+          
+          </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STATISTIKA
+         ===================================================== -->
+
+    <section class="stats-section">
+
+        <div class="stats-container">
+
+            <div class="stat">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">
+                    Kunlik 24 soat xizmat
+                </div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">13</div>
+                <div class="stat-label">
+                    Viloyatda filiallar
+                </div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">~12 min</div>
+                <div class="stat-label">
+                    O‘rtacha javob vaqti
+                </div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">
+                    Bepul xizmat
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+   <!-- =====================================================
+     QASHQADARYO VILOYATI TEZ TIBBIY YORDAM FILIALLARI
+     ===================================================== -->
+
+<section class="branches-section" id="branches">
+
+  <div class="section-header">
+
+      <h2 style="color: black;">
+          Qashqadaryo viloyati tez tibbiy yordam filiallari xaritasi
+      </h2>
+
+      <p style="color: black;">
+          Xarita orqali kerakli filialni tanlang
+      </p>
+
+  </div>
+
+
+  <div class="branches-map-container">
+
+      <!-- =============================================
+           CHAP TOMON — FILIAL MA'LUMOTLARI
+           ============================================= -->
+
+           <div class="branch-info" id="branch-info">
+
+            <!-- RAHBAR RASMI -->
+            <div class="branch-info-icon">
+                <img src="{% static 'blog/images/director.jpg' %}" alt="Filial rahbari">
+            </div>
+        
+            <!-- FILIAL NOMI -->
+            <h3 id="branch-name">
+                Qashqadaryo tez tibbiy yordam markazi direktori
+            </h3>
+        
+            <!-- RAHBAR -->
+            <div class="branch-info-line" id="branch-director">
+                👨‍⚕️ Rahbar: Aliev Akmaljon Akromkulovch
+            </div>
+        
+            <!-- TELEFON -->
+            <div class="branch-info-line" id="branch-phone">
+                📞 Telefon: +998 90 288 70 77
+            </div>
+        
+            <!-- MANZIL -->
+            <div class="branch-info-line" id="branch-address">
+                📍 Manzil: Qashqadaryo viloyati, Qarshi shahri
+            </div>
+        
+            <!-- EMAIL -->
+            <div class="branch-info-line" id="branch-email">
+                📧 Email:
+                <a href="mailto:example@gmail.com">
+                    example@gmail.com
+                </a>
+            </div>
+        
+            <!-- IJTIMOIY TARMOQ IKONKALARI -->
+            <div class="branch-socials">
+
+                <!-- GMAIL -->
+                <a href="mailto:example@gmail.com"
+                   class="branch-social"
+                   id="branch-gmail"
+                   title="Gmail">
+            
+                    <svg viewBox="0 0 256 193" aria-hidden="true">
+                        <path fill="#4285F4"
+                              d="M58.182 192.05V93.14L27.507 65.077 0 49.504v125.091c0 9.658 7.825 17.455 17.455 17.455h40.727Z"/>
+            
+                        <path fill="#34A853"
+                              d="M197.818 192.05h40.727c9.659 0 17.455-7.826 17.455-17.455V49.505l-31.156 17.837-27.026 25.798v98.91Z"/>
+            
+                        <path fill="#EA4335"
+                              d="m58.182 93.14-4.174-38.647 4.174-36.989L128 69.868l69.818-52.364 4.67 34.992-4.67 40.644L128 145.504z"/>
+            
+                        <path fill="#FBBC04"
+                              d="M197.818 17.504V93.14L256 49.504V26.231c0-21.585-24.64-33.89-41.89-20.945l-16.292 12.218Z"/>
+            
+                        <path fill="#C5221F"
+                              d="m0 49.504 26.759 20.07L58.182 93.14V17.504L41.89 5.286C24.61-7.66 0 4.646 0 26.23v23.273Z"/>
+                    </svg>
+            
+                </a>
+            
+            
+                <!-- TELEGRAM -->
+                <a href="https://t.me/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="branch-social"
+                   id="branch-telegram"
+                   title="Telegram">
+            
+                    <svg viewBox="0 0 240 240" aria-hidden="true">
+                        <circle cx="120" cy="120" r="120" fill="#229ED9"/>
+            
+                        <path
+                            fill="#fff"
+                            d="M184.7 70.3 159.4 190c-1.9 8.5-6.9 10.6-14 6.6l-38.6-28.5-18.6 17.9c-2.1 2.1-3.8 3.8-7.8 3.8l2.8-39.3 71.5-64.6c3.1-2.8-.7-4.4-4.8-1.6L61.5 141.8 24.2 130.1c-8.1-2.5-8.3-8.1 1.7-12L171.7 60.6c6.8-2.5 12.8 1.6 13 9.7Z"/>
+                    </svg>
+            
+                </a>
+            
+            
+                <!-- INSTAGRAM -->
+<a href="https://instagram.com/"
+target="_blank"
+rel="noopener noreferrer"
+class="branch-social"
+id="branch-instagram"
+title="Instagram">
+
+ <svg viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true">
+
+     <path fill="#E4405F"
+         d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.059 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.059-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zM12 5.838c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.846-10.405a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/>
+ </svg>
+
+</a>
+            
+            </div>
+            <div class="branch-navigation">
+
+                <button
+                    type="button"
+                    id="branch-prev"
+                    class="branch-nav-btn branch-prev"
+                    title="Oldingi filial">
+                    ‹
+                </button>
+            
+                <button
+                    type="button"
+                    id="branch-next"
+                    class="branch-nav-btn branch-next"
+                    title="Keyingi filial">
+                    ›
+                </button>
+            
+            </div>
+        
+            <!-- YORDAM MATNI -->
+            <p class="branch-info-help">
+                Xarita ustidagi hududlardan birini bosing.
+            </p>
+        
+        </div>
+
+
+      <!-- =============================================
+           O‘NG TOMON — QASHQADARYO XARITASI
+           ============================================= -->
+
+      <div class="qashqadaryo-map-wrapper">
+
+          <div
+              class="qashqadaryo-map"
+              id="qashqadaryo-map">
+          </div>
+
+      </div>
+
+  </div>
+
+</section>
+
+
+    <!-- =====================================================
+         YANGILIKLAR
+         ===================================================== -->
+
+    <section class="news-section-v2">
+
+        <div class="news-v2-container">
+
+            <div class="section-header">
+                <h2>Markaz yangiliklari</h2>
+                <p>Biz Sizni har doim yutuqlarimiz haqida xabardor qilamiz va eng so'nggi yangiliklarni e'lon qilamiz</p>
+            </div>
+
+            {% if main_news or side_news %}
+
+            <div class="news-v2-grid">
+
+                <!-- CHAP — ASOSIY YANGILIK -->
+                {% if main_news %}
+                <a href="{% url 'news_detail' main_news.slug %}" class="news-main-card">
+
+                    <div class="news-main-image">
+                        {% if main_news.image %}
+                            <img src="{{ main_news.image.url }}" alt="{{ main_news.title }}">
+                        {% endif %}
+                        <span class="news-main-badge">Asosiy yangiliklar</span>
+                    </div>
+
+                    <div class="news-main-body">
+                        <div class="news-main-date">
+                            <span>📅</span> {{ main_news.created_at|date:"d.m.Y" }}
+                        </div>
+                        <h3 class="news-main-title">{{ main_news.title }}</h3>
+                        <p class="news-main-desc">{{ main_news.description|truncatewords:25 }}</p>
+                    </div>
+
+                </a>
+                {% endif %}
+
+                <!-- O'NG — OXIRGI 5 TA YANGILIK -->
+                <div class="news-side-list">
+
+                    {% for item in side_news %}
+                        <a href="{% url 'news_detail' item.slug %}" class="news-side-item">
+
+                            <div class="news-side-text">
+                                <div class="news-side-date">
+                                    <span>📅</span> {{ item.created_at|date:"d.m.Y" }}
+                                </div>
+                                <div class="news-side-title">{{ item.title }}</div>
+                            </div>
+
+                            <div class="news-side-thumb">
+                                {% if item.image %}
+                                    <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                                {% endif %}
+                            </div>
+
+                        </a>
+                    {% endfor %}
+
+                </div>
+
+            </div>
+
+            {% else %}
+
+                <p class="news-v2-empty">Hozircha yangiliklar yo'q.</p>
+
+            {% endif %}
+
+            <div class="news-all-btn-wrap">
+                <a href="{% url 'news_list' %}" class="news-all-btn">Barcha yangiliklar</a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOTO VA VIDEOGALEREYA
+         ===================================================== -->
+
+    <section class="gallery-section">
+
+        <div class="section-header">
+            <div class="gallery-icon">📸</div>
+            <h2>Foto va videogalereya</h2>
+            <p>
+                Bizning fotosuratlarimiz va videolarimiz prizmasi orqali
+                bizning sohamiz bilan tanishing
+            </p>
+        </div>
+
+        {% if gallery_items %}
+
+        <div class="gallery-carousel-wrapper">
+
+            <button type="button" class="gallery-nav gallery-prev" id="gallery-prev" aria-label="Oldingi">
+                &#8249;
+            </button>
+
+            <div class="gallery-track" id="gallery-track">
+
+                {% for item in gallery_items %}
+                <div class="gallery-slide">
+
+                    {% if item.media_type == 'video' and item.video_url %}
+                        <a href="{{ item.video_url }}" target="_blank" rel="noopener noreferrer" class="gallery-media-link">
+                            {% if item.image %}
+                                <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                            {% endif %}
+                            <span class="gallery-play-icon">&#9658;</span>
+                        </a>
+                    {% else %}
+                        {% if item.image %}
+                            <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                        {% endif %}
+                    {% endif %}
+
+                </div>
+                {% endfor %}
+
+            </div>
+
+            <button type="button" class="gallery-nav gallery-next" id="gallery-next" aria-label="Keyingi">
+                &#8250;
+            </button>
+
+        </div>
+
+        {% else %}
+            <p class="gallery-empty">Hozircha galereya bo'sh.</p>
+        {% endif %}
+
+        <div class="gallery-buttons">
+            <a href="{% url 'gallery' %}" class="gallery-btn gallery-btn-photo">
+                Fotogalereya
+            </a>
+            <a href="{% url 'gallery' %}" class="gallery-btn gallery-btn-video">
+                Videogalereya
+            </a>
+        </div>
+
+    </section>
+
+
+    <style>
+        .gallery-section {
+            padding: 60px 20px;
+            text-align: center;
+            background: #ffffff;
+        }
+
+        .gallery-section .gallery-icon {
+            color: #dc2626;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .gallery-section .section-header h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #111827;
+            margin: 0 0 12px;
+        }
+
+        .gallery-section .section-header p {
+            color: #6b7280;
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto 8px;
+            line-height: 1.5;
+        }
+
+        .gallery-section .section-header::after {
+            content: "";
+            display: block;
+            width: 48px;
+            height: 3px;
+            background: #dc2626;
+            margin: 16px auto 40px;
+        }
+
+        .gallery-carousel-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        .gallery-track {
+            display: flex;
+            gap: 4px;
+            overflow-x: hidden;
+            scroll-behavior: auto;
+            flex: 1;
+        }
+
+        .gallery-slide {
+            flex: 0 0 auto;
+            width: 260px;
+            height: 320px;
+            border-radius: 6px;
+            overflow: hidden;
+            position: relative;
+            background: #f3f4f6;
+        }
+
+        .gallery-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-media-link {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .gallery-play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.55);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .gallery-nav {
+            flex: 0 0 auto;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            background: #f3f4f6;
+            color: #111827;
+            font-size: 22px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .gallery-nav:hover {
+            background: #e5e7eb;
+        }
+
+        .gallery-empty {
+            color: #9ca3af;
+            padding: 40px 0;
+        }
+
+        .gallery-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 40px;
+        }
+
+        .gallery-btn {
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            color: #fff;
+            background: #1e3a5f;
+            transition: opacity 0.2s;
+        }
+
+        .gallery-btn:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 640px) {
+            .gallery-slide {
+                width: 200px;
+                height: 250px;
+            }
+            .gallery-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+
+    <script>
+        (function () {
+            const track = document.getElementById('gallery-track');
+            const prevBtn = document.getElementById('gallery-prev');
+            const nextBtn = document.getElementById('gallery-next');
+
+            if (!track || !prevBtn || !nextBtn) return;
+
+            // Asl slaydlarni saqlab qolamiz
+            const originalSlides = Array.from(track.children);
+            const slideCount = originalSlides.length;
+
+            if (slideCount === 0) return;
+
+            // Slaydlarni klonlab, oxiriga qo'shamiz — shu orqali aylanma effekt hosil bo'ladi
+            originalSlides.forEach(function (slide) {
+                const clone = slide.cloneNode(true);
+                clone.setAttribute('aria-hidden', 'true');
+                track.appendChild(clone);
+            });
+
+            const scrollAmount = 264; // 260px slayd + 4px gap
+            const autoPlayDelay = 3000;
+            let autoPlayTimer = null;
+            let originalSetWidth = 0;
+
+            function calcWidth() {
+                // faqat asl (klon bo'lmagan) slaydlar egallagan umumiy kenglik
+                const style = getComputedStyle(track);
+                const gap = parseFloat(style.gap) || 0;
+                originalSetWidth = originalSlides.reduce(function (sum, el) {
+                    return sum + el.offsetWidth + gap;
+                }, 0);
+            }
+
+            calcWidth();
+            window.addEventListener('resize', calcWidth);
+
+            function step(direction) {
+                track.style.scrollBehavior = 'smooth';
+                track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+            }
+
+            // Chegaraga yetganda sezilmas holda joyni almashtirish — aylanish effekti
+            function checkLoop() {
+                if (track.scrollLeft >= originalSetWidth - 2) {
+                    track.style.scrollBehavior = 'auto';
+                    track.scrollLeft = track.scrollLeft - originalSetWidth;
+                } else if (track.scrollLeft <= 1) {
+                    track.style.scrollBehavior = 'auto';
+                    track.scrollLeft = track.scrollLeft + originalSetWidth;
+                }
+            }
+
+            let scrollEndTimer = null;
+            track.addEventListener('scroll', function () {
+                clearTimeout(scrollEndTimer);
+                scrollEndTimer = setTimeout(checkLoop, 150);
+            });
+
+            function startAutoPlay() {
+                stopAutoPlay();
+                autoPlayTimer = setInterval(function () {
+                    step(1);
+                }, autoPlayDelay);
+            }
+
+            function stopAutoPlay() {
+                if (autoPlayTimer) {
+                    clearInterval(autoPlayTimer);
+                    autoPlayTimer = null;
+                }
+            }
+
+            prevBtn.addEventListener('click', function () {
+                step(-1);
+                startAutoPlay();
+            });
+
+            nextBtn.addEventListener('click', function () {
+                step(1);
+                startAutoPlay();
+            });
+
+            track.addEventListener('mouseenter', stopAutoPlay);
+            track.addEventListener('mouseleave', startAutoPlay);
+            track.addEventListener('touchstart', stopAutoPlay, { passive: true });
+            track.addEventListener('touchend', startAutoPlay, { passive: true });
+
+            startAutoPlay();
+        })();
+    </script>
+
+    <!-- =====================================================
+         XALQARO HAMKORLAR
+         ===================================================== -->
+
+         <section class="partners-section">
+
+            <div class="partners-header">
+    
+                <div class="partners-icon">🏛</div>
+    
+                <h2>Bizning xalqaro hamkorlarimiz</h2>
+    
+                <p>
+                    Shifokorlarimiz o‘z ishining asosiy tamoyiliga amal
+                    qiladilar
+                </p>
+    
+                <div class="partners-line"></div>
+    
+            </div>
+    
+    
+            {% if partners %}
+    
+            <div class="partners-carousel">
+    
+                <button type="button"
+                        class="partners-nav partners-prev"
+                        id="partners-prev"
+                        aria-label="Oldingi hamkor">
+                    ‹
+                </button>
+    
+    
+                <div class="partners-track" id="partners-track">
+    
+                    {% for partner in partners %}
+    
+                    <a href="{{ partner.url|default:'#' }}"
+                       {% if partner.url %}target="_blank" rel="noopener noreferrer"{% endif %}
+                       class="partner-item">
+    
+                        {% if partner.logo %}
+                            <img src="{{ partner.logo.url }}"
+                                 alt="{{ partner.name }}">
+                        {% elif partner.image %}
+                            <img src="{{ partner.image.url }}"
+                                 alt="{{ partner.name }}">
+                        {% endif %}
+    
+                    </a>
+    
+                    {% endfor %}
+    
+                </div>
+    
+    
+                <button type="button"
+                        class="partners-nav partners-next"
+                        id="partners-next"
+                        aria-label="Keyingi hamkor">
+                    ›
+                </button>
+    
+            </div>
+    
+            {% endif %}
+    
+        </section>
+    
+    
+    
+        <!-- =====================================================
+             FOYDALI HAVOLALAR
+             ===================================================== -->
+    
+        <section class="useful-links-section">
+    
+            <div class="useful-links-header">
+    
+                <div class="useful-links-icon">🏛</div>
+    
+                <h2>Foydali havolalar</h2>
+    
+                <p>
+                    Bu davlat organlarining boshqa foydali resurslari va
+                    veb-saytlariga kirish imkoniyatidir
+                </p>
+    
+                <div class="useful-links-line"></div>
+    
+            </div>
+    
+    
+            {% if useful_links %}
+    
+            <div class="useful-carousel">
+    
+                <button type="button"
+                        class="useful-nav useful-prev"
+                        id="useful-prev"
+                        aria-label="Oldingi havola">
+                    ‹
+                </button>
+    
+    
+                <div class="useful-track" id="useful-track">
+    
+                    {% for link in useful_links %}
+    
+                    <a href="{{ link.url|default:'#' }}"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="useful-item">
+    
+                        <div class="useful-logo">
+    
+                            {% if link.logo %}
+                                <img src="{{ link.logo.url }}"
+                                     alt="{{ link.name }}">
+                            {% elif link.image %}
+                                <img src="{{ link.image.url }}"
+                                     alt="{{ link.name }}">
+                            {% endif %}
+    
+                        </div>
+    
+                        <div class="useful-info">
+    
+                            {% if link.description %}
+                                <span>{{ link.description }}</span>
+                            {% endif %}
+    
+                            <strong>
+                                {{ link.name }}
+                            
+                            </strong>
+                            <br>
+                            <strong style=" color: #333333;
+                            font-size: 16px;
+                            line-height: 1.35;">
+                        
+                                {{ link.site_name }}
+                            </strong>
+                            
+    
+                        </div>
+    
+                    </a>
+    
+                    {% endfor %}
+    
+                </div>
+    
+    
+                <button type="button"
+                        class="useful-nav useful-next"
+                        id="useful-next"
+                        aria-label="Keyingi havola">
+                    ›
+                </button>
+    
+            </div>
+    
+            {% endif %}
+    
+        </section>
+    
+    
+    
+        <!-- =====================================================
+             HAMKORLAR VA FOYDALI HAVOLALAR CSS
+             ===================================================== -->
+    
+        <style>
+    
+            /* =====================================================
+               UMUMIY
+               ===================================================== */
+    
+            .partners-section,
+            .useful-links-section {
+                width: 100%;
+                background: #f1ecec;
+                padding: 70px 20px 65px;
+                box-sizing: border-box;
+            }
+    
+    
+            /* =====================================================
+               SARLAVHA
+               ===================================================== */
+    
+            .partners-header,
+            .useful-links-header {
+                text-align: center;
+                max-width: 700px;
+                margin: 0 auto 42px;
+            }
+    
+    
+            .partners-icon,
+            .useful-links-icon {
+                color: #d62828;
+                font-size: 38px;
+                line-height: 1;
+                margin-bottom: 14px;
+                font-weight: 700;
+            }
+    
+    
+            .partners-header h2,
+            .useful-links-header h2 {
+                margin: 0;
+                color: #111827;
+                font-size: 32px;
+                line-height: 1.25;
+                font-weight: 700;
+            }
+    
+    
+            .partners-header p,
+            .useful-links-header p {
+                margin: 14px auto 0;
+                max-width: 620px;
+                color: #777777;
+                font-size: 15px;
+                line-height: 1.55;
+            }
+    
+    
+            .partners-line,
+            .useful-links-line {
+                width: 48px;
+                height: 2px;
+                background: #d62828;
+                margin: 16px auto 0;
+            }
+    
+    
+            /* =====================================================
+               XALQARO HAMKORLAR CAROUSEL
+               ===================================================== */
+    
+            .partners-carousel,
+            .useful-carousel {
+                max-width: 1250px;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                gap: 18px;
+            }
+    
+    
+            .partners-track,
+            .useful-track {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                gap: 55px;
+                overflow: hidden;
+                scroll-behavior: smooth;
+                padding: 10px 5px;
+            }
+    
+    
+            .partner-item {
+                flex: 0 0 155px;
+                height: 100px;
+    
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                text-decoration: none;
+                background: #ffffff;
+            }
+    
+    
+            .partner-item img {
+                max-width: 140px;
+                max-height: 85px;
+                width: auto;
+                height: auto;
+                object-fit: contain;
+                display: block;
+            }
+    
+    
+            /* =====================================================
+               FOYDALI HAVOLALAR
+               ===================================================== */
+    
+            .useful-track {
+                gap: 25px;
+            }
+    
+            .useful-item {
+                    flex: 0 0 245px;
+                    min-height: 105px;
+
+                    display: flex;
+                    align-items: center;
+                    gap: 3px;
+
+                    text-decoration: none;
+                    color: inherit;
+                }
+    
+    
+            .useful-logo {
+                flex: 0 0 85px;
+                width: 70px;
+                height: 75px;
+    
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+    
+    
+            .useful-logo img {
+                max-width: 80px;
+                max-height: 70px;
+                object-fit: contain;
+            }
+    
+    
+            .useful-info {
+                
+                flex-direction: column;
+                gap: 4px;
+                text-align: left;
+            }
+    
+    
+            .useful-info span {
+                color: #777777;
+                font-size: 14px;
+                line-height: 1.35;
+            }
+    
+    
+            .useful-info strong {
+               
+                color: #575353;
+                font-size: 12px;
+            
+            }
+    
+    
+            /* =====================================================
+               NAVIGATSIYA TUGMALARI
+               ===================================================== */
+    
+            .partners-nav,
+            .useful-nav {
+                flex: 0 0 auto;
+    
+                width: 42px;
+                height: 42px;
+    
+                border: 0;
+                background: transparent;
+    
+                color: #777777;
+                font-size: 42px;
+                font-weight: 300;
+                line-height: 1;
+    
+                cursor: pointer;
+    
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                transition: all 0.2s ease;
+            }
+    
+    
+            .partners-nav:hover,
+            .useful-nav:hover {
+                color: #222222;
+                transform: scale(1.12);
+            }
+    
+    
+            /* =====================================================
+               MOBILE
+               ===================================================== */
+    
+            @media (max-width: 768px) {
+    
+                .partners-section,
+                .useful-links-section {
+                    padding: 50px 12px;
+                }
+    
+    
+                .partners-header h2,
+                .useful-links-header h2 {
+                    font-size: 26px;
+                }
+    
+    
+                .partners-header p,
+                .useful-links-header p {
+                    font-size: 14px;
+                }
+    
+    
+                .partners-carousel,
+                .useful-carousel {
+                    gap: 5px;
+                }
+    
+    
+                .partners-track {
+                    gap: 30px;
+                }
+    
+    
+                .partner-item {
+                    flex-basis: 130px;
+                }
+    
+    
+                .partner-item img {
+                    max-width: 115px;
+                    max-height: 70px;
+                }
+    
+    
+                .useful-track {
+                    gap: 20px;
+                }
+    
+    
+                .useful-item {
+                    flex-basis: 230px;
+                }
+    
+    
+                .partners-nav,
+                .useful-nav {
+                    width: 32px;
+                    font-size: 34px;
+                }
+    
+            }
+    
+        </style>
+    
+    
+    
+        <!-- =====================================================
+             CAROUSEL JAVASCRIPT
+             ===================================================== -->
+             <script>
+                (function () {
+                
+                    const track = document.getElementById("partners-track");
+                    const prev = document.getElementById("partners-prev");
+                    const next = document.getElementById("partners-next");
+                
+                    if (!track) return;
+                
+                    const originalItems = Array.from(track.children);
+                
+                    if (originalItems.length === 0) return;
+                
+                    // Asl elementlarni klonlaymiz
+                    originalItems.forEach(function (item) {
+                        const clone = item.cloneNode(true);
+                        clone.setAttribute("aria-hidden", "true");
+                        track.appendChild(clone);
+                    });
+                
+                    let isPaused = false;
+                    const speed = 0.6;
+                
+                    // Birinchi guruhning haqiqiy kengligi
+                    function getSetWidth() {
+                        return track.scrollWidth / 2;
+                    }
+                
+                    // UZLUKSIZ AYLANISH
+                    function animate() {
+                
+                        if (!isPaused) {
+                
+                            track.scrollLeft += speed;
+                
+                            const setWidth = getSetWidth();
+                
+                            if (track.scrollLeft >= setWidth) {
+                                track.scrollLeft -= setWidth;
+                            }
+                        }
+                
+                        requestAnimationFrame(animate);
+                    }
+                
+                    // OLDINGI
+                    if (prev) {
+                        prev.addEventListener("click", function () {
+                
+                            isPaused = true;
+                
+                            track.scrollBy({
+                                left: -250,
+                                behavior: "smooth"
+                            });
+                
+                            setTimeout(function () {
+                                isPaused = false;
+                            }, 700);
+                
+                        });
+                    }
+                
+                    // KEYINGI
+                    if (next) {
+                        next.addEventListener("click", function () {
+                
+                            isPaused = true;
+                
+                            track.scrollBy({
+                                left: 250,
+                                behavior: "smooth"
+                            });
+                
+                            setTimeout(function () {
+                                isPaused = false;
+                            }, 700);
+                
+                        });
+                    }
+                
+                    // Sichqoncha ustiga kelganda to'xtaydi
+                    track.addEventListener("mouseenter", function () {
+                        isPaused = true;
+                    });
+                
+                    track.addEventListener("mouseleave", function () {
+                        isPaused = false;
+                    });
+                
+                    // Telefonda
+                    track.addEventListener("touchstart", function () {
+                        isPaused = true;
+                    }, { passive: true });
+                
+                    track.addEventListener("touchend", function () {
+                        setTimeout(function () {
+                            isPaused = false;
+                        }, 1000);
+                    }, { passive: true });
+                
+                    // Boshlash
+                    animate();
+                
+                })();
+                </script>
+             <script>
+                (function () {
+                
+                    const track = document.getElementById("useful-track");
+                    const prev = document.getElementById("useful-prev");
+                    const next = document.getElementById("useful-next");
+                
+                    if (!track) return;
+                
+                    const originalItems = Array.from(track.children);
+                
+                    if (originalItems.length === 0) return;
+                
+                    // Agar faqat 1-2 ta element bo'lsa ham ishlashi uchun
+                    originalItems.forEach(function (item) {
+                
+                        const clone = item.cloneNode(true);
+                
+                        clone.setAttribute("aria-hidden", "true");
+                
+                        track.appendChild(clone);
+                
+                    });
+                
+                    let speed = 0.5;
+                    let isPaused = false;
+                    let animationId = null;
+                
+                
+                    // ==========================================
+                    // ASOSIY UZLUKSIZ AYLANISH
+                    // ==========================================
+                
+                    function autoScroll() {
+                
+                        if (!isPaused) {
+                
+                            track.scrollLeft += speed;
+                
+                            const halfWidth = track.scrollWidth / 2;
+                
+                            if (track.scrollLeft >= halfWidth) {
+                
+                                track.scrollLeft -= halfWidth;
+                
+                            }
+                
+                        }
+                
+                        animationId = requestAnimationFrame(autoScroll);
+                
+                    }
+                
+                
+                    // ==========================================
+                    // OLDINGI
+                    // ==========================================
+                
+                    if (prev) {
+                
+                        prev.addEventListener("click", function () {
+                
+                            isPaused = true;
+                
+                            track.scrollBy({
+                                left: -270,
+                                behavior: "smooth"
+                            });
+                
+                            setTimeout(function () {
+                                isPaused = false;
+                            }, 700);
+                
+                        });
+                
+                    }
+                
+                
+                    // ==========================================
+                    // KEYINGI
+                    // ==========================================
+                
+                    if (next) {
+                
+                        next.addEventListener("click", function () {
+                
+                            isPaused = true;
+                
+                            track.scrollBy({
+                                left: 270,
+                                behavior: "smooth"
+                            });
+                
+                            setTimeout(function () {
+                                isPaused = false;
+                            }, 700);
+                
+                        });
+                
+                    }
+                
+                
+                    // ==========================================
+                    // SICHQONCHA USTIGA KELGANDA TO'XTATISH
+                    // ==========================================
+                
+                    track.addEventListener("mouseenter", function () {
+                
+                        isPaused = true;
+                
+                    });
+                
+                
+                    track.addEventListener("mouseleave", function () {
+                
+                        isPaused = false;
+                
+                    });
+                
+                
+                    // ==========================================
+                    // TELEFON
+                    // ==========================================
+                
+                    track.addEventListener("touchstart", function () {
+                
+                        isPaused = true;
+                
+                    }, { passive: true });
+                
+                
+                    track.addEventListener("touchend", function () {
+                
+                        setTimeout(function () {
+                
+                            isPaused = false;
+                
+                        }, 1000);
+                
+                    }, { passive: true });
+                
+                
+                    // ==========================================
+                    // BOSHLASH
+                    // ==========================================
+                
+                    autoScroll();
+                
+                })();
+                </script>
+
+    <!-- =====================================================
+         BEMORLAR UCHUN
+         ===================================================== -->
+
+    <section class="patients-section">
+
+        <div class="patients-header">
+
+            <h2>
+                Bemorlar uchun
+            </h2>
+
+            <p>
+                Tez yordamga qachon murojaat qilish kerak?
+            </p>
+
+        </div>
+
+
+        <div class="patients-cards">
+
+            <div class="patient-card">
+
+                <h3>
+                    ❤️ Yurak bilan bog‘liq holatlar
+                </h3>
+
+                <p>
+                    Kuchli ko‘krak og‘rig‘i yoki yurak faoliyati
+                    bilan bog‘liq jiddiy holatlarda darhol
+                    <strong>103</strong> raqamiga qo‘ng‘iroq qiling.
+                </p>
+
+            </div>
+
+
+            <div class="patient-card">
+
+                <h3>
+                    🫁 Nafas olish qiyinlashishi
+                </h3>
+
+                <p>
+                    Nafas olishda jiddiy qiyinchilik yuzaga kelsa,
+                    <strong>103</strong> raqamiga murojaat qiling.
+                </p>
+
+            </div>
+
+
+            <div class="patient-card">
+
+                <h3>
+                    🤕 Jiddiy jarohat
+                </h3>
+
+                <p>
+                    Jiddiy jarohatlar yoki xavfli holatlarda
+                    tez tibbiy yordam chaqiring.
+                </p>
+
+            </div>
+
+
+            <div class="patient-card">
+
+                <h3>
+                    🧠 Insult belgilari
+                </h3>
+
+                <p>
+                    Yuz, qo‘l yoki nutqda to‘satdan o‘zgarishlar
+                    kuzatilsa, darhol <strong>103</strong> ga qo‘ng‘iroq qiling.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ALOQA
+         ===================================================== -->
+
+    <section class="contact-section">
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <h3>
+                    📞 Shoshilinch qo‘ng‘iroq
+                </h3>
+
+                <p>
+                    <strong>103</strong>
+                </p>
+
+                <p>
+                    Hammaga bepul, 24/7
+                </p>
+
+            </div>
+
+
+            <div class="contact-info">
+
+                <h3>
+                    📍 Manzil
+                </h3>
+
+                <p>
+                    Qashqadaryo viloyati,
+                    Qarshi shahri
+                </p>
+
+                <p>
+                    Tez tibbiy yordam markazi
+                </p>
+
+            </div>
+
+
+            <div class="contact-info">
+
+                <h3>
+                    📧 Aloqa
+                </h3>
+
+                <p>
+                    <a href="mailto:info@markaz.uz">
+                        info@markaz.uz
+                    </a>
+                </p>
+
+                <p>
+                    <a href="tel:+998912345678">
+                        +998 91 234-56-78
+                    </a>
+                </p>
+
+            </div>
+
+
+            <div class="contact-info">
+
+                <h3>
+                    🕐 Ish vaqti
+                </h3>
+
+                <p>
+                    Dushanba–Juma:
+                    09:00–18:00
+                </p>
+
+                <p>
+                    Shoshilinch yordam:
+                    24/7
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+<script src="{% static 'blog/branches.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,300 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %}{{ news.title }}{% endblock %}
+
+{% block content %}
+<style>
+
+  .news-detail-page {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 80px 40px;
+  }
+  
+  
+  /* SARLAVHA */
+  
+  .news-header {
+      margin-bottom: 35px;
+  }
+  
+  .news-date {
+      color: #999;
+      font-size: 14px;
+      margin-bottom: 10px;
+  }
+  
+  .news-detail-page h1 {
+      font-size: 42px;
+      color: #0B2438;
+      line-height: 1.3;
+      margin-bottom: 20px;
+  }
+  
+  
+  .news-meta {
+      display:flex;
+      gap:20px;
+      color:#666;
+      font-size:14px;
+      padding-bottom:20px;
+      border-bottom:1px solid #eee;
+  }
+  
+  
+  /* RASM */
+  
+  .news-detail-image-box {
+  
+      width:100%;
+      background:#f5f7fa;
+  
+      border-radius:12px;
+      overflow:hidden;
+  
+      margin-bottom:40px;
+  
+      display:flex;
+      justify-content:center;
+  }
+  
+  
+  .news-detail-image {
+  
+      width:100%;
+      height:auto;
+  
+      max-height:600px;
+  
+      object-fit:cover;
+  
+      display:block;
+  
+      border-radius:12px;
+  }
+  
+  
+  
+  /* RASM YO'Q */
+  
+  .news-no-image {
+  
+      height:350px;
+  
+      width:100%;
+  
+      display:flex;
+      align-items:center;
+      justify-content:center;
+  
+      background:#e8edf3;
+  
+      font-size:80px;
+  }
+  
+  
+  
+  /* MATN */
+  
+  .news-content {
+  
+      font-size:16px;
+  
+      line-height:1.8;
+  
+      color:#333;
+  
+  }
+  
+  
+  .news-content img {
+  
+      max-width:100%;
+  
+      height:auto;
+  
+  }
+  
+  
+  
+  /* BUTTON */
+  
+  .news-footer {
+  
+      margin-top:50px;
+  
+      padding-top:30px;
+  
+      border-top:1px solid #eee;
+  
+      display:flex;
+  
+      gap:15px;
+  
+  }
+  
+  
+  .btn {
+  
+      padding:12px 25px;
+  
+      border-radius:6px;
+  
+      text-decoration:none;
+  
+      font-weight:600;
+  
+  }
+  
+  
+  .btn-primary {
+  
+      background:#ff4757;
+  
+      color:white;
+  
+  }
+  
+  
+  .btn-secondary {
+  
+      background:#f5f7fa;
+  
+      color:#0B2438;
+  
+  }
+  
+  
+  
+  /* TELEFON */
+  
+  @media(max-width:768px){
+  
+  .news-detail-page{
+  
+      padding:40px 20px;
+  
+  }
+  
+  
+  .news-detail-page h1{
+  
+      font-size:30px;
+  
+  }
+  
+  
+  .news-footer{
+  
+      flex-direction:column;
+  
+  }
+  
+  
+  .btn{
+  
+      text-align:center;
+  
+  }
+  
+  
+  }
+  
+  
+  </style>
+  
+  
+  <div class="news-detail-page">
+  
+  
+  <div class="news-header">
+  
+  <div class="news-date">
+  {{ news.created_at|date:"d.m.Y" }}
+  </div>
+  
+  
+  <h1>
+  {{ news.title }}
+  </h1>
+  
+  
+  <div class="news-meta">
+  
+  <span>
+  📅 {{ news.created_at|date:"d F Y" }}
+  </span>
+  
+  
+  {% if news.updated_at != news.created_at %}
+  
+  <span>
+  ✏️ Yangilangan:
+  {{ news.updated_at|date:"d F Y" }}
+  </span>
+  
+  {% endif %}
+  
+  </div>
+  
+  </div>
+  
+  
+  
+  <div class="news-detail-image-box">
+  
+  
+  {% if news.image %}
+  
+  <img 
+  src="{{ news.image.url }}"
+  alt="{{ news.title }}"
+  class="news-detail-image"
+  >
+  
+  
+  {% else %}
+  
+  
+  <div class="news-no-image">
+  📰
+  </div>
+  
+  
+  {% endif %}
+  
+  
+  </div>
+  
+  
+  
+  
+  <div class="news-content">
+  
+  {{ news.description|linebreaks }}
+  
+  </div>
+  
+  
+  
+  <div class="news-footer">
+  
+  
+  <a href="{% url 'news_list' %}" class="btn btn-secondary">
+  ← Yangiliklarga qaytish
+  </a>
+  
+  
+  <a href="{% url 'home' %}" class="btn btn-primary">
+  🏠 Bosh sahifaga
+  </a>
+  
+  
+  </div>
+  
+  
+  
+  </div>
+
+{% endblock %}

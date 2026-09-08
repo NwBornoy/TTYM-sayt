@@ -1,0 +1,461 @@
+```html
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}Savol-javob{% endblock %}
+
+{% block content %}
+
+<style>
+
+    .chat-container {
+        max-width: 800px;
+        margin: 30px auto;
+        background: #ffffff;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
+    .chat-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 18px 22px;
+        background: #0d6efd;
+        color: white;
+    }
+
+    .chat-avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: white;
+        color: #0d6efd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 18px;
+        flex-shrink: 0;
+    }
+
+    .chat-info h3 {
+        margin: 0;
+        font-size: 18px;
+    }
+
+    .chat-info span {
+        font-size: 13px;
+        opacity: 0.85;
+    }
+
+
+    /* =========================
+       CHAT BODY
+    ========================= */
+
+    .chat-body {
+        padding: 20px;
+        min-height: 450px;
+        max-height: 600px;
+        overflow-y: auto;
+        background: #f5f7fb;
+    }
+
+
+    /* =========================
+       MESSAGE ROW
+    ========================= */
+
+    .message-row {
+        display: flex;
+        width: 100%;
+        margin-bottom: 18px;
+    }
+
+    .message-row.left {
+        justify-content: flex-start;
+    }
+
+    .message-row.right {
+        justify-content: flex-end;
+    }
+
+
+    /* =========================
+       MESSAGE WRAPPER
+    ========================= */
+
+    .bubble-wrapper {
+        max-width: 70%;
+        min-width: 0;
+    }
+
+
+    /* =========================
+       SENDER NAME
+    ========================= */
+
+    .sender-name {
+        font-size: 12px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #555;
+    }
+
+    .message-row.right .sender-name {
+        text-align: right;
+    }
+
+
+    /* =========================
+       MESSAGE TYPE
+    ========================= */
+
+    .message-type {
+        font-size: 11px;
+        font-weight: 600;
+        margin-bottom: 5px;
+    }
+
+    .admin-type {
+        color: #0d6efd;
+    }
+
+    .user-type {
+        color: #198754;
+        text-align: right;
+    }
+
+
+    /* =========================
+       BUBBLE
+    ========================= */
+
+    .bubble {
+        display: inline-block;
+        padding: 12px 15px;
+        border-radius: 16px;
+
+        font-size: 14px;
+        line-height: 1.5;
+
+        /*
+           MUHIM:
+           Har bir harfni alohida qatorga tushirmaydi.
+        */
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: break-word;
+
+        width: auto;
+        max-width: 100%;
+    }
+
+
+    /* =========================
+       ADMIN MESSAGE
+    ========================= */
+
+    .bubble.admin {
+        background: #e8f3ff;
+        color: #17324d;
+
+        border-bottom-left-radius: 4px;
+        border: 1px solid #cfe5ff;
+    }
+
+
+    /* =========================
+       USER MESSAGE
+    ========================= */
+
+    .bubble.user {
+        background: #0d6efd;
+        color: white;
+
+        border-bottom-right-radius: 4px;
+    }
+
+
+    /* =========================
+       TIME
+    ========================= */
+
+    .time {
+        font-size: 10px;
+        margin-top: 6px;
+        opacity: 0.65;
+        text-align: right;
+    }
+
+
+    /* =========================
+       EMPTY CHAT
+    ========================= */
+
+    .empty-chat {
+        text-align: center;
+        padding: 100px 20px;
+        color: #777;
+    }
+
+    .empty-chat h3 {
+        color: #333;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    .chat-footer {
+        padding: 15px;
+        background: white;
+        border-top: 1px solid #eee;
+    }
+
+    .chat-footer form {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .chat-footer textarea {
+        flex: 1;
+        min-height: 45px;
+        max-height: 120px;
+        resize: vertical;
+
+        border: 1px solid #ddd;
+        border-radius: 12px;
+
+        padding: 12px;
+
+        outline: none;
+        font-family: inherit;
+        font-size: 14px;
+
+        white-space: normal;
+        word-break: normal;
+        overflow-wrap: break-word;
+    }
+
+    .chat-footer textarea:focus {
+        border-color: #0d6efd;
+    }
+
+
+    /* =========================
+       SEND BUTTON
+    ========================= */
+
+    .chat-footer button {
+        width: 48px;
+        height: 48px;
+
+        border: none;
+        border-radius: 50%;
+
+        background: #0d6efd;
+        color: white;
+
+        font-size: 20px;
+        cursor: pointer;
+
+        flex-shrink: 0;
+    }
+
+    .chat-footer button:hover {
+        opacity: 0.9;
+    }
+
+
+    /* =========================
+       TELEFON UCHUN
+    ========================= */
+
+    @media (max-width: 600px) {
+
+        .chat-container {
+            margin: 10px;
+            border-radius: 12px;
+        }
+
+        .chat-body {
+            padding: 12px;
+        }
+
+        .bubble-wrapper {
+            max-width: 85%;
+        }
+
+    }
+
+</style>
+
+
+<div class="chat-container">
+
+
+    <!-- CHAT HEADER -->
+
+    <div class="chat-header">
+
+        <div class="chat-avatar">
+            103
+        </div>
+
+        <div class="chat-info">
+
+            <h3>
+                Tez tibbiy yordam
+            </h3>
+
+            <span>
+                Administrator bilan suhbat
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- CHAT BODY -->
+
+    <div class="chat-body">
+
+        {% for msg in messages_list %}
+
+
+            {% if msg.is_admin %}
+
+                <!-- =========================
+                     ADMIN XABARI
+                ========================== -->
+
+                <div class="message-row left">
+
+                    <div class="bubble-wrapper">
+
+                        <div class="message-type admin-type">
+                            🟢 Administrator
+                        </div>
+
+                        <div class="sender-name">
+
+                            {% if msg.sender.get_full_name %}
+                                {{ msg.sender.get_full_name }}
+                            {% else %}
+                                {{ msg.sender.username }}
+                            {% endif %}
+
+                        </div>
+
+                        <div class="bubble admin">
+
+                            {{ msg.message|linebreaksbr }}
+
+                            <div class="time">
+                                {{ msg.created_at|date:"H:i" }}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            {% else %}
+
+                <!-- =========================
+                     FOYDALANUVCHI XABARI
+                ========================== -->
+
+                <div class="message-row right">
+
+                    <div class="bubble-wrapper">
+
+                        <div class="message-type user-type">
+                            🔵 Siz
+                        </div>
+
+                        <div class="sender-name">
+
+                            {% if msg.sender.get_full_name %}
+                                {{ msg.sender.get_full_name }}
+                            {% else %}
+                                {{ msg.sender.username }}
+                            {% endif %}
+
+                        </div>
+
+                        <div class="bubble user">
+
+                            {{ msg.message|linebreaksbr }}
+
+                            <div class="time">
+                                {{ msg.created_at|date:"H:i" }}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            {% endif %}
+
+
+        {% empty %}
+
+
+            <div class="empty-chat">
+
+                <h3>
+                    👋 Assalomu alaykum
+                </h3>
+
+                <p>
+                    Administratorga savolingizni yozing.
+                    Tez orada javob beriladi.
+                </p>
+
+            </div>
+
+
+        {% endfor %}
+
+    </div>
+
+
+    <!-- CHAT FOOTER -->
+
+    <div class="chat-footer">
+
+        <form method="post">
+
+            {% csrf_token %}
+
+            {{ form.message }}
+
+            <button type="submit">
+                ➤
+            </button>
+
+        </form>
+
+    </div>
+
+
+</div>
+
+{% endblock %}
+```

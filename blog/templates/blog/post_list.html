@@ -1,0 +1,427 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %}Barcha maqolalar{% endblock %}
+
+{% block content %}
+
+<!-- ================================
+     QIDIRUV NATIJASI
+================================ -->
+
+{% if request.GET.q %}
+
+<div style="
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0 0 25px 0;
+    padding: 20px;
+    background: #f0f7ff;
+    border: 1px solid #dcecff;
+    border-radius: 15px;
+    overflow: hidden;
+">
+
+    <!-- ICON -->
+    <div style="
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff;
+        border-radius: 12px;
+        font-size: 22px;
+        margin-bottom: 14px;
+    ">
+        🔎
+    </div>
+
+    <!-- QIDIRUV NATIJALARI -->
+    <div style="
+        width: 100%;
+        box-sizing: border-box;
+    ">
+
+        <div style="
+            color: #687386;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        ">
+            Qidiruv natijalari
+        </div>
+
+        <div style="
+            width: 100%;
+            box-sizing: border-box;
+            color: #172033;
+            font-size: 20px;
+            font-weight: 800;
+            line-height: 1.4;
+            margin-bottom: 8px;
+            overflow-wrap: anywhere;
+            word-break: break-word;
+        ">
+            "{{ request.GET.q }}"
+        </div>
+
+        <!-- SONI ALOHIDA PASTDA -->
+        <div style="
+            width: 100%;
+            box-sizing: border-box;
+            color: #687386;
+            font-size: 13px;
+            line-height: 1.5;
+            white-space: normal;
+        ">
+            {{ paginator.count }} ta maqola topildi
+        </div>
+
+    </div>
+
+    <!-- TOZALASH -->
+    <a href="{% url 'post_list' %}"
+       style="
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 16px;
+            background: #ffffff;
+            border: 1px solid #dbe5f2;
+            border-radius: 10px;
+            color: #596579;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 700;
+       ">
+        ✕ Tozalash
+    </a>
+
+</div>
+
+{% endif %}
+
+
+<!-- ================================
+     MAQOLALAR SARLAVHASI
+================================ -->
+
+<div class="articles-heading" style="
+display: block;
+width: 100%;
+box-sizing: border-box;
+margin-bottom: 20px;
+">
+
+<h2 style="
+    margin: 0 0 8px 0;
+    color: #10233f;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-top: 25px;
+    margin-left: 5px;
+">
+    BARCHA MAQOLALAR
+</h2>
+
+{% if posts %}
+
+    <div style="
+        display: block;
+        width: 100%;
+        color: #708096;
+        font-size: 15px;
+        line-height: 1.5;
+        margin-left: 30px;
+    ">
+        {{ paginator.count }} ta maqola
+    </div>
+
+{% endif %}
+
+</div>
+
+
+<!-- ================================
+     MAQOLALAR
+================================ -->
+
+{% if posts %}
+
+<div class="articles-grid">
+
+{% for post in posts %}
+
+<article class="article-card">
+
+    <!-- RASM / ICON -->
+
+    <div class="article-image">
+
+        {% cycle 'heat' 'phone' 'medical' as icon_cls silent %}
+
+        <div class="article-placeholder {{ icon_cls }}">
+
+            {% if icon_cls == 'heat' %}
+                ☀
+            {% elif icon_cls == 'phone' %}
+                103
+            {% else %}
+                +
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+    <!-- MAQOLA MA'LUMOTI -->
+
+    <div class="article-content">
+
+        <div class="article-top">
+
+            <span class="article-category">
+                SOG‘LIQ
+            </span>
+
+            <span class="article-date">
+                {{ post.created_at|date:"d/m/Y" }}
+            </span>
+
+        </div>
+
+
+        <h3>
+            <a href="{{ post.get_absolute_url }}">
+                {{ post.title }}
+            </a>
+        </h3>
+
+
+        <p>
+            {{ post.body|truncatechars:105 }}
+        </p>
+
+
+        <a href="{{ post.get_absolute_url }}"
+           class="article-more">
+            Batafsil o‘qish →
+        </a>
+
+    </div>
+
+</article>
+
+{% endfor %}
+
+</div>
+
+
+<!-- ================================
+     PAGINATION
+================================ -->
+
+{% if is_paginated %}
+
+<div class="pagination" style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 50px;
+    padding: 30px;
+    background: #f5f7fa;
+    border-radius: 12px;
+">
+
+    {% if page_obj.has_previous %}
+
+        <a href="?q={{ request.GET.q|urlencode }}&page=1" style="
+            display: inline-block;
+            padding: 10px 16px;
+            background: #ff4757;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        " onmouseover="this.style.background='#ff3838'" onmouseout="this.style.background='#ff4757'">
+            ⬅️ Birinchi
+        </a>
+
+        <a href="?q={{ request.GET.q|urlencode }}&page={{ page_obj.previous_page_number }}" style="
+            display: inline-block;
+            padding: 10px 16px;
+            background: #ff4757;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        " onmouseover="this.style.background='#ff3838'" onmouseout="this.style.background='#ff4757'">
+            ← Oldingi
+        </a>
+
+    {% else %}
+
+        <span style="
+            padding: 10px 16px;
+            background: #ddd;
+            color: #999;
+            border-radius: 6px;
+            font-weight: 600;
+        ">
+            ⬅️ Birinchi
+        </span>
+
+        <span style="
+            padding: 10px 16px;
+            background: #ddd;
+            color: #999;
+            border-radius: 6px;
+            font-weight: 600;
+        ">
+            ← Oldingi
+        </span>
+
+    {% endif %}
+
+
+    <span style="
+        padding: 10px 16px;
+        background: white;
+        color: #0B2438;
+        border-radius: 6px;
+        border: 1px solid #ddd;
+        font-weight: 600;
+    ">
+        {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
+    </span>
+
+
+    {% if page_obj.has_next %}
+
+        <a href="?q={{ request.GET.q|urlencode }}&page={{ page_obj.next_page_number }}" style="
+            display: inline-block;
+            padding: 10px 16px;
+            background: #ff4757;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        " onmouseover="this.style.background='#ff3838'" onmouseout="this.style.background='#ff4757'">
+            Keyingi →
+        </a>
+
+        <a href="?q={{ request.GET.q|urlencode }}&page={{ page_obj.paginator.num_pages }}" style="
+            display: inline-block;
+            padding: 10px 16px;
+            background: #ff4757;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        " onmouseover="this.style.background='#ff3838'" onmouseout="this.style.background='#ff4757'">
+            Oxirgi ➡️
+        </a>
+
+    {% else %}
+
+        <span style="
+            padding: 10px 16px;
+            background: #ddd;
+            color: #999;
+            border-radius: 6px;
+            font-weight: 600;
+        ">
+            Keyingi →
+        </span>
+
+        <span style="
+            padding: 10px 16px;
+            background: #ddd;
+            color: #999;
+            border-radius: 6px;
+            font-weight: 600;
+        ">
+            Oxirgi ➡️
+        </span>
+
+    {% endif %}
+
+</div>
+
+{% endif %}
+
+
+{% else %}
+
+<!-- ================================
+     NATIJA TOPILMAGANDA
+================================ -->
+
+<div style="
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 30px;
+    padding: 50px 20px;
+    text-align: center;
+    background: #f7f9fc;
+    border: 1px solid #e5eaf0;
+    border-radius: 15px;
+">
+
+    <div style="
+        font-size: 42px;
+        margin-bottom: 15px;
+    ">
+        🔎
+    </div>
+
+    {% if request.GET.q %}
+
+        <div style="
+            color: #172033;
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        ">
+            "{{ request.GET.q }}"
+        </div>
+
+        <div style="
+            color: #687386;
+            font-size: 14px;
+            margin-bottom: 8px;
+        ">
+            bo‘yicha maqola topilmadi.
+        </div>
+
+        <div style="
+            color: #8a96a6;
+            font-size: 13px;
+        ">
+            Boshqa so‘z bilan qidirib ko‘ring.
+        </div>
+
+    {% else %}
+
+        <div style="
+            color: #687386;
+            font-size: 14px;
+        ">
+            Hozircha maqolalar yo‘q.
+        </div>
+
+    {% endif %}
+
+</div>
+
+{% endif %}
+
+{% endblock %}

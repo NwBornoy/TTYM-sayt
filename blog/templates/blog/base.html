@@ -1,0 +1,490 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        {% block title %}Maqolalar{% endblock %} — 103 Tez tibbiy yordam
+    </title>
+
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}?v=999">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <!-- YUQORI QISM -->
+    <div class="header-top">
+
+        <!-- LOGO VA NOM -->
+        <a href="{% url 'home' %}" class="header-brand">
+
+            <img
+                src="{% static 'blog/images/103-logo.png' %}"
+                alt="103 Tez tibbiy yordam"
+                class="header-brand-logo"
+            >
+
+            <div class="header-brand-text">
+
+                <div class="header-brand-title">
+                    QASHQADARYO VILOYATI 
+                </div>
+
+                <div class="header-brand-subtitle">
+                    TEZ TIBBIY YORDAM MARKAZI
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- O'NG TOMON -->
+        <div class="header-actions">
+
+            <!-- QIDIRISH -->
+            <form
+                action="{% url 'news_list' %}"
+                method="get"
+                class="header-search"
+            >
+
+                <input
+                    type="search"
+                    name="q"
+                    value="{{ request.GET.q|default:'' }}"
+                    placeholder="Qidirish..."
+                >
+
+                <button type="submit">
+                    <span>⌕</span>
+                </button>
+
+            </form>
+
+
+            {% if user.is_authenticated %}
+
+                <!-- KIRGAN FOYDALANUVCHI -->
+
+                <div class="header-user">
+
+                    <span class="user-avatar">
+
+                        {% if user.first_name %}
+                            {{ user.first_name|first|upper }}
+                        {% else %}
+                            {{ user.username|first|upper }}
+                        {% endif %}
+
+                    </span>
+
+                    <span class="user-name">
+
+                        {% if user.first_name %}
+                            {{ user.first_name }}
+                        {% else %}
+                            {{ user.username }}
+                        {% endif %}
+
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="{% url 'logout' %}"
+                    class="header-logout"
+                >
+                    Chiqish
+                </a>
+
+            {% else %}
+
+                <!-- KIRISH -->
+                <a
+                    href="{% url 'login' %}"
+                    class="header-login"
+                >
+                    Kirish
+                </a>
+
+
+                <!-- RO'YXATDAN O'TISH -->
+                <a
+                    href="{% url 'register' %}"
+                    class="header-register"
+                >
+                    Ro'yxatdan o'tish
+                </a>
+
+
+                <!-- MEHMON -->
+                <div class="header-user">
+
+                    <span class="user-avatar guest-avatar">
+                        👤
+                    </span>
+
+                    <span class="user-name">
+                        Mehmon
+                    </span>
+
+                </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+
+    <!-- KO'K MENYU -->
+    <nav class="main-navigation">
+
+        <a href="{% url 'home' %}">
+            ASOSIY
+        </a>
+        <div class="nav-dropdown">
+
+            <a href="{% url 'about' %}" class="nav-dropdown-title">
+                MARKAZ
+                <span class="menu-arrow">▼</span>
+            </a>
+        
+            <div class="dropdown-menu">
+        
+                <a href="{% url 'about' %}">
+                    Markaz haqida
+                </a>
+        
+                <a href="{% url 'leadership' %}">
+                    Rahbariyat
+                </a>
+        
+                <a href="{% url 'central_staff' %}">
+                    Markaziy apparat
+                </a>
+                <a href="#">Moliya-xo'jalik shaffofligi</a>
+                <a href="#">Kadrlar siyosati</a>
+        
+            </div>
+        
+        </div>
+        <div class="nav-dropdown">
+
+            <a href="{% url 'news_list' %}" class="nav-dropdown-title">
+                FAOLIYAT
+                <span class="menu-arrow">▼</span>
+            </a>
+        
+            <div class="dropdown-menu">
+        
+                <a href="{% url 'anticorruption_list' %}">
+                    Korrupsiyaga qarshi kurashish
+                </a>
+                <a href="#">Tashkiliy-huquqiy ma'lumotlar</a>
+                <a href="#">Faoliyat va natijalar to'g'risidagi axborot</a>
+        
+            </div>
+        
+        </div>
+
+        <div class="nav-dropdown">
+
+            <a href="#" class="nav-dropdown-title">
+                HUJJATLAR
+                <span class="menu-arrow">▼</span>
+            </a>
+        
+            <div class="dropdown-menu">
+        
+                <a href="{% url 'law_list' %}">
+                    Qonunlar
+                </a>
+        
+                <a href="{% url 'decree_list' %}">
+                    Prezident farmon, qaror va farmoyishlari
+                </a>
+        
+                <a href="{% url 'gov_decree_list' %}">
+                    Hukumat qarori va farmoyishlari
+                </a>
+        
+                <a href="{% url 'normative_list' %}">
+                    Markaz normativ hujjatlari
+                </a>
+        
+            </div>
+        
+        </div>
+
+        <a href="{% url 'branches' %}">
+            FILIALLAR
+        </a>
+
+        <div class="nav-dropdown">
+
+            <a href="{% url 'post_list' %}" class="nav-dropdown-title">
+                MATBUOT MARKAZI
+                <span class="menu-arrow">▼</span>
+            </a>
+        
+            <div class="dropdown-menu">
+                <a href="{% url 'post_list' %}">
+                    Maqola
+                </a>
+        
+                <a href="{% url 'gallery' %}">
+                    Galereya
+                </a>
+                
+        
+            </div>
+        
+        </div>
+
+        <a href="{% url 'gallery' %}">
+            GALEREYA
+        </a>
+
+        <a href="{% url 'support_chat' %}">
+            ALOQA
+        </a>
+
+        <a href="{% url 'eko_list' %}">
+            EKOFAOL XODIM
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- MAIN -->
+
+<main>
+
+    {% if messages %}
+
+        <ul class="messages">
+
+            {% for message in messages %}
+
+                <li class="status {% if message.tags %}{{ message.tags }}{% endif %}">
+                    {{ message }}
+                </li>
+
+            {% endfor %}
+
+        </ul>
+
+    {% endif %}
+
+
+    {% block content %}
+    {% endblock %}
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+    <div class="footer-top">
+
+        <!-- 1-USTUN: BREND + ULASHISH -->
+        <div class="footer-col">
+
+            <div class="footer-brand">
+
+                <div class="footer-logo">
+                    <img
+                        src="{% static 'blog/images/103-logo.png' %}"
+                        alt="103 Tez tibbiy yordam"
+                    >
+                </div>
+
+                <div class="footer-brand-text">
+                    <strong>
+                        Qashqadaryo viloyati  <br>tez
+                        tibbiy yordam markazi
+                    </strong>
+                </div>
+
+            </div>
+
+            <div class="footer-share">
+
+                <span>Ulashish:</span>
+
+                <div class="footer-socials">
+
+                    <a href="#" target="_blank" rel="noopener noreferrer" title="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="https://t.me/" target="_blank" rel="noopener noreferrer" title="Telegram">
+                        <i class="fa-brands fa-telegram"></i>
+                    </a>
+
+                    <a href="#" target="_blank" rel="noopener noreferrer" title="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+<!-- 2-USTUN: ASOSIY MENYU -->
+<ul class="footer-menu">
+
+    <li><a href="{% url 'home' %}">Asosiy</a></li>
+
+    <li class="footer-dropdown">
+        <a href="{% url 'news_list' %}" class="footer-dropdown-title">
+            Faoliyat
+            <span class="menu-arrow">▼</span>
+        </a>
+        <div class="footer-dropdown-menu">
+            <a href="{% url 'anticorruption_list' %}">Korrupsiyaga qarshi kurashish</a>
+            <a href="#">Tashkiliy-huquqiy ma'lumotlar</a>
+            <a href="#">Faoliyat va natijalar to'g'risidagi axborot</a>
+        </div>
+    </li>
+
+    <li><a href="{% url 'branches' %}">Filiallar</a></li>
+
+    <li><a href="{% url 'gallery' %}">Galereya</a></li>
+
+    <li><a href="{% url 'eko_list' %}">Ekofaol xodim</a></li>
+
+</ul>
+
+
+<!-- 3-USTUN: MARKAZ MENYU -->
+<ul class="footer-menu">
+
+    <li class="footer-dropdown">
+        <a href="{% url 'about' %}" class="footer-dropdown-title">
+            Markaz
+            <span class="menu-arrow">▼</span>
+        </a>
+        <div class="footer-dropdown-menu">
+            <a href="{% url 'about' %}">Markaz haqida</a>
+            <a href="{% url 'leadership' %}">Rahbariyat</a>
+            <a href="{% url 'central_staff' %}">Markaziy apparat</a>
+            <a href="#">Moliya-xo'jalik shaffofligi</a>
+            <a href="#">Kadrlar siyosati</a>
+        </div>
+    </li>
+
+    <li class="footer-dropdown">
+        <a href="#" class="footer-dropdown-title">
+            Hujjatlar
+            <span class="menu-arrow">▼</span>
+        </a>
+        <div class="footer-dropdown-menu">
+            <a href="{% url 'law_list' %}">Qonunlar</a>
+            <a href="{% url 'decree_list' %}">Prezident farmon, qaror va farmoyishlari</a>
+            <a href="{% url 'gov_decree_list' %}">Hukumat qarori va farmoyishlari</a>
+            <a href="{% url 'normative_list' %}">Markaz normativ hujjatlari</a>
+        </div>
+    </li>
+
+    <li class="footer-dropdown">
+        <a href="{% url 'post_list' %}" class="footer-dropdown-title">
+            Matbuot markazi
+            <span class="menu-arrow">▼</span>
+        </a>
+        <div class="footer-dropdown-menu">
+            <a href="{% url 'post_list' %}">Maqola</a>
+            <a href="{% url 'gallery' %}">Galereya</a>
+        </div>
+    </li>
+
+    <li><a href="{% url 'support_chat' %}">Aloqa</a></li>
+
+</ul>
+
+        <!-- 4-USTUN: ISH VAQTI -->
+        <div class="footer-col footer-hours">
+
+            <div class="footer-hours-label">Ish vaqti:</div>
+
+            <strong>
+                Dushanba–juma<br>
+                (dam olish kunlari:<br>
+                shanba-yakshanba)
+            </strong>
+
+            <div class="footer-lunch">
+
+                <div class="footer-hours-label">Tushlik:</div>
+
+                <strong>13:00 – 14:00</strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- 5-USTUN: ALOQA -->
+        <div class="footer-col footer-contact">
+
+            <a href="tel:+998955113103" class="footer-phone">
+                (+998 55) 511-31-03
+            </a>
+
+            <div class="footer-contact-label">Manzil:</div>
+
+            <strong>
+                Qashqadaryo viloyati,<br>
+                Qarshi shahri
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div class="footer-bottom-inner">
+
+            <p>
+                Materiallardan foydalanishda manba sifatida saytimizga
+                havola ko‘rsatilishi shart.
+            </p>
+
+            <p>
+                © Barcha huquqlar himoyalangan 2026
+            </p>
+
+            <p>
+                Diqqat! Agar matnda xato topsangiz, uni belgilang va
+                ma’muriyatni xabardor qilish uchun Ctrl+Enter tugmalarini
+                bosing.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+<script src="{% static 'blog/branches.js' %}"></script>
+</body>
+</html>

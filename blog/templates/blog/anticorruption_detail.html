@@ -1,0 +1,93 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %}{{ topic.title }}{% endblock %}
+
+{% block content %}
+
+<style>
+  .ac-hero {
+    background: linear-gradient(90deg, #16326e, #2a5aa8);
+    padding: 45px 40px;
+    text-align: center;
+  }
+
+  .ac-hero h1 {
+    color: #fff;
+    font-size: 28px;
+    margin: 0;
+  }
+
+  .ac-detail-page {
+    max-width: 950px;
+    margin: 40px auto 100px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 50px 60px;
+  }
+
+  .ac-detail-icon {
+    text-align: center;
+    color: #ff4757;
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .ac-detail-title {
+    text-align: center;
+    color: #0B2438;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .ac-detail-divider {
+    width: 60px;
+    height: 3px;
+    background: #ff4757;
+    margin: 0 auto 35px;
+  }
+
+  .ac-detail-body {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.9;
+    text-align: justify;
+  }
+
+  .ac-detail-body p {
+    margin: 0 0 18px;
+  }
+
+  .ac-detail-body strong {
+    color: #0B2438;
+  }
+
+  .ac-back {
+    display: inline-block;
+    margin-top: 35px;
+    color: #ff4757;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .ac-back:hover { text-decoration: underline; }
+</style>
+
+<div class="ac-hero">
+  <h1>Korrupsiyaga qarshi kurashish</h1>
+</div>
+
+<div class="ac-detail-page">
+  <div class="ac-detail-icon">✱</div>
+  <div class="ac-detail-title">{{ topic.title }}</div>
+  <div class="ac-detail-divider"></div>
+
+  <div class="ac-detail-body">{{ topic.body|safe }}</div>
+
+  <a href="{% url 'anticorruption_list' %}" class="ac-back">← Ro'yxatga qaytish</a>
+</div>
+
+{% endblock %}

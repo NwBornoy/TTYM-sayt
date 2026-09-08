@@ -1,0 +1,7 @@
+Django>=4.2,<5.0        # 4.2 — LTS (uzoq muddat qo'llab-quvvatlanadi), Python 3.8+ bilan ishlaydi
+python-dotenv>=1.0
+gunicorn>=22.0
+psycopg2-binary>=2.9   # PostgreSQL bilan ishlash uchun (production uchun tavsiya etiladi)
+dj-database-url>=2.1    # DATABASE_URL orqali PostgreSQL'ga ulanish uchun (faqat production'da kerak)
+django-axes>=6.5       # login-brute-force hujumlaridan himoya (tavsiya etiladi)
+Pillow>=10.0            # kelajakda rasm yuklash kerak bo'lsa

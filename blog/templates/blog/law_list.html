@@ -1,0 +1,131 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %}Qonunlar{% endblock %}
+
+{% block content %}
+
+<style>
+  .law-hero {
+    background: linear-gradient(90deg, #16326e, #2a5aa8);
+    padding: 55px 40px;
+    text-align: center;
+  }
+
+  .law-hero h1 {
+    color: #fff;
+    font-size: 34px;
+    margin: 0;
+  }
+
+  .law-list-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 40px 100px;
+  }
+
+  .law-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+  }
+
+  .law-card {
+    display: block;
+    background: #d7dce0;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    transition: box-shadow .2s, transform .2s;
+  }
+
+  .law-card:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+  }
+
+  .law-card-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .law-card-image-placeholder {
+    width: 100%;
+    height: 160px;
+    background: #dfe6ef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #9aa8ba;
+    font-size: 14px;
+  }
+
+  .law-card-body {
+    padding: 20px 22px;
+  }
+
+  .law-card-title {
+    color: #1a56c4;
+    font-size: 15.5px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  .law-card-divider {
+    width: 40px;
+    border-top: 1px solid #c7d2e0;
+    margin-bottom: 14px;
+  }
+
+  .law-card-desc {
+    color: #444;
+    font-size: 14px;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .law-empty {
+    color: #999;
+    text-align: center;
+    padding: 30px 0;
+  }
+</style>
+
+<div class="law-hero">
+  <h1>Qonunlar</h1>
+</div>
+
+<div class="law-list-page">
+  <div class="law-grid">
+
+    {% for law in laws %}
+      <a href="{{ law.url }}" target="_blank" rel="noopener noreferrer" class="law-card">
+
+        {% if law.image %}
+          <img src="{{ law.image.url }}" alt="{{ law.title }}" class="law-card-image">
+        {% else %}
+          <div class="law-card-image-placeholder">Rasm yo'q</div>
+        {% endif %}
+
+        <div class="law-card-body">
+          <div class="law-card-title">{{ law.title }}</div>
+          <div class="law-card-divider"></div>
+          <div class="law-card-desc">{{ law.description }}</div>
+        </div>
+
+      </a>
+    {% empty %}
+      <p class="law-empty">Hozircha qonunlar kiritilmagan.</p>
+    {% endfor %}
+
+  </div>
+</div>
+
+{% endblock %}

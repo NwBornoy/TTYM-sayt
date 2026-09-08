@@ -1,0 +1,311 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %}Filiallar{% endblock %}
+
+{% block content %}
+
+<style>
+  .branches-page {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .branches-page .page-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .branches-page .page-header h1 {
+    font-size: 48px;
+    color: #0B2438;
+    margin-bottom: 15px;
+  }
+
+  .branches-page .page-header p {
+    font-size: 18px;
+    color: #666;
+  }
+
+  .branches-page .branch-list-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    align-items: stretch;
+    justify-items: stretch;
+  }
+
+  @media (max-width: 1100px) {
+    .branches-page .branch-list-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .branches-page .branch-list-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .branches-page .branch-list-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+    background: white;
+    border-radius: 12px;
+    padding: 35px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+    position: relative;
+  }
+
+  .branches-page .branch-list-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .branches-page .branch-list-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  .branches-page .branch-list-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f7fa;
+    font-size: 60px;
+    color: #cfd8de;
+  }
+
+  .branches-page .branch-list-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ff4757;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+
+  .branches-page .branch-list-card h3 {
+    color: #0B2438;
+    font-size: 24px;
+    margin: 0 0 10px;
+  }
+
+  .branches-page .branch-list-region {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .branches-page .branch-list-region::before {
+    content: '📍';
+  }
+
+  .branches-page .branch-list-info {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+
+    margin: 18px 0;
+    padding: 12px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .branches-page .branch-list-label {
+    color: #999;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+  }
+
+  .branches-page .branch-list-value {
+    color: #333;
+    font-size: 15px;
+    font-weight: 500;
+    word-break: break-word;
+  }
+
+  .branches-page .branch-list-value a {
+    color: #0B2438;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .branches-page .branch-list-value a:hover {
+    color: #ff4757;
+    text-decoration: underline;
+  }
+
+  .branches-page .branch-list-info:last-child {
+    border-bottom: none;
+  }
+
+  .branches-page .branch-list-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .branches-page .branch-list-btn {
+    flex: 1;
+    min-width: 90px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background: white;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+
+  .branches-page .branch-list-btn:hover {
+    background: #ff4757;
+    color: white;
+    border-color: #ff4757;
+  }
+
+  .branches-page .branch-list-btn.is-disabled {
+    color: #ccc;
+    border-color: #eee;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    .branches-page {
+      padding: 40px 20px;
+    }
+
+    .branches-page .page-header h1 {
+      font-size: 32px;
+    }
+
+    .branches-page .branch-list-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .branches-page .branch-list-badge {
+      position: static;
+      display: inline-block;
+      margin-bottom: 15px;
+    }
+  }
+</style>
+
+<div class="branches-page">
+  <div class="page-header">
+    <h1>Filiallar</h1>
+    <p>Qashqadaryo viloyati bo'ylab joylashgan barcha filiallar</p>
+  </div>
+
+  <div class="branch-list-grid">
+    {% for branch in branches %}
+      <div class="branch-list-card">
+        {% if branch.is_main %}
+          <span class="branch-list-badge">🏆 Bosh filial</span>
+        {% endif %}
+
+        {% if branch.director_image %}
+          <img src="{{ branch.director_image.url }}" alt="{{ branch.director_name }}" class="branch-list-image">
+        {% else %}
+          <div class="branch-list-image branch-list-image-placeholder">🏥</div>
+        {% endif %}
+
+        <h3>{{ branch.name }}</h3>
+        <div class="branch-list-region">{{ branch.region }}</div>
+
+        <div class="branch-list-info">
+          <div class="branch-list-label">Rahbar</div>
+          <div class="branch-list-value">{{ branch.director_name|default:"—" }}</div>
+        </div>
+
+        <div class="branch-list-info">
+          <div class="branch-list-label">Telefon</div>
+          <div class="branch-list-value">
+            {% if branch.phone %}
+              <a href="tel:{{ branch.phone }}">{{ branch.phone }}</a>
+            {% else %}—{% endif %}
+          </div>
+        </div>
+
+        <div class="branch-list-info">
+          <div class="branch-list-label">Email</div>
+          <div class="branch-list-value">
+            {% if branch.email %}
+              <a href="mailto:{{ branch.email }}">{{ branch.email }}</a>
+            {% else %}—{% endif %}
+          </div>
+        </div>
+
+        {% if branch.address %}
+          <div class="branch-list-info">
+            <div class="branch-list-label">Manzil</div>
+            <div class="branch-list-value">{{ branch.address }}</div>
+          </div>
+        {% endif %}
+
+        <div class="branch-list-info">
+          <div class="branch-list-label">Tavsif</div>
+          <div class="branch-list-value">{{ branch.description|default:"—" }}</div>
+        </div>
+
+        <div class="branch-list-buttons">
+          {% if branch.phone %}
+            <a href="tel:{{ branch.phone }}" class="branch-list-btn">📞 Qo'ng'iroq</a>
+          {% else %}
+            <span class="branch-list-btn is-disabled">📞 Qo'ng'iroq</span>
+          {% endif %}
+
+          {% if branch.email %}
+            <a href="mailto:{{ branch.email }}" class="branch-list-btn">📧 Email</a>
+          {% else %}
+            <span class="branch-list-btn is-disabled">📧 Email</span>
+          {% endif %}
+
+          {% if branch.telegram %}
+            <a href="{{ branch.telegram }}" target="_blank" class="branch-list-btn">📱 Telegram</a>
+          {% else %}
+            <span class="branch-list-btn is-disabled">📱 Telegram</span>
+          {% endif %}
+
+          {% if branch.instagram %}
+            <a href="{{ branch.instagram }}" target="_blank" class="branch-list-btn">📷 Instagram</a>
+          {% else %}
+            <span class="branch-list-btn is-disabled">📷 Instagram</span>
+          {% endif %}
+        </div>
+      </div>
+    {% empty %}
+      <div style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+        <p style="color: #999; font-size: 16px;">Filiallar hali qo'shilmagan</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

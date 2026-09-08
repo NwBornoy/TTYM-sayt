@@ -1,0 +1,655 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}Biz haqimizda{% endblock %}
+
+{% block content %}
+
+<style>
+  .about-page { width: 100%; }
+
+  /* HERO */
+  .about-hero {
+    background: linear-gradient(135deg, #0B2438 0%, #12314A 100%);
+    color: #fff;
+    padding: 80px 40px;
+    text-align: center;
+  }
+  .about-hero h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 800; margin-bottom: 15px; }
+  .about-hero .subtitle { max-width: 700px; margin: 0 auto; font-size: 18px; color: #a0b8c8; line-height: 1.6; }
+
+ 
+
+  /* SECTION HEADER (umumiy) */
+  .section-header { text-align: center; margin-bottom: 50px; }
+  .section-header .eyebrow {
+    display: inline-block;
+    color: #ff4757;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .section-header h2 { font-size: 36px; color: #0B2438; margin: 0 0 10px; }
+  .section-header p { color: #666; font-size: 16px; max-width: 600px; margin: 0 auto; }
+
+  /* TARIX (TIMELINE) */
+  .history-section { max-width: 900px; margin: 0 auto; padding: 80px 40px; }
+  .timeline { position: relative; margin-top: 50px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(#ff4757, #0B2438);
+  }
+  .timeline-item {
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 40px;
+  }
+  .timeline-item:last-child { margin-bottom: 0; }
+  .timeline-dot {
+    position: absolute;
+    left: 11px;
+    top: 4px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ff4757;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 2px #ff4757;
+  }
+  .timeline-year {
+    color: #ff4757;
+    font-weight: 800;
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+  .timeline-item h4 { color: #0B2438; font-size: 18px; margin: 0 0 8px; }
+  .timeline-item p { color: #666; font-size: 15px; line-height: 1.6; margin: 0; }
+
+  /* JAMOA */
+  .team-section { background: #f5f7fa; padding: 80px 40px; }
+  .team-container { max-width: 1200px; margin: 0 auto; }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+  }
+  .team-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+  }
+  .team-card .team-icon { font-size: 40px; margin-bottom: 15px; }
+  .team-card .team-number { font-size: 32px; font-weight: 800; color: #0B2438; margin-bottom: 8px; }
+  .team-card .team-label { color: #666; font-size: 14px; line-height: 1.5; }
+
+  /* GALEREYA */
+  .about-gallery-section { max-width: 1200px; margin: 0 auto; padding: 80px 40px; }
+  .about-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .about-gallery-item {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  }
+  .about-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    display: block;
+  }
+  .about-gallery-item:hover img { transform: scale(1.08); }
+  .about-gallery-caption {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    background: linear-gradient(transparent, rgba(11,36,56,0.85));
+    color: #fff;
+    padding: 30px 16px 14px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .about-gallery-empty {
+    text-align: center;
+    color: #999;
+    padding: 40px;
+    grid-column: 1 / -1;
+  }
+
+  /* FILIALLAR */
+  .ab-branches-section { max-width: 1600px; margin: 0 auto; padding: 70px 40px; }
+
+  .ab-branch-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    align-items: stretch;
+    justify-items: stretch;
+  }
+
+  @media (max-width: 1100px) {
+    .ab-branch-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .ab-branch-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .ab-branch-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+
+    background: #fff;
+    border-radius: 12px;
+    padding: 35px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+    position: relative;
+  }
+  .ab-branch-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); }
+
+  .ab-branch-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+
+  .ab-branch-image-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f7fa;
+    font-size: 60px;
+    color: #cfd8de;
+  }
+
+  .ab-branch-badge {
+    position: absolute; top: 20px; right: 20px;
+    background: #ff4757; color: #fff;
+    padding: 6px 12px; border-radius: 20px;
+    font-size: 12px; font-weight: 600; text-transform: uppercase;
+    z-index: 2;
+  }
+
+  .ab-branch-card h3 { color: #0B2438; font-size: 22px; margin: 0 0 10px; }
+
+  .ab-branch-region { color: #999; font-size: 14px; margin-bottom: 20px; display: flex; align-items: center; gap: 8px; }
+  .ab-branch-region::before { content: '📍'; }
+
+  .ab-branch-row {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 15px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .ab-branch-row:last-child { border-bottom: none; }
+
+  .ab-branch-label { color: #999; font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; }
+  .ab-branch-value { color: #333; font-size: 15px; font-weight: 500; word-break: break-word; }
+  .ab-branch-value a { color: #0B2438; text-decoration: none; }
+  .ab-branch-value a:hover { color: #ff4757; text-decoration: underline; }
+
+  .ab-branch-socials {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+    padding-top: 20px;
+    flex-wrap: wrap;
+  }
+  .ab-branch-social-btn {
+    flex: 1;
+    min-width: 90px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+    text-align: center;
+    font-size: 14px;
+    transition: all 0.3s ease;
+  }
+  .ab-branch-social-btn:hover { background: #ff4757; color: #fff; border-color: #ff4757; }
+  .ab-branch-social-btn.is-disabled {
+    color: #ccc;
+    border-color: #eee;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  /* CALL-MARKAZ */
+  .callcenter-section {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 40px;
+  }
+  .callcenter-box {
+    background: linear-gradient(135deg, #ff4757 0%, #ff6b81 100%);
+    border-radius: 20px;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    color: #fff;
+    box-shadow: 0 20px 50px rgba(255, 71, 87, 0.25);
+  }
+  .callcenter-text h2 { font-size: 30px; margin: 0 0 12px; }
+  .callcenter-text p { font-size: 15px; line-height: 1.7; opacity: 0.95; margin: 0 0 20px; }
+  .callcenter-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    color: #ff4757;
+    padding: 14px 24px;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: 800;
+    text-decoration: none;
+  }
+  .callcenter-details {
+    display: grid;
+    gap: 16px;
+  }
+  .callcenter-detail-item {
+    background: rgba(255,255,255,0.15);
+    border-radius: 10px;
+    padding: 16px 20px;
+    backdrop-filter: blur(6px);
+  }
+  .callcenter-detail-label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; opacity: 0.85; margin-bottom: 4px; }
+  .callcenter-detail-value { font-size: 16px; font-weight: 600; }
+
+  @media (max-width: 768px) {
+    .callcenter-box { grid-template-columns: 1fr; padding: 35px 25px; }
+  }
+
+  /* FIKRLAR */
+  .testimonials-section { background: #f5f7fa; padding: 80px 40px; }
+  .testimonials-container { max-width: 1200px; margin: 0 auto; }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+  }
+  .testimonial-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    position: relative;
+  }
+  .testimonial-quote-mark {
+    font-size: 40px;
+    color: #ff4757;
+    line-height: 1;
+    opacity: 0.3;
+    margin-bottom: 10px;
+  }
+  .testimonial-text { color: #333; font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+  .testimonial-author { display: flex; align-items: center; gap: 12px; }
+  .testimonial-avatar {
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: #0B2438;
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .testimonial-name { color: #0B2438; font-weight: 700; font-size: 14px; }
+  .testimonial-role { color: #999; font-size: 13px; }
+  .testimonials-note {
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+    margin-top: 30px;
+    font-style: italic;
+  }
+
+  /* MISSIYA */
+  .mission-section { background: linear-gradient(135deg, #0B2438 0%, #12314A 100%); color: #fff; padding: 80px 40px; }
+  .mission-container { max-width: 900px; margin: 0 auto; text-align: center; }
+  .mission-container h2 { font-size: 36px; margin-bottom: 30px; }
+  .mission-goals { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+  .goal { background: rgba(255, 255, 255, 0.1); padding: 25px; border-radius: 8px; backdrop-filter: blur(10px); }
+  .goal-icon { font-size: 40px; margin-bottom: 15px; }
+  .goal h3 { font-size: 18px; margin: 0 0 10px; }
+  .goal p { font-size: 14px; line-height: 1.6; margin: 0; opacity: 0.9; }
+
+  @media (max-width: 768px) {
+    .about-hero { padding: 40px 20px; }
+    .about-stats, .ab-branches-section, .mission-section,
+    .history-section, .team-section, .about-gallery-section, .testimonials-section { padding: 40px 20px; }
+    .ab-branch-grid { grid-template-columns: 1fr; }
+    .ab-branch-badge { position: static; display: inline-block; margin-bottom: 15px; }
+    .about-stats .stat-number { font-size: 36px; }
+    .section-header h2 { font-size: 28px; }
+  }
+</style>
+
+<div class="about-page">
+
+  <!-- HERO -->
+  <section class="about-hero">
+    <h1>Biz haqimizda</h1>
+    <p class="subtitle">Qashqadaryo viloyatida Tez tibbiy yordam markazi — aholining sog'lig'i va farovatligini saqlash uchun faoliyat ko'rsatuvchi muassasa</p>
+  </section>
+
+  <!-- STATS -->
+
+
+  <!-- TARIX -->
+  <section class="history-section">
+    <div class="section-header">
+      <span class="eyebrow">Bizning yo'limiz</span>
+      <h2>Markaz tarixi</h2>
+      <p>Qisqa vaqt ichida bosib o'tgan yo'limiz</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2025</div>
+        <h4>Markaz tashkil topdi</h4>
+        <p>Qashqadaryo viloyatida Tez tibbiy yordam markazi o'z faoliyatini boshladi va bosh filial Qarshi shahrida ochildi.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2025</div>
+        <h4>Viloyat bo'ylab filiallar tarmog'i</h4>
+        <p>Qarshi tumani, Shahrisabz va boshqa hududlarda yangi filiallar ochilib, xizmat qamrovi kengaytirildi.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">2025 – 2026</div>
+        <h4>Jamoa kengaydi</h4>
+        <p>Malakali shifokorlar va yordamchi xodimlar soni 60–100 nafarga yetkazildi, xizmat sifati yanada oshirildi.</p>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-year">Bugungi kun</div>
+        <h4>Zamonaviy call-markaz</h4>
+        <p>24/7 ishlaydigan call-markaz orqali murojaatlar tezkor qabul qilinib, bemorlarga o'z vaqtida yordam yetkazilmoqda.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- JAMOA -->
+  <section class="team-section">
+    <div class="team-container">
+      <div class="section-header">
+        <span class="eyebrow">Kadrlar</span>
+        <h2>Bizning jamoamiz</h2>
+        <p>Malakali va tajribali mutaxassislardan tashkil topgan jamoa</p>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-icon">👨‍⚕️</div>
+          <div class="team-number">60–100</div>
+          <div class="team-label">Shifokor va tibbiyot xodimlari</div>
+        </div>
+        <div class="team-card">
+          <div class="team-icon">🚑</div>
+          <div class="team-number">24/7</div>
+          <div class="team-label">Doimiy ish rejimi</div>
+        </div>
+        <div class="team-card">
+          <div class="team-icon">🏥</div>
+          <div class="team-number">13</div>
+          <div class="team-label">Faoliyat yurituvchi filiallar</div>
+        </div>
+        <div class="team-card">
+          <div class="team-icon">📞</div>
+          <div class="team-number">100%</div>
+          <div class="team-label">Bepul konsultatsiya</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALEREYA -->
+  <section class="about-gallery-section">
+    <div class="section-header">
+      <span class="eyebrow">Fotolavha</span>
+      <h2>Markazimizdan lavhalar</h2>
+      <p>Bizning filiallar, jamoa va faoliyatimizdan rasmlar</p>
+    </div>
+
+    <div class="about-gallery-grid">
+      {% for item in about_gallery %}
+        <div class="about-gallery-item">
+          <img src="{{ item.image.url }}" alt="{{ item.title }}">
+          <div class="about-gallery-caption">{{ item.title }}</div>
+        </div>
+      {% empty %}
+        <div class="about-gallery-empty">Hozircha galereyaga rasmlar qo'shilmagan. Admin panelda "Galereya" bo'limidan rasm qo'shing.</div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- FILIALLAR -->
+  <section class="ab-branches-section">
+    <div class="section-header">
+      <span class="eyebrow">Hududlar</span>
+      <h2>Filiallar</h2>
+      <p>Qashqadaryo viloyati bo'ylab joylashgan filiallar</p>
+    </div>
+
+    <div class="ab-branch-grid">
+      {% for branch in branches %}
+        <div class="ab-branch-card">
+          {% if branch.is_main %}
+            <span class="ab-branch-badge">🏆 Bosh filial</span>
+          {% endif %}
+
+          {% if branch.director_image %}
+            <img src="{{ branch.director_image.url }}" alt="{{ branch.director_name }}" class="ab-branch-image">
+          {% else %}
+            <div class="ab-branch-image ab-branch-image-placeholder">🏥</div>
+          {% endif %}
+
+          <h3>{{ branch.name }}</h3>
+          <div class="ab-branch-region">{{ branch.region }}</div>
+
+          <div class="ab-branch-row">
+            <div class="ab-branch-label">Rahbar</div>
+            <div class="ab-branch-value">{{ branch.director_name|default:"—" }}</div>
+          </div>
+
+          <div class="ab-branch-row">
+            <div class="ab-branch-label">Telefon</div>
+            <div class="ab-branch-value">
+              {% if branch.phone %}<a href="tel:{{ branch.phone }}">{{ branch.phone }}</a>{% else %}—{% endif %}
+            </div>
+          </div>
+
+          <div class="ab-branch-row">
+            <div class="ab-branch-label">Email</div>
+            <div class="ab-branch-value">
+              {% if branch.email %}<a href="mailto:{{ branch.email }}">{{ branch.email }}</a>{% else %}—{% endif %}
+            </div>
+          </div>
+
+          {% if branch.address %}
+            <div class="ab-branch-row">
+              <div class="ab-branch-label">Manzil</div>
+              <div class="ab-branch-value">{{ branch.address }}</div>
+            </div>
+          {% endif %}
+
+          <div class="ab-branch-row">
+            <div class="ab-branch-label">Tavsif</div>
+            <div class="ab-branch-value">{{ branch.description|default:"—" }}</div>
+          </div>
+
+          <div class="ab-branch-socials">
+            {% if branch.telegram %}
+              <a href="{{ branch.telegram }}" target="_blank" class="ab-branch-social-btn">📱 Telegram</a>
+            {% else %}
+              <span class="ab-branch-social-btn is-disabled">📱 Telegram</span>
+            {% endif %}
+
+            {% if branch.instagram %}
+              <a href="{{ branch.instagram }}" target="_blank" class="ab-branch-social-btn">📷 Instagram</a>
+            {% else %}
+              <span class="ab-branch-social-btn is-disabled">📷 Instagram</span>
+            {% endif %}
+          </div>
+        </div>
+      {% empty %}
+        <div class="ab-branch-card">
+          <span class="ab-branch-badge">🏆 Bosh filial</span>
+          <h3>Qarshi Filiali</h3>
+          <div class="ab-branch-region">Qarshi shahri</div>
+          <div class="ab-branch-row">
+            <div class="ab-branch-label">Rahbar</div>
+            <div class="ab-branch-value">Dr. Abdullo Xolmatov</div>
+          </div>
+          <div class="ab-branch-row">
+            <div class="ab-branch-label">Telefon</div>
+            <div class="ab-branch-value"><a href="tel:+998912345678">+998 91 234-56-78</a></div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- CALL-MARKAZ -->
+  <section class="callcenter-section">
+    <div class="callcenter-box">
+      <div class="callcenter-text">
+        <h2>☎️ Call-markazimiz</h2>
+        <p>Shoshilinch holatlarda bizga istalgan vaqtda qo'ng'iroq qiling — mutaxassislarimiz 24 soat davomida javob berishga tayyor.</p>
+        <a href="tel:{{ contact.phone|default:'103' }}" class="callcenter-phone">📞 {{ contact.phone|default:"103" }}</a>
+      </div>
+      <div class="callcenter-details">
+        <div class="callcenter-detail-item">
+          <div class="callcenter-detail-label">Qabulxona telefoni</div>
+          <div class="callcenter-detail-value">{{ contact.phone_office|default:"—" }}</div>
+        </div>
+        <div class="callcenter-detail-item">
+          <div class="callcenter-detail-label">Email</div>
+          <div class="callcenter-detail-value">{{ contact.email|default:"—" }}</div>
+        </div>
+        <div class="callcenter-detail-item">
+          <div class="callcenter-detail-label">Ish vaqti</div>
+          <div class="callcenter-detail-value">{{ contact.working_hours|default:"24/7" }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MIJOZLAR FIKRI -->
+  <section class="testimonials-section">
+    <div class="testimonials-container">
+      <div class="section-header">
+        <span class="eyebrow">Fikrlar</span>
+        <h2>Bemorlarimiz nima deydi</h2>
+        <p>Xizmatimizdan foydalangan insonlarning fikrlari</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-quote-mark">"</div>
+          <p class="testimonial-text">Tez tibbiy yordam bir necha daqiqada yetib keldi, shifokorlar juda mehribon va professional edi. Rahmat sizlarga!</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">A</div>
+            <div>
+              <div class="testimonial-name">Aziza R.</div>
+              <div class="testimonial-role">Qarshi shahri</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote-mark">"</div>
+          <p class="testimonial-text">Call-markazga qo'ng'iroq qilganimda darrov javob berishdi va yo'l-yo'riq ko'rsatishdi. Xizmat sifatidan mamnunman.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">B</div>
+            <div>
+              <div class="testimonial-name">Bekzod T.</div>
+              <div class="testimonial-role">Shahrisabz shahri</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-quote-mark">"</div>
+          <p class="testimonial-text">Filialdagi jamoa juda tajribali. Otam uchun chaqirilgan brigada tezkor va sifatli yordam ko'rsatdi.</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">D</div>
+            <div>
+              <div class="testimonial-name">Dilnoza S.</div>
+              <div class="testimonial-role">Qarshi tumani</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="testimonials-note">* Bu namuna matnlar. Kelajakda haqiqiy fikrlar bilan almashtirishingiz mumkin.</p>
+    </div>
+  </section>
+
+  <!-- MISSIYA -->
+  <section class="mission-section">
+    <div class="mission-container">
+      <h2>Bizning maqsad va vazifalari</h2>
+      <div class="mission-goals">
+        <div class="goal">
+          <div class="goal-icon">🎯</div>
+          <h3>Shoshilinch tibbiy yordam</h3>
+          <p>Har kuni, har soatda aholining shoshilinch tibbiy ehtiyojlarini qondirish</p>
+        </div>
+        <div class="goal">
+          <div class="goal-icon">👥</div>
+          <h3>Jamiyatni tibbiy savodxonligi</h3>
+          <p>Aholining tibbiy savodxonligini oshirish va salomatliklari tug'risida bilgisi</p>
+        </div>
+        <div class="goal">
+          <div class="goal-icon">⚕️</div>
+          <h3>Sifatli xizmat</h3>
+          <p>Yuqori darajadagi tibbiy xizmatlar ko'rsatish va hamjamiyat bilan muloqot</p>
+        </div>
+        <div class="goal">
+          <div class="goal-icon">🔬</div>
+          <h3>Zamonaviy texnologiya</h3>
+          <p>Tibbiy texnologiyalarni yangilash va malaka o'stirish dasturlari</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+{% endblock %}

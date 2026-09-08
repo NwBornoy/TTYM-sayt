@@ -1,0 +1,101 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %}Xizmatlar{% endblock %}
+
+{% block content %}
+
+<style>
+  .services-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .page-header h1 {
+    font-size: 48px;
+    color: #0B2438;
+    margin-bottom: 15px;
+  }
+
+  .page-header p {
+    font-size: 18px;
+    color: #666;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .service-card {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+  }
+
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .service-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  .service-card h3 {
+    color: #0B2438;
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .service-card p {
+    color: #666;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 768px) {
+    .services-page {
+      padding: 40px 20px;
+    }
+
+    .page-header h1 {
+      font-size: 32px;
+    }
+  }
+</style>
+
+<div class="services-page">
+  <div class="page-header">
+    <h1>Biz taqdim etadigan xizmatlar</h1>
+    <p>Tez tibbiy yordam markazi taqdim etadigan tibbiy xizmatlar</p>
+  </div>
+
+  <div class="services-grid">
+    {% for service in services %}
+      <div class="service-card">
+        <div class="service-icon">🏥</div>
+        <h3>{{ service.title }}</h3>
+        <p>{{ service.description }}</p>
+      </div>
+    {% empty %}
+      <div class="service-card">
+        <div class="service-icon">🚑</div>
+        <h3>Xizmat mavjud emas</h3>
+        <p>Xizmatlar hali qo'shilmagan. Admin panel orqali xizmatlarni qo'shing.</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

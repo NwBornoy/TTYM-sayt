@@ -1,0 +1,221 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block title %}Galereya{% endblock %}
+
+{% block content %}
+
+<style>
+  .gallery-page {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .page-header h1 {
+    font-size: 48px;
+    color: #0B2438;
+    margin-bottom: 15px;
+  }
+
+  .page-header p {
+    font-size: 18px;
+    color: #666;
+  }
+
+  .gallery-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+  }
+
+  .tab-btn {
+    padding: 12px 25px;
+    border: 2px solid #ddd;
+    background: white;
+    color: #0B2438;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .tab-btn.active {
+    background: #ff4757;
+    color: white;
+    border-color: #ff4757;
+  }
+
+  .tab-btn:hover {
+    border-color: #ff4757;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+  }
+
+  .gallery-item {
+    background: linear-gradient(135deg, #0B2438 0%, #12314A 100%);
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 1;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .gallery-item-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    font-size: 48px;
+  }
+
+  .gallery-item-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .gallery-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    z-index: 2;
+  }
+
+  .gallery-item-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 20px;
+    color: white;
+    font-weight: 600;
+    z-index: 2;
+  }
+
+  .empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    color: #999;
+  }
+
+  @media (max-width: 768px) {
+    .gallery-page {
+      padding: 40px 20px;
+    }
+
+    .page-header h1 {
+      font-size: 32px;
+    }
+
+    .gallery-tabs {
+      flex-wrap: wrap;
+    }
+
+    .gallery-grid {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+  }
+</style>
+
+<div class="gallery-page">
+  <div class="page-header">
+    <h1>Galereya</h1>
+    <p>Markaz faoliyatidagi foto va videolar</p>
+  </div>
+
+  <div class="gallery-tabs">
+    <button class="tab-btn active" onclick="filterGallery('all')">Barchasi</button>
+    <button class="tab-btn" onclick="filterGallery('photo')">Fotolar</button>
+    <button class="tab-btn" onclick="filterGallery('video')">Videolar</button>
+  </div>
+
+  <div class="gallery-grid" id="gallery-container">
+    {% for item in photos %}
+      <div class="gallery-item" data-type="photo">
+        <div class="gallery-item-content">
+          {% if item.image %}
+            <img src="{{ item.image.url }}" alt="{{ item.title }}">
+          {% else %}
+            📷
+          {% endif %}
+        </div>
+        <div class="gallery-item-title">{{ item.title }}</div>
+      </div>
+    {% endfor %}
+
+    {% for item in videos %}
+      <div class="gallery-item" data-type="video">
+        <div class="gallery-item-content">
+          {% if item.image %}
+            <img src="{{ item.image.url }}" alt="{{ item.title }}">
+          {% else %}
+            🎬
+          {% endif %}
+          {% if item.video_url %}
+            <a href="{{ item.video_url }}" target="_blank" rel="noopener noreferrer" class="gallery-play-icon">&#9658;</a>
+          {% endif %}
+        </div>
+        <div class="gallery-item-title">{{ item.title }}</div>
+      </div>
+    {% empty %}
+      {% if not photos %}
+      <div class="empty-state">
+        <p style="font-size: 18px;">Galereya bo'sh. Admin panel orqali rasm va videolar qo'shing.</p>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  function filterGallery(type) {
+    const items = document.querySelectorAll('.gallery-item');
+    const buttons = document.querySelectorAll('.tab-btn');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    items.forEach(item => {
+      if (type === 'all' || item.dataset.type === type) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+{% endblock %}
