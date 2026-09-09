@@ -13,7 +13,10 @@ select,
 a {
     font-family: "Times New Roman", Times, serif !important;
 }
-
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
 /* Font Awesome ikonkalari o'zining shriftida qolishi kerak,
    aks holda ikonka o'rniga bo'sh kvadrat chiqadi */
 .fa,
