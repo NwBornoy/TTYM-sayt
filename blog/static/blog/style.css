@@ -2734,6 +2734,15 @@ img {
         width: 100%;
         order: 2;
     }
+    .qashqadaryo-map {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .qashqadaryo-map svg {
+        width: 100%;
+        height: auto;
+    }
 }
 /* =========================================================
    RAHBAR RASMI — YUPQA VA RASMGA YOPISHGAN HALQA
@@ -2895,7 +2904,7 @@ img {
     align-items: center !important;
     justify-content: center !important;
 
-    gap: 65px !important;
+    gap: 20px !important;
 
     height: 70px !important;
     min-height: 70px !important;
