@@ -96,6 +96,36 @@
     text-align: center;
     padding: 30px 0;
   }
+
+  /* PLANSHET (max 1024px) */
+  @media (max-width: 1024px) {
+    .law-hero { padding: 45px 30px; }
+    .law-list-page { padding: 40px 30px 80px; }
+  }
+
+  /* TELEFON (max 768px) */
+  @media (max-width: 768px) {
+    .law-hero { padding: 35px 20px; }
+    .law-hero h1 { font-size: 26px; }
+    .law-list-page { padding: 30px 20px 60px; }
+    .law-grid {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .law-card-body { padding: 16px 18px; }
+  }
+
+  /* KICHIK TELEFONLAR (max 420px) */
+  @media (max-width: 420px) {
+    .law-hero { padding: 28px 16px; }
+    .law-hero h1 { font-size: 22px; }
+    .law-list-page { padding: 24px 16px 50px; }
+    .law-grid {
+      grid-template-columns: 1fr;
+    }
+    .law-card-image,
+    .law-card-image-placeholder { height: 180px; }
+  }
 </style>
 
 <div class="law-hero">

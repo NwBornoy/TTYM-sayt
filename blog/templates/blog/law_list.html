@@ -96,6 +96,63 @@
     text-align: center;
     padding: 30px 0;
   }
+
+  /* ===== Planshet uchun (tablet) ===== */
+  @media (max-width: 992px) {
+    .law-hero {
+      padding: 45px 25px;
+    }
+
+    .law-hero h1 {
+      font-size: 28px;
+    }
+
+    .law-list-page {
+      padding: 40px 25px 70px;
+    }
+
+    .law-grid {
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 18px;
+    }
+  }
+
+  /* ===== Telefon uchun (mobile) ===== */
+  @media (max-width: 576px) {
+    .law-hero {
+      padding: 35px 18px;
+    }
+
+    .law-hero h1 {
+      font-size: 22px;
+    }
+
+    .law-list-page {
+      padding: 30px 15px 50px;
+    }
+
+    .law-grid {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+
+    .law-card-image,
+    .law-card-image-placeholder {
+      height: 180px;
+    }
+
+    .law-card-body {
+      padding: 16px 18px;
+    }
+
+    .law-card-title {
+      font-size: 15px;
+    }
+
+    .law-card-desc {
+      font-size: 13.5px;
+    }
+  }
 </style>
 
 <div class="law-hero">

@@ -109,6 +109,116 @@
     text-align: right;
     word-break: break-word;
   }
+  /* ===========================
+   TABLET (992px)
+=========================== */
+@media (max-width: 992px){
+
+.leadership-page{
+    padding:40px 25px 80px;
+}
+
+.leader-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+}
+
+
+/* ===========================
+MOBILE (768px)
+=========================== */
+@media (max-width:768px){
+
+.leadership-hero{
+    padding:40px 20px;
+}
+
+.leadership-hero h1{
+    font-size:28px;
+}
+
+.leadership-page{
+    padding:30px 15px 60px;
+}
+
+.leader-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+}
+
+.leader-card{
+    padding:20px;
+}
+
+.leader-photo,
+.leader-photo-placeholder{
+    width:110px;
+    height:110px;
+}
+
+.leader-name{
+    font-size:17px;
+}
+
+.leader-position{
+    font-size:14px;
+}
+
+.leader-info{
+    font-size:13px;
+}
+
+.leader-info-row{
+    flex-direction:column;
+    gap:3px;
+    align-items:flex-start;
+}
+
+.leader-info-row span:last-child{
+    text-align:left;
+}
+
+}
+
+
+/* ===========================
+SMALL MOBILE (480px)
+=========================== */
+@media (max-width:480px){
+
+.leadership-hero{
+    padding:30px 15px;
+}
+
+.leadership-hero h1{
+    font-size:24px;
+}
+
+.leader-card{
+    padding:18px;
+}
+
+.leader-photo,
+.leader-photo-placeholder{
+    width:95px;
+    height:95px;
+}
+
+.leader-name{
+    font-size:16px;
+}
+
+.leader-position{
+    font-size:13px;
+}
+
+.leader-info{
+    font-size:12px;
+}
+
+}
 </style>
 
 <div class="leadership-hero">

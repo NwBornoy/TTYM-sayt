@@ -594,6 +594,22 @@ title="Instagram">
             opacity: 0.9;
         }
 
+        /* ===== TABLET (1024px va undan kichik) ===== */
+        @media (max-width: 1024px) {
+            .gallery-section {
+                padding: 45px 18px;
+            }
+
+            .gallery-section .section-header h2 {
+                font-size: 26px;
+            }
+
+            .gallery-slide {
+                width: 230px;
+                height: 290px;
+            }
+        }
+
         @media (max-width: 640px) {
             .gallery-slide {
                 width: 200px;
@@ -602,6 +618,46 @@ title="Instagram">
             .gallery-buttons {
                 flex-direction: column;
                 align-items: center;
+            }
+        }
+
+        /* ===== MOBIL (480px va undan kichik) ===== */
+        @media (max-width: 480px) {
+            .gallery-section {
+                padding: 30px 12px;
+            }
+
+            .gallery-section .section-header h2 {
+                font-size: 21px;
+            }
+
+            .gallery-section .section-header p {
+                font-size: 13.5px;
+            }
+
+            .gallery-slide {
+                width: 155px;
+                height: 195px;
+            }
+
+            .gallery-nav {
+                width: 34px;
+                height: 34px;
+                font-size: 17px;
+            }
+
+            .gallery-play-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .gallery-btn {
+                padding: 12px 24px;
+                font-size: 14px;
+                width: 100%;
+                text-align: center;
+                box-sizing: border-box;
             }
         }
     </style>
@@ -1087,7 +1143,7 @@ title="Instagram">
     
     
             /* =====================================================
-               MOBILE
+               TABLET (768px va undan kichik)
                ===================================================== */
     
             @media (max-width: 768px) {
@@ -1148,6 +1204,75 @@ title="Instagram">
                     font-size: 34px;
                 }
     
+            }
+
+
+            /* =====================================================
+               MOBIL (480px va undan kichik)
+               ===================================================== */
+
+            @media (max-width: 480px) {
+
+                .partners-section,
+                .useful-links-section {
+                    padding: 34px 10px;
+                }
+
+                .partners-icon,
+                .useful-links-icon {
+                    font-size: 28px;
+                }
+
+                .partners-header h2,
+                .useful-links-header h2 {
+                    font-size: 20px;
+                }
+
+                .partners-header p,
+                .useful-links-header p {
+                    font-size: 13px;
+                }
+
+                .partner-item {
+                    flex-basis: 105px;
+                    height: 75px;
+                }
+
+                .partner-item img {
+                    max-width: 90px;
+                    max-height: 55px;
+                }
+
+                .useful-item {
+                    flex-basis: 185px;
+                    min-height: 85px;
+                }
+
+                .useful-logo {
+                    flex-basis: 55px;
+                    width: 55px;
+                    height: 55px;
+                }
+
+                .useful-logo img {
+                    max-width: 55px;
+                    max-height: 50px;
+                }
+
+                .useful-info span {
+                    font-size: 12px;
+                }
+
+                .useful-info strong {
+                    font-size: 11px;
+                }
+
+                .partners-nav,
+                .useful-nav {
+                    width: 24px;
+                    font-size: 26px;
+                }
+
             }
     
         </style>

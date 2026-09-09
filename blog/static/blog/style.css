@@ -2367,18 +2367,23 @@ img {
 /* =========================================================
    27. RESPONSIVE — 700
    ========================================================= */
-@media (max-width: 700px) {
-    .footer-inner {
+   @media (max-width: 700px) {
+    .footer-top {
         grid-template-columns: 1fr;
-        gap: 20px;
-        padding: 25px 0;
+        gap: 30px;
+        padding: 35px 20px 25px;
     }
 
-    .footer-brand,
-    .footer-center,
-    .footer-emergency {
+    .footer-bottom-inner {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 18px 20px;
         text-align: center;
+    }
+
+    .footer-brand {
         justify-content: center;
+        text-align: left;
     }
 
     .post-detail {
@@ -2556,7 +2561,9 @@ img {
     .footer-inner {
         grid-template-columns: 1fr;
     }
+    
 }
+
 
 
 /* =========================================================
@@ -3569,5 +3576,175 @@ img {
         width: 70px;
         height: 56px;
         min-width: 70px;
+    }
+}
+/* =========================================================
+   31. RESPONSIVE — DROPDOWN MENYULAR (mobil/planshet)
+   ========================================================= */
+   @media (max-width: 900px) {
+    .nav-dropdown .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+    }
+
+    .nav-dropdown .dropdown-menu a {
+        padding: 10px 16px;
+        font-size: 13px;
+        background: rgba(255, 255, 255, 0.04);
+        color: #ffffff !important;
+    }
+
+    .nav-dropdown .dropdown-menu a:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff !important;
+    }
+
+    .nav-dropdown {
+        height: auto;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav-dropdown-title {
+        justify-content: center;
+    }
+
+    .footer-dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+    .footer-dropdown:hover .footer-dropdown-menu,
+    .footer-dropdown .footer-dropdown-menu {
+        display: block;
+    }
+}
+/* =========================================================
+   32. RESPONSIVE — CHAT
+   ========================================================= */
+@media (max-width: 600px) {
+    .chat-container {
+        width: 100%;
+        margin: 15px auto;
+        border-radius: 10px;
+    }
+
+    .chat-body {
+        height: 65vh;
+        padding: 12px;
+    }
+
+    .chat-header {
+        padding: 14px;
+        gap: 10px;
+    }
+
+    .chat-avatar {
+        width: 42px;
+        height: 42px;
+        font-size: 17px;
+    }
+
+    .bubble {
+        max-width: 85%;
+        font-size: 14px;
+    }
+
+    .chat-footer {
+        padding: 10px;
+    }
+
+    .chat-footer button {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
+/* =========================================================
+   33. RESPONSIVE — QO'SHIMCHA TUZATISHLAR
+   ========================================================= */
+
+/* ---- ESKI .hero (52%/48% flex) ---- */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        width: calc(100% - 30px);
+        min-height: auto;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 40px 30px 20px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-image {
+        width: 100%;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
+
+    .hero-image img {
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-content {
+        padding: 30px 18px 15px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .hero-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ---- .article-card (rasm + matn flex qatori) ---- */
+@media (max-width: 700px) {
+    .article-card {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .article-image {
+        width: 100%;
+        min-height: 160px;
+        height: 160px;
+    }
+
+    .article-content {
+        width: 100%;
+        padding: 16px 18px;
+    }
+
+    .article-placeholder {
+        font-size: 40px;
+    }
+}
+
+/* ---- .footer-top (5 ustunli grid) — planshet oraliq ---- */
+@media (max-width: 900px) {
+    .footer-top {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        padding: 40px 20px 25px;
     }
 }

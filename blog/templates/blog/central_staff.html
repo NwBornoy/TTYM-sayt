@@ -109,6 +109,72 @@
     text-align: right;
     word-break: break-word;
   }
+
+  /* ===== Planshet uchun (≤768px) ===== */
+  @media (max-width: 768px) {
+    .leadership-hero {
+      padding: 40px 25px;
+    }
+
+    .leadership-hero h1 {
+      font-size: 26px;
+    }
+
+    .leadership-page {
+      padding: 35px 20px 70px;
+    }
+
+    .leader-grid {
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .leader-card {
+      padding: 20px;
+    }
+  }
+
+  /* ===== Telefon uchun (≤480px) ===== */
+  @media (max-width: 480px) {
+    .leadership-hero {
+      padding: 30px 15px;
+    }
+
+    .leadership-hero h1 {
+      font-size: 20px;
+    }
+
+    .leadership-page {
+      padding: 20px 12px 50px;
+    }
+
+    .leader-grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .leader-card {
+      padding: 18px;
+    }
+
+    .leader-photo,
+    .leader-photo-placeholder {
+      width: 100px;
+      height: 100px;
+    }
+
+    .leader-name {
+      font-size: 16px;
+    }
+
+    .leader-position {
+      font-size: 13px;
+    }
+
+    .leader-info {
+      font-size: 13px;
+    }
+  }
 </style>
 
 <div class="leadership-hero">

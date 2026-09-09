@@ -146,12 +146,6 @@
     }
   }
 
-  @media (max-width: 640px) {
-    .ab-branch-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
   .ab-branch-card {
     width: 100%;
     max-width: 100%;
@@ -286,6 +280,7 @@
   .callcenter-detail-value { font-size: 16px; font-weight: 600; }
 
   @media (max-width: 768px) {
+    .callcenter-section { padding: 0 20px; }
     .callcenter-box { grid-template-columns: 1fr; padding: 35px 25px; }
   }
 
@@ -343,6 +338,21 @@
   .goal h3 { font-size: 18px; margin: 0 0 10px; }
   .goal p { font-size: 14px; line-height: 1.6; margin: 0; opacity: 0.9; }
 
+  /* PLANSHET (769px - 1024px) */
+  @media (max-width: 1024px) {
+    .about-hero { padding: 60px 30px; }
+    .history-section,
+    .team-section,
+    .about-gallery-section,
+    .ab-branches-section,
+    .testimonials-section,
+    .mission-section {
+      padding: 60px 30px;
+    }
+    .callcenter-box { padding: 40px 30px; gap: 30px; }
+  }
+
+  /* TELEFON (max 768px) */
   @media (max-width: 768px) {
     .about-hero { padding: 40px 20px; }
     .about-stats, .ab-branches-section, .mission-section,
@@ -351,6 +361,42 @@
     .ab-branch-badge { position: static; display: inline-block; margin-bottom: 15px; }
     .about-stats .stat-number { font-size: 36px; }
     .section-header h2 { font-size: 28px; }
+    .team-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; }
+    .team-card { padding: 25px 15px; }
+    .timeline-item { padding-left: 45px; }
+    .timeline::before { left: 12px; }
+    .timeline-dot { left: 3px; }
+  }
+
+  /* KICHIK TELEFONLAR (max 480px) */
+  @media (max-width: 480px) {
+    .about-hero { padding: 32px 16px; }
+    .about-hero .subtitle { font-size: 15px; }
+    .section-header h2 { font-size: 24px; }
+    .section-header p { font-size: 14px; }
+
+    .history-section,
+    .team-section,
+    .about-gallery-section,
+    .ab-branches-section,
+    .testimonials-section,
+    .mission-section {
+      padding: 32px 16px;
+    }
+
+    .ab-branch-card { padding: 22px; }
+    .ab-branch-socials { flex-direction: column; }
+    .ab-branch-social-btn { min-width: 0; }
+
+    .callcenter-section { padding: 0 16px; }
+    .callcenter-box { padding: 25px 18px; }
+    .callcenter-text h2 { font-size: 24px; }
+    .callcenter-phone { font-size: 18px; padding: 12px 18px; }
+
+    .mission-container h2 { font-size: 26px; }
+    .goal { padding: 18px; }
+
+    .testimonial-card { padding: 20px; }
   }
 </style>
 
