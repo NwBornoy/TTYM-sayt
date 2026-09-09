@@ -20,6 +20,36 @@ from .models import Law
 from .models import PresidentialDecree
 from .models import GovernmentDecree
 from .models import NormativeDocument
+from .models import FinancialTransparencyDocument, HRPolicyDocument
+from .models import OrganizationalLegalInfo, ActivityResultsInfo
+
+
+@admin.register(OrganizationalLegalInfo)
+class OrganizationalLegalInfoAdmin(admin.ModelAdmin):
+    list_display = ["title", "order", "is_published", "created_at"]
+    list_editable = ["order", "is_published"]
+    ordering = ["order"]
+
+
+@admin.register(ActivityResultsInfo)
+class ActivityResultsInfoAdmin(admin.ModelAdmin):
+    list_display = ["title", "order", "is_published", "created_at"]
+    list_editable = ["order", "is_published"]
+    ordering = ["order"]
+
+
+@admin.register(FinancialTransparencyDocument)
+class FinancialTransparencyDocumentAdmin(admin.ModelAdmin):
+    list_display = ["title", "order", "is_published", "created_at"]
+    list_editable = ["order", "is_published"]
+    ordering = ["order"]
+
+
+@admin.register(HRPolicyDocument)
+class HRPolicyDocumentAdmin(admin.ModelAdmin):
+    list_display = ["title", "order", "is_published", "created_at"]
+    list_editable = ["order", "is_published"]
+    ordering = ["order"]
 
 
 @admin.register(NormativeDocument)

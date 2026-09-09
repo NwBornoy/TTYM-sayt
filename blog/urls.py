@@ -24,7 +24,10 @@ urlpatterns = [
     path("prezident-hujjatlari/", views.PresidentialDecreeListView.as_view(), name="decree_list"),
     path("hukumat-hujjatlari/", views.GovernmentDecreeListView.as_view(), name="gov_decree_list"),
     path("normativ-hujjatlar/", views.NormativeDocumentListView.as_view(), name="normative_list"),
-
+    path("moliya-xojalik-shaffofligi/", views.FinancialTransparencyListView.as_view(), name="finance_list"),
+    path("kadrlar-siyosati/", views.HRPolicyListView.as_view(), name="hr_policy_list"),
+    path("tashkiliy-huquqiy-malumotlar/", views.OrganizationalLegalListView.as_view(), name="org_legal_list"),
+    path("faoliyat-va-natijalar/", views.ActivityResultsListView.as_view(), name="activity_results_list"),
     path("ekofaol/", views.EkoActivityListView.as_view(), name="eko_list"),
     re_path(r"^ekofaol/(?P<slug>[\w\-']+)/$", views.EkoActivityDetailView.as_view(), name="eko_detail"),
 ]

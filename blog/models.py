@@ -512,3 +512,129 @@ class NormativeDocument(models.Model):
     @property
     def opens_in_new_tab(self):
         return True
+
+class FinancialTransparencyDocument(models.Model):
+    """Moliya-xo'jalik shaffofligi - havola yoki yuklangan faylga yo'naltiruvchi kartalar."""
+    title = models.CharField("Sarlavha", max_length=300)
+    description = models.TextField("Qisqa tavsifi")
+    image = models.ImageField("Rasm (karta uchun)", upload_to="finance_docs/", null=True, blank=True)
+    url = models.URLField(
+        "Tashqi havola", blank=True,
+        help_text="Agar hujjat boshqa saytda joylashgan bo'lsa, shu yerga havolani kiriting.",
+    )
+    file = models.FileField(
+        "Fayl (PDF, Word, Excel, TXT, rasm)", upload_to="finance_files/", null=True, blank=True,
+        help_text="Agar hujjat faylini saytga yuklamoqchi bo'lsangiz, shu yerdan tanlang.",
+    )
+    order = models.PositiveIntegerField("Tartibi", default=0)
+    is_published = models.BooleanField("Chop etilgan", default=True)
+    created_at = models.DateTimeField("Yaratilgan vaqt", auto_now_add=True)
+
+    class Meta:
+        ordering = ["order", "-created_at"]
+        verbose_name = "Moliya-xo'jalik hujjati"
+        verbose_name_plural = "Moliya-xo'jalik shaffofligi"
+
+    def __str__(self):
+        return self.title
+
+    @property
+    def link(self):
+        if self.file:
+            return self.file.url
+        return self.url
+
+
+class HRPolicyDocument(models.Model):
+    """Kadrlar siyosati - havola yoki yuklangan faylga yo'naltiruvchi kartalar."""
+    title = models.CharField("Sarlavha", max_length=300)
+    description = models.TextField("Qisqa tavsifi")
+    image = models.ImageField("Rasm (karta uchun)", upload_to="hr_docs/", null=True, blank=True)
+    url = models.URLField(
+        "Tashqi havola", blank=True,
+        help_text="Agar hujjat boshqa saytda joylashgan bo'lsa, shu yerga havolani kiriting.",
+    )
+    file = models.FileField(
+        "Fayl (PDF, Word, Excel, TXT, rasm)", upload_to="hr_files/", null=True, blank=True,
+        help_text="Agar hujjat faylini saytga yuklamoqchi bo'lsangiz, shu yerdan tanlang.",
+    )
+    order = models.PositiveIntegerField("Tartibi", default=0)
+    is_published = models.BooleanField("Chop etilgan", default=True)
+    created_at = models.DateTimeField("Yaratilgan vaqt", auto_now_add=True)
+
+    class Meta:
+        ordering = ["order", "-created_at"]
+        verbose_name = "Kadrlar siyosati hujjati"
+        verbose_name_plural = "Kadrlar siyosati"
+
+    def __str__(self):
+        return self.title
+
+    @property
+    def link(self):
+        if self.file:
+            return self.file.url
+        return self.url
+    
+class OrganizationalLegalInfo(models.Model):
+    """Tashkiliy-huquqiy ma'lumotlar - havola yoki yuklangan faylga yo'naltiruvchi kartalar."""
+    title = models.CharField("Sarlavha", max_length=300)
+    description = models.TextField("Qisqa tavsifi")
+    image = models.ImageField("Rasm (karta uchun)", upload_to="org_legal/", null=True, blank=True)
+    url = models.URLField(
+        "Tashqi havola", blank=True,
+        help_text="Agar hujjat boshqa saytda joylashgan bo'lsa, shu yerga havolani kiriting.",
+    )
+    file = models.FileField(
+        "Fayl (PDF, Word, Excel, TXT, rasm)", upload_to="org_legal_files/", null=True, blank=True,
+        help_text="Agar hujjat faylini saytga yuklamoqchi bo'lsangiz, shu yerdan tanlang.",
+    )
+    order = models.PositiveIntegerField("Tartibi", default=0)
+    is_published = models.BooleanField("Chop etilgan", default=True)
+    created_at = models.DateTimeField("Yaratilgan vaqt", auto_now_add=True)
+
+    class Meta:
+        ordering = ["order", "-created_at"]
+        verbose_name = "Tashkiliy-huquqiy ma'lumot"
+        verbose_name_plural = "Tashkiliy-huquqiy ma'lumotlar"
+
+    def __str__(self):
+        return self.title
+
+    @property
+    def link(self):
+        if self.file:
+            return self.file.url
+        return self.url
+
+
+class ActivityResultsInfo(models.Model):
+    """Faoliyat va natijalar to'g'risidagi axborot - havola yoki yuklangan faylga yo'naltiruvchi kartalar."""
+    title = models.CharField("Sarlavha", max_length=300)
+    description = models.TextField("Qisqa tavsifi")
+    image = models.ImageField("Rasm (karta uchun)", upload_to="activity_results/", null=True, blank=True)
+    url = models.URLField(
+        "Tashqi havola", blank=True,
+        help_text="Agar hujjat boshqa saytda joylashgan bo'lsa, shu yerga havolani kiriting.",
+    )
+    file = models.FileField(
+        "Fayl (PDF, Word, Excel, TXT, rasm)", upload_to="activity_results_files/", null=True, blank=True,
+        help_text="Agar hujjat faylini saytga yuklamoqchi bo'lsangiz, shu yerdan tanlang.",
+    )
+    order = models.PositiveIntegerField("Tartibi", default=0)
+    is_published = models.BooleanField("Chop etilgan", default=True)
+    created_at = models.DateTimeField("Yaratilgan vaqt", auto_now_add=True)
+
+    class Meta:
+        ordering = ["order", "-created_at"]
+        verbose_name = "Faoliyat va natijalar axboroti"
+        verbose_name_plural = "Faoliyat va natijalar to'g'risidagi axborot"
+
+    def __str__(self):
+        return self.title
+
+    @property
+    def link(self):
+        if self.file:
+            return self.file.url
+        return self.url

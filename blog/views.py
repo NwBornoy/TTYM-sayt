@@ -23,6 +23,48 @@ from .models import Law
 from .models import PresidentialDecree
 from .models import GovernmentDecree
 from .models import NormativeDocument
+from .models import FinancialTransparencyDocument, HRPolicyDocument
+from .models import OrganizationalLegalInfo, ActivityResultsInfo
+
+
+class OrganizationalLegalListView(ListView):
+    """Tashkiliy-huquqiy ma'lumotlar."""
+    model = OrganizationalLegalInfo
+    template_name = "blog/org_legal_list.html"
+    context_object_name = "documents"
+
+    def get_queryset(self):
+        return OrganizationalLegalInfo.objects.filter(is_published=True).order_by("order", "-created_at")
+
+
+class ActivityResultsListView(ListView):
+    """Faoliyat va natijalar to'g'risidagi axborot."""
+    model = ActivityResultsInfo
+    template_name = "blog/activity_results_list.html"
+    context_object_name = "documents"
+
+    def get_queryset(self):
+        return ActivityResultsInfo.objects.filter(is_published=True).order_by("order", "-created_at")
+
+
+class FinancialTransparencyListView(ListView):
+    """Moliya-xo'jalik shaffofligi."""
+    model = FinancialTransparencyDocument
+    template_name = "blog/finance_list.html"
+    context_object_name = "documents"
+
+    def get_queryset(self):
+        return FinancialTransparencyDocument.objects.filter(is_published=True).order_by("order", "-created_at")
+
+
+class HRPolicyListView(ListView):
+    """Kadrlar siyosati."""
+    model = HRPolicyDocument
+    template_name = "blog/hr_policy_list.html"
+    context_object_name = "documents"
+
+    def get_queryset(self):
+        return HRPolicyDocument.objects.filter(is_published=True).order_by("order", "-created_at")
 
 
 class NormativeDocumentListView(ListView):
