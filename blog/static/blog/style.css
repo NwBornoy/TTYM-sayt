@@ -3810,3 +3810,64 @@ img {
     }
 
 }
+/* =========================================================
+   34. GRID BLOWOUT TUZATISH — FOOTER YON TOMONGA CHIQIB
+   KETISHINING OLDINI OLISH (min-width bug fix)
+   ========================================================= */
+
+   .footer-top {
+    min-width: 0 !important;
+}
+
+.footer-top > * {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.footer-menu,
+.footer-menu li,
+.footer-dropdown-menu,
+.footer-brand,
+.footer-brand-text,
+.footer-hours,
+.footer-contact {
+    min-width: 0 !important;
+    max-width: 100% !important;
+}
+
+.footer-phone {
+    white-space: normal;
+    word-break: break-word;
+}
+
+/* Grid/flex konteynerlarning umumiy xavfsizligi uchun */
+.footer-bottom-inner {
+    min-width: 0 !important;
+}
+
+.footer-bottom-inner > * {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow-wrap: break-word;
+}
+
+/* =========================================================
+   35. FOOTER — YAKUNIY, ENG KUCHLI MOBIL QOIDA
+   (barcha oldingi zid qoidalarni bosib o'tadi)
+   ========================================================= */
+@media (max-width: 768px) {
+    .footer-top {
+        width: calc(100% - 30px) !important;
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+        padding: 35px 0 !important;
+    }
+
+    .footer-bottom-inner {
+        width: calc(100% - 30px) !important;
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+    }
+}
