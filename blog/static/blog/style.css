@@ -3499,6 +3499,7 @@ img {
     .nav-dropdown .dropdown-menu {
         position: static;
         width: 100%;
+        background: transparent;
         box-shadow: none;
         border-radius: 0;
         padding: 0;
