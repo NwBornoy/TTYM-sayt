@@ -3497,7 +3497,7 @@ img {
    ========================================================= */
 @media (max-width: 900px) {
     .nav-dropdown .dropdown-menu {
-        display: none;
+        display: none !important;
         position: static;
         width: 100%;
         background: transparent;
@@ -3507,7 +3507,7 @@ img {
     }
 
     .nav-dropdown.open .dropdown-menu {
-        display: block;
+        display: block !important;
     }
 
     .nav-dropdown.open .menu-arrow {
@@ -3725,7 +3725,7 @@ img {
 @media (max-width: 900px) {
     .footer-dropdown-menu {
         position: static;
-        display: none;
+        display: none !important;
         width: 100%;
         margin-top: 10px;
         margin-bottom: 0;
@@ -3734,7 +3734,7 @@ img {
     }
 
     .footer-dropdown.open .footer-dropdown-menu {
-        display: block;
+        display: block !important;
     }
 
     .footer-dropdown.open .menu-arrow {
