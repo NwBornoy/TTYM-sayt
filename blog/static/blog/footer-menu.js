@@ -1,36 +1,39 @@
-// Footer ichidagi ochiladigan menyular (Faoliyat, Markaz, Hujjatlar, Matbuot markazi)
-// Telefon va planshetda strelkaga bosilganda ochiladi/yopiladi — xuddi
-// kompyuter variantida sichqoncha olib borilganda ochilgani kabi.
+// Footer va bosh menyu (nav) ichidagi ochiladigan menyular
+// (Faoliyat, Markaz, Hujjatlar, Matbuot markazi va h.k.)
+// Telefon va planshetda strelkaga bosilganda ochiladi/yopiladi.
 
 document.addEventListener('DOMContentLoaded', function () {
-    var dropdowns = document.querySelectorAll('.footer-dropdown');
 
-    dropdowns.forEach(function (dropdown) {
-        var title = dropdown.querySelector('.footer-dropdown-title');
-        var arrow = dropdown.querySelector('.menu-arrow');
+    function setupAccordion(selector, breakpoint) {
+        var groups = document.querySelectorAll(selector);
 
-        if (!title || !arrow) {
-            return;
-        }
+        groups.forEach(function (group) {
+            var arrow = group.querySelector('.menu-arrow');
 
-        arrow.addEventListener('click', function (e) {
-            // Faqat mobil/planshet enida ishlaydi.
-            // Kompyuterda (768px dan katta) sichqoncha bilan hover orqali ochiladi.
-            if (window.innerWidth <= 900) {
-                e.preventDefault();
-                e.stopPropagation();
-
-                var isOpen = dropdown.classList.contains('open');
-
-                // Boshqa ochiq menyularni yopib qo'yamiz (bittasi ochiq bo'lsin)
-                dropdowns.forEach(function (other) {
-                    other.classList.remove('open');
-                });
-
-                if (!isOpen) {
-                    dropdown.classList.add('open');
-                }
+            if (!arrow) {
+                return;
             }
+
+            arrow.addEventListener('click', function (e) {
+                if (window.innerWidth <= breakpoint) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    var isOpen = group.classList.contains('open');
+
+                    // Boshqa ochiq menyularni yopib qo'yamiz (bittasi ochiq bo'lsin)
+                    groups.forEach(function (other) {
+                        other.classList.remove('open');
+                    });
+
+                    if (!isOpen) {
+                        group.classList.add('open');
+                    }
+                }
+            });
         });
-    });
+    }
+
+    setupAccordion('.footer-dropdown', 900);
+    setupAccordion('.nav-dropdown', 900);
 });

@@ -3497,12 +3497,21 @@ img {
    ========================================================= */
 @media (max-width: 900px) {
     .nav-dropdown .dropdown-menu {
+        display: none;
         position: static;
         width: 100%;
         background: transparent;
         box-shadow: none;
         border-radius: 0;
         padding: 0;
+    }
+
+    .nav-dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .nav-dropdown.open .menu-arrow {
+        transform: rotate(180deg);
     }
 
     .nav-dropdown .dropdown-menu a {
