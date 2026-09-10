@@ -12,12 +12,10 @@ select,
 a {
     font-family: "Times New Roman", Times, serif !important;
 }
-
 html, body {
     overflow-x: hidden;
     max-width: 100%;
 }
-
 /* Font Awesome ikonkalari o'zining shriftida qolishi kerak,
    aks holda ikonka o'rniga bo'sh kvadrat chiqadi */
 .fa,
@@ -1316,44 +1314,57 @@ img {
     background: #0a1a30;
     color: #c7d1e0;
 }
-
+ 
 .footer-top {
     width: min(1200px, calc(100% - 60px));
     margin: 0 auto;
     padding: 50px 0 35px;
-
+ 
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr 1fr 1.1fr;
     gap: 30px;
+
+    /* GRID BLOWOUT TUZATISH: standart holatda grid ustunlarining
+       min-width qiymati "auto" bo'ladi, ya'ni ichidagi eng uzun
+       so'z/elementga qarab cho'ziladi. Shu sabab mobil ekranda
+       ustun konteynerdan tashqariga chiqib ketishi mumkin edi. */
+    min-width: 0;
 }
 
+.footer-top > * {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+ 
 /* ---- BREND USTUNI ---- */
 .footer-brand {
     display: flex;
     align-items: flex-start;
     gap: 14px;
 }
-
+ 
 .footer-logo {
     width: 56px;
     height: 56px;
     min-width: 56px;
-
+ 
     display: flex;
     align-items: center;
     justify-content: center;
-
+ 
     border-radius: 50%;
     background: #ffffff;
     overflow: hidden;
 }
-
+ 
 .footer-logo img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
-
+ 
 .footer-brand-text strong {
     display: block;
     color: #ffffff;
@@ -1361,70 +1372,72 @@ img {
     line-height: 1.4;
     font-weight: 700;
 }
-
+ 
 .footer-share {
     margin-top: 22px;
 }
-
+ 
 .footer-share span {
     display: block;
     margin-bottom: 10px;
     color: #93a2ba;
     font-size: 13px;
 }
-
+ 
 .footer-socials {
     display: flex;
     gap: 12px;
 }
-
+ 
 .footer-socials a {
     width: 34px;
     height: 34px;
-
+ 
     display: flex;
     align-items: center;
     justify-content: center;
-
+ 
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.08);
     color: #ffffff;
-
+ 
     font-size: 14px;
     transition: background 0.2s ease;
 }
-
+ 
 .footer-socials a:hover {
     background: #ed1c24;
 }
-
+ 
 /* ---- MENYU USTUNLARI ---- */
 .footer-menu {
     list-style: none;
     margin: 0;
     padding: 0;
-
+ 
     display: flex;
     flex-direction: column;
     gap: 16px;
-}
 
+    min-width: 0;
+}
+ 
 .footer-menu a {
     color: #ffffff;
     font-size: 15px;
     font-weight: 700;
 }
-
+ 
 .footer-menu a:hover {
     color: #ed1c24;
 }
-
+ 
 .footer-menu .menu-arrow {
     margin-left: 4px;
     font-size: 9px;
     color: #93a2ba;
 }
-
+ 
 /* ---- ISH VAQTI ---- */
 .footer-hours-label,
 .footer-contact-label {
@@ -1432,7 +1445,7 @@ img {
     color: #93a2ba;
     font-size: 13px;
 }
-
+ 
 .footer-hours strong,
 .footer-contact strong {
     display: block;
@@ -1441,11 +1454,11 @@ img {
     font-weight: 700;
     line-height: 1.5;
 }
-
+ 
 .footer-hours .footer-lunch {
     margin-top: 22px;
 }
-
+ 
 /* ---- ALOQA ---- */
 .footer-phone {
     display: block;
@@ -1453,30 +1466,40 @@ img {
     color: #ffffff;
     font-size: 18px;
     font-weight: 700;
+    white-space: normal;
+    word-break: break-word;
 }
-
+ 
 /* ---- PASTKI QATOR ---- */
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
-
+ 
 .footer-bottom-inner {
     width: min(1200px, calc(100% - 60px));
     margin: 0 auto;
     padding: 20px 0;
-
+ 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
+
+    min-width: 0;
 }
 
+.footer-bottom-inner > * {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+ 
 .footer-bottom-inner p {
     margin: 0;
     color: #8291a5;
     font-size: 12px;
     line-height: 1.5;
 }
-
+ 
 .footer-bottom-inner a {
     color: #93a2ba;
     text-decoration: underline;
@@ -1539,8 +1562,6 @@ img {
     display: inline-block;
     transition: transform 0.2s ease;
 }
-
-
 /* =========================================================
    18. PAGINATION
    ========================================================= */
@@ -2367,13 +2388,20 @@ img {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
     }
+
+    /* Footer — tablet oraliq: 2 ustunga tushadi */
+    .footer-top {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        padding: 40px 20px 25px;
+    }
 }
 
 
 /* =========================================================
    27. RESPONSIVE — 700
    ========================================================= */
-@media (max-width: 700px) {
+   @media (max-width: 700px) {
     .post-detail {
         width: calc(100% - 30px);
         margin-top: 30px;
@@ -2549,7 +2577,7 @@ img {
     .footer-inner {
         grid-template-columns: 1fr;
     }
-
+    
 }
 
 
@@ -2574,42 +2602,18 @@ img {
         grid-template-columns: 1fr;
     }
 }
-
-
-/* =========================================================
+/* =========================================
    QASHQADARYO FILIALLARI — XARITA BLOKI
-   ========================================================= */
+   ========================================= */
 
-.branches-section {
+   .branches-section {
     width: 100%;
-    position: relative;
-    overflow: hidden;
-
-    background-color: #c7c8cc;
-
-    padding-top: 35px;
-    padding-bottom: 50px;
-}
-
-.branches-section .section-header,
-.branches-section .branches-map-container {
-    position: relative;
-    z-index: 2;
+    padding: 70px 0;
 }
 
 .branches-section .section-header {
     text-align: center;
     margin-bottom: 45px;
-}
-
-.branches-section .section-header h2 {
-    color: #ffffff;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
-}
-
-.branches-section .section-header p {
-    color: rgba(255, 255, 255, 0.88);
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
 
 .branches-map-container {
@@ -2629,8 +2633,8 @@ img {
     order: 1;
 
     width: 400px;
+    height: 470px;
     min-width: 400px;
-    height: auto;
 
     padding: 30px;
     box-sizing: border-box;
@@ -2641,14 +2645,123 @@ img {
     border-top: 4px solid #d71920;
 
     text-align: left;
-    overflow: visible;
 
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-.branch-info * {
-    box-sizing: border-box;
+.branch-info-icon {
+    font-size: 45px;
+    text-align: center;
+    margin-bottom: 15px;
 }
+
+.branch-info h3 {
+    margin: 0 0 20px;
+    text-align: center;
+
+    font-size: 24px;
+    color: #1f4788;
+}
+
+.branch-info-line {
+    padding: 13px 0;
+
+    border-bottom: 1px solid #d8dce3;
+
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.branch-info-help {
+    margin-top: 20px;
+
+    text-align: center;
+
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* O'NG TOMON — XARITA */
+.qashqadaryo-map-wrapper {
+    order: 2;
+
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.qashqadaryo-map {
+    width: 150%;
+    max-width: 850px;
+}
+
+.qashqadaryo-map svg {
+    display: block;
+
+    /* TUZATILDI: 110% edi — bu butun sahifani gorizontal
+       cho'zib, chetga chiqib ketishiga sabab bo'lardi. */
+    width: 100%;
+    height: auto;
+
+    max-height: 600px;
+}
+
+
+/* SVG HUDUDLARI — orqa fon (emblema) ko'rinishi uchun yarim shaffof */
+.qashqadaryo-map svg [id] {
+    cursor: pointer;
+    fill-opacity: 0.55 !important;
+    stroke-opacity: 1;
+
+    transition:
+        fill 0.2s ease,
+        fill-opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.qashqadaryo-map svg [id]:hover {
+    fill: #1f4788 !important;
+    fill-opacity: 0.9 !important;
+}
+
+
+/* TELEFONDA */
+@media (max-width: 900px) {
+
+    .branches-map-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .branch-info {
+        width: 100%;
+        min-width: 0;
+        max-width: 500px;
+        order: 1;
+    }
+
+    .qashqadaryo-map-wrapper {
+        width: 100%;
+        order: 2;
+    }
+    .qashqadaryo-map {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .qashqadaryo-map svg {
+        width: 100%;
+        height: auto;
+    }
+}
+/* =========================================================
+   RAHBAR RASMI — YUPQA VA RASMGA YOPISHGAN HALQA
+========================================================= */
 
 .branch-info-icon {
     width: 128px;
@@ -2682,6 +2795,11 @@ img {
     flex-shrink: 0;
 }
 
+
+/* =========================================================
+   RASM — HALQAGA BEVOSITA YOPISHADI
+========================================================= */
+
 .branch-info-icon img {
     width: 122px;
     height: 122px;
@@ -2704,6 +2822,11 @@ img {
     padding: 0;
 }
 
+
+/* =========================================================
+   RASM TOPILMAGANDA
+========================================================= */
+
 .branch-info-icon.no-image {
     background: linear-gradient(
         135deg,
@@ -2713,6 +2836,7 @@ img {
         #063582
     );
 }
+
 
 .branch-info-icon .fallback-icon {
     width: 122px;
@@ -2728,97 +2852,120 @@ img {
 
     font-size: 40px;
 }
+/* RAHBAR KARTASI - TO'LIQ KO'RINISH */
+.branch-info {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
 
+    overflow: visible !important;
+
+    box-sizing: border-box;
+}
+
+/* Ichidagi barcha elementlar sig'ishi uchun */
+.branch-info * {
+    box-sizing: border-box;
+}
+
+/* Sarlavha */
 .branch-title {
-    white-space: normal;
+    height: auto !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+
+    white-space: normal !important;
     word-wrap: break-word;
 }
 
-.branch-info h3 {
-    margin: 0 0 20px;
-    text-align: center;
-
-    font-size: 24px;
-    color: #1f4788;
-}
-
+/* Qatorlar */
 .branch-info-line {
-    padding: 13px 0;
+    height: auto !important;
+    min-height: 0 !important;
 
-    border-bottom: 1px solid #d8dce3;
+    overflow: visible !important;
 
-    font-size: 16px;
-    line-height: 1.5;
-
-    white-space: normal;
+    white-space: normal !important;
     word-break: normal;
 }
 
-.branch-info-help {
-    margin-top: 20px;
-    margin-bottom: 10px;
+/* Ijtimoiy tarmoqlar */
+.branch-socials {
+    height: auto !important;
+    min-height: 0 !important;
 
-    text-align: center;
-
-    color: #777;
-    font-size: 14px;
+    overflow: visible !important;
 }
 
-/* ---- SOCIAL ICONLAR ---- */
+/* Pastki yozuv */
+.branch-info-help {
+    height: auto !important;
+    overflow: visible !important;
+
+    margin-bottom: 10px;
+}
+/* =========================================================
+   HAQIQIY SOCIAL ICONLAR
+========================================================= */
+
 .branch-socials {
-    width: 100%;
+    width: 100% !important;
 
-    margin-top: 25px;
-    margin-bottom: 5px;
+    margin-top: 25px !important;
+    margin-bottom: 5px !important;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 
-    height: 70px;
-    min-height: 70px;
+    gap: 20px !important;
 
-    overflow: visible;
+    height: 70px !important;
+    min-height: 70px !important;
+
+    overflow: visible !important;
 }
 
 .branch-social {
-    width: 60px;
-    height: 60px;
+    width: 60px !important;
+    height: 60px !important;
 
-    padding: 12px;
+    padding: 12px !important;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 
-    background: #ffffff;
+    background: #ffffff !important;
 
-    border-radius: 50%;
+    border-radius: 50% !important;
 
-    text-decoration: none;
+    text-decoration: none !important;
 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
 
-    transition: all 0.25s ease;
+    transition: all 0.25s ease !important;
 
-    flex-shrink: 0;
+    flex-shrink: 0 !important;
 }
 
 #branch-instagram svg {
-    width: 40px;
-    height: 40px;
-    display: block;
-    transform: none;
+    width: 40px !important;
+    height: 40px !important;
+    display: block !important;
+    transform: none !important;
 }
 
 .branch-social:hover {
-    transform: translateY(-4px) scale(1.08);
+    transform: translateY(-4px) scale(1.08) !important;
 
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
 }
+/* =========================================================
+   FILIALLAR UCHUN OLDINGI / KEYINGI TUGMALAR
+========================================================= */
 
-/* ---- OLDINGI / KEYINGI TUGMALAR ---- */
 .branch-navigation {
     display: flex;
     justify-content: center;
@@ -2878,52 +3025,10 @@ img {
 .branch-nav-btn:active {
     transform: scale(0.96);
 }
+/* =========================================================
+   XARITA HUDUDI USTIDAGI YOZUV
+========================================================= */
 
-/* O'NG TOMON — XARITA */
-.qashqadaryo-map-wrapper {
-    order: 2;
-
-    flex: 1;
-
-    min-width: 0;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.qashqadaryo-map {
-    width: 150%;
-    max-width: 850px;
-}
-
-.qashqadaryo-map svg {
-    display: block;
-
-    width: 110%;
-    height: 170%;
-
-    max-height: 600px;
-}
-
-/* SVG HUDUDLARI — orqa fon (emblema) ko'rinishi uchun yarim shaffof */
-.qashqadaryo-map svg [id] {
-    cursor: pointer;
-    fill-opacity: 0.55 !important;
-    stroke-opacity: 1;
-
-    transition:
-        fill 0.2s ease,
-        fill-opacity 0.2s ease,
-        transform 0.2s ease;
-}
-
-.qashqadaryo-map svg [id]:hover {
-    fill: #1f4788 !important;
-    fill-opacity: 0.9 !important;
-}
-
-/* XARITA HUDUDI USTIDAGI YOZUV */
 .map-tooltip {
     position: fixed;
 
@@ -2955,11 +3060,19 @@ img {
         0 5px 15px rgba(0, 0, 0, 0.18);
 }
 
+
+/* Yozuv chiqganda */
+
 .map-tooltip.show {
     opacity: 1;
 
     transform: translateY(0);
 }
+
+
+/* =========================================================
+   XARITADAGI HUDUDNING HOVER HOLATI
+========================================================= */
 
 .map-region-hover {
     fill: #8fd694 !important;
@@ -2972,36 +3085,40 @@ img {
         fill 0.15s ease,
         stroke 0.15s ease;
 }
+/* =========================================================
+   QASHQADARYO FILIALLARI — ORQA FON
+========================================================= */
 
-/* TELEFONDA */
-@media (max-width: 900px) {
+.branches-section {
+    position: relative;
+    overflow: hidden;
 
-    .branches-map-container {
-        flex-direction: column;
-        gap: 30px;
-    }
+    background-color: #c7c8cc;
 
-    .branch-info {
-        width: 100%;
-        min-width: 0;
-        max-width: 500px;
-        order: 1;
-    }
 
-    .qashqadaryo-map-wrapper {
-        width: 100%;
-        order: 2;
-    }
 
-    .qashqadaryo-map {
-        width: 100%;
-        max-width: 100%;
-    }
+    padding-top: 35px;
+    padding-bottom: 50px;
+}
 
-    .qashqadaryo-map svg {
-        width: 100%;
-        height: auto;
-    }
+
+/* Bo‘lim ichidagi elementlar fon ustida turadi */
+.branches-section .section-header,
+.branches-section .branches-map-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Fon rasm/gradient qorong'i bo'lgani uchun sarlavha va matn oq rangda,
+   shunda o'qilishi yaxshi kontrastda bo'ladi */
+.branches-section .section-header h2 {
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.branches-section .section-header p {
+    color: rgba(255, 255, 255, 0.88);
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -3256,8 +3373,6 @@ img {
         font-size: 36px;
     }
 }
-
-
 /* =========================================================
    YANGILIKLAR — V2 (Asosiy + yon ro'yxat)
    ========================================================= */
@@ -3490,12 +3605,10 @@ img {
         min-width: 70px;
     }
 }
-
-
 /* =========================================================
    31. RESPONSIVE — DROPDOWN MENYULAR (mobil/planshet)
    ========================================================= */
-@media (max-width: 900px) {
+   @media (max-width: 900px) {
     .nav-dropdown .dropdown-menu {
         position: static;
         width: 100%;
@@ -3539,8 +3652,6 @@ img {
         display: block;
     }
 }
-
-
 /* =========================================================
    32. RESPONSIVE — CHAT
    ========================================================= */
@@ -3582,8 +3693,6 @@ img {
         font-size: 18px;
     }
 }
-
-
 /* =========================================================
    33. RESPONSIVE — QO'SHIMCHA TUZATISHLAR
    ========================================================= */
@@ -3660,36 +3769,26 @@ img {
 
 
 /* =========================================================
-   34. RESPONSIVE — FOOTER (yakuniy, bittagina qoida)
+   34. FOOTER — YAKUNIY MOBIL QOIDA (768px va undan kichik)
+   Bu — footer uchun YAGONA mobil qoida. Oldingi (700px, 900px)
+   bloklaridagi zid grid-template-columns qiymatlari olib
+   tashlandi, chunki ular bir-birini bosib, oxirida "grid
+   blowout" (ustunning chetga chiqib ketishi) hodisasiga sabab
+   bo'lgan edi.
    ========================================================= */
-@media (max-width: 900px) {
-    .footer-top {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-        padding: 40px 20px 25px;
-    }
-}
-
 @media (max-width: 768px) {
+
     .footer-top {
         width: calc(100% - 30px);
         grid-template-columns: 1fr;
         gap: 30px;
-        margin: 0 auto;
         padding: 35px 0;
-    }
-
-    .footer-top > * {
-        min-width: 0;
-        max-width: 100%;
-        overflow-wrap: break-word;
     }
 
     .footer-bottom-inner {
         width: calc(100% - 30px);
         grid-template-columns: 1fr;
         gap: 12px;
-        margin: 0 auto;
         text-align: center;
     }
 
@@ -3700,7 +3799,10 @@ img {
         align-items: center;
     }
 
-    .footer-menu,
+    .footer-menu {
+        text-align: center;
+    }
+
     .footer-hours,
     .footer-contact {
         text-align: center;
@@ -3710,11 +3812,6 @@ img {
         justify-content: center;
     }
 
-    .footer-phone {
-        white-space: normal;
-        word-break: break-word;
-    }
-
     .footer-dropdown-menu {
         position: static;
         display: block;
@@ -3722,6 +3819,6 @@ img {
         margin-top: 10px;
         margin-bottom: 0;
         box-shadow: none;
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, .05);
     }
 }
