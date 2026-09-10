@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         arrow.addEventListener('click', function (e) {
             // Faqat mobil/planshet enida ishlaydi.
             // Kompyuterda (768px dan katta) sichqoncha bilan hover orqali ochiladi.
-            if (window.innerWidth <= 768) {
+            if (window.innerWidth <= 900) {
                 e.preventDefault();
                 e.stopPropagation();
 

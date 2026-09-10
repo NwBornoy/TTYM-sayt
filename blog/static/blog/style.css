@@ -3533,11 +3533,6 @@ img {
         margin-bottom: 0;
         padding: 0;
     }
-
-    .footer-dropdown:hover .footer-dropdown-menu,
-    .footer-dropdown .footer-dropdown-menu {
-        display: block;
-    }
 }
 
 
@@ -3714,7 +3709,10 @@ img {
         white-space: normal;
         word-break: break-word;
     }
+}
 
+/* ---- FOOTER DROPDOWN — bosib ochish/yopish (telefon/planshet, 900px gacha) ---- */
+@media (max-width: 900px) {
     .footer-dropdown-menu {
         position: static;
         display: none;
