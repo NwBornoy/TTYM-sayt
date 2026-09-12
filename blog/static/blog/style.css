@@ -308,6 +308,47 @@ img {
     font-weight: 700;
 }
 
+/* Mobil hamburger tugmasi — bazaviy holat (desktopda yashirin) */
+.mobile-menu-toggle {
+    display: none;
+
+    width: 38px;
+    height: 38px;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    border: 1px solid #d7dee7;
+    border-radius: 8px;
+    background: #ffffff;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+    background: #062d75;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 
 /* =========================================================
    3. ASOSIY KO'K MENYU
@@ -1325,6 +1366,15 @@ img {
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr 1fr 1.1fr;
     gap: 30px;
+
+    min-width: 0;
+}
+
+.footer-top > * {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 /* ---- BREND USTUNI ---- */
@@ -1407,6 +1457,8 @@ img {
     display: flex;
     flex-direction: column;
     gap: 16px;
+
+    min-width: 0;
 }
 
 .footer-menu a {
@@ -1423,6 +1475,8 @@ img {
     margin-left: 4px;
     font-size: 9px;
     color: #93a2ba;
+    display: inline-block;
+    transition: transform 0.2s ease;
 }
 
 /* ---- ISH VAQTI ---- */
@@ -1453,6 +1507,8 @@ img {
     color: #ffffff;
     font-size: 18px;
     font-weight: 700;
+    white-space: normal;
+    word-break: break-word;
 }
 
 /* ---- PASTKI QATOR ---- */
@@ -1468,6 +1524,14 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
+
+    min-width: 0;
+}
+
+.footer-bottom-inner > * {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: break-word;
 }
 
 .footer-bottom-inner p {
@@ -1535,67 +1599,7 @@ img {
     transform: rotate(180deg);
 }
 
-.footer-menu .menu-arrow {
-    display: inline-block;
-    transition: transform 0.2s ease;
-}
 
-/* =========================================================
-   
-
-   7. FOOTER DROPDOWN — MOBIL UCHUN YAKUNIY MAJBURIY TUZATISH
-   ========================================================= */
-   @media (max-width: 900px) {
-
-    .footer-dropdown-menu {
-        position: static !important;
-        left: auto !important;
-        bottom: auto !important;
-        margin: 0 !important;
-
-        width: 100% !important;
-        max-width: 100% !important;
-
-        display: none !important;
-
-        background: transparent !important;
-        box-shadow: none !important;
-        border-radius: 0 !important;
-
-        padding: 10px 0 0 !important;
-
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .footer-dropdown.open .footer-dropdown-menu {
-        display: flex !important;
-    }
-
-    .footer-dropdown-menu a {
-        color: #c7d1e0 !important;
-        background: transparent !important;
-        font-size: 13px !important;
-        font-weight: 400 !important;
-        text-align: center !important;
-        padding: 6px 10px !important;
-        width: auto !important;
-    }
-
-    .footer-dropdown-menu a:hover {
-        color: #ffffff !important;
-        background: rgba(255, 255, 255, 0.08) !important;
-    }
-
-    .footer-dropdown:hover .footer-dropdown-menu {
-        display: none;
-    }
-
-    .footer-dropdown.open:hover .footer-dropdown-menu {
-        display: flex !important;
-    }
-}
 /* =========================================================
    18. PAGINATION
    ========================================================= */
@@ -2267,9 +2271,9 @@ img {
 
 
 /* =========================================================
-   25. RESPONSIVE — HEADER
+   25. RESPONSIVE — HEADER (900px dan yuqori, planshet kengroq)
    ========================================================= */
-@media (max-width: 1100px) {
+@media (max-width: 1100px) and (min-width: 901px) {
     .header-top {
         padding-left: 20px;
         padding-right: 20px;
@@ -2290,7 +2294,9 @@ img {
         padding-right: 8px;
         font-size: 15px;
     }
+}
 
+@media (max-width: 1100px) {
     .hero-section {
         height: 520px;
         min-height: 520px;
@@ -2320,45 +2326,9 @@ img {
 
 
 /* =========================================================
-   26. RESPONSIVE — 900
+   26. RESPONSIVE — 900 (faqat header'ga aloqasiz qismlar)
    ========================================================= */
 @media (max-width: 900px) {
-    .header-top {
-        height: auto;
-        min-height: 104px;
-        padding: 12px 15px;
-
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .header-brand {
-        height: 75px;
-    }
-
-    .header-actions {
-        width: 100%;
-        height: auto;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .main-navigation {
-        height: auto;
-        min-height: 43px;
-        padding: 0 10px;
-
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .main-navigation > a,
-    .nav-dropdown-title {
-        height: 43px;
-        min-height: 43px;
-        font-size: 13px;
-    }
-
     .stats-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
@@ -2422,6 +2392,13 @@ img {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
     }
+
+    /* Footer — tablet oraliq: 2 ustunga tushadi */
+    .footer-top {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        padding: 40px 20px 25px;
+    }
 }
 
 
@@ -2449,30 +2426,9 @@ img {
 
 
 /* =========================================================
-   28. RESPONSIVE — 600
+   28. RESPONSIVE — 600 (faqat header'ga aloqasiz qismlar)
    ========================================================= */
 @media (max-width: 600px) {
-    .header-brand {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .header-actions {
-        width: 100%;
-    }
-
-    .main-navigation {
-        justify-content: center;
-        padding: 0 5px;
-    }
-
-    .main-navigation > a,
-    .nav-dropdown-title {
-        padding-left: 7px;
-        padding-right: 7px;
-        font-size: 12px;
-    }
-
     .hero-section {
         height: 720px;
         min-height: 720px;
@@ -2600,13 +2556,7 @@ img {
     .search-result-count {
         font-size: 12px;
     }
-
-    .footer-inner {
-        grid-template-columns: 1fr;
-    }
-
 }
-
 
 
 /* =========================================================
@@ -2721,7 +2671,6 @@ img {
 
     position: relative;
 
-    /* Sayt ranglariga mos gradient */
     background: linear-gradient(
         135deg,
         #ed1c24 0%,
@@ -2730,7 +2679,6 @@ img {
         #063582 100%
     );
 
-    /* Yengil va chiroyli soya */
     box-shadow:
         0 4px 12px rgba(6, 53, 130, 0.18);
 
@@ -2749,7 +2697,6 @@ img {
 
     display: block;
 
-    /* OQ CHEGARA YO'Q */
     border: none;
 
     background: #ffffff;
@@ -2955,8 +2902,8 @@ img {
 .qashqadaryo-map svg {
     display: block;
 
-    width: 110%;
-    height: 170%;
+    width: 100%;
+    height: auto;
 
     max-height: 600px;
 }
@@ -3546,63 +3493,10 @@ img {
     }
 }
 
+
 /* =========================================================
-   31. MOBIL/PLANSHET HAMBURGER MENYU (1100px gacha)
+   31. MOBIL/PLANSHET ASOSIY MENYU (KO'K NAVIGATSIYA) — 1100px gacha
    ========================================================= */
-   @media (max-width: 1100px) {
-    .header-top {
-        position: relative;
-    }
-
-    .mobile-menu-toggle {
-        display: flex;
-    }
-
-    .mobile-menu-toggle {
-        position: absolute;
-        left: 15px;
-        bottom: 12px;
-    }
-   .mobile-menu-toggle {
-    display: none;
-
-    width: 40px;
-    height: 40px;
-
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    padding: 0;
-    flex-shrink: 0;
-}
-
-.mobile-menu-toggle span {
-    display: block;
-    width: 26px;
-    height: 3px;
-    border-radius: 2px;
-    background: #ed1c24;
-    transition: transform 0.25s ease, opacity 0.25s ease;
-}
-
-.mobile-menu-toggle.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-}
-
-.mobile-menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.mobile-menu-toggle.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-}
-}
-
 @media (max-width: 1100px) {
     .mobile-menu-toggle {
         display: flex;
@@ -3669,6 +3563,7 @@ img {
         color: #ffffff !important;
     }
 }
+
 
 /* =========================================================
    32. RESPONSIVE — CHAT
@@ -3787,10 +3682,11 @@ img {
     }
 }
 
+
 /* =========================================================
    34. RESPONSIVE — FOOTER (yakuniy, bittagina qoida)
    ========================================================= */
-   @media (max-width: 768px) {
+@media (max-width: 768px) {
     .footer-top {
         width: 100%;
         max-width: 420px;
@@ -3884,17 +3780,52 @@ img {
     }
 
     .footer-dropdown-menu {
-        margin-top: 12px;
-        display: flex;
+        position: static !important;
+        left: auto !important;
+        bottom: auto !important;
+        margin: 12px 0 0 !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        display: none !important;
+
+        background: transparent !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+
+        padding: 0 !important;
+
         flex-direction: column;
         align-items: center;
         gap: 10px;
     }
 
+    .footer-dropdown.open .footer-dropdown-menu {
+        display: flex !important;
+    }
+
+    .footer-dropdown:hover .footer-dropdown-menu {
+        display: none;
+    }
+
+    .footer-dropdown.open:hover .footer-dropdown-menu {
+        display: flex !important;
+    }
+
     .footer-dropdown-menu a {
-        text-align: center;
+        color: #c7d1e0 !important;
+        background: transparent !important;
         font-size: 13px !important;
-        padding: 4px 10px;
+        font-weight: 400 !important;
+        text-align: center !important;
+        padding: 6px 10px !important;
+        width: auto !important;
+    }
+
+    .footer-dropdown-menu a:hover {
+        color: #ffffff !important;
+        background: rgba(255, 255, 255, 0.08) !important;
     }
 
     /* ---- ISH VAQTI / ALOQA ---- */
@@ -3922,205 +3853,12 @@ img {
     }
 }
 
-/* =========================================================
-   35. RESPONSIVE — HEADER-TOP TO'LIQ QAYTA TUZATISH (mobil)
-   ========================================================= */
-@media (max-width: 700px) {
-    .header-brand {
-        text-align: center;
-    }
-    .header-auth-group {
-        width: 100%;
-        max-width: 320px;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    /* "Mehmon" blokini butunlay yashirmaymiz, lekin kichik va soddaroq qilamiz */
-    .header-auth-group .header-user.guest-user {
-        display: flex;
-        height: auto;
-        padding: 0;
-        border: none;
-        background: transparent;
-        gap: 5px;
-        order: -1;   /* tugmalardan tepada tursin */
-    }
-
-    .header-auth-group .header-user.guest-user .user-avatar {
-        width: 16px;
-        height: 16px;
-        min-width: 16px;
-        min-height: 16px;
-        font-size: 11px;
-        background: transparent;
-        color: #9aa5b3;
-    }
-
-    .header-auth-group .header-user.guest-user .user-name {
-        font-size: 12px;
-        font-weight: 400;
-        color: #9aa5b3;
-    }
-
-    /* Kirish + Ro'yxatdan o'tish — bir qatorda, tekis */
-    .header-auth-group .header-login,
-    .header-auth-group .header-register {
-        flex: 1;
-        justify-content: center;
-        text-align: center;
-        white-space: nowrap;
-    }
-
-    .header-auth-buttons-row {
-        width: 100%;
-        display: flex;
-        gap: 10px;
-    }
-
-    /* Kirgan foydalanuvchi uchun */
-    .header-auth-group .header-user:not(.guest-user) {
-        flex: 1;
-        justify-content: center;
-    }
-
-    .header-auth-group .header-logout {
-        flex: 1;
-        justify-content: center;
-    }
-
-    /* ---- QIDIRUV VA TUGMALAR — kichikroq o'lcham ---- */
-    .header-search,
-    .header-auth-buttons-row {
-        max-width: 260px;
-    }
-
-    .header-search input {
-        height: 32px;
-        font-size: 12px;
-        padding: 0 10px;
-    }
-
-    .header-search button {
-        width: 32px;
-        height: 32px;
-        min-width: 32px;
-    }
-
-    .header-search button span {
-        font-size: 15px;
-    }
-
-    .header-login,
-    .header-register,
-    .header-logout {
-        height: 32px;
-        padding: 0 10px;
-        font-size: 12px;
-    }
-    
-}
-
 
 /* =========================================================
-   36. MOBIL FOYDALANUVCHI AYLANASI + HAMBURGER GURUHI
+   35. HEADER-TOP — YANGI IXCHAM MOBIL TARTIB
+   (logotip / qidiruv / avatar + hamburger + Kirish-Ro'yxatdan o'tish)
    ========================================================= */
-
-.mobile-controls {
-    display: none;
-}
-
 @media (max-width: 1100px) {
-    .header-top {
-        position: relative;
-        padding-left: 65px;
-    }
-
-    .mobile-controls {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-
-        position: absolute;
-        left: 15px;
-        bottom: 16px;
-        top: auto;
-        z-index: 1200;
-    }
-
-    .mobile-menu-toggle {
-        position: static;
-        left: auto;
-        right: auto;
-        top: auto;
-        bottom: auto;
-    }
-
-    .header-auth-group > .header-user {
-        display: none;
-    }
-}
-
-.mobile-user-toggle {
-    width: 34px;
-    height: 34px;
-    min-width: 34px;
-
-    border-radius: 50%;
-    border: 2px solid #ed1c24;
-    background: #ffffff;
-    color: #ed1c24;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-family: "Times New Roman", Times, serif !important;
-    font-size: 14px;
-    font-weight: 700;
-
-    cursor: pointer;
-    padding: 0;
-    position: relative;
-}
-
-.mobile-user-toggle.is-authenticated {
-    background: #ed1c24;
-    color: #ffffff;
-}
-
-.mobile-user-label {
-    position: absolute;
-    left: 0;
-    bottom: 42px;
-
-    white-space: nowrap;
-    padding: 6px 12px;
-
-    background: #0c364d;
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: 600;
-    border-radius: 6px;
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
-
-    display: none;
-    z-index: 1300;
-}
-
-.mobile-user-label.show {
-    display: block;
-}
-/* =========================================================
-   37. HEADER-TOP — YANGI IXCHAM MOBIL TARTIB
-   (2-rasm uslubida: logotip / qidiruv / avatar+menyu+tugmalar)
-   ========================================================= */
-   @media (max-width: 1100px) {
 
     .header-top {
         display: flex !important;
@@ -4179,10 +3917,9 @@ img {
         margin-top: 2px;
     }
 
-    /* header-actions ichidagi elementlarni header-top bilan
-       bitta flex qatoriga chiqaramiz, shunda ularni
-       mobile-menu-toggle bilan birga aralashtirib tartiblash
-       mumkin bo'ladi */
+    /* header-actions ichidagi elementlarni header-top bilan bitta
+       flex qatoriga chiqaramiz, shunda ularni mobile-menu-toggle
+       bilan birga aralashtirib tartiblash mumkin bo'ladi */
     .header-actions {
         display: contents;
     }
@@ -4211,14 +3948,14 @@ img {
     .header-user {
         order: 3;
         height: 36px;
-        padding: 0 6px;
+        width: 36px;
+        min-width: 36px;
+        padding: 0;
         gap: 0;
 
         border: 2px solid #ed1c24;
         border-radius: 50%;
         background: #ffffff;
-        width: 36px;
-        min-width: 36px;
     }
 
     .header-user .user-avatar,
@@ -4239,27 +3976,6 @@ img {
     .mobile-menu-toggle {
         order: 4;
         display: flex !important;
-        position: static !important;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 5px;
-
-        width: 36px;
-        height: 36px;
-        padding: 0;
-
-        border: 1px solid #d7dee7;
-        border-radius: 8px;
-        background: #ffffff;
-        cursor: pointer;
-    }
-
-    .mobile-menu-toggle span {
-        width: 18px;
-        height: 2px;
-        background: #062d75;
-        border-radius: 2px;
     }
 
     .header-login,
@@ -4276,7 +3992,7 @@ img {
 @media (max-width: 420px) {
     .header-brand-title {
         font-size: 14px;
-    }
+    }   
 
     .header-brand-subtitle {
         font-size: 12px;
