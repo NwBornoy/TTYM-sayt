@@ -85,10 +85,10 @@ else:
 
 # --- Parollarni tekshirish (kuchsiz parollarning oldini oladi) -----------
 AUTH_PASSWORD_VALIDATORS = [
-    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator", "OPTIONS": {"min_length": 10}},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
+    {"NAME": "blog.validators.UzbekUserAttributeSimilarityValidator"},
+    {"NAME": "blog.validators.UzbekMinimumLengthValidator", "OPTIONS": {"min_length": 7}},
+    {"NAME": "blog.validators.UzbekCommonPasswordValidator"},
+    {"NAME": "blog.validators.UzbekNumericPasswordValidator"},
 ]
 
 LANGUAGE_CODE = "uz"
@@ -121,14 +121,20 @@ CKEDITOR_5_CONFIGS = {
 }
 
 # --- Production xavfsizlik sozlamalari ------------------------------------
-# Sayt haqiqiy domenda HTTPS bilan ishga tushganda DEBUG=False holatda avtomatik yoqiladi.
-if not DEBUG:
+# HTTPS majburiy yo'naltirish FAQAT haqiqiy domenda, SSL sertifikat mavjud bo'lganda yoqiladi.
+# .env faylida DJANGO_USE_HTTPS=True qo'ysangiz (production serverda) ishga tushadi.
+# Lokal (runserver, http://127.0.0.1) test paytida bu False bo'lib qoladi.
+USE_HTTPS = os.environ.get("DJANGO_USE_HTTPS", "False") == "True"
+
+if USE_HTTPS:
     SECURE_SSL_REDIRECT = True            # barcha trafikni HTTPS'ga yo'naltiradi
     SESSION_COOKIE_SECURE = True          # cookie faqat HTTPS orqali yuboriladi
     CSRF_COOKIE_SECURE = True
     SECURE_HSTS_SECONDS = 31536000        # brauzerga doim HTTPS ishlatishni buyuradi
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
+
+if not DEBUG:
     X_FRAME_OPTIONS = "DENY"
     SECURE_CONTENT_TYPE_NOSNIFF = True
 

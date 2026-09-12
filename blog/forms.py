@@ -47,6 +47,17 @@ class RegisterForm(UserCreationForm):
         model = User
         fields = ["username", "email", "password1", "password2"]
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["username"].error_messages = {
+            "unique": "Bu foydalanuvchi nomi allaqachon band. Boshqa nom tanlang.",
+            "required": "Foydalanuvchi nomini kiriting.",
+            "invalid": "Foydalanuvchi nomida faqat harflar, raqamlar va @/./+/-/_ belgilaridan foydalaning.",
+        }
+        self.fields["password1"].help_text = None
+        self.fields["password2"].help_text = None
+
+
 class SupportMessageForm(forms.ModelForm):
 
     class Meta:
@@ -55,7 +66,7 @@ class SupportMessageForm(forms.ModelForm):
 
         widgets = {
             "message": forms.Textarea(attrs={
-                "rows":2,
-                "placeholder":"Savolingizni yozing..."
+                "rows": 2,
+                "placeholder": "Savolingizni yozing..."
             })
         }

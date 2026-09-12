@@ -267,6 +267,7 @@ class AboutView(TemplateView):
     template_name = "blog/about.html"
 
     def get_context_data(self, **kwargs):
+        
         ctx = super().get_context_data(**kwargs)
         ctx["branches"] = Branch.objects.all().order_by("-is_main", "order")
         ctx["main_branch"] = Branch.objects.filter(is_main=True).first()
