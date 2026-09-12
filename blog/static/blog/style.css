@@ -3888,12 +3888,12 @@ img {
     }
 
     .header-brand-logo {
-        width: 90px;
-        height: 90px;
-        min-width: 90px;
-        min-height: 90px;
-        max-width: 90px;
-        max-height: 90px;
+        width: 150px;
+        height: 150px;
+        min-width: 150px;
+        min-height: 150px;
+        max-width: 150px;
+        max-height: 150px;
     }
 
     .header-brand-text {
@@ -3909,7 +3909,7 @@ img {
     }
 
     .header-brand-title {
-        font-size: 26px;
+        font-size: 36px;
     }
 
     .header-brand-subtitle {
@@ -3991,11 +3991,11 @@ img {
 /* Juda kichik ekranlar uchun */
 @media (max-width: 420px) {
     .header-brand-title {
-        font-size: 14px;
+        font-size: 34px;
     }   
 
     .header-brand-subtitle {
-        font-size: 12px;
+        font-size: 24px;
     }
 
     /* =========================================================
