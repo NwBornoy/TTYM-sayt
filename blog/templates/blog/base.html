@@ -10,7 +10,7 @@
         {% block title %}Maqolalar{% endblock %} — 103 Tez tibbiy yordam
     </title>
 
-    <link rel="stylesheet" href="{% static 'blog/style.css' %}?v=1009">
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}?v=1006">
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
@@ -70,8 +70,6 @@
             </form>
 
 
-            <div class="header-auth-group">
-
             {% if user.is_authenticated %}
 
                 <!-- KIRGAN FOYDALANUVCHI -->
@@ -101,6 +99,7 @@
                 </div>
 
 
+                
                 <a href="{% url 'logout' %}"
                     class="header-logout"
                 >
@@ -109,60 +108,47 @@
 
             {% else %}
 
-                <div class="header-auth-buttons-row">
+                <!-- KIRISH -->
+                
+                <a  href="{% url 'login' %}"
+                    class="header-login"
+                >
+                    Kirish
+                </a>
 
-                    <!-- KIRISH -->
-                    <a href="{% url 'login' %}"
-                        class="header-login"
-                    >
-                        Kirish
-                    </a>
 
-                    <!-- RO'YXATDAN O'TISH -->
-                    <a href="{% url 'register' %}"
-                        class="header-register"
-                    >
-                        Ro'yxatdan o'tish
-                    </a>
+                <!-- RO'YXATDAN O'TISH -->
+                
+                <a href="{% url 'register' %}"
+                    class="header-register"
+                >
+                    Ro'yxatdan o'tish
+                </a>
+
+
+                <!-- MEHMON -->
+                <div class="header-user">
+
+                    <span class="user-avatar guest-avatar">
+                        👤
+                    </span>
+
+                    <span class="user-name">
+                        Mehmon
+                    </span>
 
                 </div>
 
             {% endif %}
 
-            </div>
-
         </div>
 
-        <!-- MOBIL BOSHQARUV: FOYDALANUVCHI AYLANASI + HAMBURGER -->
-        <div class="mobile-controls">
-
-            <button
-                type="button"
-                class="mobile-user-toggle {% if user.is_authenticated %}is-authenticated{% endif %}"
-                aria-label="Foydalanuvchi ma'lumoti"
-            >
-                {% if user.is_authenticated %}
-                    {% if user.first_name %}{{ user.first_name|first|upper }}{% else %}{{ user.username|first|upper }}{% endif %}
-                {% else %}
-                    M
-                {% endif %}
-            </button>
-
-            <div class="mobile-user-label">
-                {% if user.is_authenticated %}
-                    {% if user.first_name %}{{ user.first_name }}{% else %}{{ user.username }}{% endif %}
-                {% else %}
-                    Mehmon
-                {% endif %}
-            </div>
-
-            <button type="button" class="mobile-menu-toggle" aria-label="Menyuni ochish">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-        </div>
+        <!-- MOBIL MENYU TUGMASI -->
+        <button type="button" class="mobile-menu-toggle" aria-label="Menyuni ochish">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
     </div>
 
@@ -529,23 +515,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-
-    /* Mobil foydalanuvchi aylanasi — bosilganda ism ko'rinadi/yashiriladi */
-    var userToggle = document.querySelector('.mobile-user-toggle');
-    var userLabel = document.querySelector('.mobile-user-label');
-
-    if (userToggle && userLabel) {
-        userToggle.addEventListener('click', function (e) {
-            e.stopPropagation();
-            userLabel.classList.toggle('show');
-        });
-
-        document.addEventListener('click', function (e) {
-            if (!userLabel.contains(e.target) && !userToggle.contains(e.target)) {
-                userLabel.classList.remove('show');
-            }
-        });
-    }
 });
 </script>
 </body>
