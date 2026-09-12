@@ -1541,7 +1541,9 @@ img {
 }
 
 /* =========================================================
-   17. FOOTER DROPDOWN — MOBIL UCHUN YAKUNIY MAJBURIY TUZATISH
+   
+
+   7. FOOTER DROPDOWN — MOBIL UCHUN YAKUNIY MAJBURIY TUZATISH
    ========================================================= */
    @media (max-width: 900px) {
 
@@ -3923,7 +3925,9 @@ img {
    35. RESPONSIVE — HEADER-TOP TO'LIQ QAYTA TUZATISH (mobil)
    ========================================================= */
 @media (max-width: 700px) {
-
+    .header-brand {
+        text-align: center;
+    }
     .header-auth-group {
         width: 100%;
         max-width: 320px;
@@ -4016,6 +4020,7 @@ img {
         padding: 0 10px;
         font-size: 12px;
     }
+    
 }
 
 
