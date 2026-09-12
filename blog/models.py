@@ -181,7 +181,7 @@ class Post(models.Model):
         on_delete=models.PROTECT,   # muallif hisobi o'chirilsa ham maqola qolishi kerak
         related_name="posts",
     )
-    body = models.TextField("Matn")
+    body = CKEditor5Field("Matn", config_name="default")
     is_published = models.BooleanField(
         "Chop etilgan",
         default=True,

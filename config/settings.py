@@ -115,8 +115,11 @@ CKEDITOR_5_CONFIGS = {
     'default': {
         'toolbar': ['heading', '|', 'bold', 'italic', 'underline', '|',
                     'bulletedList', 'numberedList', '|',
-                    'link', 'blockQuote', 'imageUpload', '|',
+                    'link', 'blockQuote', 'imageUpload', 'mediaEmbed', '|',
                     'undo', 'redo'],
+        'mediaEmbed': {
+            'previewsInData': True,
+        },
     },
 }
 
