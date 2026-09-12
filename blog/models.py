@@ -181,6 +181,13 @@ class Post(models.Model):
         on_delete=models.PROTECT,   # muallif hisobi o'chirilsa ham maqola qolishi kerak
         related_name="posts",
     )
+    image = models.ImageField(
+        "Rasm",
+        upload_to="posts/",
+        null=True,
+        blank=True,
+        help_text="Maqolalar ro'yxatida va sahifa boshida ko'rsatiladigan sarlavha rasmi.",
+    )
     body = CKEditor5Field("Matn", config_name="default")
     is_published = models.BooleanField(
         "Chop etilgan",

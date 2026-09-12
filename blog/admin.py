@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.html import format_html
 
 from .models import (
     Post,
@@ -187,6 +188,7 @@ class PostAdmin(admin.ModelAdmin):
     list_display = (
         "title",
         "author",
+        "image_preview",
         "is_published",
         "created_at",
     )
@@ -208,6 +210,7 @@ class PostAdmin(admin.ModelAdmin):
     readonly_fields = (
         "created_at",
         "updated_at",
+        "image_preview_large",
     )
 
     def get_readonly_fields(self, request, obj=None):
@@ -215,6 +218,24 @@ class PostAdmin(admin.ModelAdmin):
             return self.readonly_fields + ("author",)
 
         return self.readonly_fields
+
+    @admin.display(description="Rasm")
+    def image_preview(self, obj):
+        if obj.image:
+            return format_html(
+                '<img src="{}" style="height:40px; border-radius:4px;" />',
+                obj.image.url,
+            )
+        return "—"
+
+    @admin.display(description="Rasm ko'rinishi")
+    def image_preview_large(self, obj):
+        if obj.image:
+            return format_html(
+                '<img src="{}" style="max-height:200px; border-radius:8px;" />',
+                obj.image.url,
+            )
+        return "Rasm yuklanmagan"
 
 
 # =========================================================

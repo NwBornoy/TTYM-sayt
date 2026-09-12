@@ -160,19 +160,34 @@ margin-bottom: 20px;
 
     <div class="article-image">
 
-        {% cycle 'heat' 'phone' 'medical' as icon_cls silent %}
+        {% if post.image %}
 
-        <div class="article-placeholder {{ icon_cls }}">
+            <img src="{{ post.image.url }}"
+                 alt="{{ post.title }}"
+                 style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                 ">
 
-            {% if icon_cls == 'heat' %}
-                ☀
-            {% elif icon_cls == 'phone' %}
-                103
-            {% else %}
-                +
-            {% endif %}
+        {% else %}
 
-        </div>
+            {% cycle 'heat' 'phone' 'medical' as icon_cls silent %}
+
+            <div class="article-placeholder {{ icon_cls }}">
+
+                {% if icon_cls == 'heat' %}
+                    ☀
+                {% elif icon_cls == 'phone' %}
+                    103
+                {% else %}
+                    +
+                {% endif %}
+
+            </div>
+
+        {% endif %}
 
     </div>
 
@@ -202,7 +217,7 @@ margin-bottom: 20px;
 
 
         <p>
-            {{ post.body|truncatechars:105 }}
+            {{ post.body|striptags|truncatechars:105 }}
         </p>
 
 
