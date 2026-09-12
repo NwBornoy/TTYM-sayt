@@ -1540,7 +1540,60 @@ img {
     transition: transform 0.2s ease;
 }
 
+/* =========================================================
+   17. FOOTER DROPDOWN — MOBIL UCHUN YAKUNIY MAJBURIY TUZATISH
+   ========================================================= */
+   @media (max-width: 900px) {
 
+    .footer-dropdown-menu {
+        position: static !important;
+        left: auto !important;
+        bottom: auto !important;
+        margin: 0 !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        display: none !important;
+
+        background: transparent !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+
+        padding: 10px 0 0 !important;
+
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .footer-dropdown.open .footer-dropdown-menu {
+        display: flex !important;
+    }
+
+    .footer-dropdown-menu a {
+        color: #c7d1e0 !important;
+        background: transparent !important;
+        font-size: 13px !important;
+        font-weight: 400 !important;
+        text-align: center !important;
+        padding: 6px 10px !important;
+        width: auto !important;
+    }
+
+    .footer-dropdown-menu a:hover {
+        color: #ffffff !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+    }
+
+    .footer-dropdown:hover .footer-dropdown-menu {
+        display: none;
+    }
+
+    .footer-dropdown.open:hover .footer-dropdown-menu {
+        display: flex !important;
+    }
+}
 /* =========================================================
    18. PAGINATION
    ========================================================= */
@@ -3491,11 +3544,97 @@ img {
     }
 }
 
-
 /* =========================================================
-   31. RESPONSIVE — DROPDOWN MENYULAR (mobil/planshet)
+   31. MOBIL/PLANSHET HAMBURGER MENYU (1100px gacha)
    ========================================================= */
-@media (max-width: 900px) {
+   @media (max-width: 1100px) {
+    .header-top {
+        position: relative;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .mobile-menu-toggle {
+        position: absolute;
+        left: 15px;
+        bottom: 12px;
+    }
+   .mobile-menu-toggle {
+    display: none;
+
+    width: 40px;
+    height: 40px;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    border-radius: 2px;
+    background: #ed1c24;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+@media (max-width: 1100px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .main-navigation {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+        min-height: 0;
+        padding: 10px 0;
+    }
+
+    .main-navigation.nav-mobile-open {
+        display: flex;
+    }
+
+    .main-navigation > a,
+    .nav-dropdown-title {
+        width: 100%;
+        height: auto;
+        justify-content: flex-start;
+        padding: 14px 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        font-size: 15px;
+    }
+
+    .nav-dropdown {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
     .nav-dropdown .dropdown-menu {
         display: none !important;
         position: static;
@@ -3515,36 +3654,18 @@ img {
     }
 
     .nav-dropdown .dropdown-menu a {
-        padding: 10px 16px;
+        padding: 12px 30px;
         font-size: 13px;
         background: rgba(255, 255, 255, 0.04);
         color: #ffffff !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
     .nav-dropdown .dropdown-menu a:hover {
         background: rgba(255, 255, 255, 0.1);
         color: #ffffff !important;
     }
-
-    .nav-dropdown {
-        height: auto;
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .nav-dropdown-title {
-        justify-content: center;
-    }
-
-    .footer-dropdown-menu {
-        position: static;
-        width: 100%;
-        box-shadow: none;
-        margin-bottom: 0;
-        padding: 0;
-    }
 }
-
 
 /* =========================================================
    32. RESPONSIVE — CHAT
@@ -3663,31 +3784,39 @@ img {
     }
 }
 
-
 /* =========================================================
    34. RESPONSIVE — FOOTER (yakuniy, bittagina qoida)
    ========================================================= */
-@media (max-width: 900px) {
+   @media (max-width: 768px) {
     .footer-top {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-        padding: 40px 20px 25px;
-    }
-}
+        width: 100%;
+        max-width: 420px;
 
-@media (max-width: 768px) {
-    .footer-top {
-        width: calc(100% - 30px);
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 0;
+
         margin: 0 auto;
-        padding: 35px 0;
+        padding: 35px 20px 10px;
     }
 
     .footer-top > * {
         min-width: 0;
         max-width: 100%;
         overflow-wrap: break-word;
+
+        width: 100%;
+
+        padding: 22px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-top > *:last-child {
+        border-bottom: none;
     }
 
     .footer-bottom-inner {
@@ -3698,6 +3827,7 @@ img {
         text-align: center;
     }
 
+    /* ---- BREND BLOKI ---- */
     .footer-brand {
         justify-content: center;
         text-align: center;
@@ -3705,48 +3835,278 @@ img {
         align-items: center;
     }
 
-    .footer-menu,
-    .footer-hours,
-    .footer-contact {
+    .footer-brand-text strong {
         text-align: center;
+    }
+
+    .footer-share {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 18px;
     }
 
     .footer-socials {
         justify-content: center;
     }
 
-    .footer-phone {
-        white-space: normal;
-        word-break: break-word;
+    /* ---- MENYU USTUNLARI — hammasi bir xil tartibda ---- */
+    .footer-menu {
+        align-items: center;
+        gap: 14px;
     }
-}
 
-/* ---- FOOTER DROPDOWN — bosib ochish/yopish (telefon/planshet, 900px gacha) ---- */
-@media (max-width: 900px) {
-    .footer-dropdown-menu {
-        position: static;
-        display: none !important;
+    .footer-menu > li {
         width: 100%;
-        margin-top: 10px;
-        margin-bottom: 0;
-        box-shadow: none;
-        background: rgba(255, 255, 255, 0.05);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .footer-dropdown.open .footer-dropdown-menu {
-        display: block !important;
+    .footer-menu > li > a {
+        font-size: 15px;
     }
 
-    .footer-dropdown.open .menu-arrow {
-        transform: rotate(180deg);
+    /* Dropdown sarlavhasi (Markaz/Faoliyat/Hujjatlar/Matbuot markazi) katta va markazda */
+    .footer-dropdown {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-dropdown-title {
+        justify-content: center;
+        font-size: 15px;
+    }
+
+    .footer-dropdown-menu {
+        margin-top: 12px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
     }
 
     .footer-dropdown-menu a {
-        color: #c7d1e0 !important;
+        text-align: center;
+        font-size: 13px !important;
+        padding: 4px 10px;
     }
 
-    .footer-dropdown-menu a:hover {
-        color: #ffffff !important;
-        background: rgba(255, 255, 255, 0.1);
+    /* ---- ISH VAQTI / ALOQA ---- */
+    .footer-hours,
+    .footer-contact {
+        text-align: center;
+        align-items: center;
     }
+
+    .footer-hours-label,
+    .footer-contact-label {
+        text-align: center;
+    }
+
+    .footer-lunch {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-phone {
+        white-space: normal;
+        word-break: break-word;
+        text-align: center;
+    }
+}
+
+/* =========================================================
+   35. RESPONSIVE — HEADER-TOP TO'LIQ QAYTA TUZATISH (mobil)
+   ========================================================= */
+@media (max-width: 700px) {
+
+    .header-auth-group {
+        width: 100%;
+        max-width: 320px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    /* "Mehmon" blokini butunlay yashirmaymiz, lekin kichik va soddaroq qilamiz */
+    .header-auth-group .header-user.guest-user {
+        display: flex;
+        height: auto;
+        padding: 0;
+        border: none;
+        background: transparent;
+        gap: 5px;
+        order: -1;   /* tugmalardan tepada tursin */
+    }
+
+    .header-auth-group .header-user.guest-user .user-avatar {
+        width: 16px;
+        height: 16px;
+        min-width: 16px;
+        min-height: 16px;
+        font-size: 11px;
+        background: transparent;
+        color: #9aa5b3;
+    }
+
+    .header-auth-group .header-user.guest-user .user-name {
+        font-size: 12px;
+        font-weight: 400;
+        color: #9aa5b3;
+    }
+
+    /* Kirish + Ro'yxatdan o'tish — bir qatorda, tekis */
+    .header-auth-group .header-login,
+    .header-auth-group .header-register {
+        flex: 1;
+        justify-content: center;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .header-auth-buttons-row {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+    }
+
+    /* Kirgan foydalanuvchi uchun */
+    .header-auth-group .header-user:not(.guest-user) {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .header-auth-group .header-logout {
+        flex: 1;
+        justify-content: center;
+    }
+
+    /* ---- QIDIRUV VA TUGMALAR — kichikroq o'lcham ---- */
+    .header-search,
+    .header-auth-buttons-row {
+        max-width: 260px;
+    }
+
+    .header-search input {
+        height: 32px;
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+    .header-search button {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+    }
+
+    .header-search button span {
+        font-size: 15px;
+    }
+
+    .header-login,
+    .header-register,
+    .header-logout {
+        height: 32px;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   36. MOBIL FOYDALANUVCHI AYLANASI + HAMBURGER GURUHI
+   ========================================================= */
+
+.mobile-controls {
+    display: none;
+}
+
+@media (max-width: 1100px) {
+    .header-top {
+        position: relative;
+        padding-left: 65px;
+    }
+
+    .mobile-controls {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+
+        position: absolute;
+        left: 15px;
+        bottom: 16px;
+        top: auto;
+        z-index: 1200;
+    }
+
+    .mobile-menu-toggle {
+        position: static;
+        left: auto;
+        right: auto;
+        top: auto;
+        bottom: auto;
+    }
+
+    .header-auth-group > .header-user {
+        display: none;
+    }
+}
+
+.mobile-user-toggle {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+
+    border-radius: 50%;
+    border: 2px solid #ed1c24;
+    background: #ffffff;
+    color: #ed1c24;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Times New Roman", Times, serif !important;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+}
+
+.mobile-user-toggle.is-authenticated {
+    background: #ed1c24;
+    color: #ffffff;
+}
+
+.mobile-user-label {
+    position: absolute;
+    left: 0;
+    bottom: 42px;
+
+    white-space: nowrap;
+    padding: 6px 12px;
+
+    background: #0c364d;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+
+    display: none;
+    z-index: 1300;
+}
+
+.mobile-user-label.show {
+    display: block;
 }
