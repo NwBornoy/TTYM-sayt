@@ -10,7 +10,7 @@
         {% block title %}Maqolalar{% endblock %} — 103 Tez tibbiy yordam
     </title>
 
-    <link rel="stylesheet" href="{% static 'blog/style.css' %}?v=1006">
+    <link rel="stylesheet" href="{% static 'blog/style.css' %}?v=1007">
     <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
@@ -130,7 +130,7 @@
                 <div class="header-user">
 
                     <span class="user-avatar guest-avatar">
-                        👤
+                        <b>M</b>
                     </span>
 
                     <span class="user-name">
@@ -512,6 +512,27 @@ document.addEventListener('DOMContentLoaded', function () {
                 e.preventDefault();
                 var parent = title.closest('.nav-dropdown');
                 parent.classList.toggle('open');
+            }
+        });
+    });
+
+    // Avatar (Mehmon / foydalanuvchi) — bosilganda ism ko'rinsin,
+    // qayta bosilganda yashirinsin (faqat telefon/planshetda)
+    document.querySelectorAll('.header-user').forEach(function (userBox) {
+        userBox.addEventListener('click', function (e) {
+            if (window.innerWidth <= 900) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                var wasOpen = userBox.classList.contains('show-name');
+
+                document.querySelectorAll('.header-user.show-name').forEach(function (other) {
+                    other.classList.remove('show-name');
+                });
+
+                if (!wasOpen) {
+                    userBox.classList.add('show-name');
+                }
             }
         });
     });
