@@ -1010,15 +1010,15 @@ title="Instagram">
     
     
             .partners-track,
-            .useful-track {
-                flex: 1;
-                display: flex;
-                align-items: center;
-                gap: 55px;
-                overflow: hidden;
-                scroll-behavior: smooth;
-                padding: 10px 5px;
-            }
+                .useful-track {
+                    flex: 1;
+                    display: flex;
+                    align-items: center;
+                    gap: 55px;
+                    overflow: hidden;
+                    scroll-behavior: auto;
+                    padding: 10px 5px;
+                }
     
     
             .partner-item {
@@ -1329,39 +1329,29 @@ title="Instagram">
                 
                     // OLDINGI
                     if (prev) {
-                        prev.addEventListener("click", function () {
-                
-                            isPaused = true;
-                
-                            track.scrollBy({
-                                left: -250,
-                                behavior: "smooth"
+                            prev.addEventListener("click", function () {
+                                isPaused = true;
+                                track.style.scrollBehavior = "smooth";
+                                track.scrollBy({ left: -250 });
+                                setTimeout(function () {
+                                    track.style.scrollBehavior = "auto";
+                                    isPaused = false;
+                                }, 700);
                             });
-                
-                            setTimeout(function () {
-                                isPaused = false;
-                            }, 700);
-                
-                        });
-                    }
+                        }
                 
                     // KEYINGI
                     if (next) {
-                        next.addEventListener("click", function () {
-                
-                            isPaused = true;
-                
-                            track.scrollBy({
-                                left: 250,
-                                behavior: "smooth"
-                            });
-                
-                            setTimeout(function () {
-                                isPaused = false;
-                            }, 700);
-                
-                        });
-                    }
+                                next.addEventListener("click", function () {
+                                    isPaused = true;
+                                    track.style.scrollBehavior = "smooth";
+                                    track.scrollBy({ left: 250 });
+                                    setTimeout(function () {
+                                        track.style.scrollBehavior = "auto";
+                                        isPaused = false;
+                                    }, 700);
+                                });
+                            }
                 
                     // Sichqoncha ustiga kelganda to'xtaydi
                     track.addEventListener("mouseenter", function () {
