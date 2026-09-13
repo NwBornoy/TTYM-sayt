@@ -793,9 +793,9 @@ title="Instagram">
     
                     {% for partner in partners %}
     
-                    <a href="{{ partner.url|default:'#' }}"
-                       {% if partner.url %}target="_blank" rel="noopener noreferrer"{% endif %}
-                       class="partner-item">
+                    <a href="{{ partner.website_url|default:'#' }}"
+                    {% if partner.website_url %}target="_blank" rel="noopener noreferrer"{% endif %}
+                    class="partner-item">
     
                         {% if partner.logo %}
                             <img src="{{ partner.logo.url }}"
@@ -1010,15 +1010,27 @@ title="Instagram">
     
     
             .partners-track,
-                .useful-track {
-                    flex: 1;
-                    display: flex;
-                    align-items: center;
-                    gap: 55px;
-                    overflow: hidden;
-                    scroll-behavior: auto;
-                    padding: 10px 5px;
-                }
+            .useful-track {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                gap: 55px;
+
+                overflow-x: scroll;
+                overflow-y: hidden;
+                scroll-behavior: auto;
+                padding: 10px 5px;
+                -webkit-overflow-scrolling: touch;
+
+                /* Scroll chizig'ini yashiramiz */
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            }
+
+            .partners-track::-webkit-scrollbar,
+            .useful-track::-webkit-scrollbar {
+                display: none;
+            }
     
     
             .partner-item {
@@ -1614,6 +1626,6 @@ title="Instagram">
  
 
 </div>
-<script src="{% static 'blog/branches.js' %}"></script>
+<script src="{% static 'blog/branches.js' %}?v=3"></script>
 
 {% endblock %}
