@@ -591,6 +591,8 @@ function showBranch(branchId) {
             >
 
                 <svg
+                    width="28"
+                    height="28"
                     viewBox="0 0 256 193"
                     aria-hidden="true"
                 >
@@ -636,6 +638,8 @@ function showBranch(branchId) {
             >
 
                 <svg
+                    width="28"
+                    height="28"
                     viewBox="0 0 240 240"
                     aria-hidden="true"
                 >
@@ -668,6 +672,8 @@ function showBranch(branchId) {
             >
 
                 <svg
+                    width="28"
+                    height="28"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
                 >
