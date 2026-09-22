@@ -23,7 +23,59 @@ from .models import GovernmentDecree
 from .models import NormativeDocument
 from .models import FinancialTransparencyDocument, HRPolicyDocument
 from .models import OrganizationalLegalInfo, ActivityResultsInfo
+from .models import TimelineEvent
+from .models import TeamStat
+from .models import AboutMedia
+from .models import Testimonial
+from .models import MissionGoal
 
+@admin.register(MissionGoal)
+class MissionGoalAdmin(admin.ModelAdmin):
+    list_display = ("icon", "title", "order")
+    list_editable = ("order",)
+    ordering = ("order",)
+
+@admin.register(Testimonial)
+class TestimonialAdmin(admin.ModelAdmin):
+    list_display = ('name', 'location', 'short_text', 'is_approved', 'created_at')
+    list_filter = ('is_approved', 'created_at')
+    search_fields = ('name', 'text')
+    list_editable = ('is_approved',)
+    actions = ['approve_selected']
+
+    def short_text(self, obj):
+        return obj.text[:50]
+    short_text.short_description = "Fikr"
+
+    def approve_selected(self, request, queryset):
+        queryset.update(is_approved=True)
+    approve_selected.short_description = "Tanlangan fikrlarni tasdiqlash"
+
+@admin.register(AboutMedia)
+class AboutMediaAdmin(admin.ModelAdmin):
+    list_display = ('order', 'media_type', 'caption')
+    list_display_links = ('caption',)
+    list_editable = ('order', 'media_type')
+    list_filter = ('media_type',)
+    ordering = ('order',)
+    fields = ('media_type', 'image', 'video_url', 'caption', 'order')
+
+    class Media:
+        js = ('blog/about_media_toggle.js',)
+
+@admin.register(TeamStat)
+class TeamStatAdmin(admin.ModelAdmin):
+    list_display = ('order', 'icon', 'number', 'label')
+    list_display_links = ('number', 'label')
+    list_editable = ('order', 'icon')
+    ordering = ('order',)
+
+@admin.register(TimelineEvent)
+class TimelineEventAdmin(admin.ModelAdmin):
+    list_display = ('order', 'year', 'title')
+    list_display_links = ('year', 'title')
+    list_editable = ('order',)
+    ordering = ('order',)
 
 @admin.register(OrganizationalLegalInfo)
 class OrganizationalLegalInfoAdmin(admin.ModelAdmin):

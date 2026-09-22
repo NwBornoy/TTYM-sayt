@@ -5,6 +5,107 @@ from django.utils.text import slugify
 from django.contrib.auth import get_user_model
 from django_ckeditor_5.fields import CKEditor5Field
 
+class MissionGoal(models.Model):
+    """Bizning maqsad va vazifalarimiz — admin paneldan boshqariladi."""
+    icon = models.CharField(
+        max_length=10,
+        verbose_name="Ikonka (emoji)",
+        help_text="Masalan: 🎯 👥 ⚕️ 🔬 — emoji klaviaturadan yoki emojipedia.org dan nusxa oling"
+    )
+    title = models.CharField(max_length=200, verbose_name="Sarlavha")
+    description = models.TextField(verbose_name="Tavsif")
+    order = models.PositiveIntegerField(default=0, verbose_name="Tartib raqami")
+
+    class Meta:
+        verbose_name = "Maqsad va vazifa"
+        verbose_name_plural = "Bizning maqsad va vazifalarimiz"
+        ordering = ["order", "id"]
+
+    def __str__(self):
+        return self.title
+
+class Testimonial(models.Model):
+    name = models.CharField(max_length=100, verbose_name="Ism")
+    location = models.CharField(max_length=100, blank=True, verbose_name="Shahar/tuman",
+                                 help_text="Masalan: Qarshi shahri")
+    text = models.TextField(verbose_name="Fikr matni")
+    is_approved = models.BooleanField(default=False, verbose_name="Tasdiqlangan (saytda chiqadi)")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Yuborilgan sana")
+
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = "Bemor fikri"
+        verbose_name_plural = "Bemorlar fikrlari"
+
+    def __str__(self):
+        status = "Tasdiqlangan" if self.is_approved else "Kutilmoqda"
+        return f"[{status}] {self.name} — {self.text[:30]}"
+
+class AboutMedia(models.Model):
+    MEDIA_TYPE_CHOICES = (
+        ('photo', 'Rasm'),
+        ('video', 'Video'),
+    )
+
+    media_type = models.CharField(max_length=10, choices=MEDIA_TYPE_CHOICES, default='photo', verbose_name="Turi")
+    image = models.ImageField(upload_to='about_media/photos/', blank=True, null=True, verbose_name="Rasm",
+                               help_text="Faqat 'Rasm' turi tanlansa yuklang")
+    video_url = models.URLField(blank=True, null=True, verbose_name="Video havolasi",
+                                 help_text="Faqat 'Video' turi tanlansa YouTube havolasini kiriting (masalan: https://www.youtube.com/watch?v=XXXXXXXXXXX)")
+    caption = models.CharField(max_length=255, verbose_name="Qisqacha tavsif", help_text="Rasm/video tagida chiqadigan matn")
+    order = models.PositiveIntegerField(default=0, verbose_name="Tartib raqami")
+
+    class Meta:
+        ordering = ['order', 'id']
+        verbose_name = "Markaz fotolavhasi"
+        verbose_name_plural = "Markazimizdan lavhalar (Rasm/Video)"
+
+    def __str__(self):
+        return f"{self.get_media_type_display()} — {self.caption}"
+
+    @property
+    def youtube_embed_url(self):
+        """video_url dan YouTube video ID ajratib, embed havolasini qaytaradi (oddiy, youtu.be, embed, va Shorts linklarini qo'llab-quvvatlaydi)"""
+        if not self.video_url:
+            return None
+
+        import re
+        match = re.search(
+            r"(?:youtube\.com/watch\?v=|youtu\.be/|youtube\.com/embed/|youtube\.com/shorts/)([\w-]{11})",
+            self.video_url
+        )
+        if match:
+            return f"https://www.youtube.com/embed/{match.group(1)}"
+        return None
+    
+class TeamStat(models.Model):
+    icon = models.CharField(max_length=10, verbose_name="Icon (emoji)", help_text="Masalan: 👨‍⚕️ yoki 🚑 (emoji klaviaturadan tanlang)")
+    number = models.CharField(max_length=20, verbose_name="Raqam/qiymat", help_text="Masalan: 60–100 yoki 24/7 yoki 100%")
+    label = models.CharField(max_length=255, verbose_name="Tavsif")
+    order = models.PositiveIntegerField(default=0, verbose_name="Tartib raqami")
+
+    class Meta:
+        ordering = ['order', 'id']
+        verbose_name = "Jamoa statistikasi"
+        verbose_name_plural = "Bizning jamoamiz (statistika)"
+
+    def __str__(self):
+        return f"{self.icon} {self.number} — {self.label}"
+    
+class TimelineEvent(models.Model):
+    year = models.CharField(max_length=20, verbose_name="Yil", help_text="Masalan: 2025 yoki 2025 – 2026 yoki Bugungi kun")
+    title = models.CharField(max_length=255, verbose_name="Sarlavha")
+    description = models.TextField(verbose_name="Matn")
+    order = models.PositiveIntegerField(default=0, verbose_name="Tartib raqami", help_text="Kichik raqam yuqorida chiqadi")
+
+    class Meta:
+        ordering = ['order', 'id']
+        verbose_name = "Tarix voqeasi"
+        verbose_name_plural = "Markaz tarixi (Timeline)"
+
+    def __str__(self):
+        return f"{self.year} — {self.title}"
+
 
 User = get_user_model()
 

@@ -3,7 +3,18 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import SupportMessage
 from .models import Comment
+from django import forms
+from .models import Testimonial
 
+class TestimonialForm(forms.ModelForm):
+    class Meta:
+        model = Testimonial
+        fields = ['name', 'location', 'text']
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'tf-input', 'placeholder': 'Ismingiz'}),
+            'location': forms.TextInput(attrs={'class': 'tf-input', 'placeholder': 'Shahar/tuman (ixtiyoriy)'}),
+            'text': forms.Textarea(attrs={'class': 'tf-textarea', 'placeholder': 'Fikringizni yozing...', 'rows': 4}),
+        }
 
 class CommentForm(forms.ModelForm):
     guest_name = forms.CharField(

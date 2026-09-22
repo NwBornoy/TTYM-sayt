@@ -4136,6 +4136,67 @@ img {
     }
 }
 
+
+
+/* ===========================================
+   MAQOLA ICHIDAGI RASM VA VIDEOLAR — MOSLASHUVCHAN
+   =========================================== */
+
+   .post-body img {
+    max-width: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto;
+  }
+  
+  /* Video / YouTube iframe uchun 16:9 nisbatda moslashuvchan konteyner */
+  .post-body iframe,
+  .post-body video {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    display: block;
+    margin: 20px auto;
+    border: none;
+  }
+  
+  /* Ba'zi tahrirlovchilar rasmni <figure> yoki <p> ichiga o'raydi */
+  .post-body figure,
+  .post-body p {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  
+  .post-body table {
+    max-width: 100%;
+    display: block;
+    overflow-x: auto;
+  }
+  
+  /* ===========================================
+     TELEFON UCHUN QO'SHIMCHA MOSLASHTIRISH (max 768px)
+     =========================================== */
+  @media (max-width: 768px) {
+    .post-body img,
+    .post-body iframe,
+    .post-body video {
+      margin: 15px auto;
+      border-radius: 8px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .post-body img,
+    .post-body iframe,
+    .post-body video {
+      margin: 12px auto;
+      border-radius: 6px;
+    }
+  }
  
     
  

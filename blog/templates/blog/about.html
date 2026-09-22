@@ -91,8 +91,8 @@
   .team-card .team-number { font-size: 32px; font-weight: 800; color: #0B2438; margin-bottom: 8px; }
   .team-card .team-label { color: #666; font-size: 14px; line-height: 1.5; }
 
-  /* GALEREYA */
-  .about-gallery-section { max-width: 1200px; margin: 0 auto; padding: 80px 40px; }
+   /* GALEREYA */
+   .about-gallery-section { max-width: 1200px; margin: 0 auto; padding: 80px 40px; }
   .about-gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -104,15 +104,21 @@
     overflow: hidden;
     aspect-ratio: 4 / 3;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    background: #000;
   }
-  .about-gallery-item img {
+  .about-gallery-item img,
+  .about-gallery-item video,
+  .about-gallery-item iframe {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.4s ease;
     display: block;
+    border: none;
   }
-  .about-gallery-item:hover img { transform: scale(1.08); }
+  .about-gallery-item:hover img,
+  .about-gallery-item:hover video,
+  .about-gallery-item:hover iframe { transform: scale(1.08); }
   .about-gallery-caption {
     position: absolute;
     left: 0; right: 0; bottom: 0;
@@ -121,6 +127,7 @@
     padding: 30px 16px 14px;
     font-size: 14px;
     font-weight: 600;
+    pointer-events: none;
   }
   .about-gallery-empty {
     text-align: center;
@@ -284,49 +291,216 @@
     .callcenter-box { grid-template-columns: 1fr; padding: 35px 25px; }
   }
 
-  /* FIKRLAR */
-  .testimonials-section { background: #f5f7fa; padding: 80px 40px; }
-  .testimonials-container { max-width: 1200px; margin: 0 auto; }
+/* ===========================================
+   FIKRLAR — ASOSIY STIL (Kompyuter, standart, 1025px va undan katta)
+   =========================================== */
+
+/* Kartochkalar konteyneri */
+.testimonials-container { max-width: 1200px; margin: 0 auto; }
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 10px;
+}
+
+/* Har bir fikr kartochkasi */
+.testimonial-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+.testimonial-quote-mark {
+  font-size: 48px;
+  color: #ff4757;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 10px;
+  font-family: Georgia, serif;
+}
+.testimonial-text {
+  color: #444;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0 0 20px;
+  word-break: break-word;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.testimonial-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #0B2438;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.testimonial-name {
+  color: #0B2438;
+  font-weight: 700;
+  font-size: 15px;
+}
+.testimonial-role {
+  color: #999;
+  font-size: 13px;
+}
+.testimonials-note {
+  color: #999;
+  text-align: center;
+  font-size: 15px;
+  grid-column: 1 / -1;
+  padding: 30px 20px;
+}
+
+/* Fikr qoldirish formasi qutisi */
+.testimonial-form-box {
+  max-width: 560px;
+  margin: 50px auto 0;
+  background: #fff;
+  border-radius: 12px;
+  padding: 35px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+}
+.testimonial-form-box h3 {
+  color: #0B2438;
+  font-size: 20px;
+  margin: 0 0 6px;
+}
+.tf-note {
+  color: #999;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+.tf-alert {
+  background: #eafbea;
+  color: #1a7a1a;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+.tf-input,
+.tf-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease;
+}
+.tf-input:focus,
+.tf-textarea:focus {
+  outline: none;
+  border-color: #ff4757;
+}
+.tf-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+.tf-submit-btn {
+  background: #ff4757;
+  color: #fff;
+  border: none;
+  padding: 13px 30px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.tf-submit-btn:hover {
+  background: #e8404d;
+}
+
+/* ===========================================
+   PLANSHET (769px — 1024px oralig'i)
+   =========================================== */
+@media (max-width: 1024px) {
+  .testimonials-section { padding: 60px 30px; }
   .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
   }
-  .testimonial-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 30px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
-    position: relative;
+  .testimonial-card { padding: 26px; }
+  .testimonial-form-box { padding: 28px; }
+}
+
+/* ===========================================
+   TELEFON (max 768px)
+   =========================================== */
+@media (max-width: 768px) {
+  .testimonials-section { padding: 40px 20px; }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 5px;
   }
-  .testimonial-quote-mark {
-    font-size: 40px;
-    color: #ff4757;
-    line-height: 1;
-    opacity: 0.3;
-    margin-bottom: 10px;
-  }
-  .testimonial-text { color: #333; font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
-  .testimonial-author { display: flex; align-items: center; gap: 12px; }
-  .testimonial-avatar {
-    width: 44px; height: 44px;
-    border-radius: 50%;
-    background: #0B2438;
-    color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 700;
-    font-size: 16px;
-    flex-shrink: 0;
-  }
-  .testimonial-name { color: #0B2438; font-weight: 700; font-size: 14px; }
-  .testimonial-role { color: #999; font-size: 13px; }
-  .testimonials-note {
-    text-align: center;
-    color: #999;
-    font-size: 13px;
+
+  .testimonial-card { padding: 22px; }
+  .testimonial-quote-mark { font-size: 38px; margin-bottom: 6px; }
+  .testimonial-text { font-size: 14px; line-height: 1.6; margin-bottom: 16px; }
+  .testimonial-avatar { width: 38px; height: 38px; font-size: 16px; }
+  .testimonial-name { font-size: 14px; }
+  .testimonial-role { font-size: 12px; }
+
+  .testimonials-note { padding: 20px 14px; font-size: 14px; }
+
+  .testimonial-form-box {
+    padding: 25px 20px;
     margin-top: 30px;
-    font-style: italic;
+    border-radius: 10px;
   }
+  .testimonial-form-box h3 { font-size: 18px; }
+  .tf-note { font-size: 12px; margin-bottom: 16px; }
+  .tf-input, .tf-textarea { padding: 11px 13px; font-size: 14px; margin-bottom: 12px; }
+  .tf-submit-btn { width: 100%; padding: 13px; font-size: 14px; }
+}
+
+/* ===========================================
+   KICHIK TELEFONLAR (max 480px)
+   =========================================== */
+@media (max-width: 480px) {
+  .testimonials-section { padding: 32px 16px; }
+
+  .testimonials-grid { gap: 14px; }
+
+  .testimonial-card { padding: 18px; border-radius: 10px; }
+  .testimonial-quote-mark { font-size: 32px; }
+  .testimonial-text { font-size: 13.5px; margin-bottom: 14px; }
+  .testimonial-author { gap: 10px; }
+  .testimonial-avatar { width: 34px; height: 34px; font-size: 14px; }
+  .testimonial-name { font-size: 13px; }
+  .testimonial-role { font-size: 11.5px; }
+
+  .testimonials-note { padding: 16px 10px; font-size: 13px; }
+
+  .testimonial-form-box { padding: 18px 14px; margin-top: 22px; }
+  .testimonial-form-box h3 { font-size: 16px; }
+  .tf-input, .tf-textarea { padding: 10px 12px; font-size: 13px; margin-bottom: 10px; }
+  .tf-textarea { min-height: 90px; }
+  .tf-submit-btn { padding: 12px; font-size: 13.5px; }
+}
 
   /* MISSIYA */
   .mission-section { background: linear-gradient(135deg, #0B2438 0%, #12314A 100%); color: #fff; padding: 80px 40px; }
@@ -366,6 +540,8 @@
     .timeline-item { padding-left: 45px; }
     .timeline::before { left: 12px; }
     .timeline-dot { left: 3px; }
+    .about-gallery-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; }
+    .about-gallery-caption { padding: 22px 12px 10px; font-size: 13px; }
   }
 
   /* KICHIK TELEFONLAR (max 480px) */
@@ -397,6 +573,8 @@
     .goal { padding: 18px; }
 
     .testimonial-card { padding: 20px; }
+
+    .about-gallery-grid { grid-template-columns: 1fr; gap: 10px; }
   }
 </style>
 
@@ -420,34 +598,23 @@
     </div>
 
     <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-year">2025</div>
-        <h4>Markaz tashkil topdi</h4>
-        <p>Qashqadaryo viloyatida Tez tibbiy yordam markazi o'z faoliyatini boshladi va bosh filial Qarshi shahrida ochildi.</p>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-year">2025</div>
-        <h4>Viloyat bo'ylab filiallar tarmog'i</h4>
-        <p>Qarshi tumani, Shahrisabz va boshqa hududlarda yangi filiallar ochilib, xizmat qamrovi kengaytirildi.</p>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-year">2025 – 2026</div>
-        <h4>Jamoa kengaydi</h4>
-        <p>Malakali shifokorlar va yordamchi xodimlar soni 60–100 nafarga yetkazildi, xizmat sifati yanada oshirildi.</p>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-year">Bugungi kun</div>
-        <h4>Zamonaviy call-markaz</h4>
-        <p>24/7 ishlaydigan call-markaz orqali murojaatlar tezkor qabul qilinib, bemorlarga o'z vaqtida yordam yetkazilmoqda.</p>
-      </div>
+      {% for event in timeline_events %}
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">{{ event.year }}</div>
+          <h4>{{ event.title }}</h4>
+          <p>{{ event.description }}</p>
+        </div>
+      {% empty %}
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">—</div>
+          <h4>Hozircha tarix qo'shilmagan</h4>
+          <p>Admin panelda "Markaz tarixi (Timeline)" bo'limidan voqealar qo'shing.</p>
+        </div>
+      {% endfor %}
     </div>
+
   </section>
 
   <!-- JAMOA -->
@@ -458,28 +625,20 @@
         <h2>Bizning jamoamiz</h2>
         <p>Malakali va tajribali mutaxassislardan tashkil topgan jamoa</p>
       </div>
-
       <div class="team-grid">
-        <div class="team-card">
-          <div class="team-icon">👨‍⚕️</div>
-          <div class="team-number">60–100</div>
-          <div class="team-label">Shifokor va tibbiyot xodimlari</div>
-        </div>
-        <div class="team-card">
-          <div class="team-icon">🚑</div>
-          <div class="team-number">24/7</div>
-          <div class="team-label">Doimiy ish rejimi</div>
-        </div>
-        <div class="team-card">
-          <div class="team-icon">🏥</div>
-          <div class="team-number">13</div>
-          <div class="team-label">Faoliyat yurituvchi filiallar</div>
-        </div>
-        <div class="team-card">
-          <div class="team-icon">📞</div>
-          <div class="team-number">100%</div>
-          <div class="team-label">Bepul konsultatsiya</div>
-        </div>
+        {% for stat in team_stats %}
+          <div class="team-card">
+            <div class="team-icon">{{ stat.icon }}</div>
+            <div class="team-number">{{ stat.number }}</div>
+            <div class="team-label">{{ stat.label }}</div>
+          </div>
+        {% empty %}
+          <div class="team-card">
+            <div class="team-icon">ℹ️</div>
+            <div class="team-number">—</div>
+            <div class="team-label">Admin panelda "Bizning jamoamiz" bo'limidan statistika qo'shing.</div>
+          </div>
+        {% endfor %}
       </div>
     </div>
   </section>
@@ -495,11 +654,20 @@
     <div class="about-gallery-grid">
       {% for item in about_gallery %}
         <div class="about-gallery-item">
-          <img src="{{ item.image.url }}" alt="{{ item.title }}">
-          <div class="about-gallery-caption">{{ item.title }}</div>
+          {% if item.media_type == 'video' and item.youtube_embed_url %}
+            <iframe src="{{ item.youtube_embed_url }}"
+                    frameborder="0"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    loading="lazy"></iframe>
+          {% elif item.image %}
+            <img src="{{ item.image.url }}" alt="{{ item.caption }}" loading="lazy">
+          {% endif %}
+          <div class="about-gallery-caption">{{ item.caption }}</div>
         </div>
       {% empty %}
-        <div class="about-gallery-empty">Hozircha galereyaga rasmlar qo'shilmagan. Admin panelda "Galereya" bo'limidan rasm qo'shing.</div>
+        <div class="about-gallery-empty">Hozircha lavhalar qo'shilmagan. Admin panelda "Markazimizdan lavhalar" bo'limidan rasm yoki video qo'shing.</div>
       {% endfor %}
     </div>
   </section>
@@ -617,7 +785,7 @@
   </section>
 
   <!-- MIJOZLAR FIKRI -->
-  <section class="testimonials-section">
+  <section class="testimonials-section" id="fikrlar">
     <div class="testimonials-container">
       <div class="section-header">
         <span class="eyebrow">Fikrlar</span>
@@ -626,44 +794,42 @@
       </div>
 
       <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-quote-mark">"</div>
-          <p class="testimonial-text">Tez tibbiy yordam bir necha daqiqada yetib keldi, shifokorlar juda mehribon va professional edi. Rahmat sizlarga!</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">A</div>
-            <div>
-              <div class="testimonial-name">Aziza R.</div>
-              <div class="testimonial-role">Qarshi shahri</div>
+        {% for t in testimonials %}
+          <div class="testimonial-card">
+            <div class="testimonial-quote-mark">"</div>
+            <p class="testimonial-text">{{ t.text }}</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">{{ t.name|first|upper }}</div>
+              <div>
+                <div class="testimonial-name">{{ t.name }}</div>
+                <div class="testimonial-role">{{ t.location }}</div>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-quote-mark">"</div>
-          <p class="testimonial-text">Call-markazga qo'ng'iroq qilganimda darrov javob berishdi va yo'l-yo'riq ko'rsatishdi. Xizmat sifatidan mamnunman.</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">B</div>
-            <div>
-              <div class="testimonial-name">Bekzod T.</div>
-              <div class="testimonial-role">Shahrisabz shahri</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="testimonial-quote-mark">"</div>
-          <p class="testimonial-text">Filialdagi jamoa juda tajribali. Otam uchun chaqirilgan brigada tezkor va sifatli yordam ko'rsatdi.</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">D</div>
-            <div>
-              <div class="testimonial-name">Dilnoza S.</div>
-              <div class="testimonial-role">Qarshi tumani</div>
-            </div>
-          </div>
-        </div>
+        {% empty %}
+          <p class="testimonials-note " style="text-align: center; color: #e8404d; margin-top: 10%;"> <b> Hozircha fikrlar yo'q. Birinchi bo'lib fikr qoldiring!</b></p>
+        {% endfor %}
       </div>
 
-      <p class="testimonials-note">* Bu namuna matnlar. Kelajakda haqiqiy fikrlar bilan almashtirishingiz mumkin.</p>
+      <!-- FIKR QOLDIRISH FORMASI -->
+      <div class="testimonial-form-box">
+        <h3>Fikringizni qoldiring</h3>
+        <p class="tf-note">Fikringiz tekshiruvdan o'tgach saytda chop etiladi.</p>
+
+        {% if messages %}
+          {% for message in messages %}
+            <p class="tf-alert">{{ message }}</p>
+          {% endfor %}
+        {% endif %}
+
+        <form method="post">
+          {% csrf_token %}
+          {{ testimonial_form.name }}
+          {{ testimonial_form.location }}
+          {{ testimonial_form.text }}
+          <button type="submit" class="tf-submit-btn">Yuborish</button>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -672,26 +838,19 @@
     <div class="mission-container">
       <h2>Bizning maqsad va vazifalari</h2>
       <div class="mission-goals">
-        <div class="goal">
-          <div class="goal-icon">🎯</div>
-          <h3>Shoshilinch tibbiy yordam</h3>
-          <p>Har kuni, har soatda aholining shoshilinch tibbiy ehtiyojlarini qondirish</p>
-        </div>
-        <div class="goal">
-          <div class="goal-icon">👥</div>
-          <h3>Jamiyatni tibbiy savodxonligi</h3>
-          <p>Aholining tibbiy savodxonligini oshirish va salomatliklari tug'risida bilgisi</p>
-        </div>
-        <div class="goal">
-          <div class="goal-icon">⚕️</div>
-          <h3>Sifatli xizmat</h3>
-          <p>Yuqori darajadagi tibbiy xizmatlar ko'rsatish va hamjamiyat bilan muloqot</p>
-        </div>
-        <div class="goal">
-          <div class="goal-icon">🔬</div>
-          <h3>Zamonaviy texnologiya</h3>
-          <p>Tibbiy texnologiyalarni yangilash va malaka o'stirish dasturlari</p>
-        </div>
+        {% for goal in mission_goals %}
+          <div class="goal">
+            <div class="goal-icon">{{ goal.icon }}</div>
+            <h3>{{ goal.title }}</h3>
+            <p>{{ goal.description }}</p>
+          </div>
+        {% empty %}
+          <div class="goal">
+            <div class="goal-icon">ℹ️</div>
+            <h3>Hozircha ma'lumot qo'shilmagan</h3>
+            <p>Admin panelda "Bizning maqsad va vazifalarimiz" bo'limidan qo'shing.</p>
+          </div>
+        {% endfor %}
       </div>
     </div>
   </section>

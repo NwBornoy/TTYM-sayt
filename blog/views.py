@@ -25,6 +25,11 @@ from .models import GovernmentDecree
 from .models import NormativeDocument
 from .models import FinancialTransparencyDocument, HRPolicyDocument
 from .models import OrganizationalLegalInfo, ActivityResultsInfo
+from .models import TimelineEvent
+from .models import TeamStat,AboutMedia
+from .models import Testimonial
+from .forms import TestimonialForm
+from .models import MissionGoal 
 
 
 class OrganizationalLegalListView(ListView):
@@ -262,25 +267,43 @@ class HomeView(TemplateView):
 # views.py faylida AboutView klassini shu bilan ALMASHTIRING
 # (import qatorida ContactInfo allaqachon bor, qo'shimcha import shart emas)
 
+
+
 class AboutView(TemplateView):
     """Markaz haqida - filiallar bilan."""
     template_name = "blog/about.html"
 
     def get_context_data(self, **kwargs):
-        
         ctx = super().get_context_data(**kwargs)
+
         ctx["branches"] = Branch.objects.all().order_by("-is_main", "order")
         ctx["main_branch"] = Branch.objects.filter(is_main=True).first()
-
-        # YANGI: galereyadan haqiqiy rasmlar
-        ctx["about_gallery"] = Gallery.objects.filter(media_type="photo").order_by("order")[:6]
-
-        # YANGI: call-markaz bo'limi uchun aloqa ma'lumotlari
+        ctx["about_gallery"] = AboutMedia.objects.all()
         ctx["contact"] = ContactInfo.objects.first()
+        ctx["timeline_events"] = TimelineEvent.objects.all()
+        ctx["team_stats"] = TeamStat.objects.all()
+        ctx["testimonials"] = Testimonial.objects.filter(is_approved=True)
+        ctx["mission_goals"] = MissionGoal.objects.all()
+
+        # Agar post() metodidan xato bilan qaytarilgan forma bo'lmasa, bo'sh forma ko'rsatamiz
+        if "testimonial_form" not in ctx:
+            ctx["testimonial_form"] = TestimonialForm()
 
         return ctx
 
+    def post(self, request, *args, **kwargs):
+        form = TestimonialForm(request.POST)
 
+        if form.is_valid():
+            form.save()  # is_approved=False bo'lib saqlanadi — admin tasdiqlashi kerak
+            messages.success(request, "Fikringiz uchun rahmat! Tekshiruvdan so'ng saytda chop etiladi.")
+            return redirect(request.path + '#fikrlar')
+
+        # Forma noto'g'ri to'ldirilgan bo'lsa — xatolar bilan qaytaramiz
+        self.object_list = None  # ba'zi Django versiyalarida kerak bo'lishi mumkin, muammo bo'lsa o'chiring
+        context = self.get_context_data(testimonial_form=form)
+        return self.render_to_response(context)
+    
 class NewsListView(ListView):
     """Markaz yangiliklari."""
     model = News
