@@ -28,6 +28,14 @@ from .models import TeamStat
 from .models import AboutMedia
 from .models import Testimonial
 from .models import MissionGoal
+from .models import NewUserNotification
+
+@admin.register(NewUserNotification)
+class NewUserNotificationAdmin(admin.ModelAdmin):
+    list_display = ("user", "is_seen", "created_at")
+    list_filter = ("is_seen",)
+    list_editable = ("is_seen",)
+    readonly_fields = ("user", "created_at")
 
 @admin.register(MissionGoal)
 class MissionGoalAdmin(admin.ModelAdmin):

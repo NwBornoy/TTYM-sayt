@@ -5,3 +5,4 @@ psycopg2-binary>=2.9   # PostgreSQL bilan ishlash uchun (production uchun tavsiy
 dj-database-url>=2.1    # DATABASE_URL orqali PostgreSQL'ga ulanish uchun (faqat production'da kerak)
 django-axes>=6.5       # login-brute-force hujumlaridan himoya (tavsiya etiladi)
 Pillow>=10.0            # kelajakda rasm yuklash kerak bo'lsa
+django-jazzmin

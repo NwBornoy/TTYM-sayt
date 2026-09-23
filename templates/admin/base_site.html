@@ -1,0 +1,168 @@
+{% extends "admin/base.html" %}
+
+{% block usertools %}
+  {% if admin_notifications_count is not None %}
+    <div class="notif-bell-wrapper">
+      <button type="button" class="notif-bell-btn" id="notifBellBtn" onclick="toggleNotifDropdown(event)">
+        🔔
+        {% if admin_notifications_count > 0 %}
+          <span class="notif-badge">{{ admin_notifications_count }}</span>
+        {% endif %}
+      </button>
+    </div>
+
+    <div class="notif-dropdown" id="notifDropdown">
+      <div class="notif-dropdown-header">Bildirishnomalar</div>
+
+      {% if admin_notifications %}
+        {% for n in admin_notifications %}
+          <a href="{{ n.url }}" class="notif-item">{{ n.text }}</a>
+        {% endfor %}
+        <a href="/admin/blog/testimonial/?is_approved__exact=0" class="notif-view-all">
+          Barchasini ko'rish →
+        </a>
+      {% else %}
+        <div class="notif-empty">Yangi bildirishnoma yo'q ✅</div>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  {{ block.super }}
+{% endblock %}
+
+{% block extrahead %}
+  {{ block.super }}
+  <style>
+    .notif-bell-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-right: 15px;
+      vertical-align: middle;
+    }
+    .notif-bell-btn {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      position: relative;
+      color: inherit;
+      padding: 4px 6px;
+    }
+    .notif-badge {
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      background: #ff4757;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      min-width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 3px;
+      line-height: 1;
+    }
+
+    /* "fixed" — header'ning overflow:hidden chegarasidan chiqadi */
+    .notif-dropdown {
+      display: none;
+      position: fixed;
+      top: 50px;
+      right: 20px;
+      background: #ffffff !important;
+      color: #222 !important;
+      opacity: 1 !important;
+      filter: none !important;
+      width: 320px;
+      max-height: 400px;
+      overflow-y: auto;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+      z-index: 99999;
+    }
+    .notif-dropdown.is-open { display: block; }
+
+    .notif-dropdown-header {
+      padding: 12px 16px !important;
+      font-weight: 700 !important;
+      border-bottom: 1px solid #eee;
+      font-size: 14px !important;
+      background: #fafafa !important;
+      color: #172033 !important;
+      opacity: 1 !important;
+    }
+
+    .notif-item {
+      display: block !important;
+      padding: 10px 16px !important;
+      font-size: 13px !important;
+      line-height: 1.5 !important;
+      color: #222 !important;
+      opacity: 1 !important;
+      filter: none !important;
+      text-decoration: none !important;
+      border-bottom: 1px solid #f2f2f2;
+      background: #ffffff !important;
+    }
+    .notif-item:visited {
+      color: #222 !important;
+    }
+    .notif-item:hover {
+      background: #f7f7f7 !important;
+      color: #ff4757 !important;
+    }
+
+    .notif-view-all {
+      display: block !important;
+      padding: 10px 16px !important;
+      font-size: 13px !important;
+      text-align: center !important;
+      color: #ff4757 !important;
+      opacity: 1 !important;
+      font-weight: 700 !important;
+      text-decoration: none !important;
+      background: #ffffff !important;
+    }
+    .notif-view-all:visited {
+      color: #ff4757 !important;
+    }
+
+    .notif-empty {
+      padding: 20px !important;
+      text-align: center !important;
+      color: #999 !important;
+      opacity: 1 !important;
+      font-size: 13px !important;
+      background: #ffffff !important;
+    }
+  </style>
+  <script>
+    function toggleNotifDropdown(e) {
+      e.stopPropagation();
+      var dropdown = document.getElementById('notifDropdown');
+      var btn = document.getElementById('notifBellBtn');
+
+      if (dropdown.classList.contains('is-open')) {
+        dropdown.classList.remove('is-open');
+        return;
+      }
+
+      var rect = btn.getBoundingClientRect();
+      dropdown.style.top = (rect.bottom + 8) + 'px';
+      dropdown.style.right = (window.innerWidth - rect.right) + 'px';
+
+      dropdown.classList.add('is-open');
+    }
+
+    document.addEventListener('click', function(e) {
+      var dropdown = document.getElementById('notifDropdown');
+      var btn = document.getElementById('notifBellBtn');
+      if (dropdown && !dropdown.contains(e.target) && e.target !== btn) {
+        dropdown.classList.remove('is-open');
+      }
+    });
+  </script>
+{% endblock %}

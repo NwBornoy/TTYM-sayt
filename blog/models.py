@@ -5,6 +5,25 @@ from django.utils.text import slugify
 from django.contrib.auth import get_user_model
 from django_ckeditor_5.fields import CKEditor5Field
 
+class NewUserNotification(models.Model):
+    """Yangi ro'yxatdan o'tgan foydalanuvchilar haqida bildirishnoma."""
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        verbose_name="Foydalanuvchi",
+    )
+    is_seen = models.BooleanField(default=False, verbose_name="Ko'rib chiqildi")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Ro'yxatdan o'tgan vaqt")
+
+    class Meta:
+        ordering = ["-created_at"]
+        verbose_name = "Yangi foydalanuvchi bildirishnomasi"
+        verbose_name_plural = "Yangi ro'yxatdan o'tgan foydalanuvchilar"
+
+    def __str__(self):
+        status = "Ko'rilgan" if self.is_seen else "Yangi"
+        return f"[{status}] {self.user.username} — {self.created_at:%d.%m.%Y %H:%M}"
+
 class MissionGoal(models.Model):
     """Bizning maqsad va vazifalarimiz — admin paneldan boshqariladi."""
     icon = models.CharField(

@@ -33,6 +33,7 @@ ALLOWED_HOSTS = [
 
 # --- Ilovalar ------------------------------------------------------------
 INSTALLED_APPS = [
+    "jazzmin",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -66,6 +67,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "blog.context_processors.admin_notifications",
             ],
         },
     },
@@ -233,4 +235,48 @@ LOGGING = {
             "propagate": False,
         },
     },
+}
+
+JAZZMIN_SETTINGS = {
+    "site_title": "TTYM Admin",
+    "site_header": "Qashqadaryo TTY",
+    "site_brand": "TTYM Admin Panel",
+    "welcome_sign": "Xush kelibsiz, Qashqadaryo TTYM boshqaruv paneliga",
+    "copyright": "Qashqadaryo Tez Tibbiy Yordam Markazi",
+    "search_model": ["blog.Post", "blog.Testimonial", "blog.Comment"],
+
+    # Chap tomondagi menyu tartibi (ixtiyoriy — bo'limlarni guruhlash)
+    "order_with_respect_to": [
+        "auth",
+        "blog.Testimonial",
+        "blog.Comment",
+        "blog.ErrorReport",
+        "blog.SupportMessage",
+        "blog.SupportTicket",
+        "blog.Post",
+        "blog.News",
+        "blog.Branch",
+    ],
+
+    "icons": {
+        "auth": "fas fa-users-cog",
+        "auth.user": "fas fa-user",
+        "auth.Group": "fas fa-users",
+        "blog.Post": "fas fa-newspaper",
+        "blog.Testimonial": "fas fa-comment-medical",
+        "blog.Comment": "fas fa-comments",
+        "blog.News": "fas fa-bullhorn",
+        "blog.Branch": "fas fa-hospital",
+        "blog.Gallery": "fas fa-images",
+        "blog.ContactInfo": "fas fa-phone",
+        "blog.ErrorReport": "fas fa-exclamation-triangle",
+        "blog.SupportTicket": "fas fa-life-ring",
+        "blog.SupportMessage": "fas fa-envelope",
+    },
+
+    "show_ui_builder": True,   # Admin panelda o'zingiz rang/tema sozlashingiz mumkin bo'lgan tugma
+}
+
+JAZZMIN_UI_TWEAKS = {
+    "theme": "flatly",   # boshqa temalar: cosmo, cyborg, darkly, lumen, solar, superhero va h.k.
 }
