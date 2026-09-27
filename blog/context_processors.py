@@ -1,4 +1,4 @@
-from .models import Testimonial, Comment, ErrorReport, SupportMessage, NewUserNotification
+from .models import Testimonial, Comment, ErrorReport, SupportMessage, NewUserNotification, Notification
 
 
 def admin_notifications(request):
@@ -57,4 +57,15 @@ def admin_notifications(request):
     return {
         'admin_notifications': notifications,
         'admin_notifications_count': total,
+    }
+
+
+# =========================================================
+# SAYT UCHUN UMUMIY BILDIRISHNOMALAR (hammaga, mehmonlarga ham)
+# =========================================================
+
+def site_notifications(request):
+    """Bosh saytdagi qo'ng'iroq belgisi uchun — barcha tashrif buyuruvchilarga ko'rinadi."""
+    return {
+        'active_notifications': Notification.objects.filter(is_active=True).select_related('content_type')[:15],
     }

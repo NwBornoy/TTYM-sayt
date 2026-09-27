@@ -4,6 +4,8 @@ from django.urls import reverse
 from django.utils.text import slugify
 from django.contrib.auth import get_user_model
 from django_ckeditor_5.fields import CKEditor5Field
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
 
 class NewUserNotification(models.Model):
     """Yangi ro'yxatdan o'tgan foydalanuvchilar haqida bildirishnoma."""
@@ -764,3 +766,89 @@ class ActivityResultsInfo(models.Model):
         if self.file:
             return self.file.url
         return self.url
+    
+
+
+
+
+class Notification(models.Model):
+    content_type = models.ForeignKey(
+        ContentType, on_delete=models.CASCADE, null=True, blank=True,
+        verbose_name="Model turi",
+    )
+    object_id = models.PositiveIntegerField(null=True, blank=True, verbose_name="Obyekt ID")
+    content_object = GenericForeignKey("content_type", "object_id")
+
+    title = models.CharField("Sarlavha", max_length=255)
+    icon = models.CharField("Ikonka", max_length=10, default="🔔")
+    manual_url = models.CharField(
+        "Havola (qo'lda kiritilsa, avtomatikdan ustun turadi)",
+        max_length=500, blank=True,
+    )
+    is_active = models.BooleanField("Faol (saytda ko'rinsin)", default=True)
+    created_at = models.DateTimeField("Yaratilgan vaqti", auto_now_add=True)
+
+    # Detail sahifasi bo'lmagan modellar uchun ro'yxat sahifasiga yo'naltirish
+    LIST_URL_NAMES = {
+        "news": "news_list",
+        "gallery": "gallery",
+        "aboutmedia": "about",
+        "leader": "leadership",
+        "staffmember": "central_staff",
+        "law": "law_list",
+        "presidentialdecree": "decree_list",
+        "governmentdecree": "gov_decree_list",
+        "normativedocument": "normative_list",
+        "financialtransparencydocument": "finance_list",
+        "hrpolicydocument": "hr_policy_list",
+        "organizationallegalinfo": "org_legal_list",
+        "activityresultsinfo": "activity_results_list",
+    }
+
+    class Meta:
+        ordering = ["-created_at"]
+        verbose_name = "Bildirishnoma"
+        verbose_name_plural = "Bildirishnomalar"
+
+    def __str__(self):
+        return f"{self.icon} {self.title}"
+
+    def get_link(self):
+        # 1) Qo'lda kiritilgan havola bo'lsa — shuni ishlatamiz
+        if self.manual_url:
+            return self.manual_url
+
+        obj = self.content_object
+        if obj is None:
+            return "#"
+
+        # 2) get_absolute_url() bor modellar (Post, EkoActivity, AntiCorruptionPost)
+        if hasattr(obj, "get_absolute_url"):
+            try:
+                return obj.get_absolute_url()
+            except Exception:
+                pass
+
+        # 3) link property bor modellar (NormativeDocument va shu kabilar)
+        if hasattr(obj, "link"):
+            try:
+                link_value = obj.link
+                if link_value:
+                    return link_value
+            except Exception:
+                pass
+
+        # 4) url maydoni bor modellar (Law, PresidentialDecree, GovernmentDecree — tashqi havola)
+        if hasattr(obj, "url") and obj.url:
+            return obj.url
+
+        # 5) Fallback: ro'yxat sahifasiga
+        model_name = self.content_type.model if self.content_type else None
+        url_name = self.LIST_URL_NAMES.get(model_name)
+        if url_name:
+            try:
+                return reverse(url_name)
+            except Exception:
+                pass
+
+        return "#"

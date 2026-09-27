@@ -29,6 +29,23 @@ from .models import AboutMedia
 from .models import Testimonial
 from .models import MissionGoal
 from .models import NewUserNotification
+from .models import Notification
+
+@admin.register(Notification)
+class NotificationAdmin(admin.ModelAdmin):
+    list_display = ("icon", "title", "is_active", "created_at")
+    list_editable = ("is_active",)
+    list_filter = ("is_active", "created_at")
+    search_fields = ("title",)
+    actions = ["make_active", "make_inactive"]
+
+    @admin.action(description="Belgilanganlarni FAOL qilish")
+    def make_active(self, request, queryset):
+        queryset.update(is_active=True)
+
+    @admin.action(description="Belgilanganlarni NOFAOL qilish")
+    def make_inactive(self, request, queryset):
+        queryset.update(is_active=False)
 
 @admin.register(NewUserNotification)
 class NewUserNotificationAdmin(admin.ModelAdmin):

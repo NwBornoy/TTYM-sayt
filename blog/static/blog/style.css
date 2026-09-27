@@ -4371,3 +4371,272 @@ img {
       margin-right: 4px;
     }
   }
+
+/* =========================================================
+   BILDIRISHNOMALAR (Qo'ng'iroq)
+========================================================= */
+
+.notif-bell-wrap {
+    position: relative;
+    z-index: 1001; /* navbar va ko'k menyudan yuqorida turishi uchun */
+}
+
+.notif-bell-btn {
+    position: relative;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 8px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notif-bell-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #ff4757;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+}
+
+.notif-dropdown {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    width: 320px;
+    max-height: 420px;
+    overflow-y: auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+    display: none;
+    z-index: 99999; /* ko'k menyu (.main-navigation) va boshqa hamma narsadan yuqorida */
+}
+
+.notif-dropdown.open {
+    display: block;
+}
+
+.notif-dropdown-header {
+    padding: 14px 16px;
+    font-weight: 700;
+    border-bottom: 1px solid #eee;
+    color: #16326e;
+    position: sticky;
+    top: 0;
+    background: #fff;
+}
+
+.notif-dropdown-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.notif-item {
+    display: flex;
+    gap: 10px;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: #222;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.notif-item:hover {
+    background: #f5f7fb;
+}
+
+.notif-item-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.notif-item-body {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.notif-item-title {
+    font-size: 13.5px;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+.notif-item-time {
+    font-size: 11.5px;
+    color: #888;
+}
+
+.notif-empty {
+    padding: 24px 16px;
+    text-align: center;
+    color: #888;
+    font-size: 13.5px;
+}
+
+
+/* =========================================================
+   PLANSHET UCHUN (max-width: 900px)
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .notif-bell-btn {
+        font-size: 20px;
+        padding: 6px;
+    }
+
+    .notif-bell-count {
+        font-size: 10px;
+        min-width: 16px;
+        height: 16px;
+    }
+
+    .notif-dropdown {
+        width: 300px;
+        max-height: 400px;
+    }
+
+    .notif-item {
+        padding: 11px 14px;
+    }
+
+    .notif-item-icon {
+        font-size: 18px;
+    }
+
+    .notif-item-title {
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   TELEFON UCHUN (max-width: 600px)
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .notif-bell-btn {
+        font-size: 19px;
+        padding: 6px;
+    }
+
+    .notif-bell-count {
+        font-size: 9.5px;
+        min-width: 15px;
+        height: 15px;
+        padding: 0 3px;
+    }
+
+    .notif-dropdown {
+        position: fixed;
+        top: 60px;
+        left: 10px;
+        right: 10px;
+        width: auto;
+        max-height: 70vh;
+        border-radius: 10px;
+        z-index: 99999;
+    }
+
+    .notif-dropdown-header {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .notif-item {
+        padding: 10px 14px;
+        gap: 8px;
+    }
+
+    .notif-item-icon {
+        font-size: 17px;
+    }
+
+    .notif-item-title {
+        font-size: 12.5px;
+    }
+
+    .notif-item-time {
+        font-size: 11px;
+    }
+
+    .notif-empty {
+        padding: 20px 14px;
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   KICHIK TELEFONLAR UCHUN (max-width: 380px)
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .notif-bell-btn {
+        font-size: 18px;
+        padding: 5px;
+    }
+
+    .notif-bell-count {
+        font-size: 9px;
+        min-width: 14px;
+        height: 14px;
+        padding: 0 3px;
+    }
+
+    .notif-dropdown {
+        top: 55px;
+        left: 6px;
+        right: 6px;
+        max-height: 65vh;
+        border-radius: 8px;
+        z-index: 99999;
+    }
+
+    .notif-dropdown-header {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+
+    .notif-item {
+        padding: 9px 12px;
+        gap: 7px;
+    }
+
+    .notif-item-icon {
+        font-size: 16px;
+    }
+
+    .notif-item-title {
+        font-size: 12px;
+        line-height: 1.35;
+    }
+
+    .notif-item-time {
+        font-size: 10px;
+    }
+
+    .notif-empty {
+        padding: 18px 12px;
+        font-size: 12px;
+    }
+
+}
