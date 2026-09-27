@@ -1,6 +1,8 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
-<html lang="uz">
+{% get_current_language as CURRENT_LANGUAGE %}
+<html lang="{{ CURRENT_LANGUAGE }}">
 
 <head>
     <meta charset="UTF-8">
@@ -39,11 +41,11 @@
             <div class="header-brand-text">
 
                 <div class="header-brand-title">
-                    QASHQADARYO VILOYATI 
+                    {% trans "QASHQADARYO VILOYATI" %}
                 </div>
 
                 <div class="header-brand-subtitle">
-                    TEZ TIBBIY YORDAM MARKAZI
+                    {% trans "TEZ TIBBIY YORDAM MARKAZI" %}
                 </div>
 
             </div>
@@ -65,7 +67,7 @@
                     type="search"
                     name="q"
                     value="{{ request.GET.q|default:'' }}"
-                    placeholder="Qidirish..."
+                    placeholder="{% trans 'Qidirish...' %}"
                 >
 
                 <button type="submit">
@@ -73,6 +75,38 @@
                 </button>
 
             </form>
+                                   <!-- TIL TANLASH -->
+            <div class="lang-switcher">
+                <button type="button" class="lang-switcher-btn">
+                    {% get_current_language as CURRENT_LANGUAGE %}
+                    {% get_language_info for CURRENT_LANGUAGE as lang_info %}
+                    <img class="lang-flag"
+                         src="https://flagcdn.com/24x18/{% if lang_info.code == 'ru' %}ru{% elif lang_info.code == 'en' %}gb{% else %}uz{% endif %}.png"
+                         alt="">
+                    <span>{{ lang_info.name_local|capfirst }}</span>
+                    <span class="lang-arrow">▾</span>
+                </button>
+
+                <div class="lang-switcher-menu">
+                    {% get_available_languages as AVAILABLE_LANGUAGES %}
+                    {% get_language_info_list for AVAILABLE_LANGUAGES as languages %}
+
+                    <form action="{% url 'set_language' %}" method="post">
+                        {% csrf_token %}
+                        <input name="next" type="hidden" value="{{ request.path }}">
+
+                        {% for lang in languages %}
+                            <button type="submit" name="language" value="{{ lang.code }}"
+                                    class="lang-option {% if lang.code == CURRENT_LANGUAGE %}active{% endif %}">
+                                <img class="lang-flag"
+                                     src="https://flagcdn.com/24x18/{% if lang.code == 'ru' %}ru{% elif lang.code == 'en' %}gb{% else %}uz{% endif %}.png"
+                                     alt="">
+                                {{ lang.name_local|capfirst }}
+                            </button>
+                        {% endfor %}
+                    </form>
+                </div>
+            </div>
 
 
             {% if user.is_authenticated %}
@@ -108,7 +142,7 @@
                 <a href="{% url 'logout' %}"
                     class="header-logout"
                 >
-                    Chiqish
+                    {% trans "Chiqish" %}
                 </a>
 
             {% else %}
@@ -118,7 +152,7 @@
                 <a  href="{% url 'login' %}"
                     class="header-login"
                 >
-                    Kirish
+                    {% trans "Kirish" %}
                 </a>
 
 
@@ -127,7 +161,7 @@
                 <a href="{% url 'register' %}"
                     class="header-register"
                 >
-                    Ro'yxatdan o'tish
+                    {% trans "Ro'yxatdan o'tish" %}
                 </a>
 
 
@@ -139,7 +173,7 @@
                     </span>
 
                     <span class="user-name">
-                        Mehmon
+                        {% trans "Mehmon" %}
                     </span>
 
                 </div>
@@ -149,7 +183,7 @@
         </div>
 
         <!-- MOBIL MENYU TUGMASI -->
-        <button type="button" class="mobile-menu-toggle" aria-label="Menyuni ochish">
+        <button type="button" class="mobile-menu-toggle" aria-label="{% trans 'Menyuni ochish' %}">
             <span></span>
             <span></span>
             <span></span>
@@ -162,30 +196,30 @@
     <nav class="main-navigation">
 
         <a href="{% url 'home' %}">
-            ASOSIY
+            {% trans "ASOSIY" %}
         </a>
         <div class="nav-dropdown">
 
             <a href="{% url 'about' %}" class="nav-dropdown-title">
-                MARKAZ
+                {% trans "MARKAZ" %}
                 <span class="menu-arrow">▼</span>
             </a>
         
             <div class="dropdown-menu">
         
                 <a href="{% url 'about' %}">
-                    Markaz haqida
+                    {% trans "Markaz haqida" %}
                 </a>
         
                 <a href="{% url 'leadership' %}">
-                    Rahbariyat
+                    {% trans "Rahbariyat" %}
                 </a>
         
                 <a href="{% url 'central_staff' %}">
-                    Markaziy apparat
+                    {% trans "Markaziy apparat" %}
                 </a>
-                <a href="{% url 'finance_list' %}">Moliya-xo'jalik shaffofligi</a>
-                <a href="{% url 'hr_policy_list' %}">Kadrlar siyosati</a>
+                <a href="{% url 'finance_list' %}">{% trans "Moliya-xo'jalik shaffofligi" %}</a>
+                <a href="{% url 'hr_policy_list' %}">{% trans "Kadrlar siyosati" %}</a>
         
             </div>
         
@@ -193,17 +227,17 @@
         <div class="nav-dropdown">
 
             <a href="{% url 'news_list' %}" class="nav-dropdown-title">
-                FAOLIYAT
+                {% trans "FAOLIYAT" %}
                 <span class="menu-arrow">▼</span>
             </a>
         
             <div class="dropdown-menu">
         
                 <a href="{% url 'anticorruption_list' %}">
-                    Korrupsiyaga qarshi kurashish
+                    {% trans "Korrupsiyaga qarshi kurashish" %}
                 </a>
-                <a href="{% url 'org_legal_list' %}">Tashkiliy-huquqiy ma'lumotlar</a>
-                <a href="{% url 'activity_results_list' %}">Faoliyat va natijalar to'g'risidagi axborot</a>
+                <a href="{% url 'org_legal_list' %}">{% trans "Tashkiliy-huquqiy ma'lumotlar" %}</a>
+                <a href="{% url 'activity_results_list' %}">{% trans "Faoliyat va natijalar to'g'risidagi axborot" %}</a>
         
             </div>
         
@@ -212,26 +246,26 @@
         <div class="nav-dropdown">
 
             <a href="#" class="nav-dropdown-title">
-                HUJJATLAR
+                {% trans "HUJJATLAR" %}
                 <span class="menu-arrow">▼</span>
             </a>
         
             <div class="dropdown-menu">
         
                 <a href="{% url 'law_list' %}">
-                    Qonunlar
+                    {% trans "Qonunlar" %}
                 </a>
         
                 <a href="{% url 'decree_list' %}">
-                    Prezident farmon, qaror va farmoyishlari
+                    {% trans "Prezident farmon, qaror va farmoyishlari" %}
                 </a>
         
                 <a href="{% url 'gov_decree_list' %}">
-                    Hukumat qarori va farmoyishlari
+                    {% trans "Hukumat qarori va farmoyishlari" %}
                 </a>
         
                 <a href="{% url 'normative_list' %}">
-                    Markaz normativ hujjatlari
+                    {% trans "Markaz normativ hujjatlari" %}
                 </a>
         
             </div>
@@ -239,23 +273,23 @@
         </div>
 
         <a href="{% url 'branches' %}">
-            FILIALLAR
+            {% trans "FILIALLAR" %}
         </a>
 
         <div class="nav-dropdown">
 
             <a href="{% url 'post_list' %}" class="nav-dropdown-title">
-                MATBUOT MARKAZI
+                {% trans "MATBUOT MARKAZI" %}
                 <span class="menu-arrow">▼</span>
             </a>
         
             <div class="dropdown-menu">
                 <a href="{% url 'post_list' %}">
-                    Maqola
+                    {% trans "Maqola" %}
                 </a>
         
                 <a href="{% url 'gallery' %}">
-                    Galereya
+                    {% trans "Galereya" %}
                 </a>
                 
         
@@ -264,15 +298,15 @@
         </div>
 
         <a href="{% url 'gallery' %}">
-            GALEREYA
+            {% trans "GALEREYA" %}
         </a>
 
         <a href="{% url 'support_chat' %}">
-            ALOQA
+            {% trans "ALOQA" %}
         </a>
 
         <a href="{% url 'eko_list' %}">
-            EKOFAOL XODIM
+            {% trans "EKOFAOL XODIM" %}
         </a>
 
     </nav>
@@ -327,8 +361,7 @@
 
                 <div class="footer-brand-text">
                     <strong>
-                        Qashqadaryo viloyati  <br>tez
-                        tibbiy yordam markazi
+                        {% trans "Qashqadaryo viloyati" %} <br>{% trans "tez tibbiy yordam markazi" %}
                     </strong>
                 </div>
 
@@ -336,7 +369,7 @@
 
             <div class="footer-share">
 
-                <span>Ulashish:</span>
+                <span>{% trans "Ulashish:" %}</span>
 
                 <div class="footer-socials">
 
@@ -364,25 +397,25 @@
 <!-- 2-USTUN: ASOSIY MENYU -->
 <ul class="footer-menu">
 
-    <li><a href="{% url 'home' %}">Asosiy</a></li>
+    <li><a href="{% url 'home' %}">{% trans "Asosiy" %}</a></li>
 
     <li class="footer-dropdown">
         <a href="{% url 'news_list' %}" class="footer-dropdown-title">
-            Faoliyat
+            {% trans "Faoliyat" %}
             <span class="menu-arrow">▼</span>
         </a>
         <div class="footer-dropdown-menu">
-            <a href="{% url 'anticorruption_list' %}">Korrupsiyaga qarshi kurashish</a>
-            <a href="{% url 'org_legal_list' %}">Tashkiliy-huquqiy ma'lumotlar</a>
-            <a href="{% url 'activity_results_list' %}">Faoliyat va natijalar to'g'risidagi axborot</a>
+            <a href="{% url 'anticorruption_list' %}">{% trans "Korrupsiyaga qarshi kurashish" %}</a>
+            <a href="{% url 'org_legal_list' %}">{% trans "Tashkiliy-huquqiy ma'lumotlar" %}</a>
+            <a href="{% url 'activity_results_list' %}">{% trans "Faoliyat va natijalar to'g'risidagi axborot" %}</a>
         </div>
     </li>
 
-    <li><a href="{% url 'branches' %}">Filiallar</a></li>
+    <li><a href="{% url 'branches' %}">{% trans "Filiallar" %}</a></li>
 
-    <li><a href="{% url 'gallery' %}">Galereya</a></li>
+    <li><a href="{% url 'gallery' %}">{% trans "Galereya" %}</a></li>
 
-    <li><a href="{% url 'eko_list' %}">Ekofaol xodim</a></li>
+    <li><a href="{% url 'eko_list' %}">{% trans "Ekofaol xodim" %}</a></li>
 
 </ul>
 
@@ -392,60 +425,60 @@
 
     <li class="footer-dropdown">
         <a href="{% url 'about' %}" class="footer-dropdown-title">
-            Markaz
+            {% trans "Markaz" %}
             <span class="menu-arrow">▼</span>
         </a>
         <div class="footer-dropdown-menu">
-            <a href="{% url 'about' %}">Markaz haqida</a>
-            <a href="{% url 'leadership' %}">Rahbariyat</a>
-            <a href="{% url 'central_staff' %}">Markaziy apparat</a>
-            <a href="{% url 'finance_list' %}">Moliya-xo'jalik shaffofligi</a>
-            <a href="{% url 'hr_policy_list' %}">Kadrlar siyosati</a>
+            <a href="{% url 'about' %}">{% trans "Markaz haqida" %}</a>
+            <a href="{% url 'leadership' %}">{% trans "Rahbariyat" %}</a>
+            <a href="{% url 'central_staff' %}">{% trans "Markaziy apparat" %}</a>
+            <a href="{% url 'finance_list' %}">{% trans "Moliya-xo'jalik shaffofligi" %}</a>
+            <a href="{% url 'hr_policy_list' %}">{% trans "Kadrlar siyosati" %}</a>
         </div>
     </li>
 
     <li class="footer-dropdown">
         <a href="#" class="footer-dropdown-title">
-            Hujjatlar
+            {% trans "Hujjatlar" %}
             <span class="menu-arrow">▼</span>
         </a>
         <div class="footer-dropdown-menu">
-            <a href="{% url 'law_list' %}">Qonunlar</a>
-            <a href="{% url 'decree_list' %}">Prezident farmon, qaror va farmoyishlari</a>
-            <a href="{% url 'gov_decree_list' %}">Hukumat qarori va farmoyishlari</a>
-            <a href="{% url 'normative_list' %}">Markaz normativ hujjatlari</a>
+            <a href="{% url 'law_list' %}">{% trans "Qonunlar" %}</a>
+            <a href="{% url 'decree_list' %}">{% trans "Prezident farmon, qaror va farmoyishlari" %}</a>
+            <a href="{% url 'gov_decree_list' %}">{% trans "Hukumat qarori va farmoyishlari" %}</a>
+            <a href="{% url 'normative_list' %}">{% trans "Markaz normativ hujjatlari" %}</a>
         </div>
     </li>
 
     <li class="footer-dropdown">
         <a href="{% url 'post_list' %}" class="footer-dropdown-title">
-            Matbuot markazi
+            {% trans "Matbuot markazi" %}
             <span class="menu-arrow">▼</span>
         </a>
         <div class="footer-dropdown-menu">
-            <a href="{% url 'post_list' %}">Maqola</a>
-            <a href="{% url 'gallery' %}">Galereya</a>
+            <a href="{% url 'post_list' %}">{% trans "Maqola" %}</a>
+            <a href="{% url 'gallery' %}">{% trans "Galereya" %}</a>
         </div>
     </li>
 
-    <li><a href="{% url 'support_chat' %}">Aloqa</a></li>
+    <li><a href="{% url 'support_chat' %}">{% trans "Aloqa" %}</a></li>
 
 </ul>
 
         <!-- 4-USTUN: ISH VAQTI -->
         <div class="footer-col footer-hours">
 
-            <div class="footer-hours-label">Ish vaqti:</div>
+            <div class="footer-hours-label">{% trans "Ish vaqti:" %}</div>
 
             <strong>
-                Dushanba–juma<br>
-                (dam olish kunlari:<br>
-                shanba-yakshanba)
+                {% trans "Dushanba–juma" %}<br>
+                ({% trans "dam olish kunlari:" %}<br>
+                {% trans "shanba-yakshanba" %})
             </strong>
 
             <div class="footer-lunch">
 
-                <div class="footer-hours-label">Tushlik:</div>
+                <div class="footer-hours-label">{% trans "Tushlik:" %}</div>
 
                 <strong>13:00 – 14:00</strong>
 
@@ -461,11 +494,11 @@
                 (+998 55) 511-31-03
             </a>
 
-            <div class="footer-contact-label">Manzil:</div>
+            <div class="footer-contact-label">{% trans "Manzil:" %}</div>
 
             <strong>
-                Qashqadaryo viloyati,<br>
-                Qarshi shahri
+                {% trans "Qashqadaryo viloyati," %}<br>
+                {% trans "Qarshi shahri" %}
             </strong>
 
         </div>
@@ -478,18 +511,15 @@
         <div class="footer-bottom-inner">
 
             <p>
-                Materiallardan foydalanishda manba sifatida saytimizga
-                havola ko‘rsatilishi shart.
+                {% trans "Materiallardan foydalanishda manba sifatida saytimizga havola ko‘rsatilishi shart." %}
             </p>
 
             <p>
-                © Barcha huquqlar himoyalangan 2026
+                {% trans "© Barcha huquqlar himoyalangan 2026" %}
             </p>
 
             <p>
-                Diqqat! Agar matnda xato topsangiz, uni belgilang va
-                ma’muriyatni xabardor qilish uchun Ctrl+Enter tugmalarini
-                bosing.
+                {% trans "Diqqat! Agar matnda xato topsangiz, uni belgilang va ma’muriyatni xabardor qilish uchun Ctrl+Enter tugmalarini bosing." %}
             </p>
 
         </div>
@@ -541,7 +571,19 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+    var langSwitcher = document.querySelector('.lang-switcher');
+    var langBtn = document.querySelector('.lang-switcher-btn');
+    if (langSwitcher && langBtn) {
+        langBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            langSwitcher.classList.toggle('open');
+        });
+        document.addEventListener('click', function () {
+            langSwitcher.classList.remove('open');
+        });
+    }
 });
+
 </script>
 </body>
 </html>

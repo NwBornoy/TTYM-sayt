@@ -1,7 +1,8 @@
 {% extends "blog/base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Markaz normativ hujjatlari{% endblock %}
+{% block title %}{% trans "Markaz normativ hujjatlari" %}{% endblock %}
 
 {% block content %}
 
@@ -198,7 +199,7 @@ SMALL MOBILE (480px)
 </style>
 
 <div class="law-hero">
-  <h1>Markaz normativ hujjatlari</h1>
+  <h1>{% trans "Markaz normativ hujjatlari" %}</h1>
 </div>
 
 <div class="law-list-page">
@@ -211,7 +212,7 @@ SMALL MOBILE (480px)
           {% if doc.image %}
             <img src="{{ doc.image.url }}" alt="{{ doc.title }}" class="law-card-image">
           {% else %}
-            <div class="law-card-image-placeholder">Rasm yo'q</div>
+            <div class="law-card-image-placeholder">{% trans "Rasm yo'q" %}</div>
           {% endif %}
 
           <div class="law-card-body">
@@ -223,7 +224,7 @@ SMALL MOBILE (480px)
         </a>
       {% endif %}
     {% empty %}
-      <p class="law-empty">Hozircha hujjatlar kiritilmagan.</p>
+      <p class="law-empty">{% trans "Hozircha hujjatlar kiritilmagan." %}</p>
     {% endfor %}
 
   </div>

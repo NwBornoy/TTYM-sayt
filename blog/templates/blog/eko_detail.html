@@ -1,5 +1,6 @@
 {% extends "blog/base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}{{ activity.title }}{% endblock %}
 
@@ -266,8 +267,9 @@
   }
 </style>
 
+
 <div class="eko-detail-page">
-  <a href="{% url 'eko_list' %}" class="eko-detail-back">← Ekofaol xodim ro'yxatiga qaytish</a>
+  <a href="{% url 'eko_list' %}" class="eko-detail-back">← {% trans "Ekofaol xodim ro'yxatiga qaytish" %}</a>
 
   <h1>{{ activity.title }}</h1>
   <div class="eko-detail-date">{{ activity.created_at|date:"d.m.Y" }}</div>
@@ -281,7 +283,7 @@
   <!-- IZOHLAR -->
   <section class="comments-section">
 
-    <h2>Izohlar ({{ comments|length }})</h2>
+    <h2>{% trans "Izohlar" %} ({{ comments|length }})</h2>
 
     {% for comment in comments %}
       <div class="comment">
@@ -292,13 +294,13 @@
         <p>{{ comment.text }}</p>
       </div>
     {% empty %}
-      <p class="no-comments">Hozircha izohlar yo‘q. Birinchi bo‘lib fikringizni yozing.</p>
+      <p class="no-comments">{% trans "Hozircha izohlar yo'q. Birinchi bo'lib fikringizni yozing." %}</p>
     {% endfor %}
 
     <div class="comment-form-box">
-      <h3>Izoh qoldirish</h3>
+      <h3>{% trans "Izoh qoldirish" %}</h3>
       <p class="comment-help">
-        Fikringizni yozing. Izoh moderator tomonidan tasdiqlangandan keyin saytda ko‘rinadi.
+        {% trans "Fikringizni yozing. Izoh moderator tomonidan tasdiqlangandan keyin saytda ko'rinadi." %}
       </p>
 
       <form method="post" class="comment-form">
@@ -325,7 +327,7 @@
 
         {{ comment_form.website }}
 
-        <button type="submit" class="comment-submit">Izohni yuborish →</button>
+        <button type="submit" class="comment-submit">{% trans "Izohni yuborish →" %}</button>
       </form>
     </div>
 

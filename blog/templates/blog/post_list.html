@@ -1,7 +1,8 @@
 {% extends "blog/base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Barcha maqolalar{% endblock %}
+{% block title %}{% trans "Barcha maqolalar" %}{% endblock %}
 
 {% block content %}
 <style>
@@ -369,12 +370,12 @@
     <div class="search-result-icon">🔎</div>
 
     <div class="search-result-info">
-        <div class="search-result-label">Qidiruv natijalari</div>
+        <div class="search-result-label">{% trans "Qidiruv natijalari" %}</div>
         <div class="search-result-query">"{{ request.GET.q }}"</div>
-        <div class="search-result-count">{{ paginator.count }} ta maqola topildi</div>
+        <div class="search-result-count">{% blocktrans count counter=paginator.count %}{{ counter }} ta maqola topildi{% plural %}{{ counter }} ta maqola topildi{% endblocktrans %}</div>
     </div>
 
-    <a href="{% url 'post_list' %}" class="search-result-clear">✕ Tozalash</a>
+    <a href="{% url 'post_list' %}" class="search-result-clear">✕ {% trans "Tozalash" %}</a>
 
 </div>
 
@@ -387,10 +388,10 @@
 
 <div class="articles-heading">
 
-    <h2 class="articles-heading-title">BARCHA MAQOLALAR</h2>
+    <h2 class="articles-heading-title">{% trans "BARCHA MAQOLALAR" %}</h2>
 
     {% if posts %}
-        <div class="articles-heading-count">{{ paginator.count }} ta maqola</div>
+        <div class="articles-heading-count">{% blocktrans count counter=paginator.count %}{{ counter }} ta maqola{% plural %}{{ counter }} ta maqola{% endblocktrans %}</div>
     {% endif %}
 
 </div>
@@ -442,7 +443,7 @@
     <div class="article-content">
 
         <div class="article-top">
-            <span class="article-category">SOG‘LIQ</span>
+            <span class="article-category">{% trans "SOG‘LIQ" %}</span>
             <span class="article-date">{{ post.created_at|date:"d/m/Y" }}</span>
         </div>
 
@@ -452,7 +453,7 @@
 
         <p>{{ post.body|striptags|truncatechars:105 }}</p>
 
-        <a href="{{ post.get_absolute_url }}" class="article-more">Batafsil o‘qish →</a>
+        <a href="{{ post.get_absolute_url }}" class="article-more">{% trans "Batafsil o‘qish" %} →</a>
 
     </div>
 
@@ -472,21 +473,21 @@
 <div class="pagination">
 
     {% if page_obj.has_previous %}
-        <a href="?q={{ request.GET.q|urlencode }}&page=1" class="pagination-link">⬅️ Birinchi</a>
-        <a href="?q={{ request.GET.q|urlencode }}&page={{ page_obj.previous_page_number }}" class="pagination-link">← Oldingi</a>
+        <a href="?q={{ request.GET.q|urlencode }}&page=1" class="pagination-link">⬅️ {% trans "Birinchi" %}</a>
+        <a href="?q={{ request.GET.q|urlencode }}&page={{ page_obj.previous_page_number }}" class="pagination-link">← {% trans "Oldingi" %}</a>
     {% else %}
-        <span class="pagination-link is-disabled">⬅️ Birinchi</span>
-        <span class="pagination-link is-disabled">← Oldingi</span>
+        <span class="pagination-link is-disabled">⬅️ {% trans "Birinchi" %}</span>
+        <span class="pagination-link is-disabled">← {% trans "Oldingi" %}</span>
     {% endif %}
 
     <span class="pagination-current">{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</span>
 
     {% if page_obj.has_next %}
-        <a href="?q={{ request.GET.q|urlencode }}&page={{ page_obj.next_page_number }}" class="pagination-link">Keyingi →</a>
-        <a href="?q={{ request.GET.q|urlencode }}&page={{ page_obj.paginator.num_pages }}" class="pagination-link">Oxirgi ➡️</a>
+        <a href="?q={{ request.GET.q|urlencode }}&page={{ page_obj.next_page_number }}" class="pagination-link">{% trans "Keyingi" %} →</a>
+        <a href="?q={{ request.GET.q|urlencode }}&page={{ page_obj.paginator.num_pages }}" class="pagination-link">{% trans "Oxirgi" %} ➡️</a>
     {% else %}
-        <span class="pagination-link is-disabled">Keyingi →</span>
-        <span class="pagination-link is-disabled">Oxirgi ➡️</span>
+        <span class="pagination-link is-disabled">{% trans "Keyingi" %} →</span>
+        <span class="pagination-link is-disabled">{% trans "Oxirgi" %} ➡️</span>
     {% endif %}
 
 </div>
@@ -506,10 +507,10 @@
 
     {% if request.GET.q %}
         <div class="no-results-query">"{{ request.GET.q }}"</div>
-        <div class="no-results-text">bo‘yicha maqola topilmadi.</div>
-        <div class="no-results-hint">Boshqa so‘z bilan qidirib ko‘ring.</div>
+        <div class="no-results-text">{% trans "bo‘yicha maqola topilmadi." %}</div>
+        <div class="no-results-hint">{% trans "Boshqa so‘z bilan qidirib ko‘ring." %}</div>
     {% else %}
-        <div class="no-results-empty">Hozircha maqolalar yo‘q.</div>
+        <div class="no-results-empty">{% trans "Hozircha maqolalar yo‘q." %}</div>
     {% endif %}
 
 </div>

@@ -1,7 +1,8 @@
 {% extends "blog/base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Tashkiliy-huquqiy ma'lumotlar{% endblock %}
+{% block title %}{% trans "Tashkiliy-huquqiy ma'lumotlar" %}{% endblock %}
 
 {% block content %}
 
@@ -203,7 +204,7 @@ SMALL MOBILE (480px)
 </style>
 
 <div class="law-hero">
-  <h1>Tashkiliy-huquqiy ma'lumotlar</h1>
+  <h1>{% trans "Tashkiliy-huquqiy ma'lumotlar" %}</h1>
 </div>
 
 <div class="law-list-page">
@@ -216,7 +217,7 @@ SMALL MOBILE (480px)
           {% if doc.image %}
             <img src="{{ doc.image.url }}" alt="{{ doc.title }}" class="law-card-image">
           {% else %}
-            <div class="law-card-image-placeholder">Rasm yo'q</div>
+            <div class="law-card-image-placeholder">{% trans "Rasm yo'q" %}</div>
           {% endif %}
 
           <div class="law-card-body">
@@ -228,7 +229,7 @@ SMALL MOBILE (480px)
         </a>
       {% endif %}
     {% empty %}
-      <p class="law-empty">Hozircha ma'lumotlar kiritilmagan.</p>
+      <p class="law-empty">{% trans "Hozircha ma'lumotlar kiritilmagan." %}</p>
     {% endfor %}
 
   </div>

@@ -1,7 +1,8 @@
 {% extends 'blog/base.html' %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Biz haqimizda{% endblock %}
+{% block title %}{% trans "Biz haqimizda" %}{% endblock %}
 
 {% block content %}
 
@@ -582,8 +583,8 @@
 
   <!-- HERO -->
   <section class="about-hero">
-    <h1>Biz haqimizda</h1>
-    <p class="subtitle">Qashqadaryo viloyatida Tez tibbiy yordam markazi — aholining sog'lig'i va farovatligini saqlash uchun faoliyat ko'rsatuvchi muassasa</p>
+    <h1>{% trans "Biz haqimizda" %}</h1>
+    <p class="subtitle">{% trans "Qashqadaryo viloyatida Tez tibbiy yordam markazi — aholining sog'lig'i va farovatligini saqlash uchun faoliyat ko'rsatuvchi muassasa" %}</p>
   </section>
 
   <!-- STATS -->
@@ -592,9 +593,9 @@
   <!-- TARIX -->
   <section class="history-section">
     <div class="section-header">
-      <span class="eyebrow">Bizning yo'limiz</span>
-      <h2>Markaz tarixi</h2>
-      <p>Qisqa vaqt ichida bosib o'tgan yo'limiz</p>
+      <span class="eyebrow">{% trans "Bizning yo'limiz" %}</span>
+      <h2>{% trans "Markaz tarixi" %}</h2>
+      <p>{% trans "Qisqa vaqt ichida bosib o'tgan yo'limiz" %}</p>
     </div>
 
     <div class="timeline">
@@ -609,8 +610,8 @@
         <div class="timeline-item">
           <div class="timeline-dot"></div>
           <div class="timeline-year">—</div>
-          <h4>Hozircha tarix qo'shilmagan</h4>
-          <p>Admin panelda "Markaz tarixi (Timeline)" bo'limidan voqealar qo'shing.</p>
+          <h4>{% trans "Hozircha tarix qo'shilmagan" %}</h4>
+          <p>{% trans "Admin panelda \"Markaz tarixi (Timeline)\" bo'limidan voqealar qo'shing." %}</p>
         </div>
       {% endfor %}
     </div>
@@ -621,9 +622,9 @@
   <section class="team-section">
     <div class="team-container">
       <div class="section-header">
-        <span class="eyebrow">Kadrlar</span>
-        <h2>Bizning jamoamiz</h2>
-        <p>Malakali va tajribali mutaxassislardan tashkil topgan jamoa</p>
+        <span class="eyebrow">{% trans "Kadrlar" %}</span>
+        <h2>{% trans "Bizning jamoamiz" %}</h2>
+        <p>{% trans "Malakali va tajribali mutaxassislardan tashkil topgan jamoa" %}</p>
       </div>
       <div class="team-grid">
         {% for stat in team_stats %}
@@ -636,7 +637,7 @@
           <div class="team-card">
             <div class="team-icon">ℹ️</div>
             <div class="team-number">—</div>
-            <div class="team-label">Admin panelda "Bizning jamoamiz" bo'limidan statistika qo'shing.</div>
+            <div class="team-label">{% trans "Admin panelda \"Bizning jamoamiz\" bo'limidan statistika qo'shing." %}</div>
           </div>
         {% endfor %}
       </div>
@@ -646,9 +647,9 @@
   <!-- GALEREYA -->
   <section class="about-gallery-section">
     <div class="section-header">
-      <span class="eyebrow">Fotolavha</span>
-      <h2>Markazimizdan lavhalar</h2>
-      <p>Bizning filiallar, jamoa va faoliyatimizdan rasmlar</p>
+      <span class="eyebrow">{% trans "Fotolavha" %}</span>
+      <h2>{% trans "Markazimizdan lavhalar" %}</h2>
+      <p>{% trans "Bizning filiallar, jamoa va faoliyatimizdan rasmlar" %}</p>
     </div>
 
     <div class="about-gallery-grid">
@@ -667,7 +668,7 @@
           <div class="about-gallery-caption">{{ item.caption }}</div>
         </div>
       {% empty %}
-        <div class="about-gallery-empty">Hozircha lavhalar qo'shilmagan. Admin panelda "Markazimizdan lavhalar" bo'limidan rasm yoki video qo'shing.</div>
+        <div class="about-gallery-empty">{% trans "Hozircha lavhalar qo'shilmagan. Admin panelda \"Markazimizdan lavhalar\" bo'limidan rasm yoki video qo'shing." %}</div>
       {% endfor %}
     </div>
   </section>
@@ -675,16 +676,16 @@
   <!-- FILIALLAR -->
   <section class="ab-branches-section">
     <div class="section-header">
-      <span class="eyebrow">Hududlar</span>
-      <h2>Filiallar</h2>
-      <p>Qashqadaryo viloyati bo'ylab joylashgan filiallar</p>
+      <span class="eyebrow">{% trans "Hududlar" %}</span>
+      <h2>{% trans "Filiallar" %}</h2>
+      <p>{% trans "Qashqadaryo viloyati bo'ylab joylashgan filiallar" %}</p>
     </div>
 
     <div class="ab-branch-grid">
       {% for branch in branches %}
         <div class="ab-branch-card">
           {% if branch.is_main %}
-            <span class="ab-branch-badge">🏆 Bosh filial</span>
+            <span class="ab-branch-badge">🏆 {% trans "Bosh filial" %}</span>
           {% endif %}
 
           {% if branch.director_image %}
@@ -697,19 +698,19 @@
           <div class="ab-branch-region">{{ branch.region }}</div>
 
           <div class="ab-branch-row">
-            <div class="ab-branch-label">Rahbar</div>
+            <div class="ab-branch-label">{% trans "Rahbar" %}</div>
             <div class="ab-branch-value">{{ branch.director_name|default:"—" }}</div>
           </div>
 
           <div class="ab-branch-row">
-            <div class="ab-branch-label">Telefon</div>
+            <div class="ab-branch-label">{% trans "Telefon" %}</div>
             <div class="ab-branch-value">
               {% if branch.phone %}<a href="tel:{{ branch.phone }}">{{ branch.phone }}</a>{% else %}—{% endif %}
             </div>
           </div>
 
           <div class="ab-branch-row">
-            <div class="ab-branch-label">Email</div>
+            <div class="ab-branch-label">{% trans "Email" %}</div>
             <div class="ab-branch-value">
               {% if branch.email %}<a href="mailto:{{ branch.email }}">{{ branch.email }}</a>{% else %}—{% endif %}
             </div>
@@ -717,13 +718,13 @@
 
           {% if branch.address %}
             <div class="ab-branch-row">
-              <div class="ab-branch-label">Manzil</div>
+              <div class="ab-branch-label">{% trans "Manzil" %}</div>
               <div class="ab-branch-value">{{ branch.address }}</div>
             </div>
           {% endif %}
 
           <div class="ab-branch-row">
-            <div class="ab-branch-label">Tavsif</div>
+            <div class="ab-branch-label">{% trans "Tavsif" %}</div>
             <div class="ab-branch-value">{{ branch.description|default:"—" }}</div>
           </div>
 
@@ -743,15 +744,15 @@
         </div>
       {% empty %}
         <div class="ab-branch-card">
-          <span class="ab-branch-badge">🏆 Bosh filial</span>
-          <h3>Qarshi Filiali</h3>
-          <div class="ab-branch-region">Qarshi shahri</div>
+          <span class="ab-branch-badge">🏆 {% trans "Bosh filial" %}</span>
+          <h3>{% trans "Qarshi Filiali" %}</h3>
+          <div class="ab-branch-region">{% trans "Qarshi shahri" %}</div>
           <div class="ab-branch-row">
-            <div class="ab-branch-label">Rahbar</div>
+            <div class="ab-branch-label">{% trans "Rahbar" %}</div>
             <div class="ab-branch-value">Dr. Abdullo Xolmatov</div>
           </div>
           <div class="ab-branch-row">
-            <div class="ab-branch-label">Telefon</div>
+            <div class="ab-branch-label">{% trans "Telefon" %}</div>
             <div class="ab-branch-value"><a href="tel:+998912345678">+998 91 234-56-78</a></div>
           </div>
         </div>
@@ -763,21 +764,21 @@
   <section class="callcenter-section">
     <div class="callcenter-box">
       <div class="callcenter-text">
-        <h2>☎️ Call-markazimiz</h2>
-        <p>Shoshilinch holatlarda bizga istalgan vaqtda qo'ng'iroq qiling — mutaxassislarimiz 24 soat davomida javob berishga tayyor.</p>
+        <h2>☎️ {% trans "Call-markazimiz" %}</h2>
+        <p>{% trans "Shoshilinch holatlarda bizga istalgan vaqtda qo'ng'iroq qiling — mutaxassislarimiz 24 soat davomida javob berishga tayyor." %}</p>
         <a href="tel:{{ contact.phone|default:'103' }}" class="callcenter-phone">📞 {{ contact.phone|default:"103" }}</a>
       </div>
       <div class="callcenter-details">
         <div class="callcenter-detail-item">
-          <div class="callcenter-detail-label">Qabulxona telefoni</div>
+          <div class="callcenter-detail-label">{% trans "Qabulxona telefoni" %}</div>
           <div class="callcenter-detail-value">{{ contact.phone_office|default:"—" }}</div>
         </div>
         <div class="callcenter-detail-item">
-          <div class="callcenter-detail-label">Email</div>
+          <div class="callcenter-detail-label">{% trans "Email" %}</div>
           <div class="callcenter-detail-value">{{ contact.email|default:"—" }}</div>
         </div>
         <div class="callcenter-detail-item">
-          <div class="callcenter-detail-label">Ish vaqti</div>
+          <div class="callcenter-detail-label">{% trans "Ish vaqti" %}</div>
           <div class="callcenter-detail-value">{{ contact.working_hours|default:"24/7" }}</div>
         </div>
       </div>
@@ -788,9 +789,9 @@
   <section class="testimonials-section" id="fikrlar">
     <div class="testimonials-container">
       <div class="section-header">
-        <span class="eyebrow">Fikrlar</span>
-        <h2>Bemorlarimiz nima deydi</h2>
-        <p>Xizmatimizdan foydalangan insonlarning fikrlari</p>
+        <span class="eyebrow">{% trans "Fikrlar" %}</span>
+        <h2>{% trans "Bemorlarimiz nima deydi" %}</h2>
+        <p>{% trans "Xizmatimizdan foydalangan insonlarning fikrlari" %}</p>
       </div>
 
       <div class="testimonials-grid">
@@ -807,14 +808,14 @@
             </div>
           </div>
         {% empty %}
-          <p class="testimonials-note " style="text-align: center; color: #e8404d; margin-top: 10%;"> <b> Hozircha fikrlar yo'q. Birinchi bo'lib fikr qoldiring!</b></p>
+          <p class="testimonials-note " style="text-align: center; color: #e8404d; margin-top: 10%;"> <b>{% trans "Hozircha fikrlar yo'q. Birinchi bo'lib fikr qoldiring!" %}</b></p>
         {% endfor %}
       </div>
 
       <!-- FIKR QOLDIRISH FORMASI -->
       <div class="testimonial-form-box">
-        <h3>Fikringizni qoldiring</h3>
-        <p class="tf-note">Fikringiz tekshiruvdan o'tgach saytda chop etiladi.</p>
+        <h3>{% trans "Fikringizni qoldiring" %}</h3>
+        <p class="tf-note">{% trans "Fikringiz tekshiruvdan o'tgach saytda chop etiladi." %}</p>
 
         {% if messages %}
           {% for message in messages %}
@@ -827,7 +828,7 @@
           {{ testimonial_form.name }}
           {{ testimonial_form.location }}
           {{ testimonial_form.text }}
-          <button type="submit" class="tf-submit-btn">Yuborish</button>
+          <button type="submit" class="tf-submit-btn">{% trans "Yuborish" %}</button>
         </form>
       </div>
     </div>
@@ -836,7 +837,7 @@
   <!-- MISSIYA -->
   <section class="mission-section">
     <div class="mission-container">
-      <h2>Bizning maqsad va vazifalari</h2>
+      <h2>{% trans "Bizning maqsad va vazifalari" %}</h2>
       <div class="mission-goals">
         {% for goal in mission_goals %}
           <div class="goal">
@@ -847,8 +848,8 @@
         {% empty %}
           <div class="goal">
             <div class="goal-icon">ℹ️</div>
-            <h3>Hozircha ma'lumot qo'shilmagan</h3>
-            <p>Admin panelda "Bizning maqsad va vazifalarimiz" bo'limidan qo'shing.</p>
+            <h3>{% trans "Hozircha ma'lumot qo'shilmagan" %}</h3>
+            <p>{% trans "Admin panelda \"Bizning maqsad va vazifalarimiz\" bo'limidan qo'shing." %}</p>
           </div>
         {% endfor %}
       </div>

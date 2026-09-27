@@ -1,0 +1,981 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-25 14:48+0500\n"
+"PO-Revision-Date: 2026-09-24 18:00+0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Uzbek (Cyrillic)\n"
+"Language: uz_Cyrl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: .\blog\templates\blog\base.html:44
+msgid "QASHQADARYO VILOYATI"
+msgstr "ҚАШҚАДАРЁ ВИЛОЯТИ"
+
+#: .\blog\templates\blog\base.html:48
+msgid "TEZ TIBBIY YORDAM MARKAZI"
+msgstr "ТЕЗ ТИББИЙ ЁРДАМ МАРКАЗИ"
+
+#: .\blog\templates\blog\base.html:70
+msgid "Qidirish..."
+msgstr "Қидириш..."
+
+#: .\blog\templates\blog\base.html:138
+msgid "Chiqish"
+msgstr "Чиқиш"
+
+#: .\blog\templates\blog\base.html:148
+msgid "Kirish"
+msgstr "Кириш"
+
+#: .\blog\templates\blog\base.html:157
+msgid "Ro'yxatdan o'tish"
+msgstr "Рўйхатдан ўтиш"
+
+#: .\blog\templates\blog\base.html:169
+msgid "Mehmon"
+msgstr "Меҳмон"
+
+#: .\blog\templates\blog\base.html:179
+msgid "Menyuni ochish"
+msgstr "Менюни очиш"
+
+#: .\blog\templates\blog\base.html:192
+msgid "ASOSIY"
+msgstr "АСОСИЙ"
+
+#: .\blog\templates\blog\base.html:197
+msgid "MARKAZ"
+msgstr "МАРКАЗ"
+
+#: .\blog\templates\blog\base.html:204 .\blog\templates\blog\base.html:425
+msgid "Markaz haqida"
+msgstr "Марказ ҳақида"
+
+#: .\blog\templates\blog\base.html:208 .\blog\templates\blog\base.html:426
+msgid "Rahbariyat"
+msgstr "Раҳбарият"
+
+#: .\blog\templates\blog\base.html:212 .\blog\templates\blog\base.html:427
+msgid "Markaziy apparat"
+msgstr "Марказий аппарат"
+
+#: .\blog\templates\blog\base.html:214 .\blog\templates\blog\base.html:428
+msgid "Moliya-xo'jalik shaffofligi"
+msgstr "Молия-хўжалик шаффофлиги"
+
+#: .\blog\templates\blog\base.html:215 .\blog\templates\blog\base.html:429
+msgid "Kadrlar siyosati"
+msgstr "Кадрлар сиёсати"
+
+#: .\blog\templates\blog\base.html:223
+msgid "FAOLIYAT"
+msgstr "ФАОЛИЯТ"
+
+#: .\blog\templates\blog\base.html:230 .\blog\templates\blog\base.html:401
+msgid "Korrupsiyaga qarshi kurashish"
+msgstr "Коррупцияга қарши курашиш"
+
+#: .\blog\templates\blog\base.html:232 .\blog\templates\blog\base.html:402
+msgid "Tashkiliy-huquqiy ma'lumotlar"
+msgstr "Ташкилий-ҳуқуқий маълумотлар"
+
+#: .\blog\templates\blog\base.html:233 .\blog\templates\blog\base.html:403
+msgid "Faoliyat va natijalar to'g'risidagi axborot"
+msgstr "Фаолият ва натижалар тўғрисидаги ахборот"
+
+#: .\blog\templates\blog\base.html:242
+msgid "HUJJATLAR"
+msgstr "ҲУЖЖАТЛАР"
+
+#: .\blog\templates\blog\base.html:249 .\blog\templates\blog\base.html:439
+msgid "Qonunlar"
+msgstr "Қонунлар"
+
+#: .\blog\templates\blog\base.html:253 .\blog\templates\blog\base.html:440
+msgid "Prezident farmon, qaror va farmoyishlari"
+msgstr "Президент фармон, қарор ва фармойишлари"
+
+#: .\blog\templates\blog\base.html:257 .\blog\templates\blog\base.html:441
+msgid "Hukumat qarori va farmoyishlari"
+msgstr "Ҳукумат қарори ва фармойишлари"
+
+#: .\blog\templates\blog\base.html:261 .\blog\templates\blog\base.html:442
+msgid "Markaz normativ hujjatlari"
+msgstr "Марказ норматив ҳужжатлари"
+
+#: .\blog\templates\blog\base.html:269
+msgid "FILIALLAR"
+msgstr "ФИЛИАЛЛАР"
+
+#: .\blog\templates\blog\base.html:275
+msgid "MATBUOT MARKAZI"
+msgstr "МАТБУОТ МАРКАЗИ"
+
+#: .\blog\templates\blog\base.html:281 .\blog\templates\blog\base.html:452
+msgid "Maqola"
+msgstr "Мақола"
+
+#: .\blog\templates\blog\base.html:285 .\blog\templates\blog\base.html:409
+#: .\blog\templates\blog\base.html:453
+msgid "Galereya"
+msgstr "Галерея"
+
+#: .\blog\templates\blog\base.html:294
+msgid "GALEREYA"
+msgstr "ГАЛЕРЕЯ"
+
+#: .\blog\templates\blog\base.html:298
+msgid "ALOQA"
+msgstr "АЛОҚА"
+
+#: .\blog\templates\blog\base.html:302
+msgid "EKOFAOL XODIM"
+msgstr "ЭКОФАОЛ ХОДИМ"
+
+#: .\blog\templates\blog\base.html:357
+msgid "Qashqadaryo viloyati"
+msgstr "Қашқадарё вилояти"
+
+#: .\blog\templates\blog\base.html:357
+msgid "tez tibbiy yordam markazi"
+msgstr "тез тиббий ёрдам маркази"
+
+#: .\blog\templates\blog\base.html:365
+msgid "Ulashish:"
+msgstr "Улашиш:"
+
+#: .\blog\templates\blog\base.html:393
+msgid "Asosiy"
+msgstr "Асосий"
+
+#: .\blog\templates\blog\base.html:397
+msgid "Faoliyat"
+msgstr "Фаолият"
+
+#: .\blog\templates\blog\base.html:407
+msgid "Filiallar"
+msgstr "Филиаллар"
+
+#: .\blog\templates\blog\base.html:411
+msgid "Ekofaol xodim"
+msgstr "Экофаол ходим"
+
+#: .\blog\templates\blog\base.html:421
+msgid "Markaz"
+msgstr "Марказ"
+
+#: .\blog\templates\blog\base.html:435
+msgid "Hujjatlar"
+msgstr "Ҳужжатлар"
+
+#: .\blog\templates\blog\base.html:448
+msgid "Matbuot markazi"
+msgstr "Матбуот маркази"
+
+#: .\blog\templates\blog\base.html:457
+msgid "Aloqa"
+msgstr "Алоқа"
+
+#: .\blog\templates\blog\base.html:464
+msgid "Ish vaqti:"
+msgstr "Иш вақти:"
+
+#: .\blog\templates\blog\base.html:467
+msgid "Dushanba–juma"
+msgstr "Душанба–жума"
+
+#: .\blog\templates\blog\base.html:468
+msgid "dam olish kunlari:"
+msgstr "дам олиш кунлари:"
+
+#: .\blog\templates\blog\base.html:469
+msgid "shanba-yakshanba"
+msgstr "шанба-якшанба"
+
+#: .\blog\templates\blog\base.html:474
+msgid "Tushlik:"
+msgstr "Тушлик:"
+
+#: .\blog\templates\blog\base.html:490 .\blog\templates\blog\home.html:187
+msgid "Manzil:"
+msgstr "Манзил:"
+
+#: .\blog\templates\blog\base.html:493 .\blog\templates\blog\home.html:187
+msgid "Qashqadaryo viloyati,"
+msgstr "Қашқадарё вилояти,"
+
+#: .\blog\templates\blog\base.html:494 .\blog\templates\blog\home.html:187
+msgid "Qarshi shahri"
+msgstr "Қарши шаҳри"
+
+#: .\blog\templates\blog\base.html:507
+msgid ""
+"Materiallardan foydalanishda manba sifatida saytimizga havola ko‘rsatilishi "
+"shart."
+msgstr ""
+"Материаллардан фойдаланишда манба сифатида сайтимизга ҳавола кўрсатилиши "
+"шарт."
+
+#: .\blog\templates\blog\base.html:511
+msgid "© Barcha huquqlar himoyalangan 2026"
+msgstr "© Барча ҳуқуқлар ҳимояланган 2026"
+
+#: .\blog\templates\blog\base.html:515
+msgid ""
+"Diqqat! Agar matnda xato topsangiz, uni belgilang va ma’muriyatni xabardor "
+"qilish uchun Ctrl+Enter tugmalarini bosing."
+msgstr ""
+"Диққат! Агар матнда хато топсангиз, уни белгиланг ва маъмуриятни хабардор "
+"қилиш учун Ctrl+Enter тугмаларини босинг."
+
+#: .\blog\templates\blog\home.html:5
+msgid "Bosh sahifa"
+msgstr "Бош саҳифа"
+
+#: .\blog\templates\blog\home.html:22
+msgid "Respublika Tez<br> Tibbiy Yordam Markazi<br> Qashqadaryo filiali"
+msgstr "Республика Тез<br> Тиббий Ёрдам Маркази<br> Қашқадарё филиали"
+
+#: .\blog\templates\blog\home.html:30
+msgid "saytiga Xush kelibsiz!"
+msgstr "сайтига Хуш келибсиз!"
+
+#: .\blog\templates\blog\home.html:37
+msgid "Batafsil"
+msgstr "Батафсил"
+
+#: .\blog\templates\blog\home.html:57
+msgid "103 raqamiga"
+msgstr "103 рақамига"
+
+#: .\blog\templates\blog\home.html:58
+msgid "qo‘ng‘iroq qilinadi"
+msgstr "қўнғироқ қилинади"
+
+#: .\blog\templates\blog\home.html:67
+msgid "Manzilingizni"
+msgstr "Манзилингизни"
+
+#: .\blog\templates\blog\home.html:68
+msgid "aniq ayting"
+msgstr "аниқ айтинг"
+
+#: .\blog\templates\blog\home.html:77
+msgid "Tez yordam"
+msgstr "Тез ёрдам"
+
+#: .\blog\templates\blog\home.html:78
+msgid "15 min ichida yetib boradi"
+msgstr "15 дақиқа ичида етиб боради"
+
+#: .\blog\templates\blog\home.html:87
+msgid "Shifokorlik yordami"
+msgstr "Шифокорлик ёрдами"
+
+#: .\blog\templates\blog\home.html:88
+msgid "ko‘rsatiladi"
+msgstr "кўрсатилади"
+
+#: .\blog\templates\blog\home.html:108
+msgid "Kunlik 24 soat xizmat"
+msgstr "Кунлик 24 соат хизмат"
+
+#: .\blog\templates\blog\home.html:115
+msgid "Viloyatda filiallar"
+msgstr "Вилоятда филиаллар"
+
+#: .\blog\templates\blog\home.html:120
+msgid "min"
+msgstr "дақ"
+
+#: .\blog\templates\blog\home.html:122
+msgid "O‘rtacha javob vaqti"
+msgstr "Ўртача жавоб вақти"
+
+#: .\blog\templates\blog\home.html:129
+msgid "Bepul xizmat"
+msgstr "Бепул хизмат"
+
+#: .\blog\templates\blog\home.html:147
+msgid "Qashqadaryo viloyati tez tibbiy yordam filiallari xaritasi"
+msgstr "Қашқадарё вилояти тез тиббий ёрдам филиаллари харитаси"
+
+#: .\blog\templates\blog\home.html:151
+msgid "Xarita orqali kerakli filialni tanlang"
+msgstr "Харита орқали керакли филиални танланг"
+
+#: .\blog\templates\blog\home.html:167
+msgid "Filial rahbari"
+msgstr "Филиал раҳбари"
+
+#: .\blog\templates\blog\home.html:172
+msgid "Qashqadaryo tez tibbiy yordam markazi direktori"
+msgstr "Қашқадарё тез тиббий ёрдам маркази директори"
+
+#: .\blog\templates\blog\home.html:177
+msgid "Rahbar:"
+msgstr "Раҳбар:"
+
+#: .\blog\templates\blog\home.html:182
+msgid "Telefon:"
+msgstr "Телефон:"
+
+#: .\blog\templates\blog\home.html:271
+msgid "Oldingi filial"
+msgstr "Олдинги филиал"
+
+#: .\blog\templates\blog\home.html:279
+msgid "Keyingi filial"
+msgstr "Кейинги филиал"
+
+#: .\blog\templates\blog\home.html:287
+msgid "Xarita ustidagi hududlardan birini bosing."
+msgstr "Харита устидаги ҳудудлардан бирини босинг."
+
+#: .\blog\templates\blog\home.html:320
+msgid "Markaz yangiliklari"
+msgstr "Марказ янгиликлари"
+
+#: .\blog\templates\blog\home.html:321
+msgid ""
+"Biz Sizni har doim yutuqlarimiz haqida xabardor qilamiz va eng so'nggi "
+"yangiliklarni e'lon qilamiz"
+msgstr ""
+"Биз Сизни ҳар доим ютуқларимиз ҳақида хабардор қиламиз ва энг сўнгги "
+"янгиликларни эълон қиламиз"
+
+#: .\blog\templates\blog\home.html:336
+msgid "Asosiy yangiliklar"
+msgstr "Асосий янгиликлар"
+
+#: .\blog\templates\blog\home.html:378
+msgid "Hozircha yangiliklar yo'q."
+msgstr "Ҳозирча янгиликлар йўқ."
+
+#: .\blog\templates\blog\home.html:383
+msgid "Barcha yangiliklar"
+msgstr "Барча янгиликлар"
+
+#: .\blog\templates\blog\home.html:399
+msgid "Foto va videogalereya"
+msgstr "Фото ва видеогалерея"
+
+#: .\blog\templates\blog\home.html:401
+msgid ""
+"Bizning fotosuratlarimiz va videolarimiz prizmasi orqali bizning sohamiz "
+"bilan tanishing"
+msgstr ""
+"Бизнинг фотосуратларимиз ва видеоларимиз призмаси орқали бизнинг соҳамиз "
+"билан танишинг"
+
+#: .\blog\templates\blog\home.html:409
+msgid "Oldingi"
+msgstr "Олдинги"
+
+#: .\blog\templates\blog\home.html:436
+msgid "Keyingi"
+msgstr "Кейинги"
+
+#: .\blog\templates\blog\home.html:443
+msgid "Hozircha galereya bo'sh."
+msgstr "Ҳозирча галерея бўш."
+
+#: .\blog\templates\blog\home.html:448
+msgid "Fotogalereya"
+msgstr "Фотогалерея"
+
+#: .\blog\templates\blog\home.html:451
+msgid "Videogalereya"
+msgstr "Видеогалерея"
+
+#: .\blog\templates\blog\home.html:770
+msgid "Bizning xalqaro hamkorlarimiz"
+msgstr "Бизнинг халқаро ҳамкорларимиз"
+
+#: .\blog\templates\blog\home.html:773
+msgid "Shifokorlarimiz o‘z ishining asosiy tamoyiliga amal qiladilar"
+msgstr "Шифокорларимиз ўз ишининг асосий тамойилига амал қиладилар"
+
+#: .\blog\templates\blog\home.html:788
+msgid "Oldingi hamkor"
+msgstr "Олдинги ҳамкор"
+
+#: .\blog\templates\blog\home.html:819
+msgid "Keyingi hamkor"
+msgstr "Кейинги ҳамкор"
+
+#: .\blog\templates\blog\home.html:841
+msgid "Foydali havolalar"
+msgstr "Фойдали ҳаволалар"
+
+#: .\blog\templates\blog\home.html:844
+msgid ""
+"Bu davlat organlarining boshqa foydali resurslari va veb-saytlariga kirish "
+"imkoniyatidir"
+msgstr ""
+"Бу давлат органларининг бошқа фойдали ресурслари ва веб-сайтларига кириш "
+"имкониятидир"
+
+#: .\blog\templates\blog\home.html:859
+msgid "Oldingi havola"
+msgstr "Олдинги ҳавола"
+
+#: .\blog\templates\blog\home.html:916
+msgid "Keyingi havola"
+msgstr "Кейинги ҳавола"
+
+#: .\blog\templates\blog\home.html:1552
+msgid "Bemorlar uchun"
+msgstr "Беморлар учун"
+
+#: .\blog\templates\blog\home.html:1556
+msgid "Tez yordamga qachon murojaat qilish kerak?"
+msgstr "Тез ёрдамга қачон мурожаат қилиш керак?"
+
+#: .\blog\templates\blog\home.html:1567
+msgid "Yurak bilan bog‘liq holatlar"
+msgstr "Юрак билан боғлиқ ҳолатлар"
+
+#: .\blog\templates\blog\home.html:1571
+msgid ""
+"Kuchli ko‘krak og‘rig‘i yoki yurak faoliyati bilan bog‘liq jiddiy holatlarda"
+" darhol <strong>103</strong> raqamiga qo‘ng‘iroq qiling."
+msgstr ""
+"Кучли кўкрак оғриғи ёки юрак фаолияти билан боғлиқ жиддий ҳолатларда дарҳол "
+"<strong>103</strong> рақамига қўнғироқ қилинг."
+
+#: .\blog\templates\blog\home.html:1584
+msgid "Nafas olish qiyinlashishi"
+msgstr "Нафас олиш қийинлашиши"
+
+#: .\blog\templates\blog\home.html:1588
+msgid ""
+"Nafas olishda jiddiy qiyinchilik yuzaga kelsa, <strong>103</strong> raqamiga"
+" murojaat qiling."
+msgstr ""
+"Нафас олишда жиддий қийинчилик юзага келса, <strong>103</strong> рақамига "
+"мурожаат қилинг."
+
+#: .\blog\templates\blog\home.html:1600
+msgid "Jiddiy jarohat"
+msgstr "Жиддий жароҳат"
+
+#: .\blog\templates\blog\home.html:1604
+msgid "Jiddiy jarohatlar yoki xavfli holatlarda tez tibbiy yordam chaqiring."
+msgstr "Жиддий жароҳатлар ёки хавфли ҳолатларда тез тиббий ёрдам чақиринг."
+
+#: .\blog\templates\blog\home.html:1616
+msgid "Insult belgilari"
+msgstr "Инсульт белгилари"
+
+#: .\blog\templates\blog\home.html:1620
+msgid ""
+"Yuz, qo‘l yoki nutqda to‘satdan o‘zgarishlar kuzatilsa, darhol "
+"<strong>103</strong> ga qo‘ng‘iroq qiling."
+msgstr ""
+"Юз, қўл ёки нутқда тўсатдан ўзгаришлар кузатилса, дарҳол "
+"<strong>103</strong> га қўнғироқ қилинг."
+
+#: .\config\settings.py:132
+msgid "O'zbek"
+msgstr "Ўзбек (лотин)"
+
+#: .\config\settings.py:133
+msgid "Ўзбек"
+msgstr "Ўзбек (кирилл)"
+
+#: .\config\settings.py:134
+msgid "Русский"
+msgstr "Рус"
+
+#: .\config\settings.py:135
+msgid "English"
+msgstr "Инглиз"
+
+msgid "Biz haqimizda"
+msgstr "Биз ҳақимизда"
+
+msgid ""
+"Qashqadaryo viloyatida Tez tibbiy yordam markazi — aholining sog'lig'i va "
+"farovatligini saqlash uchun faoliyat ko'rsatuvchi muassasa"
+msgstr ""
+"Қашқадарё вилоятида Тез тиббий ёрдам маркази — аҳолининг соғлиги ва "
+"фаровонлигини сақлаш учун фаолият кўрсатувчи муассаса"
+
+msgid "Bizning yo'limiz"
+msgstr "Бизнинг йўлимиз"
+
+msgid "Markaz tarixi"
+msgstr "Марказ тарихи"
+
+msgid "Qisqa vaqt ichida bosib o'tgan yo'limiz"
+msgstr "Қисқа вақт ичида босиб ўтган йўлимиз"
+
+msgid "Hozircha tarix qo'shilmagan"
+msgstr "Ҳозирча тарих қўшилмаган"
+
+msgid "Admin panelda \"Markaz tarixi (Timeline)\" bo'limidan voqealar qo'shing."
+msgstr "Админ панелда \"Марказ тарихи (Timeline)\" бўлимидан воқеалар қўшинг."
+
+msgid "Kadrlar"
+msgstr "Кадрлар"
+
+msgid "Bizning jamoamiz"
+msgstr "Бизнинг жамоамиз"
+
+msgid "Malakali va tajribali mutaxassislardan tashkil topgan jamoa"
+msgstr "Малакали ва тажрибали мутахассислардан ташкил топган жамоа"
+
+msgid "Admin panelda \"Bizning jamoamiz\" bo'limidan statistika qo'shing."
+msgstr "Админ панелда \"Бизнинг жамоамиз\" бўлимидан статистика қўшинг."
+
+msgid "Fotolavha"
+msgstr "Фотолавҳа"
+
+msgid "Markazimizdan lavhalar"
+msgstr "Марказимиздан лавҳалар"
+
+msgid "Bizning filiallar, jamoa va faoliyatimizdan rasmlar"
+msgstr "Бизнинг филиаллар, жамоа ва фаолиятимиздан расмлар"
+
+msgid ""
+"Hozircha lavhalar qo'shilmagan. Admin panelda \"Markazimizdan lavhalar\" "
+"bo'limidan rasm yoki video qo'shing."
+msgstr ""
+"Ҳозирча лавҳалар қўшилмаган. Админ панелда \"Марказимиздан лавҳалар\" "
+"бўлимидан расм ёки видео қўшинг."
+
+msgid "Hududlar"
+msgstr "Ҳудудлар"
+
+msgid "Qashqadaryo viloyati bo'ylab joylashgan filiallar"
+msgstr "Қашқадарё вилояти бўйлаб жойлашган филиаллар"
+
+msgid "Bosh filial"
+msgstr "Бош филиал"
+
+msgid "Rahbar"
+msgstr "Раҳбар"
+
+msgid "Telefon"
+msgstr "Телефон"
+
+msgid "Manzil"
+msgstr "Манзил"
+
+msgid "Tavsif"
+msgstr "Тавсиф"
+
+msgid "Qarshi Filiali"
+msgstr "Қарши Филиали"
+
+msgid "Call-markazimiz"
+msgstr "Call-марказимиз"
+
+msgid ""
+"Shoshilinch holatlarda bizga istalgan vaqtda qo'ng'iroq qiling — "
+"mutaxassislarimiz 24 soat davomida javob berishga tayyor."
+msgstr ""
+"Шошилинч ҳолатларда бизга исталган вақтда қўнғироқ қилинг — "
+"мутахассисларимиз 24 соат давомида жавоб беришга тайёр."
+
+msgid "Qabulxona telefoni"
+msgstr "Қабулхона телефони"
+
+msgid "Ish vaqti"
+msgstr "Иш вақти"
+
+msgid "Fikrlar"
+msgstr "Фикрлар"
+
+msgid "Bemorlarimiz nima deydi"
+msgstr "Беморларимиз нима дейди"
+
+msgid "Xizmatimizdan foydalangan insonlarning fikrlari"
+msgstr "Хизматимиздан фойдаланган инсонларнинг фикрлари"
+
+msgid "Hozircha fikrlar yo'q. Birinchi bo'lib fikr qoldiring!"
+msgstr "Ҳозирча фикрлар йўқ. Биринчи бўлиб фикр қолдиринг!"
+
+msgid "Fikringizni qoldiring"
+msgstr "Фикрингизни қолдиринг"
+
+msgid "Fikringiz tekshiruvdan o'tgach saytda chop etiladi."
+msgstr "Фикрингиз текширувдан ўтгач сайтда чоп этилади."
+
+msgid "Bizning maqsad va vazifalari"
+msgstr "Бизнинг мақсад ва вазифалари"
+
+msgid "Hozircha ma'lumot qo'shilmagan"
+msgstr "Ҳозирча маълумот қўшилмаган"
+
+msgid "Admin panelda \"Bizning maqsad va vazifalarimiz\" bo'limidan qo'shing."
+msgstr "Админ панелда \"Бизнинг мақсад ва вазифаларимиз\" бўлимидан қўшинг."
+
+msgid "Ro'yxatga qaytish"
+msgstr "Рўйхатга қайтиш"
+
+msgid "Hozircha mavzular kiritilmagan."
+msgstr "Ҳозирча мавзулар киритилмаган."
+
+msgid "Qashqadaryo viloyati bo'ylab joylashgan barcha filiallar"
+msgstr "Қашқадарё вилояти бўйлаб жойлашган барча филиаллар"
+
+msgid "Qo'ng'iroq"
+msgstr "Қўнғироқ"
+
+msgid "Filiallar hali qo'shilmagan"
+msgstr "Филиаллар ҳали қўшилмаган"
+
+msgid "Hozircha markaziy apparat ma'lumotlari kiritilmagan."
+msgstr "Ҳозирча марказий аппарат маълумотлари киритилмаган."
+
+msgid "Ekofaol xodim ro'yxatiga qaytish"
+msgstr "Экофаол ходим рўйхатига қайтиш"
+
+msgid "Izoh (%(counter)s)"
+msgstr "Изоҳ (%(counter)s)"
+
+msgid "Izohlar (%(counter)s)"
+msgstr "Изоҳлар (%(counter)s)"
+
+msgid "Hozircha izohlar yo'q. Birinchi bo'lib fikringizni yozing."
+msgstr "Ҳозирча изоҳлар йўқ. Биринчи бўлиб фикрингизни ёзинг."
+
+msgid "Markaz faoliyatidagi foto va videolar"
+msgstr "Марказ фаолиятидаги фото ва видеолар"
+
+msgid "Barchasi"
+msgstr "Барчаси"
+
+msgid "Fotolar"
+msgstr "Фотолар"
+
+msgid "Videolar"
+msgstr "Видеолар"
+
+msgid "Galereya bo'sh. Admin panel orqali rasm va videolar qo'shing."
+msgstr "Галерея бўш. Админ панел орқали расм ва видеолар қўшинг."
+
+msgid "Rasm yo'q"
+msgstr "Расм йўқ"
+
+msgid "Hozircha hujjatlar kiritilmagan."
+msgstr "Ҳозирча ҳужжатлар киритилмаган."
+
+msgid ""
+"Fikringizni yozing. Izoh moderator tomonidan tasdiqlangandan keyin saytda "
+"ko'rinadi."
+msgstr ""
+"Фикрингизни ёзинг. Изоҳ модератор томонидан тасдиқлангандан кейин сайтда "
+"кўринади."
+
+msgid "Izohni yuborish →"
+msgstr "Изоҳни юбориш →"
+
+msgid ""
+"Bizning fotosuratlarimiz va videolarimiz prizmasi orqali bizning ekologik "
+"obodonlashtirish faoliyatimiz bilan tanishing"
+msgstr ""
+"Бизнинг фотосуратларимиз ва видеоларимиз призмаси орқали бизнинг экологик "
+"ободонлаштириш фаолиятимиз билан танишинг"
+
+msgid "Batafsil →"
+msgstr "Батафсил →"
+
+msgid "Qabul:"
+msgstr "Қабул:"
+
+msgid "Email:"
+msgstr "Электрон почта:"
+
+msgid "Hozircha rahbariyat ma'lumotlari kiritilmagan."
+msgstr "Ҳозирча раҳбарият маълумотлари киритилмаган."
+
+msgid "Hozircha ekofaol postlar qo'shilmagan."
+msgstr "Ҳозирча экофаол постлар қўшилмаган."
+
+msgid "Yangilangan:"
+msgstr "Янгиланган:"
+
+msgid "Yangiliklarga qaytish"
+msgstr "Янгиликларга қайтиш"
+
+msgid "Bosh sahifaga"
+msgstr "Бош саҳифага"
+
+msgid "Markaz va sog'lig'i tug'risidagi eng so'nggi yangiliklar"
+msgstr "Марказ ва соғлиғи тўғрисидаги энг сўнгги янгиликлар"
+
+msgid "Yangilik yoki so'z qidiring..."
+msgstr "Янгилик ёки сўз қидиринг..."
+
+msgid "Qidirish"
+msgstr "Қидириш"
+
+msgid "Yangiliklar hali qo'shilmagan"
+msgstr "Янгиликлар ҳали қўшилмаган"
+
+msgid "Birinchi sahifa"
+msgstr "Биринчи саҳифа"
+
+msgid "Oxirgi sahifa"
+msgstr "Охирги саҳифа"
+
+msgid "Hozircha ma'lumotlar kiritilmagan."
+msgstr "Ҳозирча маълумотлар киритилмаган."
+
+msgid "Maqolalarga qaytish"
+msgstr "Мақолаларга қайтиш"
+
+msgid "Qachon tez tibbiy yordam chaqirish kerak?"
+msgstr "Қачон тез тиббий ёрдам чақириш керак?"
+
+msgid ""
+"Hayot uchun xavfli yoki shoshilinch tibbiy yordam talab qiladigan holatlarda"
+" 103 raqamiga murojaat qiling."
+msgstr ""
+"Ҳаёт учун хавфли ёки шошилинч тиббий ёрдам талаб қиладиган ҳолатларда 103 "
+"рақамига мурожаат қилинг."
+
+msgid "Izohlar"
+msgstr "Изоҳлар"
+
+msgid "Hozircha izohlar yo‘q. Birinchi bo‘lib fikringizni yozing."
+msgstr "Ҳозирча изоҳлар йўқ. Биринчи бўлиб фикрингизни ёзинг."
+
+msgid "Izoh qoldirish"
+msgstr "Изоҳ қолдириш"
+
+msgid ""
+"Fikringizni yozing. Izoh moderator tomonidan tasdiqlangandan keyin saytda "
+"ko‘rinadi."
+msgstr ""
+"Фикрингизни ёзинг. Изоҳ модератор томонидан тасдиқлангандан кейин сайтда "
+"кўринади."
+
+msgid "Izohni yuborish"
+msgstr "Изоҳни юбориш"
+
+msgid "Qidiruv natijalari"
+msgstr "Қидирув натижалари"
+
+msgid "Tozalash"
+msgstr "Тозалаш"
+
+msgid "BARCHA MAQOLALAR"
+msgstr "БАРЧА МАҚОЛАЛАР"
+
+msgid "SOG‘LIQ"
+msgstr "СОҒЛИҚ"
+
+msgid "Batafsil o‘qish"
+msgstr "Батафсил ўқиш"
+
+msgid "Birinchi"
+msgstr "Биринчи"
+
+msgid "Oxirgi"
+msgstr "Охирги"
+
+msgid "bo‘yicha maqola topilmadi."
+msgstr "бўйича мақола топилмади."
+
+msgid "Boshqa so‘z bilan qidirib ko‘ring."
+msgstr "Бошқа сўз билан қидириб кўринг."
+
+msgid "Hozircha maqolalar yo‘q."
+msgstr "Ҳозирча мақолалар йўқ."
+
+#, python-format
+msgid "%(counter)s ta maqola topildi"
+msgid_plural "%(counter)s ta maqola topildi"
+msgstr[0] "%(counter)s та мақола топилди"
+
+#, python-format
+msgid "%(counter)s ta maqola"
+msgid_plural "%(counter)s ta maqola"
+msgstr[0] "%(counter)s та мақола"
+
+msgid "Xizmatlar"
+msgstr "Хизматлар"
+
+msgid "Biz taqdim etadigan xizmatlar"
+msgstr "Биз тақдим этадиган хизматлар"
+
+msgid "Tez tibbiy yordam markazi taqdim etadigan tibbiy xizmatlar"
+msgstr "Тез тиббий ёрдам маркази тақдим этадиган тиббий хизматлар"
+
+msgid "Xizmat mavjud emas"
+msgstr "Хизмат мавжуд эмас"
+
+msgid "Xizmatlar hali qo'shilmagan. Admin panel orqali xizmatlarni qo'shing."
+msgstr "Хизматлар ҳали қўшилмаган. Админ панел орқали хизматларни қўшинг."
+
+msgid "Savol-javob"
+msgstr "Савол-жавоб"
+
+msgid "Administrator bilan suhbat"
+msgstr "Администратор билан суҳбат"
+
+msgid "Administrator"
+msgstr "Администратор"
+
+msgid "Siz"
+msgstr "Сиз"
+
+msgid "Assalomu alaykum"
+msgstr "Ассалому алайкум"
+
+msgid "Administratorga savolingizni yozing. Tez orada javob beriladi."
+msgstr "Администраторга саволингизни ёзинг. Тез орада жавоб берилади."
+
+msgid "Yuborish"
+msgstr "Юбориш"
+
+msgid "Ismingiz"
+msgstr "Исмингиз"
+
+msgid "Shahar/tuman (ixtiyoriy)"
+msgstr "Шаҳар/туман (ихтиёрий)"
+
+msgid "Fikringizni yozing..."
+msgstr "Фикрингизни ёзинг..."
+
+msgid "Ixtiyoriy — bo'sh qoldirsangiz 'Anonim' deb ko'rsatiladi."
+msgstr "Ихтиёрий — бўш қолдирсангиз 'Аноним' деб кўрсатилади."
+
+msgid "Ismingiz (ixtiyoriy)"
+msgstr "Исмингиз (ихтиёрий)"
+
+msgid "Izoh"
+msgstr "Изоҳ"
+
+msgid "Izohingizni yozing…"
+msgstr "Изоҳингизни ёзинг…"
+
+msgid "Spam aniqlandi."
+msgstr "Спам аниқланди."
+
+msgid "Izoh bo'sh bo'lishi mumkin emas."
+msgstr "Изоҳ бўш бўлиши мумкин эмас."
+
+msgid "Email (ixtiyoriy)"
+msgstr "Email (ихтиёрий)"
+
+msgid "Bu foydalanuvchi nomi allaqachon band. Boshqa nom tanlang."
+msgstr "Бу фойдаланувчи номи аллақачон банд. Бошқа ном танланг."
+
+msgid "Foydalanuvchi nomini kiriting."
+msgstr "Фойдаланувчи номини киритинг."
+
+msgid ""
+"Foydalanuvchi nomida faqat harflar, raqamlar va @/./+/-/_ belgilaridan "
+"foydalaning."
+msgstr ""
+"Фойдаланувчи номида фақат ҳарфлар, рақамлар ва @/./+/-/_ белгиларидан "
+"фойдаланинг."
+
+msgid "Savolingizni yozing..."
+msgstr "Саволингизни ёзинг..."
+
+msgid "Hisobga kirish"
+msgstr "Ҳисобга кириш"
+
+msgid "Hisobingizga kirib, maqolalarga izoh qoldiring."
+msgstr "Ҳисобингизга кириб, мақолаларга изоҳ қолдиринг."
+
+msgid "Foydalanuvchi nomi"
+msgstr "Фойдаланувчи номи"
+
+msgid "Parol"
+msgstr "Парол"
+
+msgid "Parolni ko'rsatish"
+msgstr "Паролни кўрсатиш"
+
+msgid "Hisobingiz yo‘qmi?"
+msgstr "Ҳисобингиз йўқми?"
+
+msgid "Ro‘yxatdan o‘ting"
+msgstr "Рўйхатдан ўтинг"
+
+msgid "Saytda ishtirok etish uchun yangi hisob yarating."
+msgstr "Сайтда иштирок этиш учун янги ҳисоб яратинг."
+
+msgid "Email"
+msgstr "Email"
+
+msgid "ixtiyoriy"
+msgstr "ихтиёрий"
+
+msgid "Parolni tasdiqlang"
+msgstr "Паролни тасдиқланг"
+
+msgid "Hisobingiz bormi?"
+msgstr "Ҳисобингиз борми?"
+
+msgid "Noto'g'ri so'rov"
+msgstr "Нотўғри сўров"
+
+msgid ""
+"Kechirasiz, so'rovingiz noto'g'ri yoki tushunarsiz formatda yuborildi. "
+"Sahifani qayta yuklab ko'ring yoki bosh sahifaga qayting."
+msgstr ""
+"Кечирасиз, сўровингиз нотўғри ёки тушунарсиз форматда юборилди. Саҳифани "
+"қайта юклаб кўринг ёки бош саҳифага қайтинг."
+
+msgid "Bosh sahifaga qaytish"
+msgstr "Бош саҳифага қайтиш"
+
+msgid "403 — Ruxsat berilmagan"
+msgstr "403 — Рухсат берилмаган"
+
+msgid "Ruxsat berilmagan"
+msgstr "Рухсат берилмаган"
+
+msgid ""
+"Kechirasiz, sizda ushbu sahifani ko'rish uchun yetarli huquq yo'q. Agar bu "
+"xato deb hisoblasangiz, tizimga qayta kiring yoki administrator bilan "
+"bog'laning."
+msgstr ""
+"Кечирасиз, сизда ушбу сахифани кўриш учун етарли ҳуқуқ йўқ. Агар бу хато деб"
+" ҳисобласангиз, тизимга қайта киринг ёки администратор билан боғланинг."
+
+msgid "404 — Sahifa topilmadi"
+msgstr "404 — Сахифа топилмади"
+
+msgid "Sahifa topilmadi"
+msgstr "Сахифа топилмади"
+
+msgid ""
+"Kechirasiz, siz izlagan sahifa mavjud emas yoki o'chirib yuborilgan bo'lishi"
+" mumkin. Havolani tekshirib qayta urinib ko'ring yoki bosh sahifaga qayting."
+msgstr ""
+"Кечирасиз, сиз излаган сахифа мавжуд эмас ёки ўчириб юборилган бўлиши "
+"мумкин. Ҳаволани текшириб қайта уриниб кўринг ёки бош сахифага қайтинг."
+
+msgid "500 — Server xatosi"
+msgstr "500 — Сервер хатоси"
+
+msgid "Serverda texnik nosozlik"
+msgstr "Серверда техник носозлик"
+
+msgid ""
+"Kechirasiz, hozircha texnik nosozlik yuz berdi. Bizning mutaxassislar "
+"muammoni tezda bartaraf etishga harakat qilmoqda. Iltimos, birozdan so'ng "
+"qayta urinib ko'ring."
+msgstr ""
+"Кечирасиз, ҳозирча техник носозлик юз берди. Бизнинг мутахассислар муаммони "
+"тезда бартараф этишга ҳаракат қилмоқда. Илтимос, бироздан сўнг қайта уриниб "
+"кўринг."

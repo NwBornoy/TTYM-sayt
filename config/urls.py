@@ -3,12 +3,23 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import include, path
 from django.conf.urls.static import static
+from django.conf.urls.i18n import i18n_patterns
 
 
 urlpatterns = [
-    # Admin panel
+    # Admin panel — tilga bog'liq emas, prefiks olmaydi
     path(settings.ADMIN_URL, admin.site.urls),
 
+    # CKEditor 5 (rasm yuklash va boshqa xizmatlar uchun) — tilga bog'liq emas
+    path("ckeditor5/", include("django_ckeditor_5.urls")),
+
+    # Tilni almashtirish uchun maxsus yo'l (dropdown/forma shu yerga POST yuboradi)
+    path("i18n/", include("django.conf.urls.i18n")),
+]
+
+
+# Tilga bog'liq sahifalar — bularga avtomatik /uz/, /ru/, /en/, /uz-cyrl/ prefiksi qo'shiladi
+urlpatterns += i18n_patterns(
     # Login
     path(
         "login/",
@@ -25,15 +36,14 @@ urlpatterns = [
         name="logout",
     ),
 
-    # CKEditor 5 (rasm yuklash va boshqa xizmatlar uchun)
-    path("ckeditor5/", include("django_ckeditor_5.urls")),
-
     # Blog ilovasi
     path(
         "",
         include("blog.urls")
     ),
-]
+
+    prefix_default_language=True,  # /uz/ ham ko'rinsin (False qilsangiz asosiy til prefikssiz qoladi)
+)
 
 
 # Media rasmlarni DEBUG rejimida ko'rsatish

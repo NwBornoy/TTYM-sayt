@@ -1,7 +1,8 @@
 {% extends "blog/base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Xizmatlar{% endblock %}
+{% block title %}{% trans "Xizmatlar" %}{% endblock %}
 
 {% block content %}
 
@@ -133,8 +134,8 @@
 
 <div class="services-page">
   <div class="page-header">
-    <h1>Biz taqdim etadigan xizmatlar</h1>
-    <p>Tez tibbiy yordam markazi taqdim etadigan tibbiy xizmatlar</p>
+    <h1>{% trans "Biz taqdim etadigan xizmatlar" %}</h1>
+    <p>{% trans "Tez tibbiy yordam markazi taqdim etadigan tibbiy xizmatlar" %}</p>
   </div>
 
   <div class="services-grid">
@@ -147,8 +148,8 @@
     {% empty %}
       <div class="service-card">
         <div class="service-icon">🚑</div>
-        <h3>Xizmat mavjud emas</h3>
-        <p>Xizmatlar hali qo'shilmagan. Admin panel orqali xizmatlarni qo'shing.</p>
+        <h3>{% trans "Xizmat mavjud emas" %}</h3>
+        <p>{% trans "Xizmatlar hali qo'shilmagan. Admin panel orqali xizmatlarni qo'shing." %}</p>
       </div>
     {% endfor %}
   </div>

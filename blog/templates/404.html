@@ -1,9 +1,10 @@
+{% load i18n %}
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="{{ LANGUAGE_CODE|default:'uz' }}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>404 — Sahifa topilmadi</title>
+<title>{% trans "404 — Sahifa topilmadi" %}</title>
 <style>
   * { box-sizing: border-box; }
 
@@ -96,12 +97,14 @@
   <div class="error-card">
     <div class="error-icon">🔍</div>
     <div class="error-code">404</div>
-    <div class="error-title">Sahifa topilmadi</div>
+    <div class="error-title">{% trans "Sahifa topilmadi" %}</div>
     <p class="error-desc">
+      {% blocktrans trimmed %}
       Kechirasiz, siz izlagan sahifa mavjud emas yoki o'chirib yuborilgan bo'lishi mumkin.
       Havolani tekshirib qayta urinib ko'ring yoki bosh sahifaga qayting.
+      {% endblocktrans %}
     </p>
-    <a href="/" class="error-btn">Bosh sahifaga qaytish</a>
+    <a href="/" class="error-btn">{% trans "Bosh sahifaga qaytish" %}</a>
   </div>
 
 </body>

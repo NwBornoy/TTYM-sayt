@@ -1,4 +1,5 @@
 {% extends "blog/base.html" %}
+{% load i18n %}
 
 {% block title %}{{ post.title }}{% endblock %}
 
@@ -7,7 +8,7 @@
 <article class="post-detail">
 
     <a href="{% url 'post_list' %}" class="back-link">
-        ← Maqolalarga qaytish
+        ← {% trans "Maqolalarga qaytish" %}
     </a>
 
     <div class="post-meta">
@@ -34,11 +35,10 @@
         </div>
 
         <div>
-            <strong>Qachon tez tibbiy yordam chaqirish kerak?</strong>
+            <strong>{% trans "Qachon tez tibbiy yordam chaqirish kerak?" %}</strong>
 
             <p>
-                Hayot uchun xavfli yoki shoshilinch tibbiy yordam
-                talab qiladigan holatlarda 103 raqamiga murojaat qiling.
+                {% trans "Hayot uchun xavfli yoki shoshilinch tibbiy yordam talab qiladigan holatlarda 103 raqamiga murojaat qiling." %}
             </p>
         </div>
 
@@ -50,7 +50,7 @@
     <section class="comments-section">
 
         <h2>
-            Izohlar ({{ comments|length }})
+            {% trans "Izohlar" %} ({{ comments|length }})
         </h2>
 
 
@@ -81,8 +81,7 @@
         {% empty %}
 
             <p class="no-comments">
-                Hozircha izohlar yo‘q.
-                Birinchi bo‘lib fikringizni yozing.
+                {% trans "Hozircha izohlar yo‘q. Birinchi bo‘lib fikringizni yozing." %}
             </p>
 
         {% endfor %}
@@ -92,11 +91,10 @@
 
         <div class="comment-form-box">
 
-            <h3>Izoh qoldirish</h3>
+            <h3>{% trans "Izoh qoldirish" %}</h3>
 
             <p class="comment-help">
-                Fikringizni yozing. Izoh moderator tomonidan
-                tasdiqlangandan keyin saytda ko‘rinadi.
+                {% trans "Fikringizni yozing. Izoh moderator tomonidan tasdiqlangandan keyin saytda ko‘rinadi." %}
             </p>
 
             <form method="post" class="comment-form">
@@ -148,7 +146,7 @@
 
 
                 <button type="submit" class="comment-submit">
-                    Izohni yuborish →
+                    {% trans "Izohni yuborish" %} →
                 </button>
 
             </form>

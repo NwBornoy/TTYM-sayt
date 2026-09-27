@@ -1,0 +1,75 @@
+/* Admin panel — sayt uslubiga mos qizil-ko'k ranglar (FAQAT admin uchun) */
+
+.main-header.navbar {
+    background-color: #16326e !important;
+}
+
+.main-sidebar {
+    background-color: #0B2438 !important;
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link.active {
+    background-color: #ff4757 !important;
+}
+
+.sidebar-dark-primary .nav-sidebar > .nav-item > .nav-link:hover {
+    background-color: #2a5aa8 !important;
+}
+
+.btn-danger,
+.btn-primary {
+    background-color: #ff4757 !important;
+    border-color: #ff4757 !important;
+}
+
+.btn-danger:hover,
+.btn-primary:hover {
+    background-color: #e8404f !important;
+    border-color: #e8404f !important;
+}
+
+.brand-link {
+    background-color: #16326e !important;
+}
+
+.card-header {
+    background-color: #f7f9fb;
+    border-bottom: 2px solid #16326e;
+}
+
+/* Checkbox/checkmark ikonkalarini normal o'lchamga qaytarish */
+.field-is_approved svg,
+.field-is_approved i,
+td .fa-check-circle,
+td svg.fa-check,
+.readonly svg {
+    width: 20px !important;
+    height: 20px !important;
+    font-size: 18px !important;
+}
+/* Forma maydonlari kartadan tashqariga chiqib ketmasligi uchun */
+.form-row {
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.form-row .related-widget-wrapper,
+.form-row select,
+.form-row input[type="text"],
+.form-row textarea {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.related-widget-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    max-width: 100%;
+}
+
+.related-widget-wrapper select {
+    flex: 1 1 auto;
+    min-width: 0;
+}

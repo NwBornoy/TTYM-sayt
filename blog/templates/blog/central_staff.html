@@ -1,7 +1,8 @@
 {% extends "blog/base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Markaziy apparat{% endblock %}
+{% block title %}{% trans "Markaziy apparat" %}{% endblock %}
 
 {% block content %}
 
@@ -178,7 +179,7 @@
 </style>
 
 <div class="leadership-hero">
-  <h1>Markaziy apparat</h1>
+  <h1>{% trans "Markaziy apparat" %}</h1>
 </div>
 
 <div class="leadership-page">
@@ -197,11 +198,11 @@
 
         <div class="leader-info">
           <div class="leader-info-row">
-            <span>Telefon:</span>
+            <span>{% trans "Telefon:" %}</span>
             <span>{{ member.phone|default:"—" }}</span>
           </div>
           <div class="leader-info-row">
-            <span>Qabul:</span>
+            <span>{% trans "Qabul:" %}</span>
             <span>{{ member.reception_day|default:"—" }}</span>
           </div>
           <div class="leader-info-row">
@@ -212,7 +213,7 @@
 
       </div>
     {% empty %}
-      <p>Hozircha markaziy apparat ma'lumotlari kiritilmagan.</p>
+      <p>{% trans "Hozircha markaziy apparat ma'lumotlari kiritilmagan." %}</p>
     {% endfor %}
   </div>
 </div>

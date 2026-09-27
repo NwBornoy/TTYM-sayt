@@ -11,7 +11,7 @@ XAVFSIZLIK BO'YICHA ASOSIY QOIDALAR:
   server manzillari, sozlamalar va hatto SECRET_KEY sizib chiqishiga olib kelishi mumkin.
 - ALLOWED_HOSTS aniq domenlar bilan cheklanadi.
 """
-
+from django.utils.translation import gettext_lazy as _
 import os
 from pathlib import Path
 from dotenv import load_dotenv
@@ -33,6 +33,7 @@ ALLOWED_HOSTS = [
 
 # --- Ilovalar ------------------------------------------------------------
 INSTALLED_APPS = [
+    "modeltranslation",   # ← YANGI: ma'lumotlar bazasi kontentini ko'p tilli qilish uchun (django.contrib.admin'dan OLDIN turishi shart)
     "jazzmin",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "django.middleware.locale.LocaleMiddleware",   # ← YANGI: til aniqlash uchun, CommonMiddleware'dan OLDIN
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",       # CSRF himoyasi — barcha formalarda kerak
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -105,7 +107,42 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "blog.validators.UzbekNumericPasswordValidator"},
 ]
 
+# --- Til (i18n) sozlamalari ------------------------------------------------
 LANGUAGE_CODE = "uz"
+
+# Django'ning o'zida uz-cyrl (Ўзбек, kirill) tili uchun to'liq ma'lumot yo'q,
+# shuning uchun uni LANG_INFO lug'atiga o'zimiz qo'shib qo'yamiz.
+# Bu qism LANGUAGES ro'yxatidan OLDIN turishi SHART, aks holda shablonlarda
+# ({% get_language_info_list %} orqali) uz-cyrl uchun ham "O'zbek tili" nomi chiqadi.
+from django.conf.locale import LANG_INFO
+import django.conf.locale
+
+LANG_INFO = {
+    **LANG_INFO,
+    "uz-cyrl": {
+        "bidi": False,
+        "code": "uz-cyrl",
+        "name": "Uzbek (Cyrillic)",
+        "name_local": "Ўзбек",
+    },
+}
+django.conf.locale.LANG_INFO = LANG_INFO
+
+LANGUAGES = [
+    ("uz", _("O'zbek")),
+    ("uz-cyrl", _("Ўзбек")),
+    ("ru", _("Русский")),
+    ("en", _("English")),
+]
+
+LOCALE_PATHS = [
+
+    BASE_DIR / "locale",
+]
+MODELTRANSLATION_DEFAULT_LANGUAGE = "uz"
+MODELTRANSLATION_LANGUAGES = ("uz", "uz-cyrl", "ru", "en")
+MODELTRANSLATION_CUSTOM_FIELDS = ("CKEditor5Field",)
+
 TIME_ZONE = "Asia/Tashkent"
 USE_I18N = True
 USE_TZ = True
@@ -238,21 +275,17 @@ LOGGING = {
 }
 
 JAZZMIN_SETTINGS = {
-    "site_title": "TTYM Admin",
-    "site_header": "Qashqadaryo TTY",
-    "site_brand": "TTYM Admin Panel",
-    "welcome_sign": "Xush kelibsiz, Qashqadaryo TTYM boshqaruv paneliga",
-    "copyright": "Qashqadaryo Tez Tibbiy Yordam Markazi",
-    "search_model": ["blog.Post", "blog.Testimonial", "blog.Comment"],
+    "site_title": "103 Admin Panel",
+    "site_header": "103 Tez tibbiy yordam",
+    "site_brand": "103 TTYM Admin",
+    "site_logo": "blog/images/103-logo.png",
+    "login_logo": "blog/images/103-logo.png",
+    "site_logo_classes": "img-circle",
+    "site_icon": "blog/images/103-logo.png",
+    "welcome_sign": "Xush kelibsiz, 103 Tez tibbiy yordam boshqaruv paneliga",
+    "copyright": "Qashqadaryo viloyati Tez tibbiy yordam markazi",
 
-    # Chap tomondagi menyu tartibi (ixtiyoriy — bo'limlarni guruhlash)
-    "order_with_respect_to": [
-        "auth",
-        "blog.Testimonial",
-        "blog.Comment",
-        "blog.ErrorReport",
-        "blog.SupportMessage",
-        "blog.SupportTicket",
+    "search_model": [
         "blog.Post",
         "blog.News",
         "blog.Branch",
@@ -275,8 +308,24 @@ JAZZMIN_SETTINGS = {
     },
 
     "show_ui_builder": True,   # Admin panelda o'zingiz rang/tema sozlashingiz mumkin bo'lgan tugma
+
+    "custom_css": "blog/css/admin-custom.css",  # Aniq qizil-ko'k ranglar shu fayl orqali
 }
 
 JAZZMIN_UI_TWEAKS = {
-    "theme": "flatly",   # boshqa temalar: cosmo, cyborg, darkly, lumen, solar, superhero va h.k.
+    "theme": "flatly",
+    "navbar": "navbar-dark",
+    "navbar_fixed": True,
+    "sidebar": "sidebar-dark-primary",
+    "sidebar_fixed": True,
+    "brand_colour": "navbar-dark",
+    "accent": "accent-danger",
+    "button_classes": {
+        "primary": "btn-danger",
+        "secondary": "btn-secondary",
+        "info": "btn-info",
+        "warning": "btn-warning",
+        "danger": "btn-danger",
+        "success": "btn-success",
+    },
 }

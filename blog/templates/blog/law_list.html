@@ -1,7 +1,8 @@
 {% extends "blog/base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Qonunlar{% endblock %}
+{% block title %}{% trans "Qonunlar" %}{% endblock %}
 
 {% block content %}
 
@@ -156,7 +157,7 @@
 </style>
 
 <div class="law-hero">
-  <h1>Qonunlar</h1>
+  <h1>{% trans "Qonunlar" %}</h1>
 </div>
 
 <div class="law-list-page">
@@ -168,7 +169,7 @@
         {% if law.image %}
           <img src="{{ law.image.url }}" alt="{{ law.title }}" class="law-card-image">
         {% else %}
-          <div class="law-card-image-placeholder">Rasm yo'q</div>
+          <div class="law-card-image-placeholder">{% trans "Rasm yo'q" %}</div>
         {% endif %}
 
         <div class="law-card-body">
@@ -179,7 +180,7 @@
 
       </a>
     {% empty %}
-      <p class="law-empty">Hozircha qonunlar kiritilmagan.</p>
+      <p class="law-empty">{% trans "Hozircha qonunlar kiritilmagan." %}</p>
     {% endfor %}
 
   </div>

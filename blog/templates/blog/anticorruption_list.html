@@ -1,7 +1,8 @@
 {% extends "blog/base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Korrupsiyaga qarshi kurashish{% endblock %}
+{% block title %}{% trans "Korrupsiyaga qarshi kurashish" %}{% endblock %}
 
 {% block content %}
 
@@ -125,7 +126,7 @@
 </style>
 
 <div class="ac-hero">
-  <h1>Korrupsiyaga qarshi kurashish</h1>
+  <h1>{% trans "Korrupsiyaga qarshi kurashish" %}</h1>
 </div>
 
 <div class="ac-list-page">
@@ -136,7 +137,7 @@
       <span class="ac-item-dot"></span>
     </a>
   {% empty %}
-    <p class="ac-empty">Hozircha mavzular kiritilmagan.</p>
+    <p class="ac-empty">{% trans "Hozircha mavzular kiritilmagan." %}</p>
   {% endfor %}
 
 </div>

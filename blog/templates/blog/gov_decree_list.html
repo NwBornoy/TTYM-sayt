@@ -1,7 +1,8 @@
 {% extends "blog/base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Hukumat qarori va farmoyishlari{% endblock %}
+{% block title %}{% trans "Hukumat qarori va farmoyishlari" %}{% endblock %}
 
 {% block content %}
 
@@ -170,7 +171,7 @@
 </style>
 
 <div class="law-hero">
-  <h1>Hukumat qarori va farmoyishlari</h1>
+  <h1>{% trans "Hukumat qarori va farmoyishlari" %}</h1>
 </div>
 
 <div class="law-list-page">
@@ -182,7 +183,7 @@
         {% if decree.image %}
           <img src="{{ decree.image.url }}" alt="{{ decree.title }}" class="law-card-image">
         {% else %}
-          <div class="law-card-image-placeholder">Rasm yo'q</div>
+          <div class="law-card-image-placeholder">{% trans "Rasm yo'q" %}</div>
         {% endif %}
 
         <div class="law-card-body">
@@ -193,7 +194,7 @@
 
       </a>
     {% empty %}
-      <p class="law-empty">Hozircha hujjatlar kiritilmagan.</p>
+      <p class="law-empty">{% trans "Hozircha hujjatlar kiritilmagan." %}</p>
     {% endfor %}
 
   </div>

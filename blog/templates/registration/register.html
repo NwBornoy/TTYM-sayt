@@ -1,6 +1,7 @@
 {% extends "blog/base.html" %}
+{% load i18n %}
 
-{% block title %}Ro‘yxatdan o‘tish{% endblock %}
+{% block title %}{% trans "Ro‘yxatdan o‘tish" %}{% endblock %}
 
 {% block content %}
 
@@ -46,9 +47,9 @@
 
         <div class="auth-icon">103</div>
 
-        <h1>Ro‘yxatdan o‘tish</h1>
+        <h1>{% trans "Ro‘yxatdan o‘tish" %}</h1>
         <p class="auth-subtitle">
-            Saytda ishtirok etish uchun yangi hisob yarating.
+            {% trans "Saytda ishtirok etish uchun yangi hisob yarating." %}
         </p>
 
         <form method="post" class="auth-form">
@@ -62,7 +63,7 @@
 
             <div class="form-group">
                 <label for="{{ form.username.id_for_label }}">
-                    Foydalanuvchi nomi
+                    {% trans "Foydalanuvchi nomi" %}
                 </label>
                 {{ form.username }}
 
@@ -75,7 +76,7 @@
 
             <div class="form-group">
                 <label for="{{ form.email.id_for_label }}">
-                    Email <span>(ixtiyoriy)</span>
+                    {% trans "Email" %} <span>({% trans "ixtiyoriy" %})</span>
                 </label>
                 {{ form.email }}
 
@@ -88,11 +89,11 @@
 
             <div class="form-group">
                 <label for="{{ form.password1.id_for_label }}">
-                    Parol
+                    {% trans "Parol" %}
                 </label>
                 <div class="password-field-wrap">
                     {{ form.password1 }}
-                    <button type="button" class="password-toggle-btn" data-target="{{ form.password1.id_for_label }}" aria-label="Parolni ko'rsatish">
+                    <button type="button" class="password-toggle-btn" data-target="{{ form.password1.id_for_label }}" aria-label="{% trans "Parolni ko'rsatish" %}">
                         <svg class="icon-eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                             <circle cx="12" cy="12" r="3"></circle>
@@ -113,11 +114,11 @@
 
             <div class="form-group">
                 <label for="{{ form.password2.id_for_label }}">
-                    Parolni tasdiqlang
+                    {% trans "Parolni tasdiqlang" %}
                 </label>
                 <div class="password-field-wrap">
                     {{ form.password2 }}
-                    <button type="button" class="password-toggle-btn" data-target="{{ form.password2.id_for_label }}" aria-label="Parolni ko'rsatish">
+                    <button type="button" class="password-toggle-btn" data-target="{{ form.password2.id_for_label }}" aria-label="{% trans "Parolni ko'rsatish" %}">
                         <svg class="icon-eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                             <circle cx="12" cy="12" r="3"></circle>
@@ -137,13 +138,13 @@
             </div>
 
             <button type="submit" class="auth-button">
-                Ro‘yxatdan o‘tish
+                {% trans "Ro‘yxatdan o‘tish" %}
             </button>
         </form>
 
         <div class="auth-bottom">
-            Hisobingiz bormi?
-            <a href="{% url 'login' %}">Kirish</a>
+            {% trans "Hisobingiz bormi?" %}
+            <a href="{% url 'login' %}">{% trans "Kirish" %}</a>
         </div>
 
     </div>

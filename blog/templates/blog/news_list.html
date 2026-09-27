@@ -1,7 +1,8 @@
 {% extends "blog/base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Yangiliklar{% endblock %}
+{% block title %}{% trans "Yangiliklar" %}{% endblock %}
 
 {% block content %}
 
@@ -421,11 +422,11 @@ KICHIK TELEFON
   <div class="page-header">
 
     <h1>
-      Yangiliklar
+      {% trans "Yangiliklar" %}
     </h1>
 
     <p>
-      Markaz va sog'lig'i tug'risidagi eng so'nggi yangiliklar
+      {% trans "Markaz va sog'lig'i tug'risidagi eng so'nggi yangiliklar" %}
     </p>
 
   </div>
@@ -437,17 +438,19 @@ KICHIK TELEFON
 
   <div class="search-box">
 
+    {% blocktrans asvar search_placeholder %}Yangilik yoki so'z qidiring...{% endblocktrans %}
+
     <form method="get">
 
       <input
         type="search"
         name="q"
-        placeholder="Yangilik yoki so'z qidiring..."
+        placeholder="{{ search_placeholder }}"
         value="{{ request.GET.q }}"
       >
 
       <button type="submit">
-        🔍 Qidirish
+        🔍 {% trans "Qidirish" %}
       </button>
 
     </form>
@@ -463,10 +466,8 @@ KICHIK TELEFON
 
     {% for item in news %}
 
-      <a
-        href="{% url 'news_detail' item.slug %}"
-        class="news-card"
-      >
+      
+    <a href="{% url 'news_detail' item.slug %}" class="news-card">
 
         <!-- RASM -->
 
@@ -503,7 +504,7 @@ KICHIK TELEFON
           </h3>
 
           <p>
-            {{ item.description|truncatewords:20 }}
+            {{ item.description|striptags|cut:"&nbsp;"|truncatewords:20 }}
           </p>
 
         </div>
@@ -526,7 +527,7 @@ KICHIK TELEFON
             font-size: 16px;
           "
         >
-          Yangiliklar hali qo'shilmagan
+          {% trans "Yangiliklar hali qo'shilmagan" %}
         </p>
 
       </div>
@@ -541,85 +542,32 @@ KICHIK TELEFON
   ====================================================== -->
 
   {% if is_paginated %}
+  <div class="news-pagination">
+    <div style="text-align: center;">
 
-    <div class="news-pagination">
+      {% if page_obj.has_previous %}
+        <a href="?page=1" class="nav-btn">⬅️ {% trans "Birinchi sahifa" %}</a>
+        <a href="?page={{ page_obj.previous_page_number }}" class="nav-btn">← {% trans "Oldingi" %}</a>
+      {% else %}
+        <span class="nav-btn disabled">⬅️ {% trans "Birinchi sahifa" %}</span>
+        <span class="nav-btn disabled">← {% trans "Oldingi" %}</span>
+      {% endif %}
 
-      <div style="text-align: center;">
+      <span style="margin: 0 15px; color: #666;">
+        {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
+      </span>
 
-        {% if page_obj.has_previous %}
-
-          <a
-            href="?page=1"
-            class="nav-btn"
-          >
-            ⬅️ Birinchi sahifa
-          </a>
-
-          <a
-            href="?page={{ page_obj.previous_page_number }}"
-            class="nav-btn"
-          >
-            ← Oldingi
-          </a>
-
-        {% else %}
-
-          <span class="nav-btn disabled">
-            ⬅️ Birinchi sahifa
-          </span>
-
-          <span class="nav-btn disabled">
-            ← Oldingi
-          </span>
-
-        {% endif %}
-
-
-        <span
-          style="
-            margin: 0 15px;
-            color: #666;
-          "
-        >
-          {{ page_obj.number }}
-          /
-          {{ page_obj.paginator.num_pages }}
-        </span>
-
-
-        {% if page_obj.has_next %}
-
-          <a
-            href="?page={{ page_obj.next_page_number }}"
-            class="nav-btn"
-          >
-            Keyingi →
-          </a>
-
-          <a
-            href="?page={{ page_obj.paginator.num_pages }}"
-            class="nav-btn"
-          >
-            Oxirgi sahifa ➡️
-          </a>
-
-        {% else %}
-
-          <span class="nav-btn disabled">
-            Keyingi →
-          </span>
-
-          <span class="nav-btn disabled">
-            Oxirgi sahifa ➡️
-          </span>
-
-        {% endif %}
-
-      </div>
+      {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}" class="nav-btn">{% trans "Keyingi" %} →</a>
+        <a href="?page={{ page_obj.paginator.num_pages }}" class="nav-btn">{% trans "Oxirgi sahifa" %} ➡️</a>
+      {% else %}
+        <span class="nav-btn disabled">{% trans "Keyingi" %} →</span>
+        <span class="nav-btn disabled">{% trans "Oxirgi sahifa" %} ➡️</span>
+      {% endif %}
 
     </div>
-
-  {% endif %}
+  </div>
+{% endif %}
 
 </div>
 

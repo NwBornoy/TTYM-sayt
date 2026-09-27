@@ -1,7 +1,8 @@
 {% extends "blog/base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Ekofaol xodim{% endblock %}
+{% block title %}{% trans "Ekofaol xodim" %}{% endblock %}
 
 {% block content %}
 
@@ -246,8 +247,8 @@
 <div class="eko-page">
   <div class="page-header">
     <span class="eko-icon">✳️</span>
-    <h1>Ekofaol xodim</h1>
-    <p>Bizning fotosuratlarimiz va videolarimiz prizmasi orqali bizning ekologik obodonlashtirish faoliyatimiz bilan tanishing</p>
+    <h1>{% trans "Ekofaol xodim" %}</h1>
+    <p>{% trans "Bizning fotosuratlarimiz va videolarimiz prizmasi orqali bizning ekologik obodonlashtirish faoliyatimiz bilan tanishing" %}</p>
   </div>
   <div class="eko-divider"></div>
 
@@ -268,12 +269,12 @@
 
           <div class="eko-card-footer">
             <span class="eko-card-date">{{ item.created_at|date:"d.m.Y" }}</span>
-            <a href="{{ item.get_absolute_url }}" class="eko-card-more">Batafsil →</a>
+            <a href="{{ item.get_absolute_url }}" class="eko-card-more">{% trans "Batafsil →" %}</a>
           </div>
         </div>
       </div>
     {% empty %}
-      <div class="eko-empty">Hozircha ekofaol postlar qo'shilmagan.</div>
+      <div class="eko-empty">{% trans "Hozircha ekofaol postlar qo'shilmagan." %}</div>
     {% endfor %}
   </div>
 

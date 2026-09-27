@@ -1,14 +1,135 @@
 /* =========================================================
-   QASHQADARYO FILIALLARI
+   QASHQADARYO FILIALLARI — 4 TILDA
+   (uz = lotin, uz-cyrl = kirill, ru = rus, en = ingliz)
+========================================================= */
+
+const branchTranslations = {
+
+    "qarshi-shahar": {
+        uz:      { name: "Qarshi shahar filiali",       address: "Qarshi shahri" },
+        "uz-cyrl": { name: "Қарши шаҳар филиали",        address: "Қарши шаҳри" },
+        ru:      { name: "Филиал города Карши",         address: "город Карши" },
+        en:      { name: "Karshi City Branch",          address: "Karshi city" }
+    },
+
+    "qarshi-tumani": {
+        uz:      { name: "Qarshi tumani filiali",       address: "Qarshi tumani" },
+        "uz-cyrl": { name: "Қарши тумани филиали",       address: "Қарши тумани" },
+        ru:      { name: "Филиал Каршинского района",   address: "Каршинский район" },
+        en:      { name: "Karshi District Branch",      address: "Karshi district" }
+    },
+
+    "shahrisabz-shahar": {
+        uz:      { name: "Shahrisabz shahar filiali",   address: "Shahrisabz shahri" },
+        "uz-cyrl": { name: "Шаҳрисабз шаҳар филиали",    address: "Шаҳрисабз шаҳри" },
+        ru:      { name: "Филиал города Шахрисабз",     address: "город Шахрисабз" },
+        en:      { name: "Shahrisabz City Branch",      address: "Shahrisabz city" }
+    },
+
+    "shahrisabz-tumani": {
+        uz:      { name: "Shahrisabz tumani filiali",   address: "Shahrisabz tumani" },
+        "uz-cyrl": { name: "Шаҳрисабз тумани филиали",   address: "Шаҳрисабз тумани" },
+        ru:      { name: "Филиал Шахрисабзского района", address: "Шахрисабзский район" },
+        en:      { name: "Shahrisabz District Branch",  address: "Shahrisabz district" }
+    },
+
+    "kitob": {
+        uz:      { name: "Kitob tumani filiali",        address: "Kitob tumani" },
+        "uz-cyrl": { name: "Китоб тумани филиали",       address: "Китоб тумани" },
+        ru:      { name: "Филиал Китабского района",    address: "Китабский район" },
+        en:      { name: "Kitab District Branch",       address: "Kitab district" }
+    },
+
+    "chiroqchi": {
+        uz:      { name: "Chiroqchi tumani filiali",    address: "Chiroqchi tumani" },
+        "uz-cyrl": { name: "Чироқчи тумани филиали",     address: "Чироқчи тумани" },
+        ru:      { name: "Филиал Чиракчинского района", address: "Чиракчинский район" },
+        en:      { name: "Chirakchi District Branch",   address: "Chirakchi district" }
+    },
+
+    "yakkabog": {
+        uz:      { name: "Yakkabog‘ tumani filiali",    address: "Yakkabog‘ tumani" },
+        "uz-cyrl": { name: "Яккабоғ тумани филиали",     address: "Яккабоғ тумани" },
+        ru:      { name: "Филиал Яккабагского района",  address: "Яккабагский район" },
+        en:      { name: "Yakkabag District Branch",    address: "Yakkabag district" }
+    },
+
+    "qamashi": {
+        uz:      { name: "Qamashi tumani filiali",      address: "Qamashi tumani" },
+        "uz-cyrl": { name: "Қамаши тумани филиали",      address: "Қамаши тумани" },
+        ru:      { name: "Филиал Камашинского района",  address: "Камашинский район" },
+        en:      { name: "Kamashi District Branch",     address: "Kamashi district" }
+    },
+
+    "guzor": {
+        uz:      { name: "G‘uzor tumani filiali",       address: "G‘uzor tumani" },
+        "uz-cyrl": { name: "Ғузор тумани филиали",       address: "Ғузор тумани" },
+        ru:      { name: "Филиал Гузарского района",    address: "Гузарский район" },
+        en:      { name: "Guzar District Branch",       address: "Guzar district" }
+    },
+
+    "dehqonobod": {
+        uz:      { name: "Dehqonobod tumani filiali",   address: "Dehqonobod tumani" },
+        "uz-cyrl": { name: "Деҳқонобод тумани филиали",  address: "Деҳқонобод тумани" },
+        ru:      { name: "Филиал Дехканабадского района", address: "Дехканабадский район" },
+        en:      { name: "Dehkanabad District Branch",  address: "Dehkanabad district" }
+    },
+
+    "nishon": {
+        uz:      { name: "Nishon tumani filiali",       address: "Nishon tumani" },
+        "uz-cyrl": { name: "Нишон тумани филиали",       address: "Нишон тумани" },
+        ru:      { name: "Филиал Нишанского района",    address: "Нишанский район" },
+        en:      { name: "Nishan District Branch",      address: "Nishan district" }
+    },
+
+    "kasbi": {
+        uz:      { name: "Kasbi tumani filiali",        address: "Kasbi tumani" },
+        "uz-cyrl": { name: "Касби тумани филиали",       address: "Касби тумани" },
+        ru:      { name: "Филиал Касбийского района",   address: "Касбийский район" },
+        en:      { name: "Kasbi District Branch",       address: "Kasbi district" }
+    },
+
+    "koson": {
+        uz:      { name: "Koson tumani filiali",        address: "Koson tumani" },
+        "uz-cyrl": { name: "Косон тумани филиали",       address: "Косон тумани" },
+        ru:      { name: "Филиал Касанского района",    address: "Касанский район" },
+        en:      { name: "Kasan District Branch",       address: "Kasan district" }
+    },
+
+    "muborak": {
+        uz:      { name: "Muborak tumani filiali",      address: "Muborak tumani" },
+        "uz-cyrl": { name: "Муборак тумани филиали",     address: "Муборак тумани" },
+        ru:      { name: "Филиал Муборакского района",  address: "Муборакский район" },
+        en:      { name: "Muborak District Branch",     address: "Muborak district" }
+    },
+
+    "mirishkor": {
+        uz:      { name: "Mirishkor tumani filiali",    address: "Mirishkor tumani" },
+        "uz-cyrl": { name: "Миришкор тумани филиали",    address: "Миришкор тумани" },
+        ru:      { name: "Филиал Миришкорского района", address: "Миришкорский район" },
+        en:      { name: "Mirishkor District Branch",   address: "Mirishkor district" }
+    },
+
+    "kokdala": {
+        uz:      { name: "Ko‘kdala tumani filiali",     address: "Ko‘kdala tumani" },
+        "uz-cyrl": { name: "Кўкдала тумани филиали",     address: "Кўкдала тумани" },
+        ru:      { name: "Филиал Кукдалинского района", address: "Кукдалинский район" },
+        en:      { name: "Kukdala District Branch",     address: "Kukdala district" }
+    }
+
+};
+
+
+/* =========================================================
+   HAR BIR FILIALNING TIL BILAN BOG'LIQ BO'LMAGAN MA'LUMOTLARI
+   (rahbar ismi, telefon, email, ijtimoiy tarmoq — barcha tilda bir xil)
 ========================================================= */
 
 const branches = {
 
     "qarshi-shahar": {
-        name: "Qarshi shahar filiali",
-        director: "Rahbar: __________",
-        phone: "Telefon: __________",
-        address: "Qarshi shahri",
+        director: "__________",
+        phone: "__________",
         email: "example@gmail.com",
         telegram: "https://t.me/example",
         instagram: "https://instagram.com/example",
@@ -16,10 +137,8 @@ const branches = {
     },
 
     "qarshi-tumani": {
-        name: "Qarshi tumani filiali",
-        director: "Rahbar: __________",
-        phone: "Telefon: __________",
-        address: "Qarshi tumani",
+        director: "__________",
+        phone: "__________",
         email: "example@gmail.com",
         telegram: "https://t.me/example",
         instagram: "https://instagram.com/example",
@@ -27,10 +146,8 @@ const branches = {
     },
 
     "shahrisabz-shahar": {
-        name: "Shahrisabz shahar filiali",
-        director: "Rahbar: __________",
-        phone: "Telefon: __________",
-        address: "Shahrisabz shahri",
+        director: "__________",
+        phone: "__________",
         email: "example@gmail.com",
         telegram: "https://t.me/example",
         instagram: "https://instagram.com/example",
@@ -38,10 +155,8 @@ const branches = {
     },
 
     "shahrisabz-tumani": {
-        name: "Shahrisabz tumani filiali",
-        director: "Rahbar: __________",
-        phone: "Telefon: __________",
-        address: "Shahrisabz tumani",
+        director: "__________",
+        phone: "__________",
         email: "example@gmail.com",
         telegram: "https://t.me/example",
         instagram: "https://instagram.com/example",
@@ -49,10 +164,8 @@ const branches = {
     },
 
     "kitob": {
-        name: "Kitob tumani filiali",
-        director: "Rahbar: __________",
-        phone: "Telefon: __________",
-        address: "Kitob tumani",
+        director: "__________",
+        phone: "__________",
         email: "example@gmail.com",
         telegram: "https://t.me/example",
         instagram: "https://instagram.com/example",
@@ -60,10 +173,8 @@ const branches = {
     },
 
     "chiroqchi": {
-        name: "Chiroqchi tumani filiali",
-        director: "Rahbar: __________",
-        phone: "Telefon: __________",
-        address: "Chiroqchi tumani",
+        director: "__________",
+        phone: "__________",
         email: "example@gmail.com",
         telegram: "https://t.me/example",
         instagram: "https://instagram.com/example",
@@ -71,10 +182,8 @@ const branches = {
     },
 
     "yakkabog": {
-        name: "Yakkabog‘ tumani filiali",
-        director: "Rahbar: __________",
-        phone: "Telefon: __________",
-        address: "Yakkabog‘ tumani",
+        director: "__________",
+        phone: "__________",
         email: "example@gmail.com",
         telegram: "https://t.me/example",
         instagram: "https://instagram.com/example",
@@ -82,10 +191,8 @@ const branches = {
     },
 
     "qamashi": {
-        name: "Qamashi tumani filiali",
-        director: "Rahbar: __________",
-        phone: "Telefon: __________",
-        address: "Qamashi tumani",
+        director: "__________",
+        phone: "__________",
         email: "example@gmail.com",
         telegram: "https://t.me/example",
         instagram: "https://instagram.com/example",
@@ -93,10 +200,8 @@ const branches = {
     },
 
     "guzor": {
-        name: "G‘uzor tumani filiali",
-        director: "Rahbar: __________",
-        phone: "Telefon: __________",
-        address: "G‘uzor tumani",
+        director: "__________",
+        phone: "__________",
         email: "example@gmail.com",
         telegram: "https://t.me/example",
         instagram: "https://instagram.com/example",
@@ -104,10 +209,8 @@ const branches = {
     },
 
     "dehqonobod": {
-        name: "Dehqonobod tumani filiali",
-        director: "Rahbar: __________",
-        phone: "Telefon: __________",
-        address: "Dehqonobod tumani",
+        director: "__________",
+        phone: "__________",
         email: "example@gmail.com",
         telegram: "https://t.me/example",
         instagram: "https://instagram.com/example",
@@ -115,10 +218,8 @@ const branches = {
     },
 
     "nishon": {
-        name: "Nishon tumani filiali",
-        director: "Rahbar: __________",
-        phone: "Telefon: __________",
-        address: "Nishon tumani",
+        director: "__________",
+        phone: "__________",
         email: "example@gmail.com",
         telegram: "https://t.me/example",
         instagram: "https://instagram.com/example",
@@ -126,10 +227,8 @@ const branches = {
     },
 
     "kasbi": {
-        name: "Kasbi tumani filiali",
-        director: "Rahbar: __________",
-        phone: "Telefon: __________",
-        address: "Kasbi tumani",
+        director: "__________",
+        phone: "__________",
         email: "example@gmail.com",
         telegram: "https://t.me/example",
         instagram: "https://instagram.com/example",
@@ -137,10 +236,8 @@ const branches = {
     },
 
     "koson": {
-        name: "Koson tumani filiali",
-        director: "Rahbar: __________",
-        phone: "Telefon: __________",
-        address: "Koson tumani",
+        director: "__________",
+        phone: "__________",
         email: "example@gmail.com",
         telegram: "https://t.me/example",
         instagram: "https://instagram.com/example",
@@ -148,10 +245,8 @@ const branches = {
     },
 
     "muborak": {
-        name: "Muborak tumani filiali",
-        director: "Rahbar: __________",
-        phone: "Telefon: __________",
-        address: "Muborak tumani",
+        director: "__________",
+        phone: "__________",
         email: "example@gmail.com",
         telegram: "https://t.me/example",
         instagram: "https://instagram.com/example",
@@ -159,10 +254,8 @@ const branches = {
     },
 
     "mirishkor": {
-        name: "Mirishkor tumani filiali",
-        director: "Rahbar: __________",
-        phone: "Telefon: __________",
-        address: "Mirishkor tumani",
+        director: "__________",
+        phone: "__________",
         email: "example@gmail.com",
         telegram: "https://t.me/example",
         instagram: "https://instagram.com/example",
@@ -170,10 +263,8 @@ const branches = {
     },
 
     "kokdala": {
-        name: "Ko‘kdala tumani filiali",
-        director: "Rahbar: __________",
-        phone: "Telefon: __________",
-        address: "Ko‘kdala tumani",
+        director: "__________",
+        phone: "__________",
         email: "example@gmail.com",
         telegram: "https://t.me/example",
         instagram: "https://instagram.com/example",
@@ -181,6 +272,57 @@ const branches = {
     }
 
 };
+
+
+/* =========================================================
+   JORIY TIL VA YORLIQLAR (LABELS)
+   window.branchI18n home.html da <script> ichida beriladi:
+   <script>
+     window.branchI18n = {
+       rahbar: "{% trans 'Rahbar:' %}",
+       telefon: "{% trans 'Telefon:' %}",
+       email: "Email:",
+       oldingiFilial: "{% trans 'Oldingi filial' %}",
+       keyingiFilial: "{% trans 'Keyingi filial' %}",
+       yordamMatni: "{% trans 'Xarita ustidagi hududlardan birini bosing.' %}"
+     };
+   </script>
+   Agar bu obyekt topilmasa, standart (o'zbekcha) matnlar ishlatiladi.
+========================================================= */
+
+const defaultI18n = {
+    rahbar: "Rahbar:",
+    telefon: "Telefon:",
+    email: "Email:",
+    oldingiFilial: "Oldingi filial",
+    keyingiFilial: "Keyingi filial",
+    yordamMatni: "Xarita ustidagi hududlardan birini bosing."
+};
+
+function getI18n() {
+    return (typeof window !== "undefined" && window.branchI18n)
+        ? Object.assign({}, defaultI18n, window.branchI18n)
+        : defaultI18n;
+}
+
+/*
+ * Django <html lang="..."> ga uz, uz-cyrl, ru yoki en qo'yadi.
+ * branchTranslations ichida shu kalitlar bilan qidiramiz,
+ * topilmasa "uz" ga tushamiz.
+ */
+function getCurrentLang() {
+    const lang = (document.documentElement.lang || "uz").toLowerCase();
+    return lang;
+}
+
+function getBranchText(branchId) {
+    const table = branchTranslations[branchId];
+    if (!table) {
+        return { name: branchId, address: "" };
+    }
+    const lang = getCurrentLang();
+    return table[lang] || table.uz;
+}
 
 
 /* =========================================================
@@ -448,6 +590,11 @@ function showBranch(branchId) {
     }
 
 
+    const text = getBranchText(branchId);
+
+    const i18n = getI18n();
+
+
     /*
      * Joriy filial indeksini saqlaymiz.
      */
@@ -486,7 +633,7 @@ function showBranch(branchId) {
 
             <img
                 src="${branch.image}"
-                alt="${branch.name}"
+                alt="${text.name}"
 
                 onerror="
                     this.style.display='none';
@@ -504,7 +651,7 @@ function showBranch(branchId) {
         <!-- FILIAL NOMI -->
 
         <h3 class="branch-title">
-            ${branch.name}
+            ${text.name}
         </h3>
 
 
@@ -517,7 +664,7 @@ function showBranch(branchId) {
             </span>
 
             <span>
-                ${branch.director}
+                ${i18n.rahbar} ${branch.director}
             </span>
 
         </div>
@@ -532,7 +679,7 @@ function showBranch(branchId) {
             </span>
 
             <span>
-                ${branch.phone}
+                ${i18n.telefon} ${branch.phone}
             </span>
 
         </div>
@@ -547,7 +694,7 @@ function showBranch(branchId) {
             </span>
 
             <span>
-                ${branch.address}
+                ${text.address}
             </span>
 
         </div>
@@ -565,7 +712,7 @@ function showBranch(branchId) {
             </span>
 
             <span>
-                Email:
+                ${i18n.email}
             </span>
 
             <a
@@ -698,7 +845,7 @@ function showBranch(branchId) {
                 type="button"
                 class="branch-nav-btn branch-prev"
                 id="branch-prev"
-                title="Oldingi filial"
+                title="${i18n.oldingiFilial}"
             >
                 ‹
             </button>
@@ -708,7 +855,7 @@ function showBranch(branchId) {
                 type="button"
                 class="branch-nav-btn branch-next"
                 id="branch-next"
-                title="Keyingi filial"
+                title="${i18n.keyingiFilial}"
             >
                 ›
             </button>
@@ -719,7 +866,7 @@ function showBranch(branchId) {
         <!-- YORDAMCHI YOZUV -->
 
         <p class="branch-info-help">
-            Xarita ustidagi hududlardan birini bosing.
+            ${i18n.yordamMatni}
         </p>
 
     `;
@@ -969,7 +1116,7 @@ document.addEventListener(
                              */
 
                             showMapTooltip(
-                                branch.name,
+                                getBranchText(area.id).name,
                                 event
                             );
 

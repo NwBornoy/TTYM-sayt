@@ -130,10 +130,9 @@ User = get_user_model()
 
 
 class News(models.Model):
-    """Markaz yangiliklari."""
     title = models.CharField("Sarlavha", max_length=300)
     slug = models.SlugField(unique=True, blank=True)
-    description = models.TextField("Qisqa tavsifi")
+    description = CKEditor5Field("Qisqa tavsifi", config_name="default")  # ← TextField o'rniga shu
     image = models.ImageField("Rasm", upload_to="news/", null=True, blank=True)
     created_at = models.DateTimeField("Yaratilgan vaqt", auto_now_add=True)
     is_published = models.BooleanField("Chop etilgan", default=True)

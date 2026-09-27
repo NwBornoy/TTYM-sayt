@@ -1,7 +1,8 @@
 {% extends "blog/base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Rahbariyat{% endblock %}
+{% block title %}{% trans "Rahbariyat" %}{% endblock %}
 
 {% block content %}
 
@@ -222,7 +223,7 @@ SMALL MOBILE (480px)
 </style>
 
 <div class="leadership-hero">
-  <h1>Rahbariyat</h1>
+  <h1>{% trans "Rahbariyat" %}</h1>
 </div>
 
 <div class="leadership-page">
@@ -241,22 +242,22 @@ SMALL MOBILE (480px)
 
         <div class="leader-info">
           <div class="leader-info-row">
-            <span>Telefon:</span>
+            <span>{% trans "Telefon:" %}</span>
             <span>{{ leader.phone|default:"—" }}</span>
           </div>
           <div class="leader-info-row">
-            <span>Qabul:</span>
+            <span>{% trans "Qabul:" %}</span>
             <span>{{ leader.reception_day|default:"—" }}</span>
           </div>
           <div class="leader-info-row">
-            <span>Email:</span>
+            <span>{% trans "Email:" %}</span>
             <span>{{ leader.email|default:"—" }}</span>
           </div>
         </div>
 
       </div>
     {% empty %}
-      <p>Hozircha rahbariyat ma'lumotlari kiritilmagan.</p>
+      <p>{% trans "Hozircha rahbariyat ma'lumotlari kiritilmagan." %}</p>
     {% endfor %}
   </div>
 </div>

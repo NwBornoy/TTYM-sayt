@@ -1,5 +1,6 @@
 {% extends "blog/base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}{{ news.title }}{% endblock %}
 
@@ -115,6 +116,36 @@
       height:auto;
   
   }
+
+  /* YOUTUBE VIDEO VA BOSHQA EMBED KONTENT — barcha o'lchamlarda moslashuvchan */
+  .news-content .media,
+  .news-content oembed,
+  .news-content figure.media {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 nisbat */
+    height: 0;
+    margin: 25px 0;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .news-content .media iframe,
+  .news-content oembed iframe,
+  .news-content figure.media iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 10px;
+  }
+
+  /* Agar CKEditor iframe'ni to'g'ridan-to'g'ri (wrapper'siz) chiqarsa */
+  .news-content iframe {
+    max-width: 100%;
+  }
   
   
   
@@ -217,6 +248,13 @@
     max-height:500px;
 }
 
+.news-content .media,
+.news-content oembed,
+.news-content figure.media {
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
 }
 
 
@@ -250,6 +288,13 @@ MOBILE (768px)
 .news-content{
     font-size:15px;
     line-height:1.7;
+}
+
+.news-content .media,
+.news-content oembed,
+.news-content figure.media {
+    margin: 18px 0;
+    border-radius: 8px;
 }
 
 .news-footer{
@@ -301,6 +346,13 @@ SMALL MOBILE (480px)
     line-height:1.6;
 }
 
+.news-content .media,
+.news-content oembed,
+.news-content figure.media {
+    margin: 14px 0;
+    border-radius: 6px;
+}
+
 .btn{
     padding:12px;
     font-size:14px;
@@ -336,7 +388,7 @@ SMALL MOBILE (480px)
   {% if news.updated_at != news.created_at %}
   
   <span>
-  ✏️ Yangilangan:
+  ✏️ {% trans "Yangilangan:" %}
   {{ news.updated_at|date:"d F Y" }}
   </span>
   
@@ -378,7 +430,7 @@ SMALL MOBILE (480px)
   
   <div class="news-content">
   
-  {{ news.description|linebreaks }}
+  {{ news.description|safe }}
   
   </div>
   
@@ -388,12 +440,12 @@ SMALL MOBILE (480px)
   
   
   <a href="{% url 'news_list' %}" class="btn btn-secondary">
-  ← Yangiliklarga qaytish
+  ← {% trans "Yangiliklarga qaytish" %}
   </a>
   
   
   <a href="{% url 'home' %}" class="btn btn-primary">
-  🏠 Bosh sahifaga
+  🏠 {% trans "Bosh sahifaga" %}
   </a>
   
   

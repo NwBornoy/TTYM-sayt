@@ -1,7 +1,8 @@
 {% extends "blog/base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Bosh sahifa{% endblock %}
+{% block title %}{% trans "Bosh sahifa" %}{% endblock %}
 
 {% block content %}
 
@@ -18,20 +19,22 @@
             <div class="hero-text">
 
                 <h1>
+                    {% blocktrans trimmed %}
                     Respublika Tez<br>
                     Tibbiy Yordam Markazi<br>
                     Qashqadaryo filiali
+                    {% endblocktrans %}
                 </h1>
 
                 <div class="hero-welcome">
-                    saytiga Xush kelibsiz!
+                    {% trans "saytiga Xush kelibsiz!" %}
                 </div>
 
                 <div class="hero-buttons">
 
                     <a href="{% url 'about' %}"
                        class="hero-btn hero-btn-red">
-                        Batafsil
+                        {% trans "Batafsil" %}
                     </a>
 
                 </div>
@@ -51,8 +54,8 @@
                   <div class="hero-info-icon hero-103">103</div>
           
                   <div class="hero-info-text">
-                      <strong>103 raqamiga</strong>
-                      <span>qo‘ng‘iroq qilinadi</span>
+                      <strong>{% trans "103 raqamiga" %}</strong>
+                      <span>{% trans "qo‘ng‘iroq qilinadi" %}</span>
                   </div>
               </div>
           
@@ -61,8 +64,8 @@
                   <div class="hero-info-icon">📍</div>
           
                   <div class="hero-info-text">
-                      <strong>Manzilingizni</strong>
-                      <span>aniq ayting</span>
+                      <strong>{% trans "Manzilingizni" %}</strong>
+                      <span>{% trans "aniq ayting" %}</span>
                   </div>
               </div>
           
@@ -71,8 +74,8 @@
                   <div class="hero-info-icon">🚑</div>
           
                   <div class="hero-info-text">
-                      <strong>Tez yordam</strong>
-                      <span>15 min ichida yetib boradi</span>
+                      <strong>{% trans "Tez yordam" %}</strong>
+                      <span>{% trans "15 min ichida yetib boradi" %}</span>
                   </div>
               </div>
           
@@ -81,8 +84,8 @@
                   <div class="hero-info-icon">👨‍⚕️</div>
           
                   <div class="hero-info-text">
-                      <strong>Shifokorlik yordami</strong>
-                      <span>ko‘rsatiladi</span>
+                      <strong>{% trans "Shifokorlik yordami" %}</strong>
+                      <span>{% trans "ko‘rsatiladi" %}</span>
                   </div>
               </div>
           
@@ -102,28 +105,28 @@
             <div class="stat">
                 <div class="stat-number">24/7</div>
                 <div class="stat-label">
-                    Kunlik 24 soat xizmat
+                    {% trans "Kunlik 24 soat xizmat" %}
                 </div>
             </div>
 
             <div class="stat">
-                <div class="stat-number">13</div>
+                <div class="stat-number">16</div>
                 <div class="stat-label">
-                    Viloyatda filiallar
+                    {% trans "Tumanda filiallar" %}
                 </div>
             </div>
 
             <div class="stat">
-                <div class="stat-number">~12 min</div>
+                <div class="stat-number">~12 {% trans "min" %}</div>
                 <div class="stat-label">
-                    O‘rtacha javob vaqti
+                    {% trans "O‘rtacha javob vaqti" %}
                 </div>
             </div>
 
             <div class="stat">
                 <div class="stat-number">100%</div>
                 <div class="stat-label">
-                    Bepul xizmat
+                    {% trans "Bepul xizmat" %}
                 </div>
             </div>
 
@@ -141,11 +144,11 @@
   <div class="section-header">
 
       <h2 style="color: black;">
-          Qashqadaryo viloyati tez tibbiy yordam filiallari xaritasi
+          {% trans "Qashqadaryo viloyati tez tibbiy yordam filiallari xaritasi" %}
       </h2>
 
       <p style="color: black;">
-          Xarita orqali kerakli filialni tanlang
+          {% trans "Xarita orqali kerakli filialni tanlang" %}
       </p>
 
   </div>
@@ -161,27 +164,27 @@
 
             <!-- RAHBAR RASMI -->
             <div class="branch-info-icon">
-                <img src="{% static 'blog/images/director.jpg' %}" alt="Filial rahbari">
+                <img src="{% static 'blog/images/director.jpg' %}" alt="{% trans 'Filial rahbari' %}">
             </div>
         
             <!-- FILIAL NOMI -->
             <h3 id="branch-name">
-                Qashqadaryo tez tibbiy yordam markazi direktori
+                {% trans "Qashqadaryo tez tibbiy yordam markazi direktori" %}
             </h3>
         
             <!-- RAHBAR -->
             <div class="branch-info-line" id="branch-director">
-                👨‍⚕️ Rahbar: Aliev Akmaljon Akromkulovch
+                👨‍⚕️ {% trans "Rahbar:" %} Aliev Akmaljon Akromkulovch
             </div>
         
             <!-- TELEFON -->
             <div class="branch-info-line" id="branch-phone">
-                📞 Telefon: +998 90 288 70 77
+                📞 {% trans "Telefon:" %} +998 90 288 70 77
             </div>
         
             <!-- MANZIL -->
             <div class="branch-info-line" id="branch-address">
-                📍 Manzil: Qashqadaryo viloyati, Qarshi shahri
+                📍 {% trans "Manzil:" %} {% trans "Qashqadaryo viloyati," %} {% trans "Qarshi shahri" %}
             </div>
         
             <!-- EMAIL -->
@@ -265,7 +268,7 @@ title="Instagram">
                     type="button"
                     id="branch-prev"
                     class="branch-nav-btn branch-prev"
-                    title="Oldingi filial">
+                    title="{% trans 'Oldingi filial' %}">
                     ‹
                 </button>
             
@@ -273,7 +276,7 @@ title="Instagram">
                     type="button"
                     id="branch-next"
                     class="branch-nav-btn branch-next"
-                    title="Keyingi filial">
+                    title="{% trans 'Keyingi filial' %}">
                     ›
                 </button>
             
@@ -281,7 +284,7 @@ title="Instagram">
         
             <!-- YORDAM MATNI -->
             <p class="branch-info-help">
-                Xarita ustidagi hududlardan birini bosing.
+                {% trans "Xarita ustidagi hududlardan birini bosing." %}
             </p>
         
         </div>
@@ -314,8 +317,8 @@ title="Instagram">
         <div class="news-v2-container">
 
             <div class="section-header">
-                <h2>Markaz yangiliklari</h2>
-                <p>Biz Sizni har doim yutuqlarimiz haqida xabardor qilamiz va eng so'nggi yangiliklarni e'lon qilamiz</p>
+                <h2>{% trans "Markaz yangiliklari" %}</h2>
+                <p>{% trans "Biz Sizni har doim yutuqlarimiz haqida xabardor qilamiz va eng so'nggi yangiliklarni e'lon qilamiz" %}</p>
             </div>
 
             {% if main_news or side_news %}
@@ -330,7 +333,7 @@ title="Instagram">
                         {% if main_news.image %}
                             <img src="{{ main_news.image.url }}" alt="{{ main_news.title }}">
                         {% endif %}
-                        <span class="news-main-badge">Asosiy yangiliklar</span>
+                        <span class="news-main-badge">{% trans "Asosiy yangiliklar" %}</span>
                     </div>
 
                     <div class="news-main-body">
@@ -338,7 +341,7 @@ title="Instagram">
                             <span>📅</span> {{ main_news.created_at|date:"d.m.Y" }}
                         </div>
                         <h3 class="news-main-title">{{ main_news.title }}</h3>
-                        <p class="news-main-desc">{{ main_news.description|truncatewords:25 }}</p>
+                        <p class="news-main-desc">{{ main_news.description|striptags|truncatewords:25 }}</p>
                     </div>
 
                 </a>
@@ -372,12 +375,12 @@ title="Instagram">
 
             {% else %}
 
-                <p class="news-v2-empty">Hozircha yangiliklar yo'q.</p>
+                <p class="news-v2-empty">{% trans "Hozircha yangiliklar yo'q." %}</p>
 
             {% endif %}
 
             <div class="news-all-btn-wrap">
-                <a href="{% url 'news_list' %}" class="news-all-btn">Barcha yangiliklar</a>
+                <a href="{% url 'news_list' %}" class="news-all-btn">{% trans "Barcha yangiliklar" %}</a>
             </div>
 
         </div>
@@ -393,10 +396,9 @@ title="Instagram">
 
         <div class="section-header">
             <div class="gallery-icon">📸</div>
-            <h2>Foto va videogalereya</h2>
+            <h2>{% trans "Foto va videogalereya" %}</h2>
             <p>
-                Bizning fotosuratlarimiz va videolarimiz prizmasi orqali
-                bizning sohamiz bilan tanishing
+                {% trans "Bizning fotosuratlarimiz va videolarimiz prizmasi orqali bizning sohamiz bilan tanishing" %}
             </p>
         </div>
 
@@ -404,7 +406,7 @@ title="Instagram">
 
         <div class="gallery-carousel-wrapper">
 
-            <button type="button" class="gallery-nav gallery-prev" id="gallery-prev" aria-label="Oldingi">
+            <button type="button" class="gallery-nav gallery-prev" id="gallery-prev" aria-label="{% trans 'Oldingi' %}">
                 &#8249;
             </button>
 
@@ -431,22 +433,22 @@ title="Instagram">
 
             </div>
 
-            <button type="button" class="gallery-nav gallery-next" id="gallery-next" aria-label="Keyingi">
+            <button type="button" class="gallery-nav gallery-next" id="gallery-next" aria-label="{% trans 'Keyingi' %}">
                 &#8250;
             </button>
 
         </div>
 
         {% else %}
-            <p class="gallery-empty">Hozircha galereya bo'sh.</p>
+            <p class="gallery-empty">{% trans "Hozircha galereya bo'sh." %}</p>
         {% endif %}
 
         <div class="gallery-buttons">
             <a href="{% url 'gallery' %}" class="gallery-btn gallery-btn-photo">
-                Fotogalereya
+                {% trans "Fotogalereya" %}
             </a>
             <a href="{% url 'gallery' %}" class="gallery-btn gallery-btn-video">
-                Videogalereya
+                {% trans "Videogalereya" %}
             </a>
         </div>
 
@@ -765,11 +767,10 @@ title="Instagram">
     
                 <div class="partners-icon">🏛</div>
     
-                <h2>Bizning xalqaro hamkorlarimiz</h2>
+                <h2>{% trans "Bizning xalqaro hamkorlarimiz" %}</h2>
     
                 <p>
-                    Shifokorlarimiz o‘z ishining asosiy tamoyiliga amal
-                    qiladilar
+                    {% trans "Shifokorlarimiz o‘z ishining asosiy tamoyiliga amal qiladilar" %}
                 </p>
     
                 <div class="partners-line"></div>
@@ -784,7 +785,7 @@ title="Instagram">
                 <button type="button"
                         class="partners-nav partners-prev"
                         id="partners-prev"
-                        aria-label="Oldingi hamkor">
+                        aria-label="{% trans 'Oldingi hamkor' %}">
                     ‹
                 </button>
     
@@ -815,7 +816,7 @@ title="Instagram">
                 <button type="button"
                         class="partners-nav partners-next"
                         id="partners-next"
-                        aria-label="Keyingi hamkor">
+                        aria-label="{% trans 'Keyingi hamkor' %}">
                     ›
                 </button>
     
@@ -837,11 +838,10 @@ title="Instagram">
     
                 <div class="useful-links-icon">🏛</div>
     
-                <h2>Foydali havolalar</h2>
+                <h2>{% trans "Foydali havolalar" %}</h2>
     
                 <p>
-                    Bu davlat organlarining boshqa foydali resurslari va
-                    veb-saytlariga kirish imkoniyatidir
+                    {% trans "Bu davlat organlarining boshqa foydali resurslari va veb-saytlariga kirish imkoniyatidir" %}
                 </p>
     
                 <div class="useful-links-line"></div>
@@ -856,7 +856,7 @@ title="Instagram">
                 <button type="button"
                         class="useful-nav useful-prev"
                         id="useful-prev"
-                        aria-label="Oldingi havola">
+                        aria-label="{% trans 'Oldingi havola' %}">
                     ‹
                 </button>
     
@@ -913,7 +913,7 @@ title="Instagram">
                 <button type="button"
                         class="useful-nav useful-next"
                         id="useful-next"
-                        aria-label="Keyingi havola">
+                        aria-label="{% trans 'Keyingi havola' %}">
                     ›
                 </button>
     
@@ -1549,11 +1549,11 @@ title="Instagram">
         <div class="patients-header">
 
             <h2>
-                Bemorlar uchun
+                {% trans "Bemorlar uchun" %}
             </h2>
 
             <p>
-                Tez yordamga qachon murojaat qilish kerak?
+                {% trans "Tez yordamga qachon murojaat qilish kerak?" %}
             </p>
 
         </div>
@@ -1564,13 +1564,15 @@ title="Instagram">
             <div class="patient-card">
 
                 <h3>
-                    ❤️ Yurak bilan bog‘liq holatlar
+                    ❤️ {% trans "Yurak bilan bog‘liq holatlar" %}
                 </h3>
 
                 <p>
+                    {% blocktrans trimmed %}
                     Kuchli ko‘krak og‘rig‘i yoki yurak faoliyati
                     bilan bog‘liq jiddiy holatlarda darhol
                     <strong>103</strong> raqamiga qo‘ng‘iroq qiling.
+                    {% endblocktrans %}
                 </p>
 
             </div>
@@ -1579,12 +1581,14 @@ title="Instagram">
             <div class="patient-card">
 
                 <h3>
-                    🫁 Nafas olish qiyinlashishi
+                    🫁 {% trans "Nafas olish qiyinlashishi" %}
                 </h3>
 
                 <p>
+                    {% blocktrans trimmed %}
                     Nafas olishda jiddiy qiyinchilik yuzaga kelsa,
                     <strong>103</strong> raqamiga murojaat qiling.
+                    {% endblocktrans %}
                 </p>
 
             </div>
@@ -1593,12 +1597,14 @@ title="Instagram">
             <div class="patient-card">
 
                 <h3>
-                    🤕 Jiddiy jarohat
+                    🤕 {% trans "Jiddiy jarohat" %}
                 </h3>
 
                 <p>
+                    {% blocktrans trimmed %}
                     Jiddiy jarohatlar yoki xavfli holatlarda
                     tez tibbiy yordam chaqiring.
+                    {% endblocktrans %}
                 </p>
 
             </div>
@@ -1607,12 +1613,14 @@ title="Instagram">
             <div class="patient-card">
 
                 <h3>
-                    🧠 Insult belgilari
+                    🧠 {% trans "Insult belgilari" %}
                 </h3>
 
                 <p>
+                    {% blocktrans trimmed %}
                     Yuz, qo‘l yoki nutqda to‘satdan o‘zgarishlar
                     kuzatilsa, darhol <strong>103</strong> ga qo‘ng‘iroq qiling.
+                    {% endblocktrans %}
                 </p>
 
             </div>
@@ -1625,6 +1633,17 @@ title="Instagram">
  
 
 </div>
+<script>
+    window.branchI18n = {
+        rahbar: "{% trans 'Rahbar:' %}",
+        telefon: "{% trans 'Telefon:' %}",
+        email: "Email:",
+        oldingiFilial: "{% trans 'Oldingi filial' %}",
+        keyingiFilial: "{% trans 'Keyingi filial' %}",
+        yordamMatni: "{% trans 'Xarita ustidagi hududlardan birini bosing.' %}"
+    };
+    </script>
+
 <script src="{% static 'blog/branches.js' %}?v=3"></script>
 
 {% endblock %}

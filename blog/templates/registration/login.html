@@ -1,6 +1,7 @@
 {% extends "blog/base.html" %}
+{% load i18n %}
 
-{% block title %}Kirish{% endblock %}
+{% block title %}{% trans "Kirish" %}{% endblock %}
 
 {% block content %}
 
@@ -46,9 +47,9 @@
 
         <div class="auth-icon">103</div>
 
-        <h1>Hisobga kirish</h1>
+        <h1>{% trans "Hisobga kirish" %}</h1>
         <p class="auth-subtitle">
-            Hisobingizga kirib, maqolalarga izoh qoldiring.
+            {% trans "Hisobingizga kirib, maqolalarga izoh qoldiring." %}
         </p>
 
         <form method="post" class="auth-form">
@@ -62,7 +63,7 @@
 
             <div class="form-group">
                 <label for="{{ form.username.id_for_label }}">
-                    Foydalanuvchi nomi
+                    {% trans "Foydalanuvchi nomi" %}
                 </label>
                 {{ form.username }}
 
@@ -75,11 +76,11 @@
 
             <div class="form-group">
                 <label for="{{ form.password.id_for_label }}">
-                    Parol
+                    {% trans "Parol" %}
                 </label>
                 <div class="password-field-wrap">
                     {{ form.password }}
-                    <button type="button" class="password-toggle-btn" data-target="{{ form.password.id_for_label }}" aria-label="Parolni ko'rsatish">
+                    <button type="button" class="password-toggle-btn" data-target="{{ form.password.id_for_label }}" aria-label="{% trans "Parolni ko'rsatish" %}">
                         <svg class="icon-eye-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                             <circle cx="12" cy="12" r="3"></circle>
@@ -99,13 +100,13 @@
             </div>
 
             <button type="submit" class="auth-button">
-                Kirish
+                {% trans "Kirish" %}
             </button>
         </form>
 
         <div class="auth-bottom">
-            Hisobingiz yo‘qmi?
-            <a href="{% url 'register' %}">Ro‘yxatdan o‘ting</a>
+            {% trans "Hisobingiz yo‘qmi?" %}
+            <a href="{% url 'register' %}">{% trans "Ro‘yxatdan o‘ting" %}</a>
         </div>
 
     </div>

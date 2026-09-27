@@ -1,7 +1,8 @@
 {% extends "blog/base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Filiallar{% endblock %}
+{% block title %}{% trans "Filiallar" %}{% endblock %}
 
 {% block content %}
 
@@ -219,15 +220,15 @@
 
 <div class="branches-page">
   <div class="page-header">
-    <h1>Filiallar</h1>
-    <p>Qashqadaryo viloyati bo'ylab joylashgan barcha filiallar</p>
+    <h1>{% trans "Filiallar" %}</h1>
+    <p>{% trans "Qashqadaryo viloyati bo'ylab joylashgan barcha filiallar" %}</p>
   </div>
 
   <div class="branch-list-grid">
     {% for branch in branches %}
       <div class="branch-list-card">
         {% if branch.is_main %}
-          <span class="branch-list-badge">🏆 Bosh filial</span>
+          <span class="branch-list-badge">🏆 {% trans "Bosh filial" %}</span>
         {% endif %}
 
         {% if branch.director_image %}
@@ -240,12 +241,12 @@
         <div class="branch-list-region">{{ branch.region }}</div>
 
         <div class="branch-list-info">
-          <div class="branch-list-label">Rahbar</div>
+          <div class="branch-list-label">{% trans "Rahbar" %}</div>
           <div class="branch-list-value">{{ branch.director_name|default:"—" }}</div>
         </div>
 
         <div class="branch-list-info">
-          <div class="branch-list-label">Telefon</div>
+          <div class="branch-list-label">{% trans "Telefon" %}</div>
           <div class="branch-list-value">
             {% if branch.phone %}
               <a href="tel:{{ branch.phone }}">{{ branch.phone }}</a>
@@ -254,7 +255,7 @@
         </div>
 
         <div class="branch-list-info">
-          <div class="branch-list-label">Email</div>
+          <div class="branch-list-label">{% trans "Email" %}</div>
           <div class="branch-list-value">
             {% if branch.email %}
               <a href="mailto:{{ branch.email }}">{{ branch.email }}</a>
@@ -264,21 +265,21 @@
 
         {% if branch.address %}
           <div class="branch-list-info">
-            <div class="branch-list-label">Manzil</div>
+            <div class="branch-list-label">{% trans "Manzil" %}</div>
             <div class="branch-list-value">{{ branch.address }}</div>
           </div>
         {% endif %}
 
         <div class="branch-list-info">
-          <div class="branch-list-label">Tavsif</div>
+          <div class="branch-list-label">{% trans "Tavsif" %}</div>
           <div class="branch-list-value">{{ branch.description|default:"—" }}</div>
         </div>
 
         <div class="branch-list-buttons">
           {% if branch.phone %}
-            <a href="tel:{{ branch.phone }}" class="branch-list-btn">📞 Qo'ng'iroq</a>
+            <a href="tel:{{ branch.phone }}" class="branch-list-btn">📞 {% trans "Qo'ng'iroq" %}</a>
           {% else %}
-            <span class="branch-list-btn is-disabled">📞 Qo'ng'iroq</span>
+            <span class="branch-list-btn is-disabled">📞 {% trans "Qo'ng'iroq" %}</span>
           {% endif %}
 
           {% if branch.email %}
@@ -302,7 +303,7 @@
       </div>
     {% empty %}
       <div style="grid-column: 1 / -1; text-align: center; padding: 40px;">
-        <p style="color: #999; font-size: 16px;">Filiallar hali qo'shilmagan</p>
+        <p style="color: #999; font-size: 16px;">{% trans "Filiallar hali qo'shilmagan" %}</p>
       </div>
     {% endfor %}
   </div>

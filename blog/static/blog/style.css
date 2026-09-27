@@ -4197,18 +4197,177 @@ img {
       border-radius: 6px;
     }
   }
- 
-    
- 
- 
-   
- 
-    
-    
-  
-  
- 
-    
-    
 
- 
+/* ===========================================
+   TIL TANLASH — ASOSIY STIL (Kompyuter, standart, 1025px va undan katta)
+   =========================================== */
+   .lang-switcher {
+    position: relative;
+    display: inline-block;
+  }
+  .lang-switcher-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0B2438;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .lang-arrow {
+    font-size: 11px;
+    transition: transform 0.2s ease;
+  }
+  .lang-switcher.open .lang-arrow {
+    transform: rotate(180deg);
+  }
+  
+  .lang-switcher-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    min-width: 160px;
+    overflow: hidden;
+    z-index: 99999;
+  }
+  .lang-switcher.open .lang-switcher-menu {
+    display: block;
+  }
+  
+  .lang-switcher-menu form {
+    display: flex;
+    flex-direction: column;
+  }
+  .lang-option {
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 12px 18px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+  }
+  .lang-option:hover {
+    background: #f5f7fa;
+  }
+  .lang-option.active {
+    color: #ff4757;
+    font-weight: 700;
+  }
+  
+  
+  /* ===========================================
+     PLANSHET (769px — 1024px oralig'i)
+     =========================================== */
+  @media (max-width: 1024px) {
+    .lang-switcher-btn {
+      padding: 9px 14px;
+      font-size: 13px;
+    }
+    .lang-switcher-menu {
+      min-width: 150px;
+    }
+    .lang-option {
+      padding: 11px 16px;
+      font-size: 13px;
+    }
+  }
+  
+  
+  /* ===========================================
+     TELEFON (max 768px)
+     =========================================== */
+  @media (max-width: 768px) {
+    .lang-switcher-btn {
+      padding: 8px 12px;
+      font-size: 13px;
+      border-radius: 6px;
+    }
+    .lang-switcher-menu {
+      left: auto;
+      right: 0;
+      min-width: 140px;
+    }
+    .lang-option {
+      padding: 10px 14px;
+      font-size: 13px;
+    }
+  }
+  
+  
+  /* ===========================================
+     KICHIK TELEFONLAR (max 480px)
+     =========================================== */
+  @media (max-width: 480px) {
+    .lang-switcher-btn {
+      padding: 7px 10px;
+      font-size: 12px;
+      gap: 4px;
+    }
+    .lang-arrow {
+      font-size: 10px;
+    }
+    .lang-switcher-menu {
+      min-width: 130px;
+      right: 0;
+    }
+    .lang-option {
+      padding: 9px 12px;
+      font-size: 12px;
+    }
+  }
+
+  /* ===========================================
+   BAYROQ IKONKASI — ASOSIY STIL (Kompyuter, standart, 1025px va undan katta)
+   =========================================== */
+.lang-flag {
+    height: 14px;
+    width: auto;
+    margin-right: 6px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
+  }
+  
+  
+  /* ===========================================
+     PLANSHET (769px — 1024px oralig'i)
+     =========================================== */
+  @media (max-width: 1024px) {
+    .lang-flag {
+      height: 13px;
+      margin-right: 5px;
+    }
+  }
+  
+  
+  /* ===========================================
+     TELEFON (max 768px)
+     =========================================== */
+  @media (max-width: 768px) {
+    .lang-flag {
+      height: 12px;
+      margin-right: 5px;
+    }
+  }
+  
+  
+  /* ===========================================
+     KICHIK TELEFONLAR (max 480px)
+     =========================================== */
+  @media (max-width: 480px) {
+    .lang-flag {
+      height: 11px;
+      margin-right: 4px;
+    }
+  }

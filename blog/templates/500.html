@@ -1,9 +1,10 @@
+{% load i18n %}
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="{{ LANGUAGE_CODE|default:'uz' }}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>500 — Server xatosi</title>
+<title>{% trans "500 — Server xatosi" %}</title>
 <style>
   * { box-sizing: border-box; }
 
@@ -96,13 +97,15 @@
   <div class="error-card">
     <div class="error-icon">⚠️</div>
     <div class="error-code">500</div>
-    <div class="error-title">Serverda texnik nosozlik</div>
+    <div class="error-title">{% trans "Serverda texnik nosozlik" %}</div>
     <p class="error-desc">
+      {% blocktrans trimmed %}
       Kechirasiz, hozircha texnik nosozlik yuz berdi. Bizning mutaxassislar
       muammoni tezda bartaraf etishga harakat qilmoqda. Iltimos, birozdan
       so'ng qayta urinib ko'ring.
+      {% endblocktrans %}
     </p>
-    <a href="/" class="error-btn">Bosh sahifaga qaytish</a>
+    <a href="/" class="error-btn">{% trans "Bosh sahifaga qaytish" %}</a>
   </div>
 
 </body>

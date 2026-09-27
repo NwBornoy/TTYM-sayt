@@ -1,7 +1,8 @@
 {% extends "blog/base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block title %}Galereya{% endblock %}
+{% block title %}{% trans "Galereya" %}{% endblock %}
 
 {% block content %}
 
@@ -203,14 +204,14 @@
 
 <div class="gallery-page">
   <div class="page-header">
-    <h1>Galereya</h1>
-    <p>Markaz faoliyatidagi foto va videolar</p>
+    <h1>{% trans "Galereya" %}</h1>
+    <p>{% trans "Markaz faoliyatidagi foto va videolar" %}</p>
   </div>
 
   <div class="gallery-tabs">
-    <button class="tab-btn active" onclick="filterGallery('all')">Barchasi</button>
-    <button class="tab-btn" onclick="filterGallery('photo')">Fotolar</button>
-    <button class="tab-btn" onclick="filterGallery('video')">Videolar</button>
+    <button class="tab-btn active" onclick="filterGallery('all')">{% trans "Barchasi" %}</button>
+    <button class="tab-btn" onclick="filterGallery('photo')">{% trans "Fotolar" %}</button>
+    <button class="tab-btn" onclick="filterGallery('video')">{% trans "Videolar" %}</button>
   </div>
 
   <div class="gallery-grid" id="gallery-container">
@@ -244,7 +245,7 @@
     {% empty %}
       {% if not photos %}
       <div class="empty-state">
-        <p style="font-size: 18px;">Galereya bo'sh. Admin panel orqali rasm va videolar qo'shing.</p>
+        <p style="font-size: 18px;">{% trans "Galereya bo'sh. Admin panel orqali rasm va videolar qo'shing." %}</p>
       </div>
       {% endif %}
     {% endfor %}

@@ -1,9 +1,10 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="uz">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>400 — Noto'g'ri so'rov</title>
+<title>400 — {% trans "Noto'g'ri so'rov" %}</title>
 <style>
   * { box-sizing: border-box; }
 
@@ -96,12 +97,14 @@
   <div class="error-card">
     <div class="error-icon">⚠️</div>
     <div class="error-code">400</div>
-    <div class="error-title">Noto'g'ri so'rov</div>
+    <div class="error-title">{% trans "Noto'g'ri so'rov" %}</div>
     <p class="error-desc">
-      Kechirasiz, so'rovingiz noto'g'ri yoki tushunarsiz formatda yuborildi.
-      Sahifani qayta yuklab ko'ring yoki bosh sahifaga qayting.
+      {% blocktrans trimmed %}
+        Kechirasiz, so'rovingiz noto'g'ri yoki tushunarsiz formatda yuborildi.
+        Sahifani qayta yuklab ko'ring yoki bosh sahifaga qayting.
+      {% endblocktrans %}
     </p>
-    <a href="/" class="error-btn">Bosh sahifaga qaytish</a>
+    <a href="/" class="error-btn">{% trans "Bosh sahifaga qaytish" %}</a>
   </div>
 
 </body>

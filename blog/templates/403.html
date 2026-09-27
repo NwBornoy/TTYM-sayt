@@ -1,9 +1,10 @@
+{% load i18n %}
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="{{ LANGUAGE_CODE|default:'uz' }}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>403 — Ruxsat berilmagan</title>
+<title>{% trans "403 — Ruxsat berilmagan" %}</title>
 <style>
   * { box-sizing: border-box; }
 
@@ -96,13 +97,15 @@
   <div class="error-card">
     <div class="error-icon">🔒</div>
     <div class="error-code">403</div>
-    <div class="error-title">Ruxsat berilmagan</div>
+    <div class="error-title">{% trans "Ruxsat berilmagan" %}</div>
     <p class="error-desc">
+      {% blocktrans trimmed %}
       Kechirasiz, sizda ushbu sahifani ko'rish uchun yetarli huquq yo'q.
       Agar bu xato deb hisoblasangiz, tizimga qayta kiring yoki administrator
       bilan bog'laning.
+      {% endblocktrans %}
     </p>
-    <a href="/" class="error-btn">Bosh sahifaga qaytish</a>
+    <a href="/" class="error-btn">{% trans "Bosh sahifaga qaytish" %}</a>
   </div>
 
 </body>

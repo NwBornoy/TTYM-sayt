@@ -1,5 +1,6 @@
 {% extends "blog/base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}{{ topic.title }}{% endblock %}
 
@@ -117,7 +118,7 @@
 </style>
 
 <div class="ac-hero">
-  <h1>Korrupsiyaga qarshi kurashish</h1>
+  <h1>{% trans "Korrupsiyaga qarshi kurashish" %}</h1>
 </div>
 
 <div class="ac-detail-page">
@@ -127,7 +128,7 @@
 
   <div class="ac-detail-body">{{ topic.body|safe }}</div>
 
-  <a href="{% url 'anticorruption_list' %}" class="ac-back">← Ro'yxatga qaytish</a>
+  <a href="{% url 'anticorruption_list' %}" class="ac-back">← {% trans "Ro'yxatga qaytish" %}</a>
 </div>
 
 {% endblock %}
