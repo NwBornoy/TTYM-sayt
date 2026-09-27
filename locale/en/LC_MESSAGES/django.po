@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-25 14:48+0500\n"
+"POT-Creation-Date: 2026-09-28 00:18+0500\n"
 "PO-Revision-Date: 2026-09-24 18:00+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: English\n"
@@ -17,6 +17,340 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#: .\blog\forms.py:15 .\blog\forms.py:23
+msgid "Ismingiz"
+msgstr "Your name"
+
+#: .\blog\forms.py:16
+msgid "Shahar/tuman (ixtiyoriy)"
+msgstr "City/district (optional)"
+
+#: .\blog\forms.py:17
+msgid "Fikringizni yozing..."
+msgstr "Write your feedback..."
+
+#: .\blog\forms.py:26
+msgid "Ixtiyoriy — bo'sh qoldirsangiz 'Anonim' deb ko'rsatiladi."
+msgstr "Optional — if left blank, it will be shown as 'Anonymous'."
+
+#: .\blog\forms.py:27
+msgid "Ismingiz (ixtiyoriy)"
+msgstr "Your name (optional)"
+
+#: .\blog\forms.py:30
+msgid "Izoh"
+msgstr "Comment"
+
+#: .\blog\forms.py:32
+msgid "Izohingizni yozing…"
+msgstr "Write your comment…"
+
+#: .\blog\forms.py:46
+msgid "Spam aniqlandi."
+msgstr "Spam detected."
+
+#: .\blog\forms.py:52
+msgid "Izoh bo'sh bo'lishi mumkin emas."
+msgstr "Comment cannot be empty."
+
+#: .\blog\forms.py:57
+msgid "Email (ixtiyoriy)"
+msgstr "Email (optional)"
+
+#: .\blog\forms.py:66
+msgid "Bu foydalanuvchi nomi allaqachon band. Boshqa nom tanlang."
+msgstr "This username is already taken. Please choose another."
+
+#: .\blog\forms.py:67
+msgid "Foydalanuvchi nomini kiriting."
+msgstr "Please enter a username."
+
+#: .\blog\forms.py:68
+msgid ""
+"Foydalanuvchi nomida faqat harflar, raqamlar va @/./+/-/_ belgilaridan "
+"foydalaning."
+msgstr "Username may only contain letters, digits and @/./+/-/_ characters."
+
+#: .\blog\forms.py:83
+msgid "Savolingizni yozing..."
+msgstr "Write your question..."
+
+#: .\blog\templates\400.html:7 .\blog\templates\400.html:100
+msgid "Noto'g'ri so'rov"
+msgstr "Bad Request"
+
+#: .\blog\templates\400.html:102
+msgid ""
+"Kechirasiz, so'rovingiz noto'g'ri yoki tushunarsiz formatda yuborildi. "
+"Sahifani qayta yuklab ko'ring yoki bosh sahifaga qayting."
+msgstr ""
+"Sorry, your request was sent in an invalid or unrecognized format. Please "
+"reload the page or return to the homepage."
+
+#: .\blog\templates\400.html:107 .\blog\templates\403.html:108
+#: .\blog\templates\404.html:107 .\blog\templates\500.html:108
+msgid "Bosh sahifaga qaytish"
+msgstr "Return to homepage"
+
+#: .\blog\templates\403.html:7
+msgid "403 — Ruxsat berilmagan"
+msgstr "403 — Access Denied"
+
+#: .\blog\templates\403.html:100
+msgid "Ruxsat berilmagan"
+msgstr "Access Denied"
+
+#: .\blog\templates\403.html:102
+msgid ""
+"Kechirasiz, sizda ushbu sahifani ko'rish uchun yetarli huquq yo'q. Agar bu "
+"xato deb hisoblasangiz, tizimga qayta kiring yoki administrator bilan "
+"bog'laning."
+msgstr ""
+"Sorry, you do not have sufficient permission to view this page. If you "
+"believe this is an error, please log in again or contact the administrator."
+
+#: .\blog\templates\404.html:7
+msgid "404 — Sahifa topilmadi"
+msgstr "404 — Page Not Found"
+
+#: .\blog\templates\404.html:100
+msgid "Sahifa topilmadi"
+msgstr "Page Not Found"
+
+#: .\blog\templates\404.html:102
+msgid ""
+"Kechirasiz, siz izlagan sahifa mavjud emas yoki o'chirib yuborilgan bo'lishi "
+"mumkin. Havolani tekshirib qayta urinib ko'ring yoki bosh sahifaga qayting."
+msgstr ""
+"Sorry, the page you are looking for does not exist or may have been removed. "
+"Please check the link and try again, or return to the homepage."
+
+#: .\blog\templates\500.html:7
+msgid "500 — Server xatosi"
+msgstr "500 — Server Error"
+
+#: .\blog\templates\500.html:100
+msgid "Serverda texnik nosozlik"
+msgstr "Server Technical Issue"
+
+#: .\blog\templates\500.html:102
+msgid ""
+"Kechirasiz, hozircha texnik nosozlik yuz berdi. Bizning mutaxassislar "
+"muammoni tezda bartaraf etishga harakat qilmoqda. Iltimos, birozdan so'ng "
+"qayta urinib ko'ring."
+msgstr ""
+"Sorry, a technical issue has occurred. Our specialists are working to "
+"resolve it quickly. Please try again shortly."
+
+#: .\blog\templates\blog\about.html:5 .\blog\templates\blog\about.html:586
+msgid "Biz haqimizda"
+msgstr "About Us"
+
+#: .\blog\templates\blog\about.html:587
+msgid ""
+"Qashqadaryo viloyatida Tez tibbiy yordam markazi — aholining sog'lig'i va "
+"farovatligini saqlash uchun faoliyat ko'rsatuvchi muassasa"
+msgstr ""
+"The Emergency Medical Care Center in Kashkadarya region is an institution "
+"operating to protect the health and well-being of the population"
+
+#: .\blog\templates\blog\about.html:596
+msgid "Bizning yo'limiz"
+msgstr "Our journey"
+
+#: .\blog\templates\blog\about.html:597
+msgid "Markaz tarixi"
+msgstr "History of the Center"
+
+#: .\blog\templates\blog\about.html:598
+msgid "Qisqa vaqt ichida bosib o'tgan yo'limiz"
+msgstr "The path we have traveled in a short time"
+
+#: .\blog\templates\blog\about.html:613
+msgid "Hozircha tarix qo'shilmagan"
+msgstr "No history has been added yet"
+
+#: .\blog\templates\blog\about.html:614 .\blog\templates\blog\about.html:640
+#: .\blog\templates\blog\about.html:852
+msgid "Admin panelda \\"
+msgstr ""
+
+#: .\blog\templates\blog\about.html:625
+msgid "Kadrlar"
+msgstr "Staff"
+
+#: .\blog\templates\blog\about.html:626
+msgid "Bizning jamoamiz"
+msgstr "Our team"
+
+#: .\blog\templates\blog\about.html:627
+msgid "Malakali va tajribali mutaxassislardan tashkil topgan jamoa"
+msgstr "A team of qualified and experienced professionals"
+
+#: .\blog\templates\blog\about.html:650
+msgid "Fotolavha"
+msgstr "Photo gallery"
+
+#: .\blog\templates\blog\about.html:651
+msgid "Markazimizdan lavhalar"
+msgstr "Glimpses of our Center"
+
+#: .\blog\templates\blog\about.html:652
+msgid "Bizning filiallar, jamoa va faoliyatimizdan rasmlar"
+msgstr "Photos of our branches, team and activities"
+
+#: .\blog\templates\blog\about.html:671
+#, fuzzy
+#| msgid "Hozircha tarix qo'shilmagan"
+msgid "Hozircha lavhalar qo'shilmagan. Admin panelda \\"
+msgstr "No history has been added yet"
+
+#: .\blog\templates\blog\about.html:679
+msgid "Hududlar"
+msgstr "Regions"
+
+#: .\blog\templates\blog\about.html:680 .\blog\templates\blog\base.html:447
+#: .\blog\templates\blog\branches.html:5
+#: .\blog\templates\blog\branches.html:223
+msgid "Filiallar"
+msgstr "Branches"
+
+#: .\blog\templates\blog\about.html:681
+msgid "Qashqadaryo viloyati bo'ylab joylashgan filiallar"
+msgstr "Branches located across Kashkadarya region"
+
+#: .\blog\templates\blog\about.html:688 .\blog\templates\blog\about.html:747
+#: .\blog\templates\blog\branches.html:231
+msgid "Bosh filial"
+msgstr "Main branch"
+
+#: .\blog\templates\blog\about.html:701 .\blog\templates\blog\about.html:751
+#: .\blog\templates\blog\branches.html:244
+msgid "Rahbar"
+msgstr "Director"
+
+#: .\blog\templates\blog\about.html:706 .\blog\templates\blog\about.html:755
+#: .\blog\templates\blog\branches.html:249
+msgid "Telefon"
+msgstr "Phone"
+
+#: .\blog\templates\blog\about.html:713 .\blog\templates\blog\about.html:777
+#: .\blog\templates\blog\branches.html:258
+#: .\blog\templates\registration\register.html:79
+msgid "Email"
+msgstr "Email"
+
+#: .\blog\templates\blog\about.html:721 .\blog\templates\blog\branches.html:268
+msgid "Manzil"
+msgstr "Address"
+
+#: .\blog\templates\blog\about.html:727 .\blog\templates\blog\branches.html:274
+msgid "Tavsif"
+msgstr "Description"
+
+#: .\blog\templates\blog\about.html:748
+msgid "Qarshi Filiali"
+msgstr "Qarshi Branch"
+
+#: .\blog\templates\blog\about.html:749 .\blog\templates\blog\base.html:534
+#: .\blog\templates\blog\home.html:187
+msgid "Qarshi shahri"
+msgstr "Qarshi city"
+
+#: .\blog\templates\blog\about.html:767
+msgid "Call-markazimiz"
+msgstr "Our Call Center"
+
+#: .\blog\templates\blog\about.html:768
+msgid ""
+"Shoshilinch holatlarda bizga istalgan vaqtda qo'ng'iroq qiling — "
+"mutaxassislarimiz 24 soat davomida javob berishga tayyor."
+msgstr ""
+"In emergency situations, call us anytime — our specialists are ready to "
+"respond 24 hours a day."
+
+#: .\blog\templates\blog\about.html:773
+msgid "Qabulxona telefoni"
+msgstr "Reception phone"
+
+#: .\blog\templates\blog\about.html:781
+msgid "Ish vaqti"
+msgstr "Working hours"
+
+#: .\blog\templates\blog\about.html:792
+msgid "Fikrlar"
+msgstr "Reviews"
+
+#: .\blog\templates\blog\about.html:793
+msgid "Bemorlarimiz nima deydi"
+msgstr "What our patients say"
+
+#: .\blog\templates\blog\about.html:794
+msgid "Xizmatimizdan foydalangan insonlarning fikrlari"
+msgstr "Reviews from people who have used our services"
+
+#: .\blog\templates\blog\about.html:811
+msgid "Hozircha fikrlar yo'q. Birinchi bo'lib fikr qoldiring!"
+msgstr "There are no reviews yet. Be the first to leave one!"
+
+#: .\blog\templates\blog\about.html:817
+msgid "Fikringizni qoldiring"
+msgstr "Leave your review"
+
+#: .\blog\templates\blog\about.html:818
+msgid "Fikringiz tekshiruvdan o'tgach saytda chop etiladi."
+msgstr "Your review will be published on the site after moderation."
+
+#: .\blog\templates\blog\about.html:831
+#: .\blog\templates\blog\support_chat.html:161
+msgid "Yuborish"
+msgstr "Submit"
+
+#: .\blog\templates\blog\about.html:840
+msgid "Bizning maqsad va vazifalari"
+msgstr "Our Goals and Objectives"
+
+#: .\blog\templates\blog\about.html:851
+msgid "Hozircha ma'lumot qo'shilmagan"
+msgstr "No information has been added yet"
+
+#: .\blog\templates\blog\activity_results_list.html:5
+#: .\blog\templates\blog\activity_results_list.html:133
+#: .\blog\templates\blog\base.html:273 .\blog\templates\blog\base.html:443
+msgid "Faoliyat va natijalar to'g'risidagi axborot"
+msgstr "Information on Activities and Results"
+
+#: .\blog\templates\blog\activity_results_list.html:146
+#: .\blog\templates\blog\decree_list.html:176
+#: .\blog\templates\blog\finance_list.html:187
+#: .\blog\templates\blog\gov_decree_list.html:186
+#: .\blog\templates\blog\hr_policy_list.html:173
+#: .\blog\templates\blog\law_list.html:172
+#: .\blog\templates\blog\normative_list.html:215
+#: .\blog\templates\blog\org_legal_list.html:220
+msgid "Rasm yo'q"
+msgstr "No image"
+
+#: .\blog\templates\blog\activity_results_list.html:158
+#: .\blog\templates\blog\org_legal_list.html:232
+msgid "Hozircha ma'lumotlar kiritilmagan."
+msgstr "No information has been entered yet."
+
+#: .\blog\templates\blog\anticorruption_detail.html:121
+#: .\blog\templates\blog\anticorruption_list.html:5
+#: .\blog\templates\blog\anticorruption_list.html:129
+#: .\blog\templates\blog\base.html:270 .\blog\templates\blog\base.html:441
+msgid "Korrupsiyaga qarshi kurashish"
+msgstr "Anti-Corruption"
+
+#: .\blog\templates\blog\anticorruption_detail.html:131
+msgid "Ro'yxatga qaytish"
+msgstr "Back to list"
+
+#: .\blog\templates\blog\anticorruption_list.html:140
+msgid "Hozircha mavzular kiritilmagan."
+msgstr "No topics have been entered yet."
+
 #: .\blog\templates\blog\base.html:44
 msgid "QASHQADARYO VILOYATI"
 msgstr "KASHKADARYA REGION"
@@ -25,217 +359,338 @@ msgstr "KASHKADARYA REGION"
 msgid "TEZ TIBBIY YORDAM MARKAZI"
 msgstr "EMERGENCY MEDICAL CARE CENTER"
 
-#: .\blog\templates\blog\base.html:70
+#: .\blog\templates\blog\base.html:62 .\blog\templates\blog\base.html:69
+msgid "Bildirishnomalar"
+msgstr "Notifications"
+
+#: .\blog\templates\blog\base.html:78
+msgid "oldin"
+msgstr "ago"
+
+#: .\blog\templates\blog\base.html:82
+msgid "Hozircha bildirishnoma yo'q"
+msgstr "No notifications yet"
+
+#: .\blog\templates\blog\base.html:103
 msgid "Qidirish..."
 msgstr "Search..."
 
-#: .\blog\templates\blog\base.html:138
+#: .\blog\templates\blog\base.html:178
 msgid "Chiqish"
 msgstr "Log out"
 
-#: .\blog\templates\blog\base.html:148
+#: .\blog\templates\blog\base.html:188
+#: .\blog\templates\registration\login.html:4
+#: .\blog\templates\registration\login.html:103
+#: .\blog\templates\registration\register.html:147
 msgid "Kirish"
 msgstr "Log in"
 
-#: .\blog\templates\blog\base.html:157
+#: .\blog\templates\blog\base.html:197
 msgid "Ro'yxatdan o'tish"
 msgstr "Sign up"
 
-#: .\blog\templates\blog\base.html:169
+#: .\blog\templates\blog\base.html:209
 msgid "Mehmon"
 msgstr "Guest"
 
-#: .\blog\templates\blog\base.html:179
+#: .\blog\templates\blog\base.html:219
 msgid "Menyuni ochish"
 msgstr "Open menu"
 
-#: .\blog\templates\blog\base.html:192
+#: .\blog\templates\blog\base.html:232
 msgid "ASOSIY"
 msgstr "HOME"
 
-#: .\blog\templates\blog\base.html:197
+#: .\blog\templates\blog\base.html:237
 msgid "MARKAZ"
 msgstr "CENTER"
 
-#: .\blog\templates\blog\base.html:204 .\blog\templates\blog\base.html:425
+#: .\blog\templates\blog\base.html:244 .\blog\templates\blog\base.html:465
 msgid "Markaz haqida"
 msgstr "About the Center"
 
-#: .\blog\templates\blog\base.html:208 .\blog\templates\blog\base.html:426
+#: .\blog\templates\blog\base.html:248 .\blog\templates\blog\base.html:466
+#: .\blog\templates\blog\leadership.html:5
+#: .\blog\templates\blog\leadership.html:226
 msgid "Rahbariyat"
 msgstr "Leadership"
 
-#: .\blog\templates\blog\base.html:212 .\blog\templates\blog\base.html:427
+#: .\blog\templates\blog\base.html:252 .\blog\templates\blog\base.html:467
+#: .\blog\templates\blog\central_staff.html:5
+#: .\blog\templates\blog\central_staff.html:182
 msgid "Markaziy apparat"
 msgstr "Central Staff"
 
-#: .\blog\templates\blog\base.html:214 .\blog\templates\blog\base.html:428
+#: .\blog\templates\blog\base.html:254 .\blog\templates\blog\base.html:468
+#: .\blog\templates\blog\finance_list.html:5
+#: .\blog\templates\blog\finance_list.html:174
 msgid "Moliya-xo'jalik shaffofligi"
 msgstr "Financial Transparency"
 
-#: .\blog\templates\blog\base.html:215 .\blog\templates\blog\base.html:429
+#: .\blog\templates\blog\base.html:255 .\blog\templates\blog\base.html:469
+#: .\blog\templates\blog\hr_policy_list.html:5
+#: .\blog\templates\blog\hr_policy_list.html:160
 msgid "Kadrlar siyosati"
 msgstr "HR Policy"
 
-#: .\blog\templates\blog\base.html:223
+#: .\blog\templates\blog\base.html:263
 msgid "FAOLIYAT"
 msgstr "ACTIVITY"
 
-#: .\blog\templates\blog\base.html:230 .\blog\templates\blog\base.html:401
-msgid "Korrupsiyaga qarshi kurashish"
-msgstr "Anti-Corruption"
-
-#: .\blog\templates\blog\base.html:232 .\blog\templates\blog\base.html:402
+#: .\blog\templates\blog\base.html:272 .\blog\templates\blog\base.html:442
+#: .\blog\templates\blog\org_legal_list.html:5
+#: .\blog\templates\blog\org_legal_list.html:207
 msgid "Tashkiliy-huquqiy ma'lumotlar"
 msgstr "Organizational and Legal Information"
 
-#: .\blog\templates\blog\base.html:233 .\blog\templates\blog\base.html:403
-msgid "Faoliyat va natijalar to'g'risidagi axborot"
-msgstr "Information on Activities and Results"
-
-#: .\blog\templates\blog\base.html:242
+#: .\blog\templates\blog\base.html:282
 msgid "HUJJATLAR"
 msgstr "DOCUMENTS"
 
-#: .\blog\templates\blog\base.html:249 .\blog\templates\blog\base.html:439
+#: .\blog\templates\blog\base.html:289 .\blog\templates\blog\base.html:479
+#: .\blog\templates\blog\law_list.html:5
+#: .\blog\templates\blog\law_list.html:160
 msgid "Qonunlar"
 msgstr "Laws"
 
-#: .\blog\templates\blog\base.html:253 .\blog\templates\blog\base.html:440
+#: .\blog\templates\blog\base.html:293 .\blog\templates\blog\base.html:480
+#: .\blog\templates\blog\decree_list.html:5
+#: .\blog\templates\blog\decree_list.html:164
 msgid "Prezident farmon, qaror va farmoyishlari"
 msgstr "Presidential Decrees, Resolutions and Orders"
 
-#: .\blog\templates\blog\base.html:257 .\blog\templates\blog\base.html:441
+#: .\blog\templates\blog\base.html:297 .\blog\templates\blog\base.html:481
+#: .\blog\templates\blog\gov_decree_list.html:5
+#: .\blog\templates\blog\gov_decree_list.html:174
 msgid "Hukumat qarori va farmoyishlari"
 msgstr "Government Resolutions and Orders"
 
-#: .\blog\templates\blog\base.html:261 .\blog\templates\blog\base.html:442
+#: .\blog\templates\blog\base.html:301 .\blog\templates\blog\base.html:482
+#: .\blog\templates\blog\normative_list.html:5
+#: .\blog\templates\blog\normative_list.html:202
 msgid "Markaz normativ hujjatlari"
 msgstr "Center's Regulatory Documents"
 
-#: .\blog\templates\blog\base.html:269
+#: .\blog\templates\blog\base.html:309
 msgid "FILIALLAR"
 msgstr "BRANCHES"
 
-#: .\blog\templates\blog\base.html:275
+#: .\blog\templates\blog\base.html:315
 msgid "MATBUOT MARKAZI"
 msgstr "PRESS CENTER"
 
-#: .\blog\templates\blog\base.html:281 .\blog\templates\blog\base.html:452
+#: .\blog\templates\blog\base.html:321 .\blog\templates\blog\base.html:492
 msgid "Maqola"
 msgstr "Articles"
 
-#: .\blog\templates\blog\base.html:285 .\blog\templates\blog\base.html:409
-#: .\blog\templates\blog\base.html:453
+#: .\blog\templates\blog\base.html:325 .\blog\templates\blog\base.html:449
+#: .\blog\templates\blog\base.html:493 .\blog\templates\blog\gallery.html:5
+#: .\blog\templates\blog\gallery.html:207
 msgid "Galereya"
 msgstr "Gallery"
 
-#: .\blog\templates\blog\base.html:294
+#: .\blog\templates\blog\base.html:334
 msgid "GALEREYA"
 msgstr "GALLERY"
 
-#: .\blog\templates\blog\base.html:298
+#: .\blog\templates\blog\base.html:338
 msgid "ALOQA"
 msgstr "CONTACT"
 
-#: .\blog\templates\blog\base.html:302
+#: .\blog\templates\blog\base.html:342
 msgid "EKOFAOL XODIM"
 msgstr "ECO-ACTIVE STAFF"
 
-#: .\blog\templates\blog\base.html:357
+#: .\blog\templates\blog\base.html:397
 msgid "Qashqadaryo viloyati"
 msgstr "Qashqadaryo region"
 
-#: .\blog\templates\blog\base.html:357
+#: .\blog\templates\blog\base.html:397
 msgid "tez tibbiy yordam markazi"
 msgstr "emergency medical care center"
 
-#: .\blog\templates\blog\base.html:365
+#: .\blog\templates\blog\base.html:405
 msgid "Ulashish:"
 msgstr "Share:"
 
-#: .\blog\templates\blog\base.html:393
+#: .\blog\templates\blog\base.html:433
 msgid "Asosiy"
 msgstr "Home"
 
-#: .\blog\templates\blog\base.html:397
+#: .\blog\templates\blog\base.html:437
 msgid "Faoliyat"
 msgstr "Activity"
 
-#: .\blog\templates\blog\base.html:407
-msgid "Filiallar"
-msgstr "Branches"
-
-#: .\blog\templates\blog\base.html:411
+#: .\blog\templates\blog\base.html:451 .\blog\templates\blog\eko_list.html:5
+#: .\blog\templates\blog\eko_list.html:250
 msgid "Ekofaol xodim"
 msgstr "Eco-active staff"
 
-#: .\blog\templates\blog\base.html:421
+#: .\blog\templates\blog\base.html:461
 msgid "Markaz"
 msgstr "Center"
 
-#: .\blog\templates\blog\base.html:435
+#: .\blog\templates\blog\base.html:475
 msgid "Hujjatlar"
 msgstr "Documents"
 
-#: .\blog\templates\blog\base.html:448
+#: .\blog\templates\blog\base.html:488
 msgid "Matbuot markazi"
 msgstr "Press center"
 
-#: .\blog\templates\blog\base.html:457
+#: .\blog\templates\blog\base.html:497
 msgid "Aloqa"
 msgstr "Contact"
 
-#: .\blog\templates\blog\base.html:464
+#: .\blog\templates\blog\base.html:504
 msgid "Ish vaqti:"
 msgstr "Working hours:"
 
-#: .\blog\templates\blog\base.html:467
+#: .\blog\templates\blog\base.html:507
 msgid "Dushanba–juma"
 msgstr "Monday–Friday"
 
-#: .\blog\templates\blog\base.html:468
+#: .\blog\templates\blog\base.html:508
 msgid "dam olish kunlari:"
 msgstr "days off:"
 
-#: .\blog\templates\blog\base.html:469
+#: .\blog\templates\blog\base.html:509
 msgid "shanba-yakshanba"
 msgstr "Saturday-Sunday"
 
-#: .\blog\templates\blog\base.html:474
+#: .\blog\templates\blog\base.html:514
 msgid "Tushlik:"
 msgstr "Lunch break:"
 
-#: .\blog\templates\blog\base.html:490 .\blog\templates\blog\home.html:187
+#: .\blog\templates\blog\base.html:530 .\blog\templates\blog\home.html:187
 msgid "Manzil:"
 msgstr "Address:"
 
-#: .\blog\templates\blog\base.html:493 .\blog\templates\blog\home.html:187
+#: .\blog\templates\blog\base.html:533 .\blog\templates\blog\home.html:187
 msgid "Qashqadaryo viloyati,"
 msgstr "Kashkadarya region,"
 
-#: .\blog\templates\blog\base.html:494 .\blog\templates\blog\home.html:187
-msgid "Qarshi shahri"
-msgstr "Qarshi city"
-
-#: .\blog\templates\blog\base.html:507
+#: .\blog\templates\blog\base.html:547
 msgid ""
 "Materiallardan foydalanishda manba sifatida saytimizga havola ko‘rsatilishi "
 "shart."
 msgstr ""
 "When using materials, a link to our website must be provided as the source."
 
-#: .\blog\templates\blog\base.html:511
+#: .\blog\templates\blog\base.html:551
 msgid "© Barcha huquqlar himoyalangan 2026"
 msgstr "© All rights reserved 2026"
 
-#: .\blog\templates\blog\base.html:515
+#: .\blog\templates\blog\base.html:555
 msgid ""
 "Diqqat! Agar matnda xato topsangiz, uni belgilang va ma’muriyatni xabardor "
 "qilish uchun Ctrl+Enter tugmalarini bosing."
 msgstr ""
 "Attention! If you find an error in the text, select it and press Ctrl+Enter "
 "to notify the administration."
+
+#: .\blog\templates\blog\branches.html:224
+msgid "Qashqadaryo viloyati bo'ylab joylashgan barcha filiallar"
+msgstr "All branches located across Kashkadarya region"
+
+#: .\blog\templates\blog\branches.html:280
+#: .\blog\templates\blog\branches.html:282
+msgid "Qo'ng'iroq"
+msgstr "Call"
+
+#: .\blog\templates\blog\branches.html:306
+msgid "Filiallar hali qo'shilmagan"
+msgstr "No branches have been added yet"
+
+#: .\blog\templates\blog\central_staff.html:201
+#: .\blog\templates\blog\home.html:182 .\blog\templates\blog\home.html:1639
+#: .\blog\templates\blog\leadership.html:245
+msgid "Telefon:"
+msgstr "Phone:"
+
+#: .\blog\templates\blog\central_staff.html:205
+#: .\blog\templates\blog\leadership.html:249
+msgid "Qabul:"
+msgstr "Reception:"
+
+#: .\blog\templates\blog\central_staff.html:216
+msgid "Hozircha markaziy apparat ma'lumotlari kiritilmagan."
+msgstr "No central office information has been entered yet."
+
+#: .\blog\templates\blog\decree_list.html:187
+#: .\blog\templates\blog\finance_list.html:199
+#: .\blog\templates\blog\gov_decree_list.html:197
+#: .\blog\templates\blog\hr_policy_list.html:185
+#: .\blog\templates\blog\normative_list.html:227
+msgid "Hozircha hujjatlar kiritilmagan."
+msgstr "No documents have been entered yet."
+
+#: .\blog\templates\blog\eko_detail.html:272
+msgid "Ekofaol xodim ro'yxatiga qaytish"
+msgstr "Back to Eco-active Staff list"
+
+#: .\blog\templates\blog\eko_detail.html:286
+#: .\blog\templates\blog\post_detail.html:53
+msgid "Izohlar"
+msgstr "Comments"
+
+#: .\blog\templates\blog\eko_detail.html:297
+msgid "Hozircha izohlar yo'q. Birinchi bo'lib fikringizni yozing."
+msgstr "There are no comments yet. Be the first to share your thoughts."
+
+#: .\blog\templates\blog\eko_detail.html:301
+#: .\blog\templates\blog\post_detail.html:94
+msgid "Izoh qoldirish"
+msgstr "Leave a comment"
+
+#: .\blog\templates\blog\eko_detail.html:303
+msgid ""
+"Fikringizni yozing. Izoh moderator tomonidan tasdiqlangandan keyin saytda "
+"ko'rinadi."
+msgstr ""
+"Write your thoughts. The comment will appear on the site after moderator "
+"approval."
+
+#: .\blog\templates\blog\eko_detail.html:330
+msgid "Izohni yuborish →"
+msgstr "Submit comment →"
+
+#: .\blog\templates\blog\eko_list.html:251
+msgid ""
+"Bizning fotosuratlarimiz va videolarimiz prizmasi orqali bizning ekologik "
+"obodonlashtirish faoliyatimiz bilan tanishing"
+msgstr ""
+"Get to know our environmental improvement activities through our photos and "
+"videos"
+
+#: .\blog\templates\blog\eko_list.html:272
+msgid "Batafsil →"
+msgstr "Read more →"
+
+#: .\blog\templates\blog\eko_list.html:277
+msgid "Hozircha ekofaol postlar qo'shilmagan."
+msgstr "No eco-active posts have been added yet."
+
+#: .\blog\templates\blog\gallery.html:208
+msgid "Markaz faoliyatidagi foto va videolar"
+msgstr "Photos and videos of the Center's activities"
+
+#: .\blog\templates\blog\gallery.html:212
+msgid "Barchasi"
+msgstr "All"
+
+#: .\blog\templates\blog\gallery.html:213
+msgid "Fotolar"
+msgstr "Photos"
+
+#: .\blog\templates\blog\gallery.html:214
+msgid "Videolar"
+msgstr "Videos"
+
+#: .\blog\templates\blog\gallery.html:248
+msgid "Galereya bo'sh. Admin panel orqali rasm va videolar qo'shing."
+msgstr "The gallery is empty. Add photos and videos through the admin panel."
 
 #: .\blog\templates\blog\home.html:5
 msgid "Bosh sahifa"
@@ -290,7 +745,9 @@ msgid "Kunlik 24 soat xizmat"
 msgstr "24-hour service every day"
 
 #: .\blog\templates\blog\home.html:115
-msgid "Viloyatda filiallar"
+#, fuzzy
+#| msgid "Viloyatda filiallar"
+msgid "Tumanda filiallar"
 msgstr "Branches in the region"
 
 #: .\blog\templates\blog\home.html:120
@@ -321,23 +778,19 @@ msgstr "Branch head"
 msgid "Qashqadaryo tez tibbiy yordam markazi direktori"
 msgstr "Director of the Kashkadarya emergency medical care center"
 
-#: .\blog\templates\blog\home.html:177
+#: .\blog\templates\blog\home.html:177 .\blog\templates\blog\home.html:1638
 msgid "Rahbar:"
 msgstr "Head:"
 
-#: .\blog\templates\blog\home.html:182
-msgid "Telefon:"
-msgstr "Phone:"
-
-#: .\blog\templates\blog\home.html:271
+#: .\blog\templates\blog\home.html:271 .\blog\templates\blog\home.html:1641
 msgid "Oldingi filial"
 msgstr "Previous branch"
 
-#: .\blog\templates\blog\home.html:279
+#: .\blog\templates\blog\home.html:279 .\blog\templates\blog\home.html:1642
 msgid "Keyingi filial"
 msgstr "Next branch"
 
-#: .\blog\templates\blog\home.html:287
+#: .\blog\templates\blog\home.html:287 .\blog\templates\blog\home.html:1643
 msgid "Xarita ustidagi hududlardan birini bosing."
 msgstr "Click one of the areas on the map."
 
@@ -375,11 +828,17 @@ msgid ""
 "bilan tanishing"
 msgstr "Get to know our field through the lens of our photos and videos"
 
-#: .\blog\templates\blog\home.html:409
+#: .\blog\templates\blog\home.html:409 .\blog\templates\blog\news_list.html:550
+#: .\blog\templates\blog\news_list.html:553
+#: .\blog\templates\blog\post_list.html:477
+#: .\blog\templates\blog\post_list.html:480
 msgid "Oldingi"
 msgstr "Previous"
 
-#: .\blog\templates\blog\home.html:436
+#: .\blog\templates\blog\home.html:436 .\blog\templates\blog\news_list.html:561
+#: .\blog\templates\blog\news_list.html:564
+#: .\blog\templates\blog\post_list.html:486
+#: .\blog\templates\blog\post_list.html:489
 msgid "Keyingi"
 msgstr "Next"
 
@@ -445,8 +904,8 @@ msgstr "Heart-related conditions"
 
 #: .\blog\templates\blog\home.html:1571
 msgid ""
-"Kuchli ko‘krak og‘rig‘i yoki yurak faoliyati bilan bog‘liq jiddiy holatlarda"
-" darhol <strong>103</strong> raqamiga qo‘ng‘iroq qiling."
+"Kuchli ko‘krak og‘rig‘i yoki yurak faoliyati bilan bog‘liq jiddiy holatlarda "
+"darhol <strong>103</strong> raqamiga qo‘ng‘iroq qiling."
 msgstr ""
 "In case of severe chest pain or serious heart-related conditions, call "
 "<strong>103</strong> immediately."
@@ -457,8 +916,8 @@ msgstr "Difficulty breathing"
 
 #: .\blog\templates\blog\home.html:1588
 msgid ""
-"Nafas olishda jiddiy qiyinchilik yuzaga kelsa, <strong>103</strong> raqamiga"
-" murojaat qiling."
+"Nafas olishda jiddiy qiyinchilik yuzaga kelsa, <strong>103</strong> raqamiga "
+"murojaat qiling."
 msgstr "If you have serious difficulty breathing, call <strong>103</strong>."
 
 #: .\blog\templates\blog\home.html:1600
@@ -477,502 +936,310 @@ msgstr "Signs of a stroke"
 
 #: .\blog\templates\blog\home.html:1620
 msgid ""
-"Yuz, qo‘l yoki nutqda to‘satdan o‘zgarishlar kuzatilsa, darhol "
-"<strong>103</strong> ga qo‘ng‘iroq qiling."
+"Yuz, qo‘l yoki nutqda to‘satdan o‘zgarishlar kuzatilsa, darhol <strong>103</"
+"strong> ga qo‘ng‘iroq qiling."
 msgstr ""
-"If sudden changes appear in the face, arm or speech, call "
-"<strong>103</strong> immediately."
+"If sudden changes appear in the face, arm or speech, call <strong>103</"
+"strong> immediately."
 
-#: .\config\settings.py:132
-msgid "O'zbek"
-msgstr "Uzbek (Latin)"
-
-#: .\config\settings.py:133
-msgid "Ўзбек"
-msgstr "Uzbek (Cyrillic)"
-
-#: .\config\settings.py:134
-msgid "Русский"
-msgstr "Russian"
-
-#: .\config\settings.py:135
-msgid "English"
-msgstr "English"
-
-msgid "Biz haqimizda"
-msgstr "About Us"
-
-msgid ""
-"Qashqadaryo viloyatida Tez tibbiy yordam markazi — aholining sog'lig'i va "
-"farovatligini saqlash uchun faoliyat ko'rsatuvchi muassasa"
-msgstr ""
-"The Emergency Medical Care Center in Kashkadarya region is an institution "
-"operating to protect the health and well-being of the population"
-
-msgid "Bizning yo'limiz"
-msgstr "Our journey"
-
-msgid "Markaz tarixi"
-msgstr "History of the Center"
-
-msgid "Qisqa vaqt ichida bosib o'tgan yo'limiz"
-msgstr "The path we have traveled in a short time"
-
-msgid "Hozircha tarix qo'shilmagan"
-msgstr "No history has been added yet"
-
-msgid "Admin panelda \"Markaz tarixi (Timeline)\" bo'limidan voqealar qo'shing."
-msgstr ""
-"Add events in the \"Center History (Timeline)\" section of the admin panel."
-
-msgid "Kadrlar"
-msgstr "Staff"
-
-msgid "Bizning jamoamiz"
-msgstr "Our team"
-
-msgid "Malakali va tajribali mutaxassislardan tashkil topgan jamoa"
-msgstr "A team of qualified and experienced professionals"
-
-msgid "Admin panelda \"Bizning jamoamiz\" bo'limidan statistika qo'shing."
-msgstr "Add statistics in the \"Our Team\" section of the admin panel."
-
-msgid "Fotolavha"
-msgstr "Photo gallery"
-
-msgid "Markazimizdan lavhalar"
-msgstr "Glimpses of our Center"
-
-msgid "Bizning filiallar, jamoa va faoliyatimizdan rasmlar"
-msgstr "Photos of our branches, team and activities"
-
-msgid ""
-"Hozircha lavhalar qo'shilmagan. Admin panelda \"Markazimizdan lavhalar\" "
-"bo'limidan rasm yoki video qo'shing."
-msgstr ""
-"No media has been added yet. Add a photo or video in the \"Glimpses of Our "
-"Center\" section of the admin panel."
-
-msgid "Hududlar"
-msgstr "Regions"
-
-msgid "Qashqadaryo viloyati bo'ylab joylashgan filiallar"
-msgstr "Branches located across Kashkadarya region"
-
-msgid "Bosh filial"
-msgstr "Main branch"
-
-msgid "Rahbar"
-msgstr "Director"
-
-msgid "Telefon"
-msgstr "Phone"
-
-msgid "Manzil"
-msgstr "Address"
-
-msgid "Tavsif"
-msgstr "Description"
-
-msgid "Qarshi Filiali"
-msgstr "Qarshi Branch"
-
-msgid "Call-markazimiz"
-msgstr "Our Call Center"
-
-msgid ""
-"Shoshilinch holatlarda bizga istalgan vaqtda qo'ng'iroq qiling — "
-"mutaxassislarimiz 24 soat davomida javob berishga tayyor."
-msgstr ""
-"In emergency situations, call us anytime — our specialists are ready to "
-"respond 24 hours a day."
-
-msgid "Qabulxona telefoni"
-msgstr "Reception phone"
-
-msgid "Ish vaqti"
-msgstr "Working hours"
-
-msgid "Fikrlar"
-msgstr "Reviews"
-
-msgid "Bemorlarimiz nima deydi"
-msgstr "What our patients say"
-
-msgid "Xizmatimizdan foydalangan insonlarning fikrlari"
-msgstr "Reviews from people who have used our services"
-
-msgid "Hozircha fikrlar yo'q. Birinchi bo'lib fikr qoldiring!"
-msgstr "There are no reviews yet. Be the first to leave one!"
-
-msgid "Fikringizni qoldiring"
-msgstr "Leave your review"
-
-msgid "Fikringiz tekshiruvdan o'tgach saytda chop etiladi."
-msgstr "Your review will be published on the site after moderation."
-
-msgid "Yuborish"
-msgstr "Submit"
-
-msgid "Bizning maqsad va vazifalari"
-msgstr "Our Goals and Objectives"
-
-msgid "Hozircha ma'lumot qo'shilmagan"
-msgstr "No information has been added yet"
-
-msgid "Admin panelda \"Bizning maqsad va vazifalarimiz\" bo'limidan qo'shing."
-msgstr "Add it in the \"Our Goals and Objectives\" section of the admin panel."
-
-msgid "Hozircha ma'lumotlar kiritilmagan."
-msgstr "No information has been entered yet."
-
-msgid "Ro'yxatga qaytish"
-msgstr "Back to list"
-
-msgid "Hozircha mavzular kiritilmagan."
+#: .\blog\templates\blog\law_list.html:183
+#, fuzzy
+#| msgid "Hozircha mavzular kiritilmagan."
+msgid "Hozircha qonunlar kiritilmagan."
 msgstr "No topics have been entered yet."
 
-msgid "Qashqadaryo viloyati bo'ylab joylashgan barcha filiallar"
-msgstr "All branches located across Kashkadarya region"
-
-msgid "Qo'ng'iroq"
-msgstr "Call"
-
-msgid "Filiallar hali qo'shilmagan"
-msgstr "No branches have been added yet"
-
-msgid "Hozircha markaziy apparat ma'lumotlari kiritilmagan."
-msgstr "No central office information has been entered yet."
-
-msgid "Hozircha hujjatlar kiritilmagan."
-msgstr "No documents have been entered yet."
-
-msgid "Ekofaol xodim ro'yxatiga qaytish"
-msgstr "Back to Eco-active Staff list"
-
-msgid "Izoh (%(counter)s)"
-msgstr "Comment (%(counter)s)"
-
-msgid "Izohlar (%(counter)s)"
-msgstr "Comments (%(counter)s)"
-
-msgid "Hozircha izohlar yo'q. Birinchi bo'lib fikringizni yozing."
-msgstr "There are no comments yet. Be the first to share your thoughts."
-
-msgid ""
-"Fikringizni yozing. Izoh moderator tomonidan tasdiqlangandan keyin saytda "
-"ko'rinadi."
-msgstr ""
-"Write your thoughts. The comment will appear on the site after moderator "
-"approval."
-
-msgid "Izohni yuborish →"
-msgstr "Submit comment →"
-
-msgid ""
-"Bizning fotosuratlarimiz va videolarimiz prizmasi orqali bizning ekologik "
-"obodonlashtirish faoliyatimiz bilan tanishing"
-msgstr ""
-"Get to know our environmental improvement activities through our photos and "
-"videos"
-
-msgid "Batafsil →"
-msgstr "Read more →"
-
-msgid "Hozircha ekofaol postlar qo'shilmagan."
-msgstr "No eco-active posts have been added yet."
-
-msgid "Markaz faoliyatidagi foto va videolar"
-msgstr "Photos and videos of the Center's activities"
-
-msgid "Barchasi"
-msgstr "All"
-
-msgid "Fotolar"
-msgstr "Photos"
-
-msgid "Videolar"
-msgstr "Videos"
-
-msgid "Galereya bo'sh. Admin panel orqali rasm va videolar qo'shing."
-msgstr "The gallery is empty. Add photos and videos through the admin panel."
-
-msgid "Rasm yo'q"
-msgstr "No image"
-
-msgid "Qabul:"
-msgstr "Reception:"
-
+#: .\blog\templates\blog\leadership.html:253
 msgid "Email:"
 msgstr "Email:"
 
+#: .\blog\templates\blog\leadership.html:260
 msgid "Hozircha rahbariyat ma'lumotlari kiritilmagan."
 msgstr "Leadership information has not been added yet."
 
+#: .\blog\templates\blog\news_detail.html:391
 msgid "Yangilangan:"
 msgstr "Updated:"
 
+#: .\blog\templates\blog\news_detail.html:443
 msgid "Yangiliklarga qaytish"
 msgstr "Back to news"
 
+#: .\blog\templates\blog\news_detail.html:448
 msgid "Bosh sahifaga"
 msgstr "Home"
 
+#: .\blog\templates\blog\news_list.html:5
+#: .\blog\templates\blog\news_list.html:425
+#, fuzzy
+#| msgid "Asosiy yangiliklar"
+msgid "Yangiliklar"
+msgstr "Top news"
+
+#: .\blog\templates\blog\news_list.html:429
 msgid "Markaz va sog'lig'i tug'risidagi eng so'nggi yangiliklar"
 msgstr "Latest news about the center and health"
 
+#: .\blog\templates\blog\news_list.html:441
 msgid "Yangilik yoki so'z qidiring..."
 msgstr "Search news or a word..."
 
+#: .\blog\templates\blog\news_list.html:453
 msgid "Qidirish"
 msgstr "Search"
 
+#: .\blog\templates\blog\news_list.html:530
 msgid "Yangiliklar hali qo'shilmagan"
 msgstr "No news added yet"
 
+#: .\blog\templates\blog\news_list.html:549
+#: .\blog\templates\blog\news_list.html:552
 msgid "Birinchi sahifa"
 msgstr "First page"
 
+#: .\blog\templates\blog\news_list.html:562
+#: .\blog\templates\blog\news_list.html:565
 msgid "Oxirgi sahifa"
 msgstr "Last page"
 
+#: .\blog\templates\blog\post_detail.html:11
 msgid "Maqolalarga qaytish"
 msgstr "Back to articles"
 
+#: .\blog\templates\blog\post_detail.html:38
 msgid "Qachon tez tibbiy yordam chaqirish kerak?"
 msgstr "When should you call an ambulance?"
 
+#: .\blog\templates\blog\post_detail.html:41
 msgid ""
-"Hayot uchun xavfli yoki shoshilinch tibbiy yordam talab qiladigan holatlarda"
-" 103 raqamiga murojaat qiling."
+"Hayot uchun xavfli yoki shoshilinch tibbiy yordam talab qiladigan holatlarda "
+"103 raqamiga murojaat qiling."
 msgstr ""
 "In life-threatening situations or when urgent medical care is needed, call "
 "103."
 
-msgid "Izohlar"
-msgstr "Comments"
-
+#: .\blog\templates\blog\post_detail.html:84
 msgid "Hozircha izohlar yo‘q. Birinchi bo‘lib fikringizni yozing."
 msgstr "No comments yet. Be the first to share your thoughts."
 
-msgid "Izoh qoldirish"
-msgstr "Leave a comment"
-
+#: .\blog\templates\blog\post_detail.html:97
 msgid ""
 "Fikringizni yozing. Izoh moderator tomonidan tasdiqlangandan keyin saytda "
 "ko‘rinadi."
 msgstr ""
 "Write your comment. It will appear on the site after moderator approval."
 
+#: .\blog\templates\blog\post_detail.html:149
 msgid "Izohni yuborish"
 msgstr "Submit comment"
 
+#: .\blog\templates\blog\post_list.html:5
+#, fuzzy
+#| msgid "Barcha yangiliklar"
+msgid "Barcha maqolalar"
+msgstr "All news"
+
+#: .\blog\templates\blog\post_list.html:373
 msgid "Qidiruv natijalari"
 msgstr "Search results"
 
-msgid "Tozalash"
-msgstr "Clear"
-
-msgid "BARCHA MAQOLALAR"
-msgstr "ALL ARTICLES"
-
-msgid "SOG‘LIQ"
-msgstr "HEALTH"
-
-msgid "Batafsil o‘qish"
-msgstr "Read more"
-
-msgid "Birinchi"
-msgstr "First"
-
-msgid "Oxirgi"
-msgstr "Last"
-
-msgid "bo‘yicha maqola topilmadi."
-msgstr "no articles found."
-
-msgid "Boshqa so‘z bilan qidirib ko‘ring."
-msgstr "Try searching with a different word."
-
-msgid "Hozircha maqolalar yo‘q."
-msgstr "No articles yet."
-
+#: .\blog\templates\blog\post_list.html:375
 #, python-format
 msgid "%(counter)s ta maqola topildi"
 msgid_plural "%(counter)s ta maqola topildi"
 msgstr[0] "%(counter)s article found"
 msgstr[1] "%(counter)s articles found"
 
+#: .\blog\templates\blog\post_list.html:378
+msgid "Tozalash"
+msgstr "Clear"
+
+#: .\blog\templates\blog\post_list.html:391
+msgid "BARCHA MAQOLALAR"
+msgstr "ALL ARTICLES"
+
+#: .\blog\templates\blog\post_list.html:394
 #, python-format
 msgid "%(counter)s ta maqola"
 msgid_plural "%(counter)s ta maqola"
 msgstr[0] "%(counter)s article"
 msgstr[1] "%(counter)s articles"
 
+#: .\blog\templates\blog\post_list.html:446
+msgid "SOG‘LIQ"
+msgstr "HEALTH"
+
+#: .\blog\templates\blog\post_list.html:456
+msgid "Batafsil o‘qish"
+msgstr "Read more"
+
+#: .\blog\templates\blog\post_list.html:476
+#: .\blog\templates\blog\post_list.html:479
+msgid "Birinchi"
+msgstr "First"
+
+#: .\blog\templates\blog\post_list.html:487
+#: .\blog\templates\blog\post_list.html:490
+msgid "Oxirgi"
+msgstr "Last"
+
+#: .\blog\templates\blog\post_list.html:510
+msgid "bo‘yicha maqola topilmadi."
+msgstr "no articles found."
+
+#: .\blog\templates\blog\post_list.html:511
+msgid "Boshqa so‘z bilan qidirib ko‘ring."
+msgstr "Try searching with a different word."
+
+#: .\blog\templates\blog\post_list.html:513
+msgid "Hozircha maqolalar yo‘q."
+msgstr "No articles yet."
+
+#: .\blog\templates\blog\services.html:5
 msgid "Xizmatlar"
 msgstr "Services"
 
+#: .\blog\templates\blog\services.html:137
 msgid "Biz taqdim etadigan xizmatlar"
 msgstr "Services we provide"
 
+#: .\blog\templates\blog\services.html:138
 msgid "Tez tibbiy yordam markazi taqdim etadigan tibbiy xizmatlar"
 msgstr "Medical services provided by the emergency medical care center"
 
+#: .\blog\templates\blog\services.html:151
 msgid "Xizmat mavjud emas"
 msgstr "No service available"
 
+#: .\blog\templates\blog\services.html:152
 msgid "Xizmatlar hali qo'shilmagan. Admin panel orqali xizmatlarni qo'shing."
 msgstr "No services have been added yet. Add services via the admin panel."
 
+#: .\blog\templates\blog\support_chat.html:5
 msgid "Savol-javob"
 msgstr "Q&A"
 
+#: .\blog\templates\blog\support_chat.html:28
+#, fuzzy
+#| msgid "tez tibbiy yordam markazi"
+msgid "Tez tibbiy yordam"
+msgstr "emergency medical care center"
+
+#: .\blog\templates\blog\support_chat.html:32
 msgid "Administrator bilan suhbat"
 msgstr "Chat with administrator"
 
+#: .\blog\templates\blog\support_chat.html:58
 msgid "Administrator"
 msgstr "Administrator"
 
+#: .\blog\templates\blog\support_chat.html:97
 msgid "Siz"
 msgstr "You"
 
+#: .\blog\templates\blog\support_chat.html:133
 msgid "Assalomu alaykum"
 msgstr "Hello"
 
+#: .\blog\templates\blog\support_chat.html:137
 msgid "Administratorga savolingizni yozing. Tez orada javob beriladi."
 msgstr ""
 "Write your question to the administrator. You will receive a reply shortly."
 
-msgid "Ismingiz"
-msgstr "Your name"
-
-msgid "Shahar/tuman (ixtiyoriy)"
-msgstr "City/district (optional)"
-
-msgid "Fikringizni yozing..."
-msgstr "Write your feedback..."
-
-msgid "Ixtiyoriy — bo'sh qoldirsangiz 'Anonim' deb ko'rsatiladi."
-msgstr "Optional — if left blank, it will be shown as 'Anonymous'."
-
-msgid "Ismingiz (ixtiyoriy)"
-msgstr "Your name (optional)"
-
-msgid "Izoh"
-msgstr "Comment"
-
-msgid "Izohingizni yozing…"
-msgstr "Write your comment…"
-
-msgid "Spam aniqlandi."
-msgstr "Spam detected."
-
-msgid "Izoh bo'sh bo'lishi mumkin emas."
-msgstr "Comment cannot be empty."
-
-msgid "Email (ixtiyoriy)"
-msgstr "Email (optional)"
-
-msgid "Bu foydalanuvchi nomi allaqachon band. Boshqa nom tanlang."
-msgstr "This username is already taken. Please choose another."
-
-msgid "Foydalanuvchi nomini kiriting."
-msgstr "Please enter a username."
-
-msgid ""
-"Foydalanuvchi nomida faqat harflar, raqamlar va @/./+/-/_ belgilaridan "
-"foydalaning."
-msgstr "Username may only contain letters, digits and @/./+/-/_ characters."
-
-msgid "Savolingizni yozing..."
-msgstr "Write your question..."
-
+#: .\blog\templates\registration\login.html:50
 msgid "Hisobga kirish"
 msgstr "Log in to your account"
 
+#: .\blog\templates\registration\login.html:52
 msgid "Hisobingizga kirib, maqolalarga izoh qoldiring."
 msgstr "Log in to your account to leave comments on articles."
 
+#: .\blog\templates\registration\login.html:66
+#: .\blog\templates\registration\register.html:66
 msgid "Foydalanuvchi nomi"
 msgstr "Username"
 
+#: .\blog\templates\registration\login.html:79
+#: .\blog\templates\registration\register.html:92
 msgid "Parol"
 msgstr "Password"
 
+#: .\blog\templates\registration\login.html:83
+#: .\blog\templates\registration\register.html:96
+#: .\blog\templates\registration\register.html:121
 msgid "Parolni ko'rsatish"
 msgstr "Show password"
 
+#: .\blog\templates\registration\login.html:108
 msgid "Hisobingiz yo‘qmi?"
 msgstr "Don't have an account?"
 
+#: .\blog\templates\registration\login.html:109
 msgid "Ro‘yxatdan o‘ting"
 msgstr "Sign up"
 
+#: .\blog\templates\registration\register.html:4
+#: .\blog\templates\registration\register.html:50
+#: .\blog\templates\registration\register.html:141
+#, fuzzy
+#| msgid "Ro‘yxatdan o‘ting"
+msgid "Ro‘yxatdan o‘tish"
+msgstr "Sign up"
+
+#: .\blog\templates\registration\register.html:52
 msgid "Saytda ishtirok etish uchun yangi hisob yarating."
 msgstr "Create a new account to participate on the site."
 
-msgid "Email"
-msgstr "Email"
-
+#: .\blog\templates\registration\register.html:79
 msgid "ixtiyoriy"
 msgstr "optional"
 
+#: .\blog\templates\registration\register.html:117
 msgid "Parolni tasdiqlang"
 msgstr "Confirm password"
 
+#: .\blog\templates\registration\register.html:146
 msgid "Hisobingiz bormi?"
 msgstr "Already have an account?"
 
-msgid "Noto'g'ri so'rov"
-msgstr "Bad Request"
+#: .\config\settings.py:133
+msgid "O'zbek"
+msgstr "Uzbek (Latin)"
 
-msgid ""
-"Kechirasiz, so'rovingiz noto'g'ri yoki tushunarsiz formatda yuborildi. "
-"Sahifani qayta yuklab ko'ring yoki bosh sahifaga qayting."
-msgstr ""
-"Sorry, your request was sent in an invalid or unrecognized format. Please "
-"reload the page or return to the homepage."
+#: .\config\settings.py:134
+msgid "Ўзбек"
+msgstr "Uzbek (Cyrillic)"
 
-msgid "Bosh sahifaga qaytish"
-msgstr "Return to homepage"
+#: .\config\settings.py:135
+msgid "Русский"
+msgstr "Russian"
 
-msgid "403 — Ruxsat berilmagan"
-msgstr "403 — Access Denied"
+#: .\config\settings.py:136
+msgid "English"
+msgstr "English"
 
-msgid "Ruxsat berilmagan"
-msgstr "Access Denied"
+#~ msgid ""
+#~ "Admin panelda \"Markaz tarixi (Timeline)\" bo'limidan voqealar qo'shing."
+#~ msgstr ""
+#~ "Add events in the \"Center History (Timeline)\" section of the admin "
+#~ "panel."
 
-msgid ""
-"Kechirasiz, sizda ushbu sahifani ko'rish uchun yetarli huquq yo'q. Agar bu "
-"xato deb hisoblasangiz, tizimga qayta kiring yoki administrator bilan "
-"bog'laning."
-msgstr ""
-"Sorry, you do not have sufficient permission to view this page. If you "
-"believe this is an error, please log in again or contact the administrator."
+#~ msgid "Admin panelda \"Bizning jamoamiz\" bo'limidan statistika qo'shing."
+#~ msgstr "Add statistics in the \"Our Team\" section of the admin panel."
 
-msgid "404 — Sahifa topilmadi"
-msgstr "404 — Page Not Found"
+#~ msgid ""
+#~ "Hozircha lavhalar qo'shilmagan. Admin panelda \"Markazimizdan lavhalar\" "
+#~ "bo'limidan rasm yoki video qo'shing."
+#~ msgstr ""
+#~ "No media has been added yet. Add a photo or video in the \"Glimpses of "
+#~ "Our Center\" section of the admin panel."
 
-msgid "Sahifa topilmadi"
-msgstr "Page Not Found"
+#~ msgid ""
+#~ "Admin panelda \"Bizning maqsad va vazifalarimiz\" bo'limidan qo'shing."
+#~ msgstr ""
+#~ "Add it in the \"Our Goals and Objectives\" section of the admin panel."
 
-msgid ""
-"Kechirasiz, siz izlagan sahifa mavjud emas yoki o'chirib yuborilgan bo'lishi"
-" mumkin. Havolani tekshirib qayta urinib ko'ring yoki bosh sahifaga qayting."
-msgstr ""
-"Sorry, the page you are looking for does not exist or may have been removed."
-" Please check the link and try again, or return to the homepage."
+#~ msgid "Izoh (%(counter)s)"
+#~ msgstr "Comment (%(counter)s)"
 
-msgid "500 — Server xatosi"
-msgstr "500 — Server Error"
-
-msgid "Serverda texnik nosozlik"
-msgstr "Server Technical Issue"
-
-msgid ""
-"Kechirasiz, hozircha texnik nosozlik yuz berdi. Bizning mutaxassislar "
-"muammoni tezda bartaraf etishga harakat qilmoqda. Iltimos, birozdan so'ng "
-"qayta urinib ko'ring."
-msgstr ""
-"Sorry, a technical issue has occurred. Our specialists are working to "
-"resolve it quickly. Please try again shortly."
+#~ msgid "Izohlar (%(counter)s)"
+#~ msgstr "Comments (%(counter)s)"

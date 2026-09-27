@@ -7,6 +7,11 @@ from .models import (
     FinancialTransparencyDocument, HRPolicyDocument,
     OrganizationalLegalInfo, ActivityResultsInfo,
 )
+from .models import Notification
+
+@register(Notification)
+class NotificationTranslationOptions(TranslationOptions):
+    fields = ('title',)
 
 @register(MissionGoal)
 class MissionGoalTR(TranslationOptions):

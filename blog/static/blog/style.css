@@ -4372,7 +4372,7 @@ img {
     }
   }
 
-/* =========================================================
+  /* =========================================================
    BILDIRISHNOMALAR (Qo'ng'iroq)
 ========================================================= */
 
@@ -4418,6 +4418,7 @@ img {
     width: 320px;
     max-height: 420px;
     overflow-y: auto;
+    overflow-x: hidden;
     background: #fff;
     border-radius: 12px;
     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
@@ -4442,6 +4443,7 @@ img {
 .notif-dropdown-list {
     display: flex;
     flex-direction: column;
+    min-width: 0;
 }
 
 .notif-item {
@@ -4451,6 +4453,7 @@ img {
     text-decoration: none;
     color: #222;
     border-bottom: 1px solid #f2f2f2;
+    min-width: 0;
 }
 
 .notif-item:hover {
@@ -4467,11 +4470,14 @@ img {
     flex-direction: column;
     gap: 3px;
     min-width: 0;
+    flex: 1 1 auto;
 }
 
 .notif-item-title {
     font-size: 13.5px;
     line-height: 1.4;
+    white-space: normal;
+    overflow-wrap: break-word;
     word-break: break-word;
 }
 

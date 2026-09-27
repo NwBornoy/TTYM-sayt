@@ -29,10 +29,11 @@ from .models import AboutMedia
 from .models import Testimonial
 from .models import MissionGoal
 from .models import NewUserNotification
+from modeltranslation.admin import TranslationAdmin
 from .models import Notification
 
 @admin.register(Notification)
-class NotificationAdmin(admin.ModelAdmin):
+class NotificationAdmin(TranslationAdmin):
     list_display = ("icon", "title", "is_active", "created_at")
     list_editable = ("is_active",)
     list_filter = ("is_active", "created_at")
