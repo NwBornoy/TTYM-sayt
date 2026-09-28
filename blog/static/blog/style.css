@@ -1,15 +1,7 @@
 /* =========================================================
    GLOBAL FONT — BUTUN SAYT
 ========================================================= */
-
-html,
-body,
-body *,
-button,
-input,
-textarea,
-select,
-a {
+html, body, body *, button, input, textarea, select, a {
     font-family: "Times New Roman", Times, serif !important;
 }
 
@@ -18,63 +10,38 @@ html, body {
     max-width: 100%;
 }
 
-/* Font Awesome ikonkalari o'zining shriftida qolishi kerak,
-   aks holda ikonka o'rniga bo'sh kvadrat chiqadi */
-.fa,
-.fas,
-.far,
-.fab,
-.fa-brands,
-.fa-solid,
-.fa-regular,
-[class*="fa-"] {
+/* Font Awesome ikonkalari o'z shriftida qolishi kerak */
+.fa, .fas, .far, .fab, .fa-brands, .fa-solid, .fa-regular, [class*="fa-"] {
     font-family: "Font Awesome 6 Brands", "Font Awesome 6 Free" !important;
 }
 
 /* =========================================================
    QASHQADARYO 103 — YAKUNIY TOZALANGAN STYLE.CSS
-   ========================================================= */
+========================================================= */
 
-/* =========================================================
-   1. GLOBAL
-   ========================================================= */
-html,
-body {
+/* 1. GLOBAL */
+html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     min-height: 100%;
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
     color: #26344a;
     background: #ffffff;
-    font-family: "Times New Roman", Times, serif !important;
 }
 
-main {
-    margin: 0;
-    padding: 0;
-}
-
-a {
-    text-decoration: none;
-}
-
-img {
-    max-width: 100%;
-}
+main { margin: 0; padding: 0; }
+a { text-decoration: none; }
+img { max-width: 100%; }
 
 
 /* =========================================================
-   2. HEADER
-   ========================================================= */
+   2. HEADER (kompyuter asosi)
+========================================================= */
 .site-header {
     width: 100%;
     margin: 0;
@@ -89,12 +56,10 @@ img {
     min-height: 150px;
     margin: 0;
     padding: 0 16px 0 27px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
-
     background: #ffffff;
 }
 
@@ -102,13 +67,10 @@ img {
     height: 104px;
     margin: 0;
     padding: 0;
-
     display: flex;
     align-items: center;
     gap: 9px;
-
     flex: 0 0 auto;
-    text-decoration: none;
 }
 
 .header-brand-logo {
@@ -118,7 +80,6 @@ img {
     min-height: 78px;
     max-width: 78px;
     max-height: 78px;
-
     display: block;
     object-fit: contain;
     flex-shrink: 0;
@@ -128,7 +89,6 @@ img {
     min-width: 0;
     margin: 0;
     padding: 0;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -137,9 +97,7 @@ img {
 .header-brand-title {
     margin: 0;
     padding: 0;
-
     color: #062d75;
-    font-family: "Times New Roman", Times, serif !important;
     font-size: 20px;
     line-height: 18px;
     font-weight: 700;
@@ -150,9 +108,7 @@ img {
 .header-brand-subtitle {
     margin: 3px 0 0;
     padding: 0;
-
     color: #ed1c24;
-    font-family: "Times New Roman", Times, serif !important;
     font-size: 18px;
     line-height: 17px;
     font-weight: 700;
@@ -164,12 +120,10 @@ img {
     height: 104px;
     margin: 0;
     padding: 0;
-
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 15px;
-
     flex: 0 0 auto;
     white-space: nowrap;
 }
@@ -178,7 +132,6 @@ img {
     height: 43px;
     margin: 0;
     padding: 0;
-
     display: flex;
     align-items: center;
     gap: 15px;
@@ -190,15 +143,11 @@ img {
     height: 43px;
     margin: 0;
     padding: 0 13px;
-
     border: 1px solid #405b93;
     border-radius: 9px;
     outline: none;
-
     background: #ffffff;
     color: #222222;
-
-    font-family: "Times New Roman", Times, serif !important;
     font-size: 13px;
 }
 
@@ -207,23 +156,17 @@ img {
     height: 43px;
     margin: 0;
     padding: 0;
-
     border: 0;
     border-radius: 8px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: #f7191f;
     color: #ffffff;
     cursor: pointer;
 }
 
-.header-search button span {
-    font-size: 22px;
-    line-height: 1;
-}
+.header-search button span { font-size: 22px; line-height: 1; }
 
 .header-login,
 .header-register,
@@ -231,11 +174,9 @@ img {
 .header-user {
     height: 43px;
     margin: 0;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     white-space: nowrap;
 }
 
@@ -243,11 +184,8 @@ img {
     padding: 0 19px;
     border: 1px solid #4e6896;
     border-radius: 8px;
-
     background: #ffffff;
     color: #062d75;
-
-    font-family: "Times New Roman", Times, serif !important;
     font-size: 17px;
     font-weight: 700;
 }
@@ -257,11 +195,8 @@ img {
     padding: 0 18px;
     border: 0;
     border-radius: 8px;
-
     background: #f7191f;
     color: #ffffff;
-
-    font-family: "Times New Roman", Times, serif !important;
     font-size: 17px;
     font-weight: 700;
 }
@@ -269,14 +204,10 @@ img {
 .header-user {
     padding: 0 12px 0 9px;
     gap: 10px;
-
     border: 1px solid #293e62;
     border-radius: 8px;
-
     background: #ffffff;
     color: #062d75;
-
-    font-family: "Times New Roman", Times, serif !important;
     font-size: 17px;
     font-weight: 700;
 }
@@ -286,18 +217,14 @@ img {
     height: 25px;
     min-width: 25px;
     min-height: 25px;
-
     margin: 0;
     padding: 0;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
     background: #ed1c24;
     color: #ffffff;
-
     font-size: 19px;
 }
 
@@ -308,18 +235,15 @@ img {
     font-weight: 700;
 }
 
-/* Mobil hamburger tugmasi — bazaviy holat (desktopda yashirin) */
+/* Hamburger (desktopda yashirin) */
 .mobile-menu-toggle {
     display: none;
-
     width: 38px;
     height: 38px;
-
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 5px;
-
     border: 1px solid #d7dee7;
     border-radius: 8px;
     background: #ffffff;
@@ -337,39 +261,28 @@ img {
     transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.mobile-menu-toggle.active span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-}
-
-.mobile-menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.mobile-menu-toggle.active span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-}
+.mobile-menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.mobile-menu-toggle.active span:nth-child(2) { opacity: 0; }
+.mobile-menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 
 /* =========================================================
    3. ASOSIY KO'K MENYU
-   ========================================================= */
+========================================================= */
 .main-navigation {
     width: 100%;
     min-height: 70px;
     height: 70px;
     margin: 0;
     padding: 0 35px;
-
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: nowrap;
     gap: 0;
-
     overflow: visible;
     position: relative;
     z-index: 1000;
-
     background: #0c364d;
 }
 
@@ -378,34 +291,20 @@ img {
     min-height: 43px;
     margin: 0;
     padding: 0 12px;
-
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 0 0 auto;
-
     color: #ffffff;
-    font-family: "Times New Roman", Times, serif !important;
     font-size: 18px;
     font-weight: 400;
     line-height: 1;
     white-space: nowrap;
-    text-decoration: none;
 }
 
-.main-navigation > a:first-child {
-    padding-left: 12px;
-}
-
-.main-navigation > a:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.main-navigation > a::after {
-    display: none;
-    content: none;
-}
+.main-navigation > a:first-child { padding-left: 12px; }
+.main-navigation > a:hover { color: #ffffff; background: rgba(255, 255, 255, 0.08); }
+.main-navigation > a::after { display: none; content: none; }
 
 .menu-arrow {
     display: inline-block;
@@ -417,7 +316,7 @@ img {
 
 /* =========================================================
    4. DROPDOWN
-   ========================================================= */
+========================================================= */
 .nav-dropdown {
     position: relative;
     height: 43px;
@@ -429,17 +328,13 @@ img {
 .nav-dropdown-title {
     height: 43px;
     padding: 0 12px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: #ffffff;
-    font-family: "Times New Roman", Times, serif !important;
     font-size: 18px;
     font-weight: 400;
     white-space: nowrap;
-    text-decoration: none;
 }
 
 .nav-dropdown-title .menu-arrow {
@@ -454,16 +349,12 @@ img {
     position: absolute;
     top: 43px;
     left: 0;
-
     width: 270px;
     padding: 8px 0;
-
     display: none;
-
     background: #ffffff;
     border-radius: 0 0 3px 3px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.18);
-
     z-index: 99999;
 }
 
@@ -471,63 +362,39 @@ img {
     display: block;
     width: 100%;
     padding: 12px 20px;
-
     color: #333333;
     background: #ffffff;
-
-    font-family: "Times New Roman", Times, serif !important;
     font-size: 15px;
     font-weight: 400;
     line-height: 1.3;
-
-    text-decoration: none;
     white-space: normal;
     overflow-wrap: break-word;
 }
 
-.nav-dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-.nav-dropdown:hover .nav-dropdown-title {
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.nav-dropdown:hover .nav-dropdown-title .menu-arrow {
-    transform: rotate(180deg);
-}
-
-.nav-dropdown .dropdown-menu a:hover {
-    background: #f2f5f9;
-    color: #063582;
-}
+.nav-dropdown:hover .dropdown-menu { display: block; }
+.nav-dropdown:hover .nav-dropdown-title { background: rgba(255, 255, 255, 0.08); }
+.nav-dropdown:hover .nav-dropdown-title .menu-arrow { transform: rotate(180deg); }
+.nav-dropdown .dropdown-menu a:hover { background: #f2f5f9; color: #063582; }
 
 
 /* =========================================================
-   5. YANGI BOSH SAHIFA — HERO
-   ========================================================= */
+   5. BOSH SAHIFA — HERO
+========================================================= */
 .hero-section {
     width: 100%;
     height: 540px;
     min-height: 540px;
-
     position: relative;
     overflow: hidden;
-
     margin: 0;
     padding: 0;
-
     background:
-        linear-gradient(
-            90deg,
+        linear-gradient(90deg,
             rgba(7, 43, 105, 0.96) 0%,
             rgba(13, 61, 135, 0.86) 32%,
             rgba(13, 61, 135, 0.35) 62%,
-            rgba(0, 20, 50, 0.10) 100%
-        ),
-        url("/static/blog/images/ambulance.png")
-        center center / cover no-repeat;
-
+            rgba(0, 20, 50, 0.10) 100%),
+        url("/static/blog/images/ambulance.png") center center / cover no-repeat;
     color: #ffffff;
     text-align: left;
 }
@@ -550,9 +417,7 @@ img {
 .hero-text h1 {
     margin: 0;
     padding: 0;
-
     color: #ffffff;
-    font-family: "Times New Roman", Times, serif !important;
     font-size: 37px;
     font-weight: 700;
     line-height: 1.36;
@@ -561,9 +426,7 @@ img {
 
 .hero-welcome {
     margin-top: 8px;
-
     color: #f32930;
-    font-family: "Times New Roman", Times, serif !important;
     font-size: 36px;
     font-weight: 700;
     line-height: 1.2;
@@ -574,25 +437,18 @@ img {
     justify-content: flex-start;
     align-items: center;
     gap: 12px;
-
     margin-top: 28px;
 }
 
 .hero-btn {
     height: 38px;
     padding: 0 28px;
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 4px;
-
-    font-family: "Times New Roman", Times, serif !important;
     font-size: 14px;
     font-weight: 600;
-
-    text-decoration: none;
     transition: 0.2s ease;
 }
 
@@ -611,20 +467,16 @@ img {
 .hero-info {
     position: absolute;
     z-index: 10;
-
     left: 50%;
     bottom: 23px;
     transform: translateX(-50%);
-
     width: 765px;
     min-height: 96px;
     padding: 14px 24px;
-
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
     gap: 15px;
-
     background: #ffffff;
     border-radius: 11px;
     box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
@@ -641,69 +493,46 @@ img {
     width: 47px;
     height: 47px;
     min-width: 47px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
     background: #fff0f1;
     color: #ed1c24;
-
     font-size: 23px;
     font-weight: 700;
 }
 
-.hero-info-icon.hero-103 {
-    font-size: 17px;
-    font-family: "Times New Roman", Times, serif !important;
-}
+.hero-info-icon.hero-103 { font-size: 17px; }
 
 .hero-info-text strong,
 .hero-info-text span {
     display: block;
-
     color: #26344a;
-    font-family: "Times New Roman", Times, serif !important;
     font-size: 12px;
     line-height: 1.45;
 }
 
-.hero-info-text strong {
-    font-weight: 600;
-}
-
-.hero-info-text span {
-    font-weight: 400;
-}
+.hero-info-text strong { font-weight: 600; }
+.hero-info-text span { font-weight: 400; }
 
 .hero-section .hero-eyebrow,
 .hero-section .hero-lead,
-.hero-section .hero-card {
-    display: none;
-}
+.hero-section .hero-card { display: none; }
 
 
 /* =========================================================
    6. ESKI HERO CLASSLAR — SAQLANADI
-   Saytning boshqa sahifalari buzilmasligi uchun qoldirildi.
-   ========================================================= */
+========================================================= */
 .hero {
     width: min(1100px, calc(100% - 40px));
     min-height: 420px;
     margin: 0 auto;
-
     display: flex;
     position: relative;
     overflow: hidden;
-
     background:
-        radial-gradient(
-            circle at 30% 20%,
-            #edf5fc 0,
-            #edf5fc 30%,
-            transparent 31%
-        ),
+        radial-gradient(circle at 30% 20%, #edf5fc 0, #edf5fc 30%, transparent 31%),
         linear-gradient(90deg, #f1f7fc, #ffffff 65%);
 }
 
@@ -731,9 +560,7 @@ img {
     letter-spacing: -1.5px;
 }
 
-.hero h1 span {
-    display: block;
-}
+.hero h1 span { display: block; }
 
 .hero p {
     max-width: 440px;
@@ -748,22 +575,16 @@ img {
     align-items: center;
     gap: 10px;
     padding: 14px 20px;
-
     background: #ed1c24;
     color: #ffffff;
     border-radius: 8px;
-
     font-size: 13px;
     font-weight: 800;
-
     box-shadow: 0 8px 20px rgba(237, 28, 36, 0.25);
     transition: 0.2s ease;
 }
 
-.hero-button:hover {
-    background: #c9151d;
-    transform: translateY(-2px);
-}
+.hero-button:hover { background: #c9151d; transform: translateY(-2px); }
 
 .hero-more {
     display: block;
@@ -792,27 +613,15 @@ img {
 
 /* =========================================================
    7. BOSH SAHIFA UMUMIY
-   ========================================================= */
-.home-page {
-    width: 100%;
-    overflow: hidden;
-}
-
-.home-page h2 {
-    margin: 0;
-    color: #123d78;
-    font-size: 32px;
-    font-weight: 700;
-}
-
-.home-page p {
-    line-height: 1.7;
-}
+========================================================= */
+.home-page { width: 100%; overflow: hidden; }
+.home-page h2 { margin: 0; color: #123d78; font-size: 32px; font-weight: 700; }
+.home-page p { line-height: 1.7; }
 
 
 /* =========================================================
    8. STATISTIKA
-   ========================================================= */
+========================================================= */
 .stats-section {
     width: 100%;
     padding: 35px 20px;
@@ -823,7 +632,6 @@ img {
 .stats-container {
     max-width: 1100px;
     margin: 0 auto;
-
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 }
@@ -834,56 +642,35 @@ img {
     border-right: 1px solid #e5e9ef;
 }
 
-.stat:last-child {
-    border-right: none;
-}
+.stat:last-child { border-right: none; }
 
 .stat-number {
     margin-bottom: 7px;
     color: #ed1c24;
-
-    font-family: "Times New Roman", Times, serif !important;
     font-size: 32px;
     font-weight: 800;
 }
 
-.stat-label {
-    color: #5c6675;
-    font-family: "Times New Roman", Times, serif !important;
-    font-size: 14px;
-    line-height: 1.4;
-}
+.stat-label { color: #5c6675; font-size: 14px; line-height: 1.4; }
 
 
 /* =========================================================
    9. MARKAZ HAQIDA
-   ========================================================= */
+========================================================= */
 .about-section {
     max-width: 1100px;
     margin: 0 auto;
     padding: 75px 30px;
-
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
     gap: 70px;
     align-items: center;
 }
 
-.about-text h2 {
-    margin-bottom: 20px;
-}
+.about-text h2 { margin-bottom: 20px; }
+.about-text > p { margin: 0 0 25px; color: #596575; font-size: 16px; }
 
-.about-text > p {
-    margin: 0 0 25px;
-    color: #596575;
-    font-size: 16px;
-}
-
-.about-points {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+.about-points { list-style: none; margin: 0; padding: 0; }
 
 .about-points li {
     position: relative;
@@ -897,18 +684,14 @@ img {
     position: absolute;
     left: 0;
     top: 7px;
-
     width: 21px;
     height: 21px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
     background: #ed1c24;
     color: #ffffff;
-
     font-size: 12px;
     font-weight: 700;
 }
@@ -916,35 +699,26 @@ img {
 .about-visual {
     min-height: 270px;
     padding: 35px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 18px;
-
     background: linear-gradient(135deg, #0d4488, #12346b);
     box-shadow: 0 12px 35px rgba(18, 61, 120, 0.16);
-
     text-align: center;
 }
 
-.about-visual > div {
-    color: #ffffff;
-}
+.about-visual > div { color: #ffffff; }
 
 .circle-icon {
     width: 90px;
     height: 90px;
     margin: 0 auto 20px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.14);
-
     font-size: 42px;
 }
 
@@ -959,36 +733,17 @@ img {
 
 /* =========================================================
    10. SECTION HEADER
-   ========================================================= */
-.section-header {
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.section-header h2 {
-    margin-bottom: 10px;
-}
-
-.section-header p {
-    margin: 0;
-    color: #6c7685;
-    font-size: 15px;
-}
+========================================================= */
+.section-header { margin-bottom: 40px; text-align: center; }
+.section-header h2 { margin-bottom: 10px; }
+.section-header p { margin: 0; color: #6c7685; font-size: 15px; }
 
 
 /* =========================================================
    12. YANGILIKLAR
-   ========================================================= */
-.news-section {
-    width: 100%;
-    padding: 75px 30px;
-    background: #ffffff;
-}
-
-.news-container {
-    max-width: 1100px;
-    margin: 0 auto;
-}
+========================================================= */
+.news-section { width: 100%; padding: 75px 30px; background: #ffffff; }
+.news-container { max-width: 1100px; margin: 0 auto; }
 
 .news-grid {
     display: grid;
@@ -998,76 +753,38 @@ img {
 
 .news-card {
     overflow: hidden;
-
     background: #ffffff;
     border: 1px solid #e5eaf1;
     border-radius: 14px;
-
     box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
 }
 
 .news-image {
     height: 145px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: #eaf1fa;
     font-size: 48px;
 }
 
-.news-content {
-    padding: 22px;
-}
-
-.news-date {
-    margin-bottom: 8px;
-    color: #ed1c24;
-    font-size: 12px;
-}
-
-.news-content h3 {
-    margin: 0 0 10px;
-    color: #173f78;
-    font-size: 18px;
-}
-
-.news-content p {
-    margin: 0;
-    color: #687384;
-    font-size: 14px;
-}
+.news-content { padding: 22px; }
+.news-date { margin-bottom: 8px; color: #ed1c24; font-size: 12px; }
+.news-content h3 { margin: 0 0 10px; color: #173f78; font-size: 18px; }
+.news-content p { margin: 0; color: #687384; font-size: 14px; }
 
 
 /* =========================================================
    13. BEMORLAR UCHUN
-   ========================================================= */
-.patients-section {
-    width: 100%;
-    padding: 75px 30px;
-    background: #f5f8fc;
-}
-
-.patients-header {
-    max-width: 1100px;
-    margin: 0 auto 40px;
-    text-align: center;
-}
-
-.patients-header h2 {
-    margin-bottom: 10px;
-}
-
-.patients-header p {
-    margin: 0;
-    color: #6c7685;
-}
+========================================================= */
+.patients-section { width: 100%; padding: 75px 30px; background: #f5f8fc; }
+.patients-header { max-width: 1100px; margin: 0 auto 40px; text-align: center; }
+.patients-header h2 { margin-bottom: 10px; }
+.patients-header p { margin: 0; color: #6c7685; }
 
 .patients-cards {
     max-width: 1100px;
     margin: 0 auto;
-
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
@@ -1075,76 +792,39 @@ img {
 
 .patient-card {
     padding: 25px;
-
     background: #ffffff;
     border-left: 4px solid #ed1c24;
     border-radius: 13px;
-
     box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
 }
 
-.patient-card h3 {
-    margin: 0 0 10px;
-    color: #173f78;
-    font-size: 18px;
-}
-
-.patient-card p {
-    margin: 0;
-    color: #667181;
-    font-size: 14px;
-}
+.patient-card h3 { margin: 0 0 10px; color: #173f78; font-size: 18px; }
+.patient-card p { margin: 0; color: #667181; font-size: 14px; }
 
 
 /* =========================================================
    14. ALOQA
-   ========================================================= */
-.contact-section {
-    width: 100%;
-    padding: 55px 30px;
-    background: #103f7b;
-}
+========================================================= */
+.contact-section { width: 100%; padding: 55px 30px; background: #103f7b; }
 
 .contact-container {
     max-width: 1100px;
     margin: 0 auto;
-
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
 }
 
-.contact-info {
-    color: #ffffff;
-}
-
-.contact-info h3 {
-    margin: 0 0 12px;
-    color: #ffffff;
-    font-size: 16px;
-}
-
-.contact-info p {
-    margin: 5px 0;
-    color: rgba(255, 255, 255, 0.78);
-    font-size: 13px;
-}
-
-.contact-info p strong {
-    color: #ffffff;
-    font-size: 25px;
-}
-
-.contact-info a {
-    color: #ffffff;
-    text-decoration: none;
-}
+.contact-info { color: #ffffff; }
+.contact-info h3 { margin: 0 0 12px; color: #ffffff; font-size: 16px; }
+.contact-info p { margin: 5px 0; color: rgba(255, 255, 255, 0.78); font-size: 13px; }
+.contact-info p strong { color: #ffffff; font-size: 25px; }
+.contact-info a { color: #ffffff; }
 
 
 /* =========================================================
    15. ESKI MUHIM MA'LUMOT / MAQOLALAR
-   Boshqa template buzilmasligi uchun saqlanadi.
-   ========================================================= */
+========================================================= */
 .important-section,
 .articles-section {
     width: min(1100px, calc(100% - 40px));
@@ -1170,75 +850,37 @@ img {
 .important-card {
     min-height: 105px;
     padding: 16px;
-
     display: flex;
     align-items: center;
-
     border: 1px solid #e4eaf1;
     border-radius: 8px;
     transition: 0.2s ease;
 }
 
-.important-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 7px 20px rgba(20, 50, 90, 0.08);
-}
-
-.emergency-card {
-    background: #fff4f4;
-    border-color: #ffd0d0;
-}
-
-.doctor-card {
-    background: #f2f7ff;
-    border-color: #cdddf5;
-}
+.important-card:hover { transform: translateY(-2px); box-shadow: 0 7px 20px rgba(20, 50, 90, 0.08); }
+.emergency-card { background: #fff4f4; border-color: #ffd0d0; }
+.doctor-card { background: #f2f7ff; border-color: #cdddf5; }
 
 .important-icon {
     width: 62px;
     height: 62px;
     margin-right: 17px;
     flex-shrink: 0;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
     font-size: 28px;
 }
 
-.emergency-card .important-icon {
-    background: #ffe0e0;
-}
+.emergency-card .important-icon { background: #ffe0e0; }
+.doctor-card .important-icon { background: #dceaff; }
 
-.doctor-card .important-icon {
-    background: #dceaff;
-}
+.important-content h3 { margin: 0 0 7px; color: #10233f; font-size: 15px; line-height: 1.25; }
+.important-content p { margin: 0 0 7px; color: #647386; font-size: 11px; line-height: 1.5; }
+.important-content span { color: #ed1c24; font-size: 11px; font-weight: 700; }
 
-.important-content h3 {
-    margin: 0 0 7px;
-    color: #10233f;
-    font-size: 15px;
-    line-height: 1.25;
-}
-
-.important-content p {
-    margin: 0 0 7px;
-    color: #647386;
-    font-size: 11px;
-    line-height: 1.5;
-}
-
-.important-content span {
-    color: #ed1c24;
-    font-size: 11px;
-    font-weight: 700;
-}
-
-.articles-section {
-    margin-top: 42px;
-}
+.articles-section { margin-top: 42px; }
 
 .articles-heading {
     display: flex;
@@ -1246,127 +888,58 @@ img {
     justify-content: space-between;
 }
 
-.articles-count {
-    color: #708096;
-    font-size: 11px;
-}
+.articles-count { color: #708096; font-size: 11px; }
 
 .article-card {
     min-height: 170px;
     display: flex;
     overflow: hidden;
-
     background: #ffffff;
     border: 1px solid #e2e8ef;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(20, 45, 75, 0.05);
-
     transition: 0.2s ease;
 }
 
-.article-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(20, 45, 75, 0.1);
-}
+.article-card:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(20, 45, 75, 0.1); }
 
-.article-image {
-    width: 42%;
-    min-height: 170px;
-    overflow: hidden;
-}
+.article-image { width: 42%; min-height: 170px; overflow: hidden; }
 
 .article-placeholder {
     width: 100%;
     height: 100%;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-size: 55px;
     font-weight: 800;
 }
 
-.article-placeholder.heat {
-    background: linear-gradient(135deg, #ffd36a, #ed7928);
-    color: #ffffff;
-}
+.article-placeholder.heat { background: linear-gradient(135deg, #ffd36a, #ed7928); color: #ffffff; }
+.article-placeholder.phone { background: linear-gradient(135deg, #203e66, #091d3a); color: #ffffff; }
+.article-placeholder.medical { background: #eaf3ff; color: #1b5da7; }
 
-.article-placeholder.phone {
-    background: linear-gradient(135deg, #203e66, #091d3a);
-    color: #ffffff;
-}
-
-.article-placeholder.medical {
-    background: #eaf3ff;
-    color: #1b5da7;
-}
-
-.article-content {
-    width: 58%;
-    padding: 14px 15px;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.article-top {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.article-category {
-    color: #ed1c24;
-    font-size: 8px;
-    font-weight: 800;
-}
-
-.article-date {
-    color: #8795a7;
-    font-size: 8px;
-}
-
-.article-content h3 {
-    margin: 10px 0 6px;
-    color: #142943;
-    font-size: 14px;
-    line-height: 1.3;
-}
-
-.article-content p {
-    margin: 0;
-    color: #657386;
-    font-size: 10px;
-    line-height: 1.45;
-}
-
-.article-more {
-    margin-top: auto;
-    color: #ed1c24;
-    font-size: 9px;
-    font-weight: 700;
-}
+.article-content { width: 58%; padding: 14px 15px; display: flex; flex-direction: column; }
+.article-top { display: flex; justify-content: space-between; gap: 10px; }
+.article-category { color: #ed1c24; font-size: 8px; font-weight: 800; }
+.article-date { color: #8795a7; font-size: 8px; }
+.article-content h3 { margin: 10px 0 6px; color: #142943; font-size: 14px; line-height: 1.3; }
+.article-content p { margin: 0; color: #657386; font-size: 10px; line-height: 1.45; }
+.article-more { margin-top: auto; color: #ed1c24; font-size: 9px; font-weight: 700; }
 
 
 /* =========================================================
    17. FOOTER
-   ========================================================= */
-.site-footer {
-    margin-top: 55px;
-    background: #0a1a30;
-    color: #c7d1e0;
-}
+========================================================= */
+.site-footer { margin-top: 55px; background: #0a1a30; color: #c7d1e0; }
 
 .footer-top {
     width: min(1200px, calc(100% - 60px));
     margin: 0 auto;
     padding: 50px 0 35px;
-
     display: grid;
     grid-template-columns: 1.5fr 1fr 1fr 1fr 1.1fr;
     gap: 30px;
-
     min-width: 0;
 }
 
@@ -1377,32 +950,21 @@ img {
     word-break: break-word;
 }
 
-/* ---- BREND USTUNI ---- */
-.footer-brand {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-}
+.footer-brand { display: flex; align-items: flex-start; gap: 14px; }
 
 .footer-logo {
     width: 56px;
     height: 56px;
     min-width: 56px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
     background: #ffffff;
     overflow: hidden;
 }
 
-.footer-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
+.footer-logo img { width: 100%; height: 100%; object-fit: contain; }
 
 .footer-brand-text strong {
     display: block;
@@ -1412,64 +974,37 @@ img {
     font-weight: 700;
 }
 
-.footer-share {
-    margin-top: 22px;
-}
-
-.footer-share span {
-    display: block;
-    margin-bottom: 10px;
-    color: #93a2ba;
-    font-size: 13px;
-}
-
-.footer-socials {
-    display: flex;
-    gap: 12px;
-}
+.footer-share { margin-top: 22px; }
+.footer-share span { display: block; margin-bottom: 10px; color: #93a2ba; font-size: 13px; }
+.footer-socials { display: flex; gap: 12px; }
 
 .footer-socials a {
     width: 34px;
     height: 34px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.08);
     color: #ffffff;
-
     font-size: 14px;
     transition: background 0.2s ease;
 }
 
-.footer-socials a:hover {
-    background: #ed1c24;
-}
+.footer-socials a:hover { background: #ed1c24; }
 
-/* ---- MENYU USTUNLARI ---- */
 .footer-menu {
     list-style: none;
     margin: 0;
     padding: 0;
-
     display: flex;
     flex-direction: column;
     gap: 16px;
-
     min-width: 0;
 }
 
-.footer-menu a {
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: 700;
-}
-
-.footer-menu a:hover {
-    color: #ed1c24;
-}
+.footer-menu a { color: #ffffff; font-size: 15px; font-weight: 700; }
+.footer-menu a:hover { color: #ed1c24; }
 
 .footer-menu .menu-arrow {
     margin-left: 4px;
@@ -1479,13 +1014,8 @@ img {
     transition: transform 0.2s ease;
 }
 
-/* ---- ISH VAQTI ---- */
 .footer-hours-label,
-.footer-contact-label {
-    margin-bottom: 6px;
-    color: #93a2ba;
-    font-size: 13px;
-}
+.footer-contact-label { margin-bottom: 6px; color: #93a2ba; font-size: 13px; }
 
 .footer-hours strong,
 .footer-contact strong {
@@ -1496,11 +1026,8 @@ img {
     line-height: 1.5;
 }
 
-.footer-hours .footer-lunch {
-    margin-top: 22px;
-}
+.footer-hours .footer-lunch { margin-top: 22px; }
 
-/* ---- ALOQA ---- */
 .footer-phone {
     display: block;
     margin-bottom: 22px;
@@ -1511,101 +1038,58 @@ img {
     word-break: break-word;
 }
 
-/* ---- PASTKI QATOR ---- */
-.footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
+.footer-bottom { border-top: 1px solid rgba(255, 255, 255, 0.08); }
 
 .footer-bottom-inner {
     width: min(1200px, calc(100% - 60px));
     margin: 0 auto;
     padding: 20px 0;
-
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 20px;
-
     min-width: 0;
 }
 
-.footer-bottom-inner > * {
-    min-width: 0;
-    max-width: 100%;
-    overflow-wrap: break-word;
-}
+.footer-bottom-inner > * { min-width: 0; max-width: 100%; overflow-wrap: break-word; }
+.footer-bottom-inner p { margin: 0; color: #8291a5; font-size: 12px; line-height: 1.5; }
+.footer-bottom-inner a { color: #93a2ba; text-decoration: underline; }
 
-.footer-bottom-inner p {
-    margin: 0;
-    color: #8291a5;
-    font-size: 12px;
-    line-height: 1.5;
-}
-
-.footer-bottom-inner a {
-    color: #93a2ba;
-    text-decoration: underline;
-}
-
-/* ---- FOOTER DROPDOWN (Markaz/Faoliyat/Hujjatlar/Matbuot markazi) ---- */
-.footer-dropdown {
-    position: relative;
-}
-
-.footer-dropdown-title {
-    display: flex !important;
-    align-items: center;
-    gap: 6px;
-}
+.footer-dropdown { position: relative; }
+.footer-dropdown-title { display: flex !important; align-items: center; gap: 6px; }
 
 .footer-dropdown-menu {
     position: absolute;
     left: 0;
-    bottom: 100%;      /* footer pastda bo'lgani uchun YUQORIGA ochiladi */
+    bottom: 100%;
     margin-bottom: 10px;
-
     width: 260px;
     padding: 8px 0;
-
     display: none;
-
     background: #ffffff;
     border-radius: 6px;
     box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.25);
-
     z-index: 999;
 }
 
 .footer-dropdown-menu a {
     display: block;
     padding: 10px 18px;
-
     color: #26344a !important;
     font-size: 14px !important;
     font-weight: 400 !important;
-
     white-space: normal;
 }
 
-.footer-dropdown-menu a:hover {
-    background: #f2f5f9;
-    color: #063582 !important;
-}
-
-.footer-dropdown:hover .footer-dropdown-menu {
-    display: block;
-}
-
-.footer-dropdown:hover .menu-arrow {
-    transform: rotate(180deg);
-}
+.footer-dropdown-menu a:hover { background: #f2f5f9; color: #063582 !important; }
+.footer-dropdown:hover .footer-dropdown-menu { display: block; }
+.footer-dropdown:hover .menu-arrow { transform: rotate(180deg); }
 
 
 /* =========================================================
    18. PAGINATION
-   ========================================================= */
+========================================================= */
 .pagination {
     margin: 25px 0;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1614,45 +1098,22 @@ img {
 
 .pagination a {
     padding: 8px 14px;
-
     background: #09264d;
     color: #ffffff;
     border-radius: 5px;
-
     font-size: 11px;
 }
 
-.pagination span {
-    color: #657386;
-    font-size: 11px;
-}
-
-.empty {
-    padding: 40px;
-    text-align: center;
-    color: #6d7c8e;
-}
+.pagination span { color: #657386; font-size: 11px; }
+.empty { padding: 40px; text-align: center; color: #6d7c8e; }
 
 
 /* =========================================================
    19. POST DETAIL
-   ========================================================= */
-.post-detail {
-    width: min(900px, calc(100% - 40px));
-    margin: 45px auto 70px;
-}
-
-.back-link {
-    display: inline-block;
-    margin-bottom: 25px;
-    color: #ed1c24;
-    font-size: 13px;
-    font-weight: 700;
-}
-
-.back-link:hover {
-    text-decoration: underline;
-}
+========================================================= */
+.post-detail { width: min(900px, calc(100% - 40px)); margin: 45px auto 70px; }
+.back-link { display: inline-block; margin-bottom: 25px; color: #ed1c24; font-size: 13px; font-weight: 700; }
+.back-link:hover { text-decoration: underline; }
 
 .post-meta {
     margin-bottom: 14px;
@@ -1672,46 +1133,19 @@ img {
     letter-spacing: -0.8px;
 }
 
-.post-body {
-    color: #3f5065;
-    font-size: 16px;
-    line-height: 1.8;
-}
-
-.post-body h2 {
-    margin-top: 35px;
-    margin-bottom: 12px;
-    color: #102b50;
-    font-size: 23px;
-}
-
-.post-body h3 {
-    margin-top: 28px;
-    color: #102b50;
-}
-
-.post-body p {
-    margin: 0 0 18px;
-}
-
-.post-body ul,
-.post-body ol {
-    margin: 15px 0 25px;
-    padding-left: 25px;
-}
-
-.post-body li {
-    margin-bottom: 9px;
-}
+.post-body { color: #3f5065; font-size: 16px; line-height: 1.8; }
+.post-body h2 { margin-top: 35px; margin-bottom: 12px; color: #102b50; font-size: 23px; }
+.post-body h3 { margin-top: 28px; color: #102b50; }
+.post-body p { margin: 0 0 18px; }
+.post-body ul, .post-body ol { margin: 15px 0 25px; padding-left: 25px; }
+.post-body li { margin-bottom: 9px; }
 
 .post-emergency {
     margin-top: 40px;
     padding: 22px;
-
     display: flex;
     align-items: center;
     gap: 18px;
-
     background: #fff4f4;
     border: 1px solid #ffd1d1;
     border-radius: 10px;
@@ -1721,143 +1155,69 @@ img {
     width: 65px;
     height: 65px;
     flex-shrink: 0;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: #ed1c24;
     color: #ffffff;
     border-radius: 50%;
-
     font-size: 22px;
     font-weight: 800;
 }
 
-.post-emergency strong {
-    display: block;
-    margin-bottom: 6px;
-    color: #142e4e;
-    font-size: 16px;
-}
-
-.post-emergency p {
-    margin: 0;
-    color: #69798c;
-    font-size: 12px;
-    line-height: 1.5;
-}
+.post-emergency strong { display: block; margin-bottom: 6px; color: #142e4e; font-size: 16px; }
+.post-emergency p { margin: 0; color: #69798c; font-size: 12px; line-height: 1.5; }
 
 
 /* =========================================================
    20. COMMENTS
-   ========================================================= */
-.comments-section {
-    margin-top: 50px;
-    padding-top: 30px;
-    border-top: 1px solid #e3e9f0;
-}
-
-.comments-section h2 {
-    margin: 0 0 20px;
-    color: #102b50;
-    font-size: 20px;
-}
+========================================================= */
+.comments-section { margin-top: 50px; padding-top: 30px; border-top: 1px solid #e3e9f0; }
+.comments-section h2 { margin: 0 0 20px; color: #102b50; font-size: 20px; }
 
 .comment {
     margin-bottom: 12px;
     padding: 17px 20px;
-
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 9px;
 }
 
-.comment-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.comment-header strong {
-    color: #15385d;
-    font-size: 13px;
-}
-
-.comment-header span {
-    color: #8a98a9;
-    font-size: 10px;
-}
-
-.comment p {
-    margin: 8px 0 0;
-    color: #526275;
-    font-size: 13px;
-    line-height: 1.6;
-}
-
-.no-comments {
-    color: #8997a8;
-    font-size: 13px;
-}
+.comment-header { display: flex; align-items: center; gap: 10px; }
+.comment-header strong { color: #15385d; font-size: 13px; }
+.comment-header span { color: #8a98a9; font-size: 10px; }
+.comment p { margin: 8px 0 0; color: #526275; font-size: 13px; line-height: 1.6; }
+.no-comments { color: #8997a8; font-size: 13px; }
 
 
 /* =========================================================
    21. COMMENT FORM
-   ========================================================= */
+========================================================= */
 .comment-form-box {
     margin-top: 35px;
     padding: 25px;
-
     background: #f7f9fc;
     border: 1px solid #e2e8f0;
     border-radius: 12px;
 }
 
-.comment-form-box h3 {
-    margin: 0 0 7px;
-    color: #102b50;
-    font-size: 20px;
-    font-weight: 800;
-}
-
-.comment-help {
-    margin: 0 0 20px;
-    color: #718096;
-    font-size: 12px;
-    line-height: 1.6;
-}
-
-.form-field {
-    margin-bottom: 18px;
-}
-
-.form-field label {
-    display: block;
-    margin-bottom: 6px;
-    color: #183657;
-    font-size: 12px;
-    font-weight: 700;
-}
+.comment-form-box h3 { margin: 0 0 7px; color: #102b50; font-size: 20px; font-weight: 800; }
+.comment-help { margin: 0 0 20px; color: #718096; font-size: 12px; line-height: 1.6; }
+.form-field { margin-bottom: 18px; }
+.form-field label { display: block; margin-bottom: 6px; color: #183657; font-size: 12px; font-weight: 700; }
 
 .form-field input,
 .form-field textarea {
     width: 100%;
     padding: 12px 14px;
-
     border: 1px solid #d9e1eb;
     border-radius: 7px;
-
     background: #ffffff;
-    font-family: "Times New Roman", Times, serif !important;
     font-size: 14px;
     outline: none;
 }
 
-.form-field textarea {
-    min-height: 120px;
-    resize: vertical;
-}
+.form-field textarea { min-height: 120px; resize: vertical; }
 
 .form-field input:focus,
 .form-field textarea:focus {
@@ -1865,63 +1225,43 @@ img {
     box-shadow: 0 0 0 3px rgba(27, 101, 179, 0.08);
 }
 
-.form-field small {
-    display: block;
-    margin-top: 5px;
-    color: #8997a8;
-    font-size: 10px;
-}
-
-.form-field .errorlist {
-    color: #ed1c24;
-    font-size: 11px;
-}
+.form-field small { display: block; margin-top: 5px; color: #8997a8; font-size: 10px; }
+.form-field .errorlist { color: #ed1c24; font-size: 11px; }
 
 .form-errors {
     margin-bottom: 15px;
     padding: 10px;
-
     background: #fff1f1;
     border: 1px solid #ffcaca;
     border-radius: 6px;
-
     color: #d71920;
     font-size: 12px;
 }
 
 .comment-submit {
     padding: 12px 20px;
-
     border: 0;
     border-radius: 7px;
-
     background: #ed1c24;
     color: #ffffff;
-
     font-size: 13px;
     font-weight: 800;
-
     cursor: pointer;
     transition: 0.2s ease;
 }
 
-.comment-submit:hover {
-    background: #d9161e;
-    transform: translateY(-1px);
-}
+.comment-submit:hover { background: #d9161e; transform: translateY(-1px); }
 
 
 /* =========================================================
    22. LOGIN / REGISTER
-   ========================================================= */
+========================================================= */
 .auth-page {
     min-height: 650px;
     padding: 70px 20px 90px;
-
     display: flex;
     justify-content: center;
     align-items: flex-start;
-
     background: #f5f8fc;
 }
 
@@ -1929,11 +1269,9 @@ img {
     width: 100%;
     max-width: 470px;
     padding: 42px 44px;
-
     background: #ffffff;
     border: 1px solid #e7edf5;
     border-radius: 18px;
-
     box-shadow: 0 12px 40px rgba(7, 35, 72, 0.10);
     text-align: left;
 }
@@ -1942,68 +1280,32 @@ img {
     width: 64px;
     height: 64px;
     margin-bottom: 22px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: #ed1c24;
     color: #ffffff;
     border-radius: 14px;
-
     font-size: 24px;
     font-weight: 800;
     box-shadow: 0 8px 18px rgba(237, 28, 36, 0.20);
 }
 
-.auth-card h1 {
-    margin: 0 0 10px;
-    color: #0b2a52;
-    font-size: 32px;
-    font-weight: 800;
-}
-
-.auth-subtitle {
-    margin: 0 0 30px;
-    color: #6b7c93;
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-.auth-form {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
-    margin-bottom: 8px;
-    color: #17365d;
-    font-size: 14px;
-    font-weight: 700;
-}
-
-.form-group label span {
-    color: #8a98a9;
-    font-weight: 400;
-}
+.auth-card h1 { margin: 0 0 10px; color: #0b2a52; font-size: 32px; font-weight: 800; }
+.auth-subtitle { margin: 0 0 30px; color: #6b7c93; font-size: 15px; line-height: 1.6; }
+.auth-form { display: flex; flex-direction: column; gap: 18px; }
+.form-group { display: flex; flex-direction: column; }
+.form-group label { margin-bottom: 8px; color: #17365d; font-size: 14px; font-weight: 700; }
+.form-group label span { color: #8a98a9; font-weight: 400; }
 
 .form-group input {
     width: 100%;
     height: 48px;
     padding: 0 14px;
-
     border: 1px solid #d6e0eb;
     border-radius: 9px;
-
     background: #fbfcfe;
     color: #172b4d;
-
     font-size: 15px;
     outline: none;
     transition: 0.2s;
@@ -2019,13 +1321,10 @@ img {
     width: 100%;
     height: 50px;
     margin-top: 5px;
-
     border: 0;
     border-radius: 9px;
-
     background: #ed1c24;
     color: #ffffff;
-
     font-size: 16px;
     font-weight: 800;
     cursor: pointer;
@@ -2041,29 +1340,15 @@ img {
 .auth-bottom {
     margin-top: 27px;
     padding-top: 22px;
-
     border-top: 1px solid #edf1f5;
-
     text-align: center;
     color: #6b7c93;
     font-size: 14px;
 }
 
-.auth-bottom a {
-    color: #1556a8;
-    font-weight: 700;
-}
-
-.auth-bottom a:hover {
-    text-decoration: underline;
-}
-
-.form-error,
-.field-error {
-    margin-top: 5px;
-    color: #d71920;
-    font-size: 13px;
-}
+.auth-bottom a { color: #1556a8; font-weight: 700; }
+.auth-bottom a:hover { text-decoration: underline; }
+.form-error, .field-error { margin-top: 5px; color: #d71920; font-size: 13px; }
 
 .form-error {
     padding: 12px 14px;
@@ -2072,183 +1357,92 @@ img {
     border-radius: 8px;
 }
 
-.field-error ul,
-.form-error ul {
-    margin: 0;
-    padding-left: 18px;
-}
+.field-error ul, .form-error ul { margin: 0; padding-left: 18px; }
 
 
 /* =========================================================
    23. CHAT
-   ========================================================= */
+========================================================= */
 .chat-container {
     width: 900px;
     max-width: 95%;
     margin: 40px auto;
-
     overflow: hidden;
-
     background: #ffffff;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
 }
 
-.chat-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 18px;
-
-    background: #009688;
-    color: #ffffff;
-}
+.chat-header { display: flex; align-items: center; gap: 15px; padding: 18px; background: #009688; color: #ffffff; }
 
 .chat-avatar {
     width: 55px;
     height: 55px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
     background: #ffffff;
     color: #009688;
-
     font-size: 22px;
     font-weight: bold;
 }
 
-.chat-info h3 {
-    margin: 0;
-}
-
-.chat-info span {
-    font-size: 13px;
-    opacity: 0.9;
-}
-
-.chat-body {
-    height: 550px;
-    overflow-y: auto;
-    padding: 20px;
-    background: #e5ddd5;
-}
-
-.message-row {
-    display: flex;
-    margin-bottom: 18px;
-}
-
-.left {
-    justify-content: flex-start;
-}
-
-.right {
-    justify-content: flex-end;
-}
-
-.bubble {
-    max-width: 70%;
-    padding: 12px 15px;
-
-    border-radius: 15px;
-    font-size: 15px;
-    line-height: 1.5;
-}
-
-.user {
-    background: #dcf8c6;
-}
-
-.admin {
-    background: #ffffff;
-}
-
-.time {
-    margin-top: 8px;
-    text-align: right;
-    color: #666;
-    font-size: 11px;
-}
-
-.chat-footer {
-    padding: 15px;
-    background: #ffffff;
-}
-
-.chat-footer form {
-    display: flex;
-    gap: 10px;
-}
+.chat-info h3 { margin: 0; }
+.chat-info span { font-size: 13px; opacity: 0.9; }
+.chat-body { height: 550px; overflow-y: auto; padding: 20px; background: #e5ddd5; }
+.message-row { display: flex; margin-bottom: 18px; }
+.left { justify-content: flex-start; }
+.right { justify-content: flex-end; }
+.bubble { max-width: 70%; padding: 12px 15px; border-radius: 15px; font-size: 15px; line-height: 1.5; }
+.user { background: #dcf8c6; }
+.admin { background: #ffffff; }
+.time { margin-top: 8px; text-align: right; color: #666; font-size: 11px; }
+.chat-footer { padding: 15px; background: #ffffff; }
+.chat-footer form { display: flex; gap: 10px; }
 
 .chat-footer textarea {
     flex: 1;
     resize: none;
-
     padding: 12px 18px;
-
     border: 1px solid #ccc;
     border-radius: 25px;
-
     font-size: 15px;
 }
 
 .chat-footer button {
     width: 55px;
     height: 55px;
-
     border: 0;
     border-radius: 50%;
-
     background: #009688;
     color: #ffffff;
-
     cursor: pointer;
     font-size: 22px;
 }
 
-.chat-footer button:hover {
-    background: #00796b;
-}
-
-.empty-chat {
-    margin-top: 120px;
-    text-align: center;
-    color: #666;
-}
+.chat-footer button:hover { background: #00796b; }
+.empty-chat { margin-top: 120px; text-align: center; color: #666; }
 
 
 /* =========================================================
    24. QIDIRUV NATIJASI
-   ========================================================= */
+========================================================= */
 .search-result-box {
     width: 100%;
     margin-bottom: 25px;
     padding: 18px 22px;
-
     display: flex;
     align-items: center;
     gap: 18px;
-
     background: #f0f7ff;
     border: 1px solid #dcecff;
     border-radius: 15px;
     overflow: hidden;
 }
 
-.search-result-info {
-    min-width: 0;
-    max-width: 100%;
-}
-
-.search-result-label {
-    margin-bottom: 6px;
-    color: #647386;
-    font-size: 12px;
-    font-weight: 700;
-}
+.search-result-info { min-width: 0; max-width: 100%; }
+.search-result-label { margin-bottom: 6px; color: #647386; font-size: 12px; font-weight: 700; }
 
 .search-result-query {
     margin-bottom: 6px;
@@ -2271,22 +1465,12 @@ img {
 
 
 /* =========================================================
-   25. RESPONSIVE — HEADER (900px dan yuqori, planshet kengroq)
-   ========================================================= */
+   25. RESPONSIVE — 1100px
+========================================================= */
 @media (max-width: 1100px) and (min-width: 901px) {
-    .header-top {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-
-    .header-actions {
-        gap: 10px;
-    }
-
-    .main-navigation {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
+    .header-top { padding-left: 20px; padding-right: 20px; }
+    .header-actions { gap: 10px; }
+    .main-navigation { padding-left: 15px; padding-right: 15px; }
 
     .main-navigation > a,
     .nav-dropdown-title {
@@ -2297,331 +1481,120 @@ img {
 }
 
 @media (max-width: 1100px) {
-    .hero-section {
-        height: 520px;
-        min-height: 520px;
-    }
-
-    .hero-inner {
-        width: calc(100% - 50px);
-    }
-
-    .hero-text {
-        top: 55px;
-        width: 570px;
-    }
-
-    .hero-text h1 {
-        font-size: 32px;
-    }
-
-    .hero-welcome {
-        font-size: 31px;
-    }
-
-    .hero-info {
-        width: calc(100% - 50px);
-    }
+    .hero-section { height: 520px; min-height: 520px; }
+    .hero-inner { width: calc(100% - 50px); }
+    .hero-text { top: 55px; width: 570px; }
+    .hero-text h1 { font-size: 32px; }
+    .hero-welcome { font-size: 31px; }
+    .hero-info { width: calc(100% - 50px); }
 }
 
 
 /* =========================================================
-   26. RESPONSIVE — 900 (faqat header'ga aloqasiz qismlar)
-   ========================================================= */
+   26. RESPONSIVE — 900
+========================================================= */
 @media (max-width: 900px) {
-    .stats-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
+    .stats-container { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .stat { border-right: 0; border-bottom: 1px solid #e5e9ef; padding-bottom: 20px; }
+    .stat:nth-child(3), .stat:nth-child(4) { border-bottom: none; }
+    .about-section { grid-template-columns: 1fr; gap: 35px; padding: 55px 25px; }
+    .news-grid { grid-template-columns: repeat(2, 1fr); }
+    .contact-container { grid-template-columns: repeat(2, 1fr); }
+    .important-grid, .articles-grid { grid-template-columns: 1fr; }
 
-    .stat {
-        border-right: 0;
-        border-bottom: 1px solid #e5e9ef;
-        padding-bottom: 20px;
-    }
+    .hero-section { height: 650px; min-height: 650px; background-position: 65% center; }
+    .hero-inner { width: calc(100% - 40px); }
+    .hero-text { top: 45px; width: 75%; }
+    .hero-text h1 { font-size: 28px; }
+    .hero-welcome { font-size: 27px; }
+    .hero-info { width: calc(100% - 40px); grid-template-columns: repeat(2, 1fr); gap: 12px; }
 
-    .stat:nth-child(3),
-    .stat:nth-child(4) {
-        border-bottom: none;
-    }
-
-    .about-section {
-        grid-template-columns: 1fr;
-        gap: 35px;
-        padding: 55px 25px;
-    }
-
-    .news-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .contact-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .important-grid,
-    .articles-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-section {
-        height: 650px;
-        min-height: 650px;
-        background-position: 65% center;
-    }
-
-    .hero-inner {
-        width: calc(100% - 40px);
-    }
-
-    .hero-text {
-        top: 45px;
-        width: 75%;
-    }
-
-    .hero-text h1 {
-        font-size: 28px;
-    }
-
-    .hero-welcome {
-        font-size: 27px;
-    }
-
-    .hero-info {
-        width: calc(100% - 40px);
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-
-    /* Footer — tablet oraliq: 2 ustunga tushadi */
-    .footer-top {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 25px;
-        padding: 40px 20px 25px;
-    }
+    .footer-top { grid-template-columns: repeat(2, 1fr); gap: 25px; padding: 40px 20px 25px; }
 }
 
 
 /* =========================================================
    27. RESPONSIVE — 700
-   ========================================================= */
+========================================================= */
 @media (max-width: 700px) {
-    .post-detail {
-        width: calc(100% - 30px);
-        margin-top: 30px;
-    }
-
-    .post-title {
-        font-size: 30px;
-    }
-
-    .post-body {
-        font-size: 15px;
-    }
-
-    .post-emergency {
-        align-items: flex-start;
-    }
+    .post-detail { width: calc(100% - 30px); margin-top: 30px; }
+    .post-title { font-size: 30px; }
+    .post-body { font-size: 15px; }
+    .post-emergency { align-items: flex-start; }
 }
 
 
 /* =========================================================
-   28. RESPONSIVE — 600 (faqat header'ga aloqasiz qismlar)
-   ========================================================= */
+   28. RESPONSIVE — 600
+========================================================= */
 @media (max-width: 600px) {
-    .hero-section {
-        height: 720px;
-        min-height: 720px;
-        background-position: 63% center;
-    }
+    .hero-section { height: 720px; min-height: 720px; background-position: 63% center; }
+    .hero-inner { width: calc(100% - 30px); }
+    .hero-text { top: 35px; width: 100%; }
+    .hero-text h1 { font-size: 25px; line-height: 1.3; }
+    .hero-welcome { font-size: 24px; }
+    .hero-buttons { flex-wrap: wrap; margin-top: 20px; }
+    .hero-btn { height: 40px; padding: 0 18px; }
+    .hero-info { width: calc(100% - 24px); grid-template-columns: 1fr 1fr; padding: 13px; gap: 10px; }
+    .hero-info-icon { width: 40px; height: 40px; min-width: 40px; font-size: 19px; }
+    .hero-info-text strong, .hero-info-text span { font-size: 10px; }
 
-    .hero-inner {
-        width: calc(100% - 30px);
-    }
+    .stats-section { padding: 25px 15px; }
+    .stats-container { grid-template-columns: 1fr 1fr; gap: 5px; }
+    .stat { padding: 12px 8px; }
+    .stat-number { font-size: 25px; }
+    .stat-label { font-size: 12px; }
+    .about-section { padding: 45px 20px; }
+    .home-page h2 { font-size: 26px; }
+    .news-section, .patients-section { padding: 50px 20px; }
+    .news-grid, .patients-cards { grid-template-columns: 1fr; }
+    .contact-section { padding: 45px 20px; }
+    .contact-container { grid-template-columns: 1fr 1fr; gap: 25px 15px; }
 
-    .hero-text {
-        top: 35px;
-        width: 100%;
-    }
+    .auth-page { padding: 35px 15px 60px; }
+    .auth-card { padding: 30px 24px; border-radius: 14px; }
+    .auth-card h1 { font-size: 27px; }
 
-    .hero-text h1 {
-        font-size: 25px;
-        line-height: 1.3;
-    }
-
-    .hero-welcome {
-        font-size: 24px;
-    }
-
-    .hero-buttons {
-        flex-wrap: wrap;
-        margin-top: 20px;
-    }
-
-    .hero-btn {
-        height: 40px;
-        padding: 0 18px;
-    }
-
-    .hero-info {
-        width: calc(100% - 24px);
-        grid-template-columns: 1fr 1fr;
-        padding: 13px;
-        gap: 10px;
-    }
-
-    .hero-info-icon {
-        width: 40px;
-        height: 40px;
-        min-width: 40px;
-        font-size: 19px;
-    }
-
-    .hero-info-text strong,
-    .hero-info-text span {
-        font-size: 10px;
-    }
-
-    .stats-section {
-        padding: 25px 15px;
-    }
-
-    .stats-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 5px;
-    }
-
-    .stat {
-        padding: 12px 8px;
-    }
-
-    .stat-number {
-        font-size: 25px;
-    }
-
-    .stat-label {
-        font-size: 12px;
-    }
-
-    .about-section {
-        padding: 45px 20px;
-    }
-
-    .home-page h2 {
-        font-size: 26px;
-    }
-
-    .news-section,
-    .patients-section {
-        padding: 50px 20px;
-    }
-
-    .news-grid,
-    .patients-cards {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-section {
-        padding: 45px 20px;
-    }
-
-    .contact-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 25px 15px;
-    }
-
-    .auth-page {
-        padding: 35px 15px 60px;
-    }
-
-    .auth-card {
-        padding: 30px 24px;
-        border-radius: 14px;
-    }
-
-    .auth-card h1 {
-        font-size: 27px;
-    }
-
-    .search-result-box {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .search-result-query {
-        font-size: 17px;
-    }
-
-    .search-result-count {
-        font-size: 12px;
-    }
+    .search-result-box { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .search-result-query { font-size: 17px; }
+    .search-result-count { font-size: 12px; }
 }
 
 
 /* =========================================================
    29. RESPONSIVE — 420
-   ========================================================= */
+========================================================= */
 @media (max-width: 420px) {
-    .stats-container {
-        grid-template-columns: 1fr;
-    }
-
-    .stat {
-        border-bottom: 1px solid #e5e9ef;
-    }
-
-    .stat:last-child {
-        border-bottom: none;
-    }
-
-    .contact-container {
-        grid-template-columns: 1fr;
-    }
+    .stats-container { grid-template-columns: 1fr; }
+    .stat { border-bottom: 1px solid #e5e9ef; }
+    .stat:last-child { border-bottom: none; }
+    .contact-container { grid-template-columns: 1fr; }
 }
 
 
 /* =========================================================
    QASHQADARYO FILIALLARI — XARITA BLOKI
-   ========================================================= */
-
+========================================================= */
 .branches-section {
     width: 100%;
     position: relative;
     overflow: hidden;
-
     background-color: #c7c8cc;
-
     padding-top: 35px;
     padding-bottom: 50px;
 }
 
 .branches-section .section-header,
-.branches-section .branches-map-container {
-    position: relative;
-    z-index: 2;
-}
+.branches-section .branches-map-container { position: relative; z-index: 2; }
 
-.branches-section .section-header {
-    text-align: center;
-    margin-bottom: 45px;
-}
-
-.branches-section .section-header h2 {
-    color: #ffffff;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
-}
-
-.branches-section .section-header p {
-    color: rgba(255, 255, 255, 0.88);
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
-}
+.branches-section .section-header { text-align: center; margin-bottom: 45px; }
+.branches-section .section-header h2 { color: #ffffff; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35); }
+.branches-section .section-header p { color: rgba(255, 255, 255, 0.88); text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3); }
 
 .branches-map-container {
     width: 92%;
     max-width: 1250px;
     margin: 0 auto;
-
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -2629,181 +1602,103 @@ img {
     gap: 50px;
 }
 
-/* CHAP TOMON — RAHBAR MA'LUMOTI */
 .branch-info {
     order: 1;
-
     width: 400px;
     min-width: 400px;
     height: auto;
-
     padding: 30px;
-    box-sizing: border-box;
-
     background: #f4f6fa;
     border-radius: 12px;
-
     border-top: 4px solid #d71920;
-
     text-align: left;
     overflow: visible;
-
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
 }
 
-.branch-info * {
-    box-sizing: border-box;
-}
+.branch-info * { box-sizing: border-box; }
 
 .branch-info-icon {
     width: 128px;
     height: 128px;
-
     margin: 0 auto 22px;
-
     padding: 3px;
-
     border-radius: 50%;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     position: relative;
-
-    background: linear-gradient(
-        135deg,
-        #ed1c24 0%,
-        #f02a63 40%,
-        #9b2cbf 70%,
-        #063582 100%
-    );
-
-    box-shadow:
-        0 4px 12px rgba(6, 53, 130, 0.18);
-
+    background: linear-gradient(135deg, #ed1c24 0%, #f02a63 40%, #9b2cbf 70%, #063582 100%);
+    box-shadow: 0 4px 12px rgba(6, 53, 130, 0.18);
     flex-shrink: 0;
 }
 
 .branch-info-icon img {
     width: 122px;
     height: 122px;
-
     border-radius: 50%;
-
     object-fit: cover;
-
     object-position: center top;
-
     display: block;
-
     border: none;
-
     background: #ffffff;
-
     margin: 0;
-
     padding: 0;
 }
 
 .branch-info-icon.no-image {
-    background: linear-gradient(
-        135deg,
-        #ed1c24,
-        #f02a63,
-        #9b2cbf,
-        #063582
-    );
+    background: linear-gradient(135deg, #ed1c24, #f02a63, #9b2cbf, #063582);
 }
 
 .branch-info-icon .fallback-icon {
     width: 122px;
     height: 122px;
-
     border-radius: 50%;
-
     background: #ffffff;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-size: 40px;
 }
 
-.branch-title {
-    white-space: normal;
-    word-wrap: break-word;
-}
-
-.branch-info h3 {
-    margin: 0 0 20px;
-    text-align: center;
-
-    font-size: 24px;
-    color: #1f4788;
-}
+.branch-title { white-space: normal; word-wrap: break-word; }
+.branch-info h3 { margin: 0 0 20px; text-align: center; font-size: 24px; color: #1f4788; }
 
 .branch-info-line {
     padding: 13px 0;
-
     border-bottom: 1px solid #d8dce3;
-
     font-size: 16px;
     line-height: 1.5;
-
     white-space: normal;
     word-break: normal;
 }
 
-.branch-info-help {
-    margin-top: 20px;
-    margin-bottom: 10px;
+.branch-info-help { margin-top: 20px; margin-bottom: 10px; text-align: center; color: #777; font-size: 14px; }
 
-    text-align: center;
-
-    color: #777;
-    font-size: 14px;
-}
-
-/* ---- SOCIAL ICONLAR ---- */
 .branch-socials {
     width: 100%;
-
     margin-top: 25px;
     margin-bottom: 5px;
-
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 20px;
-
     height: 70px;
     min-height: 70px;
-
     overflow: visible;
 }
 
 .branch-social {
     width: 60px;
     height: 60px;
-
     padding: 12px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     background: #ffffff;
-
     border-radius: 50%;
-
-    text-decoration: none;
-
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
-
     transition: all 0.25s ease;
-
     flex-shrink: 0;
 }
 
@@ -2814,212 +1709,99 @@ img {
     transform: none !important;
 }
 
-.branch-social:hover {
-    transform: translateY(-4px) scale(1.08);
+.branch-social:hover { transform: translateY(-4px) scale(1.08); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16); }
 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
-}
-
-/* ---- OLDINGI / KEYINGI TUGMALAR ---- */
 .branch-navigation {
     display: flex;
     justify-content: center;
     align-items: center;
-
     margin-top: 18px;
     margin-bottom: 8px;
-
     height: 48px;
 }
 
 .branch-nav-btn {
     width: 48px;
     height: 48px;
-
     border: none;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     color: #ffffff;
-
     font-family: Arial, sans-serif;
     font-size: 34px;
     font-weight: 300;
-
     line-height: 1;
-
     cursor: pointer;
-
     transition: all 0.2s ease;
 }
 
-.branch-prev {
-    background: #1f4788;
+.branch-prev { background: #1f4788; border-radius: 0; }
+.branch-next { background: #d71920; border-radius: 0; }
+.branch-nav-btn:hover { filter: brightness(1.08); }
+.branch-nav-btn:active { transform: scale(0.96); }
 
-    border-radius: 0;
-
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-}
-
-.branch-next {
-    background: #d71920;
-
-    border-radius: 0;
-
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.branch-nav-btn:hover {
-    filter: brightness(1.08);
-}
-
-.branch-nav-btn:active {
-    transform: scale(0.96);
-}
-
-/* O'NG TOMON — XARITA */
 .qashqadaryo-map-wrapper {
     order: 2;
-
     flex: 1;
-
     min-width: 0;
-
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.qashqadaryo-map {
-    width: 150%;
-    max-width: 850px;
-}
+.qashqadaryo-map { width: 150%; max-width: 850px; }
+.qashqadaryo-map svg { display: block; width: 100%; height: auto; max-height: 600px; }
 
-.qashqadaryo-map svg {
-    display: block;
-
-    width: 100%;
-    height: auto;
-
-    max-height: 600px;
-}
-
-/* SVG HUDUDLARI — orqa fon (emblema) ko'rinishi uchun yarim shaffof */
 .qashqadaryo-map svg [id] {
     cursor: pointer;
     fill-opacity: 0.55 !important;
     stroke-opacity: 1;
-
-    transition:
-        fill 0.2s ease,
-        fill-opacity 0.2s ease,
-        transform 0.2s ease;
+    transition: fill 0.2s ease, fill-opacity 0.2s ease, transform 0.2s ease;
 }
 
-.qashqadaryo-map svg [id]:hover {
-    fill: #1f4788 !important;
-    fill-opacity: 0.9 !important;
-}
+.qashqadaryo-map svg [id]:hover { fill: #1f4788 !important; fill-opacity: 0.9 !important; }
 
-/* XARITA HUDUDI USTIDAGI YOZUV */
 .map-tooltip {
     position: fixed;
-
     z-index: 99999;
-
     padding: 9px 14px;
-
     background: #063582;
     color: #ffffff;
-
     font-size: 15px;
     font-weight: 600;
-
     border-radius: 7px;
-
     white-space: nowrap;
-
     pointer-events: none;
-
     opacity: 0;
-
     transform: translateY(5px);
-
-    transition:
-        opacity 0.15s ease,
-        transform 0.15s ease;
-
-    box-shadow:
-        0 5px 15px rgba(0, 0, 0, 0.18);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.18);
 }
 
-.map-tooltip.show {
-    opacity: 1;
-
-    transform: translateY(0);
-}
+.map-tooltip.show { opacity: 1; transform: translateY(0); }
 
 .map-region-hover {
     fill: #8fd694 !important;
-
     stroke: #218838 !important;
-
     stroke-width: 2.5px !important;
-
-    transition:
-        fill 0.15s ease,
-        stroke 0.15s ease;
+    transition: fill 0.15s ease, stroke 0.15s ease;
 }
 
-/* TELEFONDA */
 @media (max-width: 900px) {
-
-    .branches-map-container {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .branch-info {
-        width: 100%;
-        min-width: 0;
-        max-width: 500px;
-        order: 1;
-    }
-
-    .qashqadaryo-map-wrapper {
-        width: 100%;
-        order: 2;
-    }
-
-    .qashqadaryo-map {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .qashqadaryo-map svg {
-        width: 100%;
-        height: auto;
-    }
+    .branches-map-container { flex-direction: column; gap: 30px; }
+    .branch-info { width: 100%; min-width: 0; max-width: 500px; order: 1; }
+    .qashqadaryo-map-wrapper { width: 100%; order: 2; }
+    .qashqadaryo-map { width: 100%; max-width: 100%; }
+    .qashqadaryo-map svg { width: 100%; height: auto; }
 }
 
 
 /* =========================================================
    30. "BIZ HAQIMIZDA" SAHIFASI (about.html)
-   Faqat .about-page ichida ishlaydi — home.html'dagi bir xil
-   nomli class'lar (.stat, .section-header, .branches-section,
-   .branch-info va h.k.) bilan TO'QNASHMASLIGI uchun shu tarzda
-   scope qilingan.
-   ========================================================= */
+========================================================= */
+.about-page { width: 100%; }
 
-.about-page {
-    width: 100%;
-}
-
-/* ---- HERO ---- */
 .about-page .about-hero {
     background: linear-gradient(135deg, #0B2438 0%, #12314A 100%);
     color: white;
@@ -3028,24 +1810,10 @@ img {
     margin-bottom: 60px;
 }
 
-.about-page .about-hero h1 {
-    font-size: clamp(36px, 5vw, 56px);
-    font-weight: 800;
-    margin-bottom: 15px;
-}
+.about-page .about-hero h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 800; margin-bottom: 15px; }
+.about-page .about-hero .subtitle { font-size: 18px; color: #a0b8c8; line-height: 1.6; }
 
-.about-page .about-hero .subtitle {
-    font-size: 18px;
-    color: #a0b8c8;
-    line-height: 1.6;
-}
-
-/* ---- STATS ---- */
-.about-page .about-stats {
-    background: #f5f7fa;
-    padding: 60px 40px;
-    margin-bottom: 60px;
-}
+.about-page .about-stats { background: #f5f7fa; padding: 60px 40px; margin-bottom: 60px; }
 
 .about-page .stats-container {
     max-width: 1200px;
@@ -3056,45 +1824,14 @@ img {
     text-align: center;
 }
 
-.about-page .stat {
-    padding: 20px;
-}
+.about-page .stat { padding: 20px; }
+.about-page .stat-number { font-size: 48px; font-weight: 800; color: #ff4757; margin-bottom: 10px; }
+.about-page .stat-label { font-size: 16px; color: #666; line-height: 1.5; }
 
-.about-page .stat-number {
-    font-size: 48px;
-    font-weight: 800;
-    color: #ff4757;
-    margin-bottom: 10px;
-}
-
-.about-page .stat-label {
-    font-size: 16px;
-    color: #666;
-    line-height: 1.5;
-}
-
-/* ---- FILIALLAR (kartochka ko'rinishi) ---- */
-.about-page .branches-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 40px 60px;
-}
-
-.about-page .section-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.about-page .section-header h2 {
-    font-size: 36px;
-    color: #0B2438;
-    margin-bottom: 10px;
-}
-
-.about-page .section-header p {
-    color: #666;
-    font-size: 16px;
-}
+.about-page .branches-section { max-width: 1200px; margin: 0 auto; padding: 0 40px 60px; }
+.about-page .section-header { text-align: center; margin-bottom: 50px; }
+.about-page .section-header h2 { font-size: 36px; color: #0B2438; margin-bottom: 10px; }
+.about-page .section-header p { color: #666; font-size: 16px; }
 
 .about-page .branches-grid {
     display: grid;
@@ -3112,10 +1849,7 @@ img {
     position: relative;
 }
 
-.about-page .branch-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
+.about-page .branch-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15); }
 
 .about-page .branch-badge {
     position: absolute;
@@ -3130,12 +1864,7 @@ img {
     text-transform: uppercase;
 }
 
-.about-page .branch-card h3 {
-    color: #0B2438;
-    font-size: 22px;
-    margin: 0 0 10px;
-    padding-right: 100px;
-}
+.about-page .branch-card h3 { color: #0B2438; font-size: 22px; margin: 0 0 10px; padding-right: 100px; }
 
 .about-page .branch-region {
     color: #999;
@@ -3146,15 +1875,8 @@ img {
     gap: 8px;
 }
 
-.about-page .branch-region::before {
-    content: '📍';
-}
-
-.about-page .branch-info {
-    margin: 15px 0;
-    padding: 10px 0;
-    border-bottom: 1px solid #f0f0f0;
-}
+.about-page .branch-region::before { content: '📍'; }
+.about-page .branch-info { margin: 15px 0; padding: 10px 0; border-bottom: 1px solid #f0f0f0; }
 
 .about-page .branch-info-label {
     color: #999;
@@ -3164,27 +1886,11 @@ img {
     margin-bottom: 5px;
 }
 
-.about-page .branch-info-value {
-    color: #333;
-    font-size: 15px;
-    font-weight: 500;
-}
+.about-page .branch-info-value { color: #333; font-size: 15px; font-weight: 500; }
+.about-page .branch-info-value a { color: #0B2438; }
+.about-page .branch-info-value a:hover { color: #ff4757; text-decoration: underline; }
+.about-page .branch-info:last-child { border-bottom: none; }
 
-.about-page .branch-info-value a {
-    color: #0B2438;
-    text-decoration: none;
-}
-
-.about-page .branch-info-value a:hover {
-    color: #ff4757;
-    text-decoration: underline;
-}
-
-.about-page .branch-info:last-child {
-    border-bottom: none;
-}
-
-/* ---- MISSIYA ---- */
 .about-page .mission-section {
     background: linear-gradient(135deg, #0B2438 0%, #12314A 100%);
     color: white;
@@ -3192,16 +1898,8 @@ img {
     margin-top: 80px;
 }
 
-.about-page .mission-container {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.about-page .mission-container h2 {
-    font-size: 36px;
-    margin-bottom: 30px;
-}
+.about-page .mission-container { max-width: 900px; margin: 0 auto; text-align: center; }
+.about-page .mission-container h2 { font-size: 36px; margin-bottom: 30px; }
 
 .about-page .mission-goals {
     display: grid;
@@ -3210,76 +1908,28 @@ img {
     margin-top: 40px;
 }
 
-.about-page .goal {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 25px;
-    border-radius: 8px;
-    backdrop-filter: blur(10px);
-}
+.about-page .goal { background: rgba(255, 255, 255, 0.1); padding: 25px; border-radius: 8px; backdrop-filter: blur(10px); }
+.about-page .goal-icon { font-size: 40px; margin-bottom: 15px; }
+.about-page .goal h3 { font-size: 18px; margin: 0 0 10px; }
+.about-page .goal p { font-size: 14px; line-height: 1.6; margin: 0; opacity: 0.9; }
 
-.about-page .goal-icon {
-    font-size: 40px;
-    margin-bottom: 15px;
-}
-
-.about-page .goal h3 {
-    font-size: 18px;
-    margin: 0 0 10px;
-}
-
-.about-page .goal p {
-    font-size: 14px;
-    line-height: 1.6;
-    margin: 0;
-    opacity: 0.9;
-}
-
-/* ---- RESPONSIVE (about.html) ---- */
 @media (max-width: 768px) {
-    .about-page .about-hero {
-        padding: 40px 20px;
-    }
-
+    .about-page .about-hero { padding: 40px 20px; }
     .about-page .about-stats,
     .about-page .branches-section,
-    .about-page .mission-section {
-        padding: 40px 20px;
-    }
-
-    .about-page .branches-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .about-page .section-header h2 {
-        font-size: 28px;
-    }
-
-    .about-page .stat-number {
-        font-size: 36px;
-    }
+    .about-page .mission-section { padding: 40px 20px; }
+    .about-page .branches-grid { grid-template-columns: 1fr; }
+    .about-page .section-header h2 { font-size: 28px; }
+    .about-page .stat-number { font-size: 36px; }
 }
 
 
 /* =========================================================
    YANGILIKLAR — V2 (Asosiy + yon ro'yxat)
-   ========================================================= */
-
-.news-section-v2 {
-    width: 100%;
-    padding: 70px 20px;
-    background: #f4f6fb;
-}
-
-.news-v2-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.news-v2-empty {
-    text-align: center;
-    color: #6c7685;
-    padding: 30px 0;
-}
+========================================================= */
+.news-section-v2 { width: 100%; padding: 70px 20px; background: #f4f6fb; }
+.news-v2-container { max-width: 1200px; margin: 0 auto; }
+.news-v2-empty { text-align: center; color: #6c7685; padding: 30px 0; }
 
 .news-v2-grid {
     display: grid;
@@ -3288,22 +1938,17 @@ img {
     align-items: start;
 }
 
-/* ---- ASOSIY KARTA ---- */
 .news-main-card {
     display: block;
     background: #ffffff;
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(15, 40, 80, 0.08);
-    text-decoration: none;
     color: inherit;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.news-main-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 14px 34px rgba(15, 40, 80, 0.14);
-}
+.news-main-card:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(15, 40, 80, 0.14); }
 
 .news-main-image {
     position: relative;
@@ -3313,107 +1958,48 @@ img {
     overflow: hidden;
 }
 
-.news-main-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
+.news-main-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 .news-main-badge {
     position: absolute;
     top: 18px;
     left: 18px;
-
     padding: 8px 16px;
-
     background: #0b2a52;
     color: #ffffff;
-
     border-radius: 20px;
     font-size: 13px;
     font-weight: 700;
 }
 
-.news-main-body {
-    padding: 22px 26px 28px;
-}
+.news-main-body { padding: 22px 26px 28px; }
+.news-main-date { display: flex; align-items: center; gap: 6px; margin-bottom: 10px; color: #8795a7; font-size: 13px; }
+.news-main-title { margin: 0 0 12px; color: #0b2a52; font-size: 24px; font-weight: 800; line-height: 1.3; }
+.news-main-desc { margin: 0; color: #5c6675; font-size: 14px; line-height: 1.7; }
 
-.news-main-date {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-
-    margin-bottom: 10px;
-    color: #8795a7;
-    font-size: 13px;
-}
-
-.news-main-title {
-    margin: 0 0 12px;
-    color: #0b2a52;
-    font-size: 24px;
-    font-weight: 800;
-    line-height: 1.3;
-}
-
-.news-main-desc {
-    margin: 0;
-    color: #5c6675;
-    font-size: 14px;
-    line-height: 1.7;
-}
-
-/* ---- O'NG YON RO'YXAT ---- */
-.news-side-list {
-    display: flex;
-    flex-direction: column;
-}
+.news-side-list { display: flex; flex-direction: column; }
 
 .news-side-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-
     padding: 16px 0;
     border-bottom: 1px solid #e2e8f0;
-
-    text-decoration: none;
     color: inherit;
-
     transition: background 0.15s ease;
 }
 
-.news-side-list a.news-side-item:first-child {
-    padding-top: 4px;
-}
-
-.news-side-item:hover {
-    background: rgba(11, 42, 82, 0.03);
-}
-
-.news-side-text {
-    min-width: 0;
-    flex: 1;
-}
-
-.news-side-date {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-
-    margin-bottom: 6px;
-    color: #8795a7;
-    font-size: 12px;
-}
+.news-side-list a.news-side-item:first-child { padding-top: 4px; }
+.news-side-item:hover { background: rgba(11, 42, 82, 0.03); }
+.news-side-text { min-width: 0; flex: 1; }
+.news-side-date { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; color: #8795a7; font-size: 12px; }
 
 .news-side-title {
     color: #26344a;
     font-size: 15px;
     font-weight: 600;
     line-height: 1.4;
-
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -3421,86 +2007,40 @@ img {
     -webkit-box-orient: vertical;
 }
 
-.news-side-thumb {
-    width: 90px;
-    height: 70px;
-    min-width: 90px;
+.news-side-thumb { width: 90px; height: 70px; min-width: 90px; border-radius: 8px; overflow: hidden; background: #dfe6f0; }
+.news-side-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    border-radius: 8px;
-    overflow: hidden;
-
-    background: #dfe6f0;
-}
-
-.news-side-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* ---- BARCHA YANGILIKLAR TUGMASI ---- */
-.news-all-btn-wrap {
-    display: flex;
-    justify-content: center;
-    margin-top: 45px;
-}
+.news-all-btn-wrap { display: flex; justify-content: center; margin-top: 45px; }
 
 .news-all-btn {
     padding: 14px 34px;
-
     background: #0b2a52;
     color: #ffffff;
-
     border-radius: 8px;
-
     font-size: 15px;
     font-weight: 700;
-
-    text-decoration: none;
     transition: 0.2s ease;
 }
 
-.news-all-btn:hover {
-    background: #092040;
-    transform: translateY(-1px);
-}
+.news-all-btn:hover { background: #092040; transform: translateY(-1px); }
 
-/* ---- RESPONSIVE ---- */
 @media (max-width: 900px) {
-    .news-v2-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .news-main-image {
-        height: 260px;
-    }
+    .news-v2-grid { grid-template-columns: 1fr; }
+    .news-main-image { height: 260px; }
 }
 
 @media (max-width: 600px) {
-    .news-section-v2 {
-        padding: 45px 15px;
-    }
-
-    .news-main-title {
-        font-size: 20px;
-    }
-
-    .news-side-thumb {
-        width: 70px;
-        height: 56px;
-        min-width: 70px;
-    }
+    .news-section-v2 { padding: 45px 15px; }
+    .news-main-title { font-size: 20px; }
+    .news-side-thumb { width: 70px; height: 56px; min-width: 70px; }
 }
 
 
 /* =========================================================
    31. MOBIL/PLANSHET ASOSIY MENYU (KO'K NAVIGATSIYA) — 1100px gacha
-   ========================================================= */
+========================================================= */
 @media (max-width: 1100px) {
-    .mobile-menu-toggle {
-        display: flex;
-    }
+    .mobile-menu-toggle { display: flex; }
 
     .main-navigation {
         display: none;
@@ -3511,9 +2051,7 @@ img {
         padding: 10px 0;
     }
 
-    .main-navigation.nav-mobile-open {
-        display: flex;
-    }
+    .main-navigation.nav-mobile-open { display: flex; }
 
     .main-navigation > a,
     .nav-dropdown-title {
@@ -3525,12 +2063,7 @@ img {
         font-size: 15px;
     }
 
-    .nav-dropdown {
-        width: 100%;
-        height: auto;
-        flex-direction: column;
-        align-items: stretch;
-    }
+    .nav-dropdown { width: 100%; height: auto; flex-direction: column; align-items: stretch; }
 
     .nav-dropdown .dropdown-menu {
         display: none !important;
@@ -3542,13 +2075,8 @@ img {
         padding: 0;
     }
 
-    .nav-dropdown.open .dropdown-menu {
-        display: block !important;
-    }
-
-    .nav-dropdown.open .menu-arrow {
-        transform: rotate(180deg);
-    }
+    .nav-dropdown.open .dropdown-menu { display: block !important; }
+    .nav-dropdown.open .menu-arrow { transform: rotate(180deg); }
 
     .nav-dropdown .dropdown-menu a {
         padding: 12px 30px;
@@ -3558,142 +2086,59 @@ img {
         border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    .nav-dropdown .dropdown-menu a:hover {
-        background: rgba(255, 255, 255, 0.1);
-        color: #ffffff !important;
-    }
+    .nav-dropdown .dropdown-menu a:hover { background: rgba(255, 255, 255, 0.1); color: #ffffff !important; }
 }
 
 
 /* =========================================================
    32. RESPONSIVE — CHAT
-   ========================================================= */
+========================================================= */
 @media (max-width: 600px) {
-    .chat-container {
-        width: 100%;
-        margin: 15px auto;
-        border-radius: 10px;
-    }
-
-    .chat-body {
-        height: 65vh;
-        padding: 12px;
-    }
-
-    .chat-header {
-        padding: 14px;
-        gap: 10px;
-    }
-
-    .chat-avatar {
-        width: 42px;
-        height: 42px;
-        font-size: 17px;
-    }
-
-    .bubble {
-        max-width: 85%;
-        font-size: 14px;
-    }
-
-    .chat-footer {
-        padding: 10px;
-    }
-
-    .chat-footer button {
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
-    }
+    .chat-container { width: 100%; margin: 15px auto; border-radius: 10px; }
+    .chat-body { height: 65vh; padding: 12px; }
+    .chat-header { padding: 14px; gap: 10px; }
+    .chat-avatar { width: 42px; height: 42px; font-size: 17px; }
+    .bubble { max-width: 85%; font-size: 14px; }
+    .chat-footer { padding: 10px; }
+    .chat-footer button { width: 45px; height: 45px; font-size: 18px; }
 }
 
 
 /* =========================================================
    33. RESPONSIVE — QO'SHIMCHA TUZATISHLAR
-   ========================================================= */
-
-/* ---- ESKI .hero (52%/48% flex) ---- */
+========================================================= */
 @media (max-width: 900px) {
-    .hero {
-        flex-direction: column;
-        width: calc(100% - 30px);
-        min-height: auto;
-    }
-
-    .hero-content {
-        width: 100%;
-        padding: 40px 30px 20px;
-    }
-
-    .hero h1 {
-        font-size: 34px;
-    }
-
-    .hero-image {
-        width: 100%;
-        justify-content: center;
-        padding-bottom: 20px;
-    }
-
-    .hero-image img {
-        max-width: 320px;
-    }
+    .hero { flex-direction: column; width: calc(100% - 30px); min-height: auto; }
+    .hero-content { width: 100%; padding: 40px 30px 20px; }
+    .hero h1 { font-size: 34px; }
+    .hero-image { width: 100%; justify-content: center; padding-bottom: 20px; }
+    .hero-image img { max-width: 320px; }
 }
 
 @media (max-width: 600px) {
-    .hero-content {
-        padding: 30px 18px 15px;
-    }
-
-    .hero h1 {
-        font-size: 26px;
-    }
-
-    .hero p {
-        font-size: 13px;
-    }
-
-    .hero-button {
-        width: 100%;
-        justify-content: center;
-    }
+    .hero-content { padding: 30px 18px 15px; }
+    .hero h1 { font-size: 26px; }
+    .hero p { font-size: 13px; }
+    .hero-button { width: 100%; justify-content: center; }
 }
 
-/* ---- .article-card (rasm + matn flex qatori) ---- */
 @media (max-width: 700px) {
-    .article-card {
-        flex-direction: column;
-        min-height: auto;
-    }
-
-    .article-image {
-        width: 100%;
-        min-height: 160px;
-        height: 160px;
-    }
-
-    .article-content {
-        width: 100%;
-        padding: 16px 18px;
-    }
-
-    .article-placeholder {
-        font-size: 40px;
-    }
+    .article-card { flex-direction: column; min-height: auto; }
+    .article-image { width: 100%; min-height: 160px; height: 160px; }
+    .article-content { width: 100%; padding: 16px 18px; }
+    .article-placeholder { font-size: 40px; }
 }
 
 
 /* =========================================================
-   34. RESPONSIVE — FOOTER (yakuniy, bittagina qoida)
-   ========================================================= */
+   34. RESPONSIVE — FOOTER
+========================================================= */
 @media (max-width: 768px) {
     .footer-top {
         width: 100%;
         max-width: 420px;
-
         grid-template-columns: 1fr;
         gap: 0;
-
         margin: 0 auto;
         padding: 35px 20px 10px;
     }
@@ -3702,21 +2147,16 @@ img {
         min-width: 0;
         max-width: 100%;
         overflow-wrap: break-word;
-
         width: 100%;
-
         padding: 22px 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
 
-    .footer-top > *:last-child {
-        border-bottom: none;
-    }
+    .footer-top > *:last-child { border-bottom: none; }
 
     .footer-bottom-inner {
         width: calc(100% - 30px);
@@ -3726,92 +2166,36 @@ img {
         text-align: center;
     }
 
-    /* ---- BREND BLOKI ---- */
-    .footer-brand {
-        justify-content: center;
-        text-align: center;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-brand-text strong {
-        text-align: center;
-    }
-
-    .footer-share {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 18px;
-    }
-
-    .footer-socials {
-        justify-content: center;
-    }
-
-    /* ---- MENYU USTUNLARI — hammasi bir xil tartibda ---- */
-    .footer-menu {
-        align-items: center;
-        gap: 14px;
-    }
-
-    .footer-menu > li {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-menu > li > a {
-        font-size: 15px;
-    }
-
-    /* Dropdown sarlavhasi (Markaz/Faoliyat/Hujjatlar/Matbuot markazi) katta va markazda */
-    .footer-dropdown {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-dropdown-title {
-        justify-content: center;
-        font-size: 15px;
-    }
+    .footer-brand { justify-content: center; text-align: center; flex-direction: column; align-items: center; }
+    .footer-brand-text strong { text-align: center; }
+    .footer-share { display: flex; flex-direction: column; align-items: center; margin-top: 18px; }
+    .footer-socials { justify-content: center; }
+    .footer-menu { align-items: center; gap: 14px; }
+    .footer-menu > li { width: 100%; display: flex; flex-direction: column; align-items: center; }
+    .footer-menu > li > a { font-size: 15px; }
+    .footer-dropdown { width: 100%; display: flex; flex-direction: column; align-items: center; }
+    .footer-dropdown-title { justify-content: center; font-size: 15px; }
 
     .footer-dropdown-menu {
         position: static !important;
         left: auto !important;
         bottom: auto !important;
         margin: 12px 0 0 !important;
-
         width: 100% !important;
         max-width: 100% !important;
-
         display: none !important;
-
         background: transparent !important;
         box-shadow: none !important;
         border-radius: 0 !important;
-
         padding: 0 !important;
-
         flex-direction: column;
         align-items: center;
         gap: 10px;
     }
 
-    .footer-dropdown.open .footer-dropdown-menu {
-        display: flex !important;
-    }
-
-    .footer-dropdown:hover .footer-dropdown-menu {
-        display: none;
-    }
-
-    .footer-dropdown.open:hover .footer-dropdown-menu {
-        display: flex !important;
-    }
+    .footer-dropdown.open .footer-dropdown-menu { display: flex !important; }
+    .footer-dropdown:hover .footer-dropdown-menu { display: none; }
+    .footer-dropdown.open:hover .footer-dropdown-menu { display: flex !important; }
 
     .footer-dropdown-menu a {
         color: #c7d1e0 !important;
@@ -3823,337 +2207,29 @@ img {
         width: auto !important;
     }
 
-    .footer-dropdown-menu a:hover {
-        color: #ffffff !important;
-        background: rgba(255, 255, 255, 0.08) !important;
-    }
+    .footer-dropdown-menu a:hover { color: #ffffff !important; background: rgba(255, 255, 255, 0.08) !important; }
 
-    /* ---- ISH VAQTI / ALOQA ---- */
-    .footer-hours,
-    .footer-contact {
-        text-align: center;
-        align-items: center;
-    }
-
-    .footer-hours-label,
-    .footer-contact-label {
-        text-align: center;
-    }
-
-    .footer-lunch {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .footer-phone {
-        white-space: normal;
-        word-break: break-word;
-        text-align: center;
-    }
+    .footer-hours, .footer-contact { text-align: center; align-items: center; }
+    .footer-hours-label, .footer-contact-label { text-align: center; }
+    .footer-lunch { display: flex; flex-direction: column; align-items: center; }
+    .footer-phone { white-space: normal; word-break: break-word; text-align: center; }
 }
 
 
 /* =========================================================
-   35. HEADER-TOP — YANGI IXCHAM MOBIL TARTIB
-   (logotip / qidiruv / avatar + hamburger + Kirish-Ro'yxatdan o'tish)
-   ========================================================= */
-   @media (max-width: 1100px) {
-
-    .header-top {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        flex-direction: row !important;
-        justify-content: center !important;
-        align-items: center !important;
-        row-gap: 14px !important;
-        column-gap: 10px !important;
-        padding: 18px 16px !important;
-        height: auto !important;
-        min-height: 0 !important;
-    }
-
-    /* ---- 1-QATOR: LOGOTIP + NOM ---- */
-    .header-brand {
-        order: 1;
-        flex: 0 0 100%;
-        max-width: 100%;
-
-        flex-direction: column;
-        align-items: center;
-        gap: 6px;
-
-        height: auto;
-        text-align: center;
-    }
-
-    .header-brand-logo {
-        width: 150px;
-        height: 150px;
-        min-width: 150px;
-        min-height: 150px;
-        max-width: 150px;
-        max-height: 150px;
-    }
-
-    .header-brand-text {
-        align-items: center;
-        max-width: 100%;
-    }
-
-    .header-brand-title,
-    .header-brand-subtitle {
-        white-space: normal;
-        text-align: center;
-        line-height: 1.25;
-    }
-
-    .header-brand-title {
-        font-size: 36px;
-    }
-
-    .header-brand-subtitle {
-        font-size: 24px;
-        margin-top: 2px;
-    }
-
-    /* header-actions ichidagi elementlarni header-top bilan bitta
-       flex qatoriga chiqaramiz, shunda ularni mobile-menu-toggle
-       bilan birga aralashtirib tartiblash mumkin bo'ladi */
-    .header-actions {
-        display: contents;
-    }
-
-    /* ---- 2-QATOR: QIDIRUV ---- */
-    .header-search {
-        order: 2;
-        flex: 0 0 100%;
-        max-width: 340px;
-        justify-content: center;
-        height: auto;
-    }
-
-    .header-search input {
-        width: 50%;
-        height: 30px;
-    }
-
-    .header-search button {
-        width: 25px;
-        height: 25px;
-        flex-shrink: 0;
-    }
-
-    /* ---- 3-QATOR: AVATAR ("M") + HAMBURGER + KIRISH/RO'YXATDAN O'TISH ---- */
-    .header-user {
-        order: 3;
-        height: 36px;
-        width: 36px;
-        min-width: 36px;
-        padding: 0;
-        gap: 0;
-
-        border: 2px solid #ed1c24;
-        border-radius: 50%;
-        background: #ffffff;
-    }
-
-    .header-user .user-avatar,
-    .header-user .user-avatar.guest-avatar {
-        background: transparent;
-        color: #ed1c24;
-        width: 20px;
-        height: 20px;
-        min-width: 20px;
-        min-height: 20px;
-        font-size: 14px;
-    }
-
-    .header-user .user-name {
-        display: none;
-    }
-
-    .mobile-menu-toggle {
-        order: 4;
-        display: flex !important;
-    }
-
-    .header-login,
-    .header-register,
-    .header-logout {
-        order: 5;
-        height: 36px;
-        padding: 0 16px;
-        font-size: 13px;
-    }
-}
-
-/* Juda kichik ekranlar uchun */
-@media (max-width: 420px) {
-    .header-brand-title {
-        font-size: 34px;
-    }   
-
-    .header-brand-subtitle {
-        font-size: 24px;
-    }
-
-    /* =========================================================
-       36. MOBIL FOYDALANUVCHI AYLANASI + HAMBURGER GURUHI
-       ========================================================= */
-
-    .mobile-controls {
-        display: none;
-    }
-
-    .header-logout {
-        padding: 0 12px;
-        font-size: 12px;
-    }
-    .header-user.show-name .user-name {
-        display: block;
-    }
-}
-
-@media (max-width: 1100px) {
-    .header-top {
-        position: relative;
-        padding-left: 65px;
-    }
-
-    .mobile-controls {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-
-        position: absolute;
-        left: 15px;
-        bottom: 16px;
-        top: auto;
-        z-index: 1200;
-    }
-
-    .mobile-menu-toggle {
-        position: static;
-        left: auto;
-        right: auto;
-        top: auto;
-        bottom: auto;
-    }
-
-    .header-auth-group > .header-user {
-        display: none;
-    }
-}
-
-.mobile-user-toggle {
-    width: 34px;
-    height: 34px;
-    min-width: 34px;
-
-    border-radius: 50%;
-    border: 2px solid #ed1c24;
-    background: #ffffff;
-    color: #ed1c24;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-family: "Times New Roman", Times, serif !important;
-    font-size: 14px;
-    font-weight: 700;
-
-    cursor: pointer;
-    padding: 0;
-    position: relative;
-}
-
-.mobile-user-toggle.is-authenticated {
-    background: #ed1c24;
-    color: #ffffff;
-}
-
-.mobile-user-label {
-    position: absolute;
-    left: 0;
-    bottom: 42px;
-
-    white-space: nowrap;
-    padding: 6px 12px;
-
-    background: #0c364d;
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: 600;
-    border-radius: 6px;
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
-
-    display: none;
-    z-index: 1300;
-}
-
-.mobile-user-label.show {
-    display: block;
-}
-
-/* =========================================================
-   37. RESPONSIVE — HEADER-TOP TO'LIQ QAYTA TUZATISH (mobil)
-   ========================================================= */
-@media (max-width: 900px) {
-    /* Avatar (M yoki foydalanuvchi harfi) bosilganda ism ko'rinsin,
-       qayta bosilganda yashirinsin */
-    .header-user {
-        position: relative;
-        cursor: pointer;
-    }
-
-    .header-user .user-name {
-        display: none;
-
-        position: absolute;
-        left: 50%;
-        top: calc(100% + 8px);
-        transform: translateX(-50%);
-
-        white-space: nowrap;
-        padding: 6px 12px;
-
-        background: #0c364d;
-        color: #ffffff;
-        font-size: 12px;
-        font-weight: 600;
-        border-radius: 6px;
-
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
-        z-index: 1300;
-    }
-
-    .header-user.show-name .user-name {
-        display: block;
-    }
-}
-
-
-
-/* ===========================================
    MAQOLA ICHIDAGI RASM VA VIDEOLAR — MOSLASHUVCHAN
-   =========================================== */
-
-   .post-body img {
+========================================================= */
+.post-body img {
     max-width: 100% !important;
     width: auto !important;
     height: auto !important;
     border-radius: 10px;
     display: block;
     margin: 20px auto;
-  }
-  
-  /* Video / YouTube iframe uchun 16:9 nisbatda moslashuvchan konteyner */
-  .post-body iframe,
-  .post-body video {
+}
+
+.post-body iframe,
+.post-body video {
     max-width: 100% !important;
     width: 100% !important;
     height: auto !important;
@@ -4162,50 +2238,28 @@ img {
     display: block;
     margin: 20px auto;
     border: none;
-  }
-  
-  /* Ba'zi tahrirlovchilar rasmni <figure> yoki <p> ichiga o'raydi */
-  .post-body figure,
-  .post-body p {
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-  
-  .post-body table {
-    max-width: 100%;
-    display: block;
-    overflow-x: auto;
-  }
-  
-  /* ===========================================
-     TELEFON UCHUN QO'SHIMCHA MOSLASHTIRISH (max 768px)
-     =========================================== */
-  @media (max-width: 768px) {
-    .post-body img,
-    .post-body iframe,
-    .post-body video {
-      margin: 15px auto;
-      border-radius: 8px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .post-body img,
-    .post-body iframe,
-    .post-body video {
-      margin: 12px auto;
-      border-radius: 6px;
-    }
-  }
+}
 
-/* ===========================================
-   TIL TANLASH — ASOSIY STIL (Kompyuter, standart, 1025px va undan katta)
-   =========================================== */
-   .lang-switcher {
-    position: relative;
-    display: inline-block;
-  }
-  .lang-switcher-btn {
+.post-body figure,
+.post-body p { max-width: 100%; overflow-x: hidden; }
+
+.post-body table { max-width: 100%; display: block; overflow-x: auto; }
+
+@media (max-width: 768px) {
+    .post-body img, .post-body iframe, .post-body video { margin: 15px auto; border-radius: 8px; }
+}
+
+@media (max-width: 480px) {
+    .post-body img, .post-body iframe, .post-body video { margin: 12px auto; border-radius: 6px; }
+}
+
+
+/* =========================================================
+   TIL TANLASH
+========================================================= */
+.lang-switcher { position: relative; display: inline-block; }
+
+.lang-switcher-btn {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -4218,16 +2272,12 @@ img {
     color: #0B2438;
     cursor: pointer;
     white-space: nowrap;
-  }
-  .lang-arrow {
-    font-size: 11px;
-    transition: transform 0.2s ease;
-  }
-  .lang-switcher.open .lang-arrow {
-    transform: rotate(180deg);
-  }
-  
-  .lang-switcher-menu {
+}
+
+.lang-arrow { font-size: 11px; transition: transform 0.2s ease; }
+.lang-switcher.open .lang-arrow { transform: rotate(180deg); }
+
+.lang-switcher-menu {
     display: none;
     position: absolute;
     top: calc(100% + 6px);
@@ -4238,16 +2288,12 @@ img {
     min-width: 160px;
     overflow: hidden;
     z-index: 99999;
-  }
-  .lang-switcher.open .lang-switcher-menu {
-    display: block;
-  }
-  
-  .lang-switcher-menu form {
-    display: flex;
-    flex-direction: column;
-  }
-  .lang-option {
+}
+
+.lang-switcher.open .lang-switcher-menu { display: block; }
+.lang-switcher-menu form { display: flex; flex-direction: column; }
+
+.lang-option {
     background: none;
     border: none;
     text-align: left;
@@ -4255,80 +2301,11 @@ img {
     font-size: 14px;
     color: #333;
     cursor: pointer;
-  }
-  .lang-option:hover {
-    background: #f5f7fa;
-  }
-  .lang-option.active {
-    color: #ff4757;
-    font-weight: 700;
-  }
-  
-  
-  /* ===========================================
-     PLANSHET (769px — 1024px oralig'i)
-     =========================================== */
-  @media (max-width: 1024px) {
-    .lang-switcher-btn {
-      padding: 9px 14px;
-      font-size: 13px;
-    }
-    .lang-switcher-menu {
-      min-width: 150px;
-    }
-    .lang-option {
-      padding: 11px 16px;
-      font-size: 13px;
-    }
-  }
-  
-  
-  /* ===========================================
-     TELEFON (max 768px)
-     =========================================== */
-  @media (max-width: 768px) {
-    .lang-switcher-btn {
-      padding: 8px 12px;
-      font-size: 13px;
-      border-radius: 6px;
-    }
-    .lang-switcher-menu {
-      left: auto;
-      right: 0;
-      min-width: 140px;
-    }
-    .lang-option {
-      padding: 10px 14px;
-      font-size: 13px;
-    }
-  }
-  
-  
-  /* ===========================================
-     KICHIK TELEFONLAR (max 480px)
-     =========================================== */
-  @media (max-width: 480px) {
-    .lang-switcher-btn {
-      padding: 7px 10px;
-      font-size: 12px;
-      gap: 4px;
-    }
-    .lang-arrow {
-      font-size: 10px;
-    }
-    .lang-switcher-menu {
-      min-width: 130px;
-      right: 0;
-    }
-    .lang-option {
-      padding: 9px 12px;
-      font-size: 12px;
-    }
-  }
+}
 
-  /* ===========================================
-   BAYROQ IKONKASI — ASOSIY STIL (Kompyuter, standart, 1025px va undan katta)
-   =========================================== */
+.lang-option:hover { background: #f5f7fa; }
+.lang-option.active { color: #ff4757; font-weight: 700; }
+
 .lang-flag {
     height: 14px;
     width: auto;
@@ -4336,142 +2313,506 @@ img {
     display: inline-block;
     vertical-align: middle;
     border-radius: 2px;
-    box-shadow: 0 0 0 1px rgba(0,0,0,0.08);
-  }
-  
-  
-  /* ===========================================
-     PLANSHET (769px — 1024px oralig'i)
-     =========================================== */
-  @media (max-width: 1024px) {
-    .lang-flag {
-      height: 13px;
-      margin-right: 5px;
-    }
-  }
-  
-  
-  /* ===========================================
-     TELEFON (max 768px)
-     =========================================== */
-  @media (max-width: 768px) {
-    .lang-flag {
-      height: 12px;
-      margin-right: 5px;
-    }
-  }
-  
-  
-  /* ===========================================
-     KICHIK TELEFONLAR (max 480px)
-     =========================================== */
-  @media (max-width: 480px) {
-    .lang-flag {
-      height: 11px;
-      margin-right: 4px;
-    }
-  }
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
 
-  /* =========================================================
-   BILDIRISHNOMALAR (Qo'ng'iroq)
+@media (max-width: 1024px) {
+    .lang-switcher-btn { padding: 9px 14px; font-size: 13px; }
+    .lang-switcher-menu { min-width: 150px; }
+    .lang-option { padding: 11px 16px; font-size: 13px; }
+    .lang-flag { height: 13px; margin-right: 5px; }
+}
+
+@media (max-width: 768px) {
+    .lang-switcher-btn { padding: 8px 12px; font-size: 13px; border-radius: 6px; }
+    .lang-switcher-menu { left: auto; right: 0; min-width: 140px; }
+    .lang-option { padding: 10px 14px; font-size: 13px; }
+    .lang-flag { height: 12px; margin-right: 5px; }
+}
+
+@media (max-width: 480px) {
+    .lang-switcher-btn { padding: 7px 10px; font-size: 12px; gap: 4px; }
+    .lang-arrow { font-size: 10px; }
+    .lang-switcher-menu { min-width: 130px; right: 0; }
+    .lang-option { padding: 9px 12px; font-size: 12px; }
+    .lang-flag { height: 11px; margin-right: 4px; }
+}
+
+
+/* =========================================================
+   HEADER + QO'NG'IROQCHA — YAKUNIY
+   Kompyuter (1101px+), Planshet (769–1100px),
+   Telefon (481–768px), Kichik telefon (≤480px)
 ========================================================= */
 
-.notif-bell-wrap {
+/* ---------- KOMPYUTER: qo'ng'iroqcha ---------- */
+.site-notif-wrapper {
     position: relative;
-    z-index: 1001; /* navbar va ko'k menyudan yuqorida turishi uchun */
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
 }
 
-.notif-bell-btn {
+.site-notif-btn {
     position: relative;
-    background: none;
-    border: none;
-    font-size: 22px;
-    cursor: pointer;
-    padding: 8px;
-    line-height: 1;
+    width: 43px;
+    height: 43px;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #ffffff;
+    border: 1px solid #d9e1ec;
+    border-radius: 8px;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
 }
 
-.notif-bell-count {
+.site-notif-badge {
     position: absolute;
-    top: 0;
-    right: 0;
-    background: #ff4757;
-    color: #fff;
-    font-size: 11px;
-    font-weight: 700;
+    top: -6px;
+    right: -6px;
     min-width: 18px;
     height: 18px;
-    border-radius: 50%;
+    padding: 0 4px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 4px;
+    background: #f7191f;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
 }
 
-.notif-dropdown {
+.site-notif-dropdown {
+    display: none;
     position: absolute;
-    top: 120%;
-    left: 0;
+    top: calc(100% + 8px);
+    right: 0;
     width: 320px;
     max-height: 420px;
     overflow-y: auto;
     overflow-x: hidden;
-    background: #fff;
+    background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
-    display: none;
-    z-index: 99999; /* ko'k menyu (.main-navigation) va boshqa hamma narsadan yuqorida */
+    z-index: 99999;
 }
 
-.notif-dropdown.open {
-    display: block;
-}
+.site-notif-dropdown.is-open { display: block; }
 
-.notif-dropdown-header {
-    padding: 14px 16px;
-    font-weight: 700;
-    border-bottom: 1px solid #eee;
-    color: #16326e;
+.site-notif-header {
     position: sticky;
     top: 0;
-    background: #fff;
+    padding: 14px 16px;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+    color: #16326e;
+    font-size: 15px;
+    font-weight: 700;
 }
 
-.notif-dropdown-list {
+.site-notif-item {
     display: flex;
-    flex-direction: column;
-    min-width: 0;
-}
-
-.notif-item {
-    display: flex;
+    align-items: flex-start;
     gap: 10px;
     padding: 12px 16px;
-    text-decoration: none;
-    color: #222;
+    color: #222222;
     border-bottom: 1px solid #f2f2f2;
     min-width: 0;
 }
 
-.notif-item:hover {
-    background: #f5f7fb;
-}
+.site-notif-item:hover { background: #f5f7fb; }
+.site-notif-item.is-new { background: #fff5f5; }
+.site-notif-icon { font-size: 20px; flex-shrink: 0; }
 
-.notif-item-icon {
-    font-size: 20px;
-    flex-shrink: 0;
-}
-
-.notif-item-body {
+.site-notif-text {
     display: flex;
     flex-direction: column;
     gap: 3px;
     min-width: 0;
     flex: 1 1 auto;
 }
+
+.site-notif-category { color: #ed1c24; font-size: 11px; font-weight: 700; text-transform: uppercase; }
+
+.site-notif-title {
+    color: #222222;
+    font-size: 13.5px;
+    line-height: 1.4;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.site-notif-empty { padding: 24px 16px; text-align: center; color: #888888; font-size: 13.5px; }
+
+
+/* ---------- PLANSHET + TELEFON (≤1100px) ----------
+   Tartib:  [logo+nom .......... til]
+            [qidiruv ................]
+            [menyu] [avatar] [Kirish] [Ro'yxatdan o'tish]
+   header-actions "display: contents" bo'lgani uchun uning
+   ichidagi elementlar header-top bolalari kabi tartiblanadi. */
+@media (max-width: 1100px) {
+
+    .header-top {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 12px 10px;
+        height: auto;
+        min-height: 0;
+        padding: 16px 20px 14px;
+    }
+
+    .header-actions { display: contents; }
+
+    /* 1-qator: logo + nom */
+    .header-brand {
+        order: 1;
+        flex: 1 1 0;
+        min-width: 0;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 12px;
+    }
+
+    .header-brand-logo {
+        width: 80px;
+        height: 80px;
+        min-width: 80px;
+        min-height: 80px;
+        max-width: 80px;
+        max-height: 80px;
+    }
+
+    .header-brand-text { align-items: flex-start; min-width: 0; }
+
+    .header-brand-title,
+    .header-brand-subtitle { white-space: normal; text-align: left; }
+
+    .header-brand-title { font-size: 26px; line-height: 1.15; }
+    .header-brand-subtitle { font-size: 18px; line-height: 1.2; margin-top: 4px; }
+
+    /* til tugmasi — yuqori o'ng */
+    .lang-switcher { order: 2; align-self: flex-start; }
+    .lang-switcher-btn { border-radius: 999px; }
+    .lang-switcher-menu { left: auto; right: 0; }
+
+    /* qo'ng'iroqcha — til tugmasi tagida */
+    .site-notif-wrapper { position: absolute; top: 66px; right: 20px; z-index: 1200; }
+
+    .site-notif-btn {
+        width: 38px;
+        height: 38px;
+        background: transparent;
+        border: 0;
+        font-size: 22px;
+    }
+
+    /* 2-qator: qidiruv */
+    .header-search {
+        order: 3;
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        gap: 10px;
+    }
+
+    .header-search input {
+        flex: 1;
+        width: auto;
+        min-width: 0;
+        height: 46px;
+        padding: 0 18px;
+        border-radius: 999px;
+        font-size: 15px;
+    }
+
+    .header-search button { width: 46px; height: 46px; border-radius: 50%; }
+
+    /* 3-qator: menyu | avatar | Kirish | Ro'yxatdan o'tish */
+    .mobile-menu-toggle {
+        order: 4;
+        display: flex;
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+    }
+
+    .header-user {
+        order: 5;
+        width: 46px;
+        min-width: 46px;
+        height: 46px;
+        padding: 0;
+        gap: 0;
+        border: 1px solid #d9e1ec;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .header-user .user-avatar {
+        width: 30px;
+        height: 30px;
+        min-width: 30px;
+        min-height: 30px;
+        font-size: 16px;
+    }
+
+    /* ism avatar bosilganda tooltip bo'lib chiqadi (JS: .show-name) */
+    .header-user .user-name {
+        display: none;
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        white-space: nowrap;
+        padding: 6px 12px;
+        background: #0c364d;
+        color: #ffffff;
+        font-size: 12px;
+        font-weight: 600;
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+        z-index: 1300;
+    }
+
+    .header-user.show-name .user-name { display: block; }
+
+    .header-login {
+        order: 6;
+        height: 46px;
+        padding: 0 18px;
+        border-radius: 999px;
+        font-size: 15px;
+    }
+
+    .header-register,
+    .header-logout {
+        order: 7;
+        flex: 1 1 auto;
+        min-width: 0;
+        height: 46px;
+        padding: 0 16px;
+        border-radius: 999px;
+        font-size: 15px;
+    }
+}
+
+
+/* ---------- TELEFON (≤768px) ---------- */
+@media (max-width: 768px) {
+
+    .header-top { padding: 14px 14px 12px; gap: 12px 8px; }
+
+    .header-brand-logo {
+        width: 68px;
+        height: 68px;
+        min-width: 68px;
+        min-height: 68px;
+        max-width: 68px;
+        max-height: 68px;
+    }
+
+    .header-brand-title { font-size: 20px; }
+    .header-brand-subtitle { font-size: 14px; }
+
+    .site-notif-wrapper { top: 60px; right: 14px; }
+
+    .site-notif-dropdown {
+        position: fixed;
+        top: 70px;
+        left: 10px;
+        right: 10px;
+        width: auto;
+        max-height: 70vh;
+        border-radius: 10px;
+    }
+
+    .site-notif-header { padding: 12px 14px; font-size: 14px; }
+    .site-notif-item { padding: 10px 14px; gap: 8px; }
+    .site-notif-icon { font-size: 18px; }
+    .site-notif-title { font-size: 13px; }
+    .site-notif-empty { padding: 20px 14px; font-size: 13px; }
+
+    .header-search input { height: 44px; font-size: 14px; }
+
+    .header-search button,
+    .mobile-menu-toggle,
+    .header-user,
+    .header-login,
+    .header-register,
+    .header-logout { height: 44px; }
+
+    .header-search button,
+    .mobile-menu-toggle,
+    .header-user { width: 44px; min-width: 44px; }
+
+    .header-login,
+    .header-register,
+    .header-logout { font-size: 14px; padding: 0 14px; }
+}
+
+
+/* ---------- KICHIK TELEFONLAR (≤480px) ---------- */
+@media (max-width: 480px) {
+
+    .header-top { padding: 12px 12px 10px; gap: 10px 6px; }
+    .header-brand { gap: 8px; }
+
+    .header-brand-logo {
+        width: 56px;
+        height: 56px;
+        min-width: 56px;
+        min-height: 56px;
+        max-width: 56px;
+        max-height: 56px;
+    }
+
+    .header-brand-title { font-size: 16px; line-height: 1.15; }
+    .header-brand-subtitle { font-size: 11.5px; line-height: 1.2; margin-top: 3px; }
+
+    .site-notif-wrapper { top: 52px; right: 12px; }
+    .site-notif-btn { width: 34px; height: 34px; font-size: 20px; }
+    .site-notif-badge { min-width: 16px; height: 16px; font-size: 9.5px; }
+
+    .site-notif-dropdown { top: 62px; left: 6px; right: 6px; max-height: 65vh; border-radius: 8px; }
+    .site-notif-header { padding: 10px 12px; font-size: 13px; }
+    .site-notif-item { padding: 9px 12px; gap: 7px; }
+    .site-notif-icon { font-size: 16px; }
+    .site-notif-title { font-size: 12px; line-height: 1.35; }
+    .site-notif-category { font-size: 10px; }
+
+    .header-search input { height: 42px; padding: 0 14px; font-size: 13.5px; }
+
+    .header-search button,
+    .mobile-menu-toggle,
+    .header-user,
+    .header-login,
+    .header-register,
+    .header-logout { height: 42px; }
+
+    .header-search button,
+    .mobile-menu-toggle,
+    .header-user { width: 42px; min-width: 42px; }
+
+    .header-user .user-avatar {
+        width: 26px;
+        height: 26px;
+        min-width: 26px;
+        min-height: 26px;
+        font-size: 14px;
+    }
+
+    .header-login,
+    .header-register,
+    .header-logout { padding: 0 10px; font-size: 13px; }
+}
+
+/* =========================================================
+   QO'NG'IROQCHA (notif-*) — base.html'dagi haqiqiy klasslar
+   ========================================================= */
+
+/* KOMPYUTER */
+.notif-bell-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    z-index: 1200;
+}
+
+.notif-bell-btn {
+    position: relative;
+    width: 43px;
+    height: 43px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border: 1px solid #d9e1ec;
+    border-radius: 8px;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.notif-bell-count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f7191f;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.notif-dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    left: auto;
+    width: 320px;
+    max-height: 420px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
+    z-index: 99999;
+}
+
+.notif-dropdown.open { display: block; }
+
+.notif-dropdown-header {
+    position: sticky;
+    top: 0;
+    padding: 14px 16px;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+    color: #16326e;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.notif-dropdown-list { display: flex; flex-direction: column; min-width: 0; }
+
+.notif-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 16px;
+    color: #222222;
+    border-bottom: 1px solid #f2f2f2;
+    min-width: 0;
+}
+
+.notif-item:hover { background: #f5f7fb; }
+.notif-item-icon { font-size: 20px; flex-shrink: 0; }
+.notif-item-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; flex: 1 1 auto; }
 
 .notif-item-title {
     font-size: 13.5px;
@@ -4481,168 +2822,77 @@ img {
     word-break: break-word;
 }
 
-.notif-item-time {
-    font-size: 11.5px;
-    color: #888;
-}
+.notif-item-time { font-size: 11.5px; color: #888888; }
+.notif-empty { padding: 24px 16px; text-align: center; color: #888888; font-size: 13.5px; }
 
-.notif-empty {
-    padding: 24px 16px;
-    text-align: center;
-    color: #888;
-    font-size: 13.5px;
-}
-
-
-/* =========================================================
-   PLANSHET UCHUN (max-width: 900px)
-========================================================= */
-
-@media (max-width: 900px) {
+/* PLANSHET + TELEFON (≤1100px): til tugmasi tagida, o'ng tomonda */
+@media (max-width: 1100px) {
+    .notif-bell-wrap {
+        position: absolute;
+        top: 58px;
+        right: 20px;
+        order: 2;
+    }
 
     .notif-bell-btn {
-        font-size: 20px;
-        padding: 6px;
-    }
-
-    .notif-bell-count {
-        font-size: 10px;
-        min-width: 16px;
-        height: 16px;
-    }
-
-    .notif-dropdown {
-        width: 300px;
-        max-height: 400px;
-    }
-
-    .notif-item {
-        padding: 11px 14px;
-    }
-
-    .notif-item-icon {
-        font-size: 18px;
-    }
-
-    .notif-item-title {
-        font-size: 13px;
+        width: 38px;
+        height: 38px;
+        background: transparent;
+        border: 0;
+        font-size: 22px;
     }
 
 }
 
-
-/* =========================================================
-   TELEFON UCHUN (max-width: 600px)
-========================================================= */
-
-@media (max-width: 600px) {
-
-    .notif-bell-btn {
-        font-size: 19px;
-        padding: 6px;
-    }
-
-    .notif-bell-count {
-        font-size: 9.5px;
-        min-width: 15px;
-        height: 15px;
-        padding: 0 3px;
-    }
-
+/* TELEFON (≤768px) */
+@media (max-width: 768px) {
+    .notif-bell-wrap { top: 48px; right: 14px; }
+    .notif-bell-btn  { width: 36px; height: 36px; font-size: 20px; }
     .notif-dropdown {
         position: fixed;
-        top: 60px;
+        top: 70px;
         left: 10px;
         right: 10px;
         width: auto;
         max-height: 70vh;
         border-radius: 10px;
-        z-index: 99999;
     }
 
-    .notif-dropdown-header {
-        padding: 12px 14px;
-        font-size: 14px;
-    }
-
-    .notif-item {
-        padding: 10px 14px;
-        gap: 8px;
-    }
-
-    .notif-item-icon {
-        font-size: 17px;
-    }
-
-    .notif-item-title {
-        font-size: 12.5px;
-    }
-
-    .notif-item-time {
-        font-size: 11px;
-    }
-
-    .notif-empty {
-        padding: 20px 14px;
-        font-size: 13px;
-    }
-
+    .notif-dropdown-header { padding: 12px 14px; font-size: 14px; }
+    .notif-item { padding: 10px 14px; gap: 8px; }
+    .notif-item-icon { font-size: 18px; }
+    .notif-item-title { font-size: 13px; }
+    .notif-empty { padding: 20px 14px; font-size: 13px; }
 }
 
-
+/* KICHIK TELEFONLAR (≤480px) */
+@media (max-width: 480px) {
+    .notif-bell-wrap { top: 44px; right: 17px; }
+    .notif-bell-btn  { width: 30px; height: 30px; font-size: 18px; }
+    .notif-bell-count { top: -4px; right: -4px; }
+    .notif-dropdown { top: 62px; left: 6px; right: 6px; max-height: 65vh; border-radius: 8px; }
+    .notif-dropdown-header { padding: 10px 12px; font-size: 13px; }
+    .notif-item { padding: 9px 12px; gap: 7px; }
+    .notif-item-icon { font-size: 16px; }
+    .notif-item-title { font-size: 12px; line-height: 1.35; }
+    .notif-item-time { font-size: 10.5px; }
+}
 /* =========================================================
-   KICHIK TELEFONLAR UCHUN (max-width: 380px)
+   QIDIRUV QATORINI YUPQALASHTIRISH (telefon/planshet)
 ========================================================= */
+@media (max-width: 1100px) {
+    .header-search input  { height: 38px; padding: 0 16px; font-size: 14px; }
+    .header-search button { width: 38px; height: 38px; min-width: 38px; }
+    .header-search button span { font-size: 18px; }
+}
 
-@media (max-width: 380px) {
+@media (max-width: 768px) {
+    .header-search input  { height: 36px; font-size: 13.5px; }
+    .header-search button { width: 36px; height: 36px; min-width: 36px; }
+}
 
-    .notif-bell-btn {
-        font-size: 18px;
-        padding: 5px;
-    }
-
-    .notif-bell-count {
-        font-size: 9px;
-        min-width: 14px;
-        height: 14px;
-        padding: 0 3px;
-    }
-
-    .notif-dropdown {
-        top: 55px;
-        left: 6px;
-        right: 6px;
-        max-height: 65vh;
-        border-radius: 8px;
-        z-index: 99999;
-    }
-
-    .notif-dropdown-header {
-        padding: 10px 12px;
-        font-size: 13px;
-    }
-
-    .notif-item {
-        padding: 9px 12px;
-        gap: 7px;
-    }
-
-    .notif-item-icon {
-        font-size: 16px;
-    }
-
-    .notif-item-title {
-        font-size: 12px;
-        line-height: 1.35;
-    }
-
-    .notif-item-time {
-        font-size: 10px;
-    }
-
-    .notif-empty {
-        padding: 18px 12px;
-        font-size: 12px;
-    }
-
+@media (max-width: 480px) {
+    .header-search input  { height: 34px; padding: 0 14px; font-size: 13px; }
+    .header-search button { width: 34px; height: 34px; min-width: 34px; }
+    .header-search button span { font-size: 16px; }
 }

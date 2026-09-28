@@ -133,4 +133,4 @@ def make_handler(labels, icon):
 
 
 for model, (labels, icon) in NOTIF_MODELS.items():
-    post_save.connect(make_handler(labels, icon), sender=model)
+    post_save.connect(make_handler(labels, icon), sender=model, weak=False)
