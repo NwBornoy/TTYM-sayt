@@ -119,11 +119,11 @@ msgstr "Page Not Found"
 
 #: .\blog\templates\404.html:102
 msgid ""
-"Kechirasiz, siz izlagan sahifa mavjud emas yoki o'chirib yuborilgan bo'lishi "
-"mumkin. Havolani tekshirib qayta urinib ko'ring yoki bosh sahifaga qayting."
+"Kechirasiz, siz izlagan sahifa mavjud emas yoki o'chirib yuborilgan bo'lishi"
+" mumkin. Havolani tekshirib qayta urinib ko'ring yoki bosh sahifaga qayting."
 msgstr ""
-"Sorry, the page you are looking for does not exist or may have been removed. "
-"Please check the link and try again, or return to the homepage."
+"Sorry, the page you are looking for does not exist or may have been removed."
+" Please check the link and try again, or return to the homepage."
 
 #: .\blog\templates\500.html:7
 msgid "500 — Server xatosi"
@@ -240,11 +240,13 @@ msgstr "Phone"
 msgid "Email"
 msgstr "Email"
 
-#: .\blog\templates\blog\about.html:721 .\blog\templates\blog\branches.html:268
+#: .\blog\templates\blog\about.html:721
+#: .\blog\templates\blog\branches.html:268
 msgid "Manzil"
 msgstr "Address"
 
-#: .\blog\templates\blog\about.html:727 .\blog\templates\blog\branches.html:274
+#: .\blog\templates\blog\about.html:727
+#: .\blog\templates\blog\branches.html:274
 msgid "Tavsif"
 msgstr "Description"
 
@@ -828,14 +830,16 @@ msgid ""
 "bilan tanishing"
 msgstr "Get to know our field through the lens of our photos and videos"
 
-#: .\blog\templates\blog\home.html:409 .\blog\templates\blog\news_list.html:550
+#: .\blog\templates\blog\home.html:409
+#: .\blog\templates\blog\news_list.html:550
 #: .\blog\templates\blog\news_list.html:553
 #: .\blog\templates\blog\post_list.html:477
 #: .\blog\templates\blog\post_list.html:480
 msgid "Oldingi"
 msgstr "Previous"
 
-#: .\blog\templates\blog\home.html:436 .\blog\templates\blog\news_list.html:561
+#: .\blog\templates\blog\home.html:436
+#: .\blog\templates\blog\news_list.html:561
 #: .\blog\templates\blog\news_list.html:564
 #: .\blog\templates\blog\post_list.html:486
 #: .\blog\templates\blog\post_list.html:489
@@ -904,8 +908,8 @@ msgstr "Heart-related conditions"
 
 #: .\blog\templates\blog\home.html:1571
 msgid ""
-"Kuchli ko‘krak og‘rig‘i yoki yurak faoliyati bilan bog‘liq jiddiy holatlarda "
-"darhol <strong>103</strong> raqamiga qo‘ng‘iroq qiling."
+"Kuchli ko‘krak og‘rig‘i yoki yurak faoliyati bilan bog‘liq jiddiy holatlarda"
+" darhol <strong>103</strong> raqamiga qo‘ng‘iroq qiling."
 msgstr ""
 "In case of severe chest pain or serious heart-related conditions, call "
 "<strong>103</strong> immediately."
@@ -916,8 +920,8 @@ msgstr "Difficulty breathing"
 
 #: .\blog\templates\blog\home.html:1588
 msgid ""
-"Nafas olishda jiddiy qiyinchilik yuzaga kelsa, <strong>103</strong> raqamiga "
-"murojaat qiling."
+"Nafas olishda jiddiy qiyinchilik yuzaga kelsa, <strong>103</strong> raqamiga"
+" murojaat qiling."
 msgstr "If you have serious difficulty breathing, call <strong>103</strong>."
 
 #: .\blog\templates\blog\home.html:1600
@@ -936,11 +940,11 @@ msgstr "Signs of a stroke"
 
 #: .\blog\templates\blog\home.html:1620
 msgid ""
-"Yuz, qo‘l yoki nutqda to‘satdan o‘zgarishlar kuzatilsa, darhol <strong>103</"
-"strong> ga qo‘ng‘iroq qiling."
+"Yuz, qo‘l yoki nutqda to‘satdan o‘zgarishlar kuzatilsa, darhol "
+"<strong>103</strong> ga qo‘ng‘iroq qiling."
 msgstr ""
-"If sudden changes appear in the face, arm or speech, call <strong>103</"
-"strong> immediately."
+"If sudden changes appear in the face, arm or speech, call "
+"<strong>103</strong> immediately."
 
 #: .\blog\templates\blog\law_list.html:183
 #, fuzzy
@@ -1011,8 +1015,8 @@ msgstr "When should you call an ambulance?"
 
 #: .\blog\templates\blog\post_detail.html:41
 msgid ""
-"Hayot uchun xavfli yoki shoshilinch tibbiy yordam talab qiladigan holatlarda "
-"103 raqamiga murojaat qiling."
+"Hayot uchun xavfli yoki shoshilinch tibbiy yordam talab qiladigan holatlarda"
+" 103 raqamiga murojaat qiling."
 msgstr ""
 "In life-threatening situations or when urgent medical care is needed, call "
 "103."
@@ -1217,11 +1221,30 @@ msgstr "Russian"
 msgid "English"
 msgstr "English"
 
-#~ msgid ""
-#~ "Admin panelda \"Markaz tarixi (Timeline)\" bo'limidan voqealar qo'shing."
+msgid "Yopish"
+msgstr "Close"
+
+msgid "Tez tibbiy yordam xizmatiga savollaringiz bormi?"
+msgstr "Do you have questions about the emergency medical service?"
+
+msgid "Qisqa raqamiga qo'ng'iroq qiling"
+msgstr "Call the short number"
+
+msgid "Telegramdagi rasmiy kanal"
+msgstr "Official Telegram channel"
+
+msgid "Telegram bot"
+msgstr "Telegram bot"
+
+msgid "O'z sog'ligingizga befarq bo'lmang"
+msgstr "Don't be indifferent to your health"
+
+msgid "Saytda murojaat qoldirish"
+msgstr "Submit a request on the site"
+
+#~ msgid "Admin panelda \"Markaz tarixi (Timeline)\" bo'limidan voqealar qo'shing."
 #~ msgstr ""
-#~ "Add events in the \"Center History (Timeline)\" section of the admin "
-#~ "panel."
+#~ "Add events in the \"Center History (Timeline)\" section of the admin panel."
 
 #~ msgid "Admin panelda \"Bizning jamoamiz\" bo'limidan statistika qo'shing."
 #~ msgstr "Add statistics in the \"Our Team\" section of the admin panel."
@@ -1230,13 +1253,11 @@ msgstr "English"
 #~ "Hozircha lavhalar qo'shilmagan. Admin panelda \"Markazimizdan lavhalar\" "
 #~ "bo'limidan rasm yoki video qo'shing."
 #~ msgstr ""
-#~ "No media has been added yet. Add a photo or video in the \"Glimpses of "
-#~ "Our Center\" section of the admin panel."
+#~ "No media has been added yet. Add a photo or video in the \"Glimpses of Our "
+#~ "Center\" section of the admin panel."
 
-#~ msgid ""
-#~ "Admin panelda \"Bizning maqsad va vazifalarimiz\" bo'limidan qo'shing."
-#~ msgstr ""
-#~ "Add it in the \"Our Goals and Objectives\" section of the admin panel."
+#~ msgid "Admin panelda \"Bizning maqsad va vazifalarimiz\" bo'limidan qo'shing."
+#~ msgstr "Add it in the \"Our Goals and Objectives\" section of the admin panel."
 
 #~ msgid "Izoh (%(counter)s)"
 #~ msgstr "Comment (%(counter)s)"

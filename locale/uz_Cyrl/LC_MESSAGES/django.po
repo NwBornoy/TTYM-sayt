@@ -108,8 +108,8 @@ msgid ""
 "xato deb hisoblasangiz, tizimga qayta kiring yoki administrator bilan "
 "bog'laning."
 msgstr ""
-"Кечирасиз, сизда ушбу сахифани кўриш учун етарли ҳуқуқ йўқ. Агар бу хато деб "
-"ҳисобласангиз, тизимга қайта киринг ёки администратор билан боғланинг."
+"Кечирасиз, сизда ушбу сахифани кўриш учун етарли ҳуқуқ йўқ. Агар бу хато деб"
+" ҳисобласангиз, тизимга қайта киринг ёки администратор билан боғланинг."
 
 #: .\blog\templates\404.html:7
 msgid "404 — Sahifa topilmadi"
@@ -121,8 +121,8 @@ msgstr "Сахифа топилмади"
 
 #: .\blog\templates\404.html:102
 msgid ""
-"Kechirasiz, siz izlagan sahifa mavjud emas yoki o'chirib yuborilgan bo'lishi "
-"mumkin. Havolani tekshirib qayta urinib ko'ring yoki bosh sahifaga qayting."
+"Kechirasiz, siz izlagan sahifa mavjud emas yoki o'chirib yuborilgan bo'lishi"
+" mumkin. Havolani tekshirib qayta urinib ko'ring yoki bosh sahifaga qayting."
 msgstr ""
 "Кечирасиз, сиз излаган сахифа мавжуд эмас ёки ўчириб юборилган бўлиши "
 "мумкин. Ҳаволани текшириб қайта уриниб кўринг ёки бош сахифага қайтинг."
@@ -243,11 +243,13 @@ msgstr "Телефон"
 msgid "Email"
 msgstr "Email"
 
-#: .\blog\templates\blog\about.html:721 .\blog\templates\blog\branches.html:268
+#: .\blog\templates\blog\about.html:721
+#: .\blog\templates\blog\branches.html:268
 msgid "Manzil"
 msgstr "Манзил"
 
-#: .\blog\templates\blog\about.html:727 .\blog\templates\blog\branches.html:274
+#: .\blog\templates\blog\about.html:727
+#: .\blog\templates\blog\branches.html:274
 msgid "Tavsif"
 msgstr "Тавсиф"
 
@@ -834,14 +836,16 @@ msgstr ""
 "Бизнинг фотосуратларимиз ва видеоларимиз призмаси орқали бизнинг соҳамиз "
 "билан танишинг"
 
-#: .\blog\templates\blog\home.html:409 .\blog\templates\blog\news_list.html:550
+#: .\blog\templates\blog\home.html:409
+#: .\blog\templates\blog\news_list.html:550
 #: .\blog\templates\blog\news_list.html:553
 #: .\blog\templates\blog\post_list.html:477
 #: .\blog\templates\blog\post_list.html:480
 msgid "Oldingi"
 msgstr "Олдинги"
 
-#: .\blog\templates\blog\home.html:436 .\blog\templates\blog\news_list.html:561
+#: .\blog\templates\blog\home.html:436
+#: .\blog\templates\blog\news_list.html:561
 #: .\blog\templates\blog\news_list.html:564
 #: .\blog\templates\blog\post_list.html:486
 #: .\blog\templates\blog\post_list.html:489
@@ -910,8 +914,8 @@ msgstr "Юрак билан боғлиқ ҳолатлар"
 
 #: .\blog\templates\blog\home.html:1571
 msgid ""
-"Kuchli ko‘krak og‘rig‘i yoki yurak faoliyati bilan bog‘liq jiddiy holatlarda "
-"darhol <strong>103</strong> raqamiga qo‘ng‘iroq qiling."
+"Kuchli ko‘krak og‘rig‘i yoki yurak faoliyati bilan bog‘liq jiddiy holatlarda"
+" darhol <strong>103</strong> raqamiga qo‘ng‘iroq qiling."
 msgstr ""
 "Кучли кўкрак оғриғи ёки юрак фаолияти билан боғлиқ жиддий ҳолатларда дарҳол "
 "<strong>103</strong> рақамига қўнғироқ қилинг."
@@ -922,8 +926,8 @@ msgstr "Нафас олиш қийинлашиши"
 
 #: .\blog\templates\blog\home.html:1588
 msgid ""
-"Nafas olishda jiddiy qiyinchilik yuzaga kelsa, <strong>103</strong> raqamiga "
-"murojaat qiling."
+"Nafas olishda jiddiy qiyinchilik yuzaga kelsa, <strong>103</strong> raqamiga"
+" murojaat qiling."
 msgstr ""
 "Нафас олишда жиддий қийинчилик юзага келса, <strong>103</strong> рақамига "
 "мурожаат қилинг."
@@ -942,11 +946,11 @@ msgstr "Инсульт белгилари"
 
 #: .\blog\templates\blog\home.html:1620
 msgid ""
-"Yuz, qo‘l yoki nutqda to‘satdan o‘zgarishlar kuzatilsa, darhol <strong>103</"
-"strong> ga qo‘ng‘iroq qiling."
+"Yuz, qo‘l yoki nutqda to‘satdan o‘zgarishlar kuzatilsa, darhol "
+"<strong>103</strong> ga qo‘ng‘iroq qiling."
 msgstr ""
-"Юз, қўл ёки нутқда тўсатдан ўзгаришлар кузатилса, дарҳол <strong>103</"
-"strong> га қўнғироқ қилинг."
+"Юз, қўл ёки нутқда тўсатдан ўзгаришлар кузатилса, дарҳол "
+"<strong>103</strong> га қўнғироқ қилинг."
 
 #: .\blog\templates\blog\law_list.html:183
 #, fuzzy
@@ -1017,8 +1021,8 @@ msgstr "Қачон тез тиббий ёрдам чақириш керак?"
 
 #: .\blog\templates\blog\post_detail.html:41
 msgid ""
-"Hayot uchun xavfli yoki shoshilinch tibbiy yordam talab qiladigan holatlarda "
-"103 raqamiga murojaat qiling."
+"Hayot uchun xavfli yoki shoshilinch tibbiy yordam talab qiladigan holatlarda"
+" 103 raqamiga murojaat qiling."
 msgstr ""
 "Ҳаёт учун хавфли ёки шошилинч тиббий ёрдам талаб қиладиган ҳолатларда 103 "
 "рақамига мурожаат қилинг."
@@ -1221,10 +1225,29 @@ msgstr "Рус"
 msgid "English"
 msgstr "Инглиз"
 
-#~ msgid ""
-#~ "Admin panelda \"Markaz tarixi (Timeline)\" bo'limidan voqealar qo'shing."
-#~ msgstr ""
-#~ "Админ панелда \"Марказ тарихи (Timeline)\" бўлимидан воқеалар қўшинг."
+msgid "Yopish"
+msgstr "Ёпиш"
+
+msgid "Tez tibbiy yordam xizmatiga savollaringiz bormi?"
+msgstr "Тез тиббий ёрдам хизматига саволларингиз борми?"
+
+msgid "Qisqa raqamiga qo'ng'iroq qiling"
+msgstr "Қисқа рақамига қўнғироқ қилинг"
+
+msgid "Telegramdagi rasmiy kanal"
+msgstr "Телеграмдаги расмий канал"
+
+msgid "Telegram bot"
+msgstr "Телеграм бот"
+
+msgid "O'z sog'ligingizga befarq bo'lmang"
+msgstr "Ўз соғлигингизга бефарқ бўлманг"
+
+msgid "Saytda murojaat qoldirish"
+msgstr "Сайтда мурожаат қолдириш"
+
+#~ msgid "Admin panelda \"Markaz tarixi (Timeline)\" bo'limidan voqealar qo'shing."
+#~ msgstr "Админ панелда \"Марказ тарихи (Timeline)\" бўлимидан воқеалар қўшинг."
 
 #~ msgid "Admin panelda \"Bizning jamoamiz\" bo'limidan statistika qo'shing."
 #~ msgstr "Админ панелда \"Бизнинг жамоамиз\" бўлимидан статистика қўшинг."
@@ -1236,8 +1259,7 @@ msgstr "Инглиз"
 #~ "Ҳозирча лавҳалар қўшилмаган. Админ панелда \"Марказимиздан лавҳалар\" "
 #~ "бўлимидан расм ёки видео қўшинг."
 
-#~ msgid ""
-#~ "Admin panelda \"Bizning maqsad va vazifalarimiz\" bo'limidan qo'shing."
+#~ msgid "Admin panelda \"Bizning maqsad va vazifalarimiz\" bo'limidan qo'shing."
 #~ msgstr "Админ панелда \"Бизнинг мақсад ва вазифаларимиз\" бўлимидан қўшинг."
 
 #~ msgid "Izoh (%(counter)s)"

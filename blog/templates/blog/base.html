@@ -324,7 +324,92 @@
 
 </header>
 
+<!-- TEZKOR ALOQA POPUP -->
+<div class="quick-contact-overlay" id="quickContactOverlay">
+    <div class="quick-contact-modal">
+        <button type="button" class="quick-contact-close" id="quickContactClose" aria-label="{% trans 'Yopish' %}">×</button>
 
+        <h3 class="quick-contact-title">{% trans "Tez tibbiy yordam xizmatiga savollaringiz bormi?" %}</h3>
+
+        <a href="tel:103" class="quick-contact-row">
+            <span class="quick-contact-icon">📞</span>
+            <span class="quick-contact-text">
+                <strong>103</strong>
+                <span>{% trans "Qisqa raqamiga qo'ng'iroq qiling" %}</span>
+            </span>
+        </a>
+
+        <div class="quick-contact-grid">
+
+            <a href="https://t.me/Press_Official_103_uz" target="_blank" rel="noopener noreferrer" class="quick-contact-row small">
+                <span class="quick-contact-icon"><i class="fa-brands fa-telegram"></i></span>
+                <span class="quick-contact-text">
+                    <span class="label">{% trans "Telegramdagi rasmiy kanal" %}</span>
+                    <span class="link">t.me/Press_Official_103_uz</span>
+                </span>
+            </a>
+
+            <a href="https://t.me/Murojaat103Bot" target="_blank" rel="noopener noreferrer" class="quick-contact-row small">
+                <span class="quick-contact-icon"><i class="fa-solid fa-robot"></i></span>
+                <span class="quick-contact-text">
+                    <span class="label">{% trans "Telegram bot" %}</span>
+                    <span class="link">t.me/Murojaat103Bot</span>
+                </span>
+            </a>
+
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="quick-contact-row small">
+                <span class="quick-contact-icon"><i class="fa-brands fa-instagram"></i></span>
+                <span class="quick-contact-text">
+                    <span class="label">{% trans "Instagram sahifasi" %}</span>
+                    <span class="link">instagram.com/103.uz</span>
+                </span>
+            </a>
+
+            <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" class="quick-contact-row small">
+                <span class="quick-contact-icon"><i class="fa-brands fa-youtube"></i></span>
+                <span class="quick-contact-text">
+                    <span class="label">{% trans "YouTube kanali" %}</span>
+                    <span class="link">youtube.com/@103uz</span>
+                </span>
+            </a>
+
+            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="quick-contact-row small">
+                <span class="quick-contact-icon"><i class="fa-brands fa-facebook-f"></i></span>
+                <span class="quick-contact-text">
+                    <span class="label">{% trans "Facebook sahifasi" %}</span>
+                    <span class="link">facebook.com/103.uz</span>
+                </span>
+            </a>
+
+        </div>
+
+
+
+        <div class="quick-contact-socials">
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="quick-social-icon" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://youtube.com/" target="_blank" rel="noopener noreferrer" class="quick-social-icon" title="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" class="quick-social-icon" title="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://t.me/" target="_blank" rel="noopener noreferrer" class="quick-social-icon" title="Telegram">
+                <i class="fa-brands fa-telegram"></i>
+            </a>
+        </div>
+
+        <a href="{% url 'support_chat' %}" class="quick-contact-aloqa-btn">
+            <i class="fa-solid fa-comments"></i>
+            {% trans "Saytda murojaat qoldirish" %}
+        </a>
+
+        <div class="quick-contact-note">
+            <span>📱</span> {% trans "O'z sog'ligingizga befarq bo'lmang" %}
+        </div>
+    </div>
+</div>
 <!-- MAIN -->
 
 <main>
@@ -634,6 +719,32 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+    // TEZKOR ALOQA POPUP — sessiyada bir marta chiqadi
+    (function () {
+        var overlay = document.getElementById('quickContactOverlay');
+        var closeBtn = document.getElementById('quickContactClose');
+        if (!overlay || !closeBtn) return;
+
+        if (!sessionStorage.getItem('quick_contact_shown')) {
+            overlay.classList.add('is-open');
+            sessionStorage.setItem('quick_contact_shown', '1');
+        }
+
+        function closeModal() {
+            overlay.classList.remove('is-open');
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+
+        overlay.addEventListener('click', function (e) {
+            if (e.target === overlay) closeModal();
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeModal();
+        });
+    })();
 
 </script>
 </body>

@@ -2896,3 +2896,249 @@ img { max-width: 100%; }
     .header-search button { width: 34px; height: 34px; min-width: 34px; }
     .header-search button span { font-size: 16px; }
 }
+
+
+/* =========================================================
+   TEZKOR ALOQA POPUP
+   Asosiy stil — Kompyuter (1025px va undan katta)
+========================================================= */
+.quick-contact-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(11, 36, 56, 0.55);
+    z-index: 100000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.quick-contact-overlay.is-open {
+    display: flex;
+}
+
+.quick-contact-modal {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 36px 40px 30px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+}
+
+.quick-contact-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 50%;
+    background: #0B2438;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quick-contact-close:hover { background: #ff4757; }
+
+.quick-contact-title {
+    margin: 0 40px 22px 0;
+    color: #0B2438;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.quick-contact-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 0;
+    text-decoration: none;
+}
+
+.quick-contact-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f4fa;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.quick-contact-row strong {
+    display: block;
+    color: #063582;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.quick-contact-row .quick-contact-text > span {
+    display: block;
+    color: #667181;
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.quick-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 6px;
+    padding-top: 6px;
+    border-top: 1px solid #eef1f5;
+}
+
+.quick-contact-row.small .quick-contact-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    font-size: 16px;
+}
+
+.quick-contact-row.small .label {
+    color: #26344a;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.quick-contact-row.small .link {
+    color: #ff4757 !important;
+    font-size: 12px;
+}
+
+.quick-contact-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid #eef1f5;
+    color: #667181;
+    font-size: 13px;
+}
+
+.quick-contact-socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid #eef1f5;
+}
+
+.quick-social-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f0f4fa;
+    color: #0B2438;
+    font-size: 18px;
+    transition: all 0.2s ease;
+}
+
+.quick-social-icon:hover {
+    background: #ff4757;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.quick-contact-aloqa-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+    padding: 14px 20px;
+    background: #0B2438;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.quick-contact-aloqa-btn:hover {
+    background: #ff4757;
+    color: #fff;
+}
+
+
+/* =========================================================
+   PLANSHET (769px — 1024px oralig'i)
+========================================================= */
+@media (max-width: 1024px) {
+    .quick-contact-modal { padding: 30px 30px 26px; }
+    .quick-contact-title { font-size: 18px; }
+    .quick-social-icon { width: 38px; height: 38px; font-size: 16px; }
+    .quick-contact-aloqa-btn { font-size: 14px; padding: 12px 18px; }
+}
+
+
+/* =========================================================
+   TELEFON (max 768px)
+========================================================= */
+@media (max-width: 768px) {
+    .quick-contact-modal {
+        padding: 26px 20px 22px;
+        border-radius: 14px;
+    }
+
+    .quick-contact-title { font-size: 16.5px; margin-right: 34px; }
+
+    .quick-contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-contact-row strong { font-size: 18px; }
+
+    .quick-contact-socials { gap: 10px; margin-top: 18px; padding-top: 14px; }
+    .quick-social-icon { width: 36px; height: 36px; font-size: 15px; }
+    .quick-contact-aloqa-btn { font-size: 13.5px; padding: 12px 16px; gap: 8px; }
+}
+
+
+/* =========================================================
+   KICHIK TELEFONLAR (max 480px)
+========================================================= */
+@media (max-width: 480px) {
+    .quick-contact-overlay { padding: 12px; }
+
+    .quick-contact-modal {
+        padding: 22px 16px 18px;
+        border-radius: 12px;
+    }
+
+    .quick-contact-close {
+        width: 28px;
+        height: 28px;
+        top: 14px;
+        right: 14px;
+        font-size: 17px;
+    }
+
+    .quick-contact-title { font-size: 15px; margin: 0 30px 16px 0; }
+
+    .quick-contact-icon { width: 38px; height: 38px; min-width: 38px; font-size: 17px; }
+    .quick-contact-row strong { font-size: 16px; }
+    .quick-contact-row .quick-contact-text > span { font-size: 12px; }
+
+    .quick-contact-note { font-size: 12px; }
+    .quick-contact-socials { gap: 8px; margin-top: 14px; padding-top: 12px; }
+    .quick-social-icon { width: 32px; height: 32px; font-size: 14px; }
+    .quick-contact-aloqa-btn { font-size: 13px; padding: 11px 14px; }
+}
