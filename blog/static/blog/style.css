@@ -2921,6 +2921,8 @@ img { max-width: 100%; }
     position: relative;
     width: 100%;
     max-width: 560px;
+    box-sizing: border-box;      /* YANGI: padding kenglikka kirsin */
+    overflow: hidden;            /* YANGI: hech narsa kartadan chiqmasin */
     background: #ffffff;
     border-radius: 16px;
     padding: 36px 40px 30px;
@@ -2961,6 +2963,7 @@ img { max-width: 100%; }
     gap: 14px;
     padding: 12px 0;
     text-decoration: none;
+    min-width: 0;                /* YANGI */
 }
 
 .quick-contact-icon {
@@ -2973,6 +2976,12 @@ img { max-width: 100%; }
     background: #f0f4fa;
     border-radius: 10px;
     font-size: 20px;
+}
+
+/* YANGI: matn bloki flex ichida kichrayishi mumkin */
+.quick-contact-row .quick-contact-text {
+    flex: 1 1 0;
+    min-width: 0;
 }
 
 .quick-contact-row strong {
@@ -2992,11 +3001,16 @@ img { max-width: 100%; }
 
 .quick-contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);   /* YANGI: 1fr o'rniga */
     gap: 10px;
     margin-top: 6px;
     padding-top: 6px;
     border-top: 1px solid #eef1f5;
+}
+
+/* YANGI: grid elementi mazmun uchun kengaymasin */
+.quick-contact-grid > .quick-contact-row {
+    min-width: 0;
 }
 
 .quick-contact-row.small .quick-contact-icon {
@@ -3015,9 +3029,10 @@ img { max-width: 100%; }
 .quick-contact-row.small .link {
     color: #ff4757 !important;
     font-size: 12px;
+    display: block;
+    max-width: 100%;             /* YANGI */
     word-break: break-all;
     overflow-wrap: anywhere;
-    display: block;
 }
 
 .quick-contact-note {
@@ -3105,7 +3120,7 @@ img { max-width: 100%; }
     .quick-contact-title { font-size: 16.5px; margin-right: 34px; }
 
     .quick-contact-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);   /* YANGI: 1fr o'rniga */
     }
 
     .quick-contact-row strong { font-size: 18px; }
