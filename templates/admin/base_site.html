@@ -6,12 +6,22 @@
   {% if admin_notifications_count is not None %}
   <script id="notif-data" type="application/json">
     {
-      "count": {{ admin_notifications_count }},
+      "count": {{ admin_notifications_count|default:0 }},
       "items": [
         {% for n in admin_notifications %}
           {
             "text": "{{ n.text|escapejs }}",
             "url": "{{ n.url|escapejs }}"
+          }{% if not forloop.last %},{% endif %}
+        {% endfor %}
+      ],
+      "tg_count": {{ tg_notifications_count|default:0 }},
+      "tg_url": "{% url 'admin:telegram_bot_adminnotification_changelist' %}?is_read__exact=0",
+      "tg_items": [
+        {% for n in tg_notifications %}
+          {
+            "text": "{{ n.text|escapejs }}",
+            "url": "{% url 'admin:telegram_bot_adminnotification_change' n.pk %}"
           }{% if not forloop.last %},{% endif %}
         {% endfor %}
       ]
@@ -107,15 +117,13 @@
       color: #999;
       font-size: 13px;
       background: #fff;
-      
     }
 
-        /* FAQAT TELEFON: qo'ng'iroqcha kichik, odamcha ikonkasining o'ng tomonida */
-        @media (max-width: 768px) {
-          #notif-bell-wrapper {
+    /* FAQAT TELEFON: qo'ng'iroqcha kichik, odamcha ikonkasining o'ng tomonida */
+    @media (max-width: 768px) {
+      #notif-bell-wrapper {
         top: 12px !important;
         right: 6px !important;
-      
       }
       #notif-bell-btn {
         width: 28px;
@@ -169,6 +177,14 @@
         return;
       }
 
+      var tgCount = data.tg_count || 0;
+      var total = (data.count || 0) + tgCount;
+      var allItems = (data.items || []).concat(
+        (data.tg_items || []).map(function (i) {
+          return { text: '\u2708\uFE0F ' + i.text, url: i.url };
+        })
+      );
+
       var wrapper = document.createElement('div');
       wrapper.id = 'notif-bell-wrapper';
 
@@ -177,10 +193,10 @@
       btn.id = 'notif-bell-btn';
       btn.innerHTML = '\uD83D\uDD14';
 
-      if (data.count > 0) {
+      if (total > 0) {
         var badge = document.createElement('span');
         badge.id = 'notif-badge';
-        badge.textContent = data.count;
+        badge.textContent = total;
         btn.appendChild(badge);
       }
 
@@ -195,8 +211,8 @@
       header.textContent = 'Bildirishnomalar';
       dropdown.appendChild(header);
 
-      if (data.items && data.items.length > 0) {
-        data.items.forEach(function (item) {
+      if (allItems.length > 0) {
+        allItems.forEach(function (item) {
           var a = document.createElement('a');
           a.className = 'notif-item';
           a.href = item.url;
@@ -204,11 +220,20 @@
           dropdown.appendChild(a);
         });
 
-        var viewAll = document.createElement('a');
-        viewAll.className = 'notif-view-all';
-        viewAll.href = '/admin/blog/testimonial/?is_approved__exact=0';
-        viewAll.textContent = "Barchasini ko'rish \u2192";
-        dropdown.appendChild(viewAll);
+        if (data.items && data.items.length > 0) {
+          var viewAll = document.createElement('a');
+          viewAll.className = 'notif-view-all';
+          viewAll.href = '/admin/blog/testimonial/?is_approved__exact=0';
+          viewAll.textContent = "Fikrlarni ko'rish \u2192";
+          dropdown.appendChild(viewAll);
+        }
+        if (tgCount > 0) {
+          var tgAll = document.createElement('a');
+          tgAll.className = 'notif-view-all';
+          tgAll.href = data.tg_url;
+          tgAll.textContent = "Telegram bildirishnomalari \u2192";
+          dropdown.appendChild(tgAll);
+        }
       } else {
         var empty = document.createElement('div');
         empty.className = 'notif-empty';
@@ -229,7 +254,7 @@
         }
       });
 
-      console.log('Bildirishnoma qo\'ng\'irog\'i muvaffaqiyatli qo\'shildi. Son:', data.count);
+      console.log("Bildirishnoma qo'ng'irog'i qo'shildi. Jami:", total);
     });
   </script>
   {% else %}

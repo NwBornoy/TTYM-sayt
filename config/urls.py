@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 
 
+
 urlpatterns = [
     # Admin panel — tilga bog'liq emas, prefiks olmaydi
     path(settings.ADMIN_URL, admin.site.urls),
@@ -15,6 +16,8 @@ urlpatterns = [
 
     # Tilni almashtirish uchun maxsus yo'l (dropdown/forma shu yerga POST yuboradi)
     path("i18n/", include("django.conf.urls.i18n")),
+
+    path("", include("telegram_bot.urls")),
 ]
 
 

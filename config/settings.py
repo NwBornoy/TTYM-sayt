@@ -16,9 +16,17 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
-load_dotenv()  # .env faylini o'qiydi (agar mavjud bo'lsa)
-
 BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv()  # .env faylini o'qiydi (agar mavjud bo'lsa)
+BOT_TOKEN = os.getenv("BOT_TOKEN", "")
+WEBHOOK_SECRET = os.getenv("WEBHOOK_SECRET", "")
+TELEGRAM_ADMIN_IDS = [
+    int(x) for x in os.getenv("TELEGRAM_ADMIN_IDS", "").split(",") if x.strip()
+]
+
+
+
+
 
 # --- Maxfiy sozlamalar (.env orqali) -----------------------------------
 SECRET_KEY = os.environ.get(
@@ -43,6 +51,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django_ckeditor_5",
     "blog",
+    "telegram_bot",
 ]
 
 MIDDLEWARE = [
@@ -71,6 +80,7 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 "blog.context_processors.admin_notifications",
                 "blog.context_processors.site_notifications",
+                "telegram_bot.context_processors.telegram_notifications",
             ],
         },
     },
@@ -306,7 +316,19 @@ JAZZMIN_SETTINGS = {
         "blog.ErrorReport": "fas fa-exclamation-triangle",
         "blog.SupportTicket": "fas fa-life-ring",
         "blog.SupportMessage": "fas fa-envelope",
+        "telegram_bot.TelegramUser": "fab fa-telegram",
+        "telegram_bot.SupportMessage": "fas fa-headset",
+        "telegram_bot.Broadcast": "fas fa-bullhorn",
+        "telegram_bot.AdminNotification": "fas fa-bell",
     },
+
+        "topmenu_links": [
+        {
+            "name": "🔔 Telegram bildirishnomalar",
+            "url": "admin:telegram_bot_adminnotification_changelist",
+            "permissions": ["auth.view_user"],
+        },
+    ],
 
     "show_ui_builder": True,   # Admin panelda o'zingiz rang/tema sozlashingiz mumkin bo'lgan tugma
 

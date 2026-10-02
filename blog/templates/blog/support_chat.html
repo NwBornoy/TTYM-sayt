@@ -60,12 +60,12 @@
 
                         <div class="sender-name">
 
-                            {% if msg.sender.get_full_name %}
-                                {{ msg.sender.get_full_name }}
+                            {% if msg.sender.first_name %}
+                                {{ msg.sender.first_name }}
                             {% else %}
-                                {{ msg.sender.username }}
+                                {% trans "Administrator" %}
                             {% endif %}
-
+                        
                         </div>
 
                         <div class="bubble admin">

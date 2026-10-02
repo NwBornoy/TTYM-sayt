@@ -1191,7 +1191,7 @@ msgstr "Рўйхатдан ўтинг"
 #, fuzzy
 #| msgid "Ro‘yxatdan o‘ting"
 msgid "Ro‘yxatdan o‘tish"
-msgstr "Рўйхатдан ўтинг"
+msgstr "Рўйхатдан ўтиш"
 
 #: .\blog\templates\registration\register.html:52
 msgid "Saytda ishtirok etish uchun yangi hisob yarating."

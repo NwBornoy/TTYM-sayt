@@ -1,7 +1,7 @@
 {% extends "blog/base.html" %}
 {% load i18n %}
 
-{% block title %}{% trans "Ro‘yxatdan o‘tish" %}{% endblock %}
+{% block title %}{% trans "Ro'yxatdan o'tish" %}{% endblock %}
 
 {% block content %}
 
@@ -47,7 +47,7 @@
 
         <div class="auth-icon">103</div>
 
-        <h1>{% trans "Ro‘yxatdan o‘tish" %}</h1>
+        <h1>{% trans "Ro'yxatdan o'tish" %}</h1>
         <p class="auth-subtitle">
             {% trans "Saytda ishtirok etish uchun yangi hisob yarating." %}
         </p>
@@ -62,10 +62,27 @@
             {% endif %}
 
             <div class="form-group">
+                <label for="{{ form.first_name.id_for_label }}">
+                    {% trans "Ismingiz" %}
+                </label>
+                {{ form.first_name }}
+
+                {% if form.first_name.errors %}
+                    <div class="field-error">
+                        {{ form.first_name.errors }}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
                 <label for="{{ form.username.id_for_label }}">
-                    {% trans "Foydalanuvchi nomi" %}
+                    {% trans "Login (kirish uchun nom)" %}
                 </label>
                 {{ form.username }}
+
+                {% if form.username.help_text %}
+                    <small class="field-help">{{ form.username.help_text }}</small>
+                {% endif %}
 
                 {% if form.username.errors %}
                     <div class="field-error">
@@ -138,7 +155,7 @@
             </div>
 
             <button type="submit" class="auth-button">
-                {% trans "Ro‘yxatdan o‘tish" %}
+                {% trans "Ro'yxatdan o'tish" %}
             </button>
         </form>
 

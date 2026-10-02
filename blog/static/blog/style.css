@@ -2987,6 +2987,7 @@ img { max-width: 100%; }
     color: #667181;
     font-size: 13px;
     margin-top: 2px;
+    min-width: 0;
 }
 
 .quick-contact-grid {
@@ -3014,6 +3015,9 @@ img { max-width: 100%; }
 .quick-contact-row.small .link {
     color: #ff4757 !important;
     font-size: 12px;
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    display: block;
 }
 
 .quick-contact-note {

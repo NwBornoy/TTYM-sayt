@@ -54,18 +54,26 @@ class CommentForm(forms.ModelForm):
 
 
 class RegisterForm(UserCreationForm):
-    email = forms.EmailField(required=False, label=_("Email (ixtiyoriy)"))
+    first_name = forms.CharField(
+        label="Ismingiz",
+        max_length=150,
+        required=True,
+        widget=forms.TextInput(attrs={"placeholder": "Ismingiz"}),
+    )
+    email = forms.EmailField(required=False, label="Email (ixtiyoriy)")
 
     class Meta:
         model = User
-        fields = ["username", "email", "password1", "password2"]
+        fields = ["first_name", "username", "email", "password1", "password2"]
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.fields["username"].label = "Login (kirish uchun nom)"
+        self.fields["username"].help_text = "Faqat tizimga kirish uchun ishlatiladi, boshqalarga ko'rinmaydi."
         self.fields["username"].error_messages = {
-            "unique": _("Bu foydalanuvchi nomi allaqachon band. Boshqa nom tanlang."),
-            "required": _("Foydalanuvchi nomini kiriting."),
-            "invalid": _("Foydalanuvchi nomida faqat harflar, raqamlar va @/./+/-/_ belgilaridan foydalaning."),
+            "unique": "Bu login allaqachon band. Boshqa nom tanlang.",
+            "required": "Login kiriting.",
+            "invalid": "Loginda faqat harflar, raqamlar va @/./+/-/_ belgilaridan foydalaning.",
         }
         self.fields["password1"].help_text = None
         self.fields["password2"].help_text = None
